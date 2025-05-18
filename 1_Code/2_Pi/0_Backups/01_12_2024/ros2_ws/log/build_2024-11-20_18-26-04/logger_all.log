@@ -1,0 +1,355 @@
+[1.791s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.792s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffff99b59060>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff99b58bb0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff99b58bb0>>, mixin_verb=('build',))
+[3.775s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.776s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.776s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.777s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.777s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[3.778s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.778s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/marc/ros2_ws'
+[3.779s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.782s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[3.783s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[3.783s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[3.784s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[3.784s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[3.785s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[3.785s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[3.786s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[3.963s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[3.964s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[3.964s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[3.965s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[3.966s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[3.967s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[3.968s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[3.968s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[3.970s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[3.971s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[3.971s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[3.974s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[3.975s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[3.976s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[3.977s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[3.978s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[3.979s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[3.979s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[3.980s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[3.980s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[3.980s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[3.981s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[3.981s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[3.982s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[3.983s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[3.983s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[3.984s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[3.984s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[3.985s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extensions ['ignore', 'ignore_ament_install']
+[3.986s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extension 'ignore'
+[3.987s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extension 'ignore_ament_install'
+[3.988s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extensions ['colcon_pkg']
+[3.988s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extension 'colcon_pkg'
+[3.988s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extensions ['colcon_meta']
+[3.989s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extension 'colcon_meta'
+[3.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extensions ['ros']
+[3.990s] Level 1:colcon.colcon_core.package_identification:_identify(src/test_stand) by extension 'ros'
+[4.020s] DEBUG:colcon.colcon_core.package_identification:Package 'src/test_stand' with type 'ros.ament_python' and name 'test_stand'
+[4.023s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extensions ['ignore', 'ignore_ament_install']
+[4.024s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extension 'ignore'
+[4.025s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extension 'ignore_ament_install'
+[4.026s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extensions ['colcon_pkg']
+[4.026s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extension 'colcon_pkg'
+[4.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extensions ['colcon_meta']
+[4.027s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extension 'colcon_meta'
+[4.028s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extensions ['ros']
+[4.028s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_controllers) by extension 'ros'
+[4.035s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thorn_controllers' with type 'ros.ament_cmake' and name 'thorn_controllers'
+[4.036s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extensions ['ignore', 'ignore_ament_install']
+[4.037s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extension 'ignore'
+[4.038s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extension 'ignore_ament_install'
+[4.039s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extensions ['colcon_pkg']
+[4.039s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extension 'colcon_pkg'
+[4.039s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extensions ['colcon_meta']
+[4.040s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extension 'colcon_meta'
+[4.040s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extensions ['ros']
+[4.041s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_drivers) by extension 'ros'
+[4.048s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thorn_drivers' with type 'ros.ament_cmake' and name 'thorn_drivers'
+[4.050s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extensions ['ignore', 'ignore_ament_install']
+[4.051s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extension 'ignore'
+[4.052s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extension 'ignore_ament_install'
+[4.053s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extensions ['colcon_pkg']
+[4.054s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extension 'colcon_pkg'
+[4.054s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extensions ['colcon_meta']
+[4.055s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extension 'colcon_meta'
+[4.055s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extensions ['ros']
+[4.056s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_launchers) by extension 'ros'
+[4.065s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thorn_launchers' with type 'ros.ament_python' and name 'thorn_launchers'
+[4.066s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extensions ['ignore', 'ignore_ament_install']
+[4.067s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extension 'ignore'
+[4.068s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extension 'ignore_ament_install'
+[4.068s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extensions ['colcon_pkg']
+[4.069s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extension 'colcon_pkg'
+[4.069s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extensions ['colcon_meta']
+[4.070s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extension 'colcon_meta'
+[4.071s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extensions ['ros']
+[4.071s] Level 1:colcon.colcon_core.package_identification:_identify(src/thorn_planners) by extension 'ros'
+[4.081s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thorn_planners' with type 'ros.ament_python' and name 'thorn_planners'
+[4.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[4.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[4.082s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[4.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[4.083s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[4.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[4.354s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[4.389s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/marc/ros2_ws/install
+[4.408s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 194 installed packages in /opt/ros/iron
+[4.421s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[5.226s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'cmake_args' from command line to 'None'
+[5.227s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'cmake_target' from command line to 'None'
+[5.227s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.227s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'cmake_clean_cache' from command line to 'False'
+[5.228s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'cmake_clean_first' from command line to 'False'
+[5.228s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'cmake_force_configure' from command line to 'False'
+[5.228s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'ament_cmake_args' from command line to 'None'
+[5.228s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'catkin_cmake_args' from command line to 'None'
+[5.229s] Level 5:colcon.colcon_core.verb:set package 'test_stand' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.229s] DEBUG:colcon.colcon_core.verb:Building package 'test_stand' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marc/ros2_ws/build/test_stand', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marc/ros2_ws/install/test_stand', 'merge_install': False, 'path': '/home/marc/ros2_ws/src/test_stand', 'symlink_install': False, 'test_result_base': None}
+[5.233s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'cmake_args' from command line to 'None'
+[5.234s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'cmake_target' from command line to 'None'
+[5.234s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.234s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'cmake_clean_cache' from command line to 'False'
+[5.235s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'cmake_clean_first' from command line to 'False'
+[5.235s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'cmake_force_configure' from command line to 'False'
+[5.235s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'ament_cmake_args' from command line to 'None'
+[5.235s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'catkin_cmake_args' from command line to 'None'
+[5.236s] Level 5:colcon.colcon_core.verb:set package 'thorn_controllers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.236s] DEBUG:colcon.colcon_core.verb:Building package 'thorn_controllers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marc/ros2_ws/build/thorn_controllers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marc/ros2_ws/install/thorn_controllers', 'merge_install': False, 'path': '/home/marc/ros2_ws/src/thorn_controllers', 'symlink_install': False, 'test_result_base': None}
+[5.240s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'cmake_args' from command line to 'None'
+[5.241s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'cmake_target' from command line to 'None'
+[5.241s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.241s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'cmake_clean_cache' from command line to 'False'
+[5.242s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'cmake_clean_first' from command line to 'False'
+[5.242s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'cmake_force_configure' from command line to 'False'
+[5.242s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'ament_cmake_args' from command line to 'None'
+[5.242s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'catkin_cmake_args' from command line to 'None'
+[5.243s] Level 5:colcon.colcon_core.verb:set package 'thorn_drivers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.243s] DEBUG:colcon.colcon_core.verb:Building package 'thorn_drivers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marc/ros2_ws/build/thorn_drivers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marc/ros2_ws/install/thorn_drivers', 'merge_install': False, 'path': '/home/marc/ros2_ws/src/thorn_drivers', 'symlink_install': False, 'test_result_base': None}
+[5.247s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'cmake_args' from command line to 'None'
+[5.248s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'cmake_target' from command line to 'None'
+[5.248s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.248s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'cmake_clean_cache' from command line to 'False'
+[5.248s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'cmake_clean_first' from command line to 'False'
+[5.249s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'cmake_force_configure' from command line to 'False'
+[5.249s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'ament_cmake_args' from command line to 'None'
+[5.249s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'catkin_cmake_args' from command line to 'None'
+[5.250s] Level 5:colcon.colcon_core.verb:set package 'thorn_launchers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.250s] DEBUG:colcon.colcon_core.verb:Building package 'thorn_launchers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marc/ros2_ws/build/thorn_launchers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marc/ros2_ws/install/thorn_launchers', 'merge_install': False, 'path': '/home/marc/ros2_ws/src/thorn_launchers', 'symlink_install': False, 'test_result_base': None}
+[5.254s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'cmake_args' from command line to 'None'
+[5.255s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'cmake_target' from command line to 'None'
+[5.255s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.255s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'cmake_clean_cache' from command line to 'False'
+[5.255s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'cmake_clean_first' from command line to 'False'
+[5.256s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'cmake_force_configure' from command line to 'False'
+[5.256s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'ament_cmake_args' from command line to 'None'
+[5.256s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'catkin_cmake_args' from command line to 'None'
+[5.256s] Level 5:colcon.colcon_core.verb:set package 'thorn_planners' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.257s] DEBUG:colcon.colcon_core.verb:Building package 'thorn_planners' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/marc/ros2_ws/build/thorn_planners', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/marc/ros2_ws/install/thorn_planners', 'merge_install': False, 'path': '/home/marc/ros2_ws/src/thorn_planners', 'symlink_install': False, 'test_result_base': None}
+[5.258s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[5.266s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[5.268s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/marc/ros2_ws/src/test_stand' with build type 'ament_python'
+[5.270s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_stand', 'ament_prefix_path')
+[5.315s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[5.319s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/test_stand/share/test_stand/hook/ament_prefix_path.ps1'
+[5.326s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/test_stand/share/test_stand/hook/ament_prefix_path.dsv'
+[5.332s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/test_stand/share/test_stand/hook/ament_prefix_path.sh'
+[5.340s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.341s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.383s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/marc/ros2_ws/src/thorn_controllers' with build type 'ament_cmake'
+[5.385s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/marc/ros2_ws/src/thorn_controllers'
+[5.387s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.388s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.430s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/marc/ros2_ws/src/thorn_drivers' with build type 'ament_cmake'
+[5.431s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/marc/ros2_ws/src/thorn_drivers'
+[5.434s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.435s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.477s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/marc/ros2_ws/src/thorn_launchers' with build type 'ament_python'
+[5.479s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_launchers', 'ament_prefix_path')
+[5.483s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/hook/ament_prefix_path.ps1'
+[5.489s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/hook/ament_prefix_path.dsv'
+[5.493s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/hook/ament_prefix_path.sh'
+[5.500s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.501s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.395s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/marc/ros2_ws/src/test_stand'
+[8.398s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.399s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.467s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/build/thorn_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_controllers -- -j4 -l4
+[8.534s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[11.469s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/marc/ros2_ws/src/thorn_launchers'
+[11.471s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[11.472s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.546s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/build/thorn_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_controllers -- -j4 -l4
+[11.559s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[11.907s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/build/thorn_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_controllers
+[11.942s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_drivers
+[12.048s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thorn_controllers)
+[12.088s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/build/thorn_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_controllers
+[12.136s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers' for CMake module files
+[12.144s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers' for CMake config files
+[12.147s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_controllers', 'cmake_prefix_path')
+[12.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/hook/cmake_prefix_path.ps1'
+[12.155s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/hook/cmake_prefix_path.dsv'
+[12.161s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/hook/cmake_prefix_path.sh'
+[12.169s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/bin'
+[12.170s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/lib/pkgconfig/thorn_controllers.pc'
+[12.173s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/lib/python3.10/site-packages'
+[12.176s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/bin'
+[12.180s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.ps1'
+[12.189s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.dsv'
+[12.196s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.sh'
+[12.208s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.bash'
+[12.220s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.zsh'
+[12.230s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/thorn_controllers/share/colcon-core/packages/thorn_controllers)
+[12.255s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thorn_drivers)
+[12.259s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers' for CMake module files
+[12.264s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/test_stand:/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_drivers
+[12.271s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers' for CMake config files
+[12.275s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_drivers', 'cmake_prefix_path')
+[12.279s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/hook/cmake_prefix_path.ps1'
+[12.284s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/hook/cmake_prefix_path.dsv'
+[12.291s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/hook/cmake_prefix_path.sh'
+[12.298s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/lib'
+[12.301s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/bin'
+[12.302s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/lib/pkgconfig/thorn_drivers.pc'
+[12.306s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/lib/python3.10/site-packages'
+[12.309s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/bin'
+[12.314s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.ps1'
+[12.322s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.dsv'
+[12.328s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.sh'
+[12.335s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.bash'
+[12.341s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.zsh'
+[12.347s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/thorn_drivers/share/colcon-core/packages/thorn_drivers)
+[12.548s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thorn_controllers)
+[12.552s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers' for CMake module files
+[12.560s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers' for CMake config files
+[12.564s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_controllers', 'cmake_prefix_path')
+[12.567s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/hook/cmake_prefix_path.ps1'
+[12.572s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/hook/cmake_prefix_path.dsv'
+[12.579s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/hook/cmake_prefix_path.sh'
+[12.587s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/bin'
+[12.588s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/lib/pkgconfig/thorn_controllers.pc'
+[12.591s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/lib/python3.10/site-packages'
+[12.594s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_controllers/bin'
+[12.598s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.ps1'
+[12.604s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.dsv'
+[12.612s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.sh'
+[12.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.bash'
+[12.626s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.zsh'
+[12.634s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/thorn_controllers/share/colcon-core/packages/thorn_controllers)
+[12.637s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/marc/ros2_ws/src/thorn_planners' with build type 'ament_python'
+[12.639s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_planners', 'ament_prefix_path')
+[12.644s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/hook/ament_prefix_path.ps1'
+[12.664s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/hook/ament_prefix_path.dsv'
+[12.670s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/hook/ament_prefix_path.sh'
+[12.681s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[12.682s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[12.742s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thorn_drivers)
+[12.745s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers' for CMake module files
+[12.755s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers' for CMake config files
+[12.760s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_drivers', 'cmake_prefix_path')
+[12.762s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/hook/cmake_prefix_path.ps1'
+[12.767s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/hook/cmake_prefix_path.dsv'
+[12.772s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/hook/cmake_prefix_path.sh'
+[12.779s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/lib'
+[12.781s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/bin'
+[12.782s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/lib/pkgconfig/thorn_drivers.pc'
+[12.785s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/lib/python3.10/site-packages'
+[12.788s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_drivers/bin'
+[12.791s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.ps1'
+[12.798s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.dsv'
+[12.804s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.sh'
+[12.810s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.bash'
+[12.816s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.zsh'
+[12.822s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/thorn_drivers/share/colcon-core/packages/thorn_drivers)
+[16.470s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/marc/ros2_ws/src/thorn_planners'
+[16.476s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[16.476s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[17.088s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/src/test_stand': PYTHONPATH=/home/marc/ros2_ws/build/test_stand/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/test_stand build --build-base /home/marc/ros2_ws/build/test_stand/build install --record /home/marc/ros2_ws/build/test_stand/install.log --single-version-externally-managed install_data
+[17.114s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/src/thorn_launchers': PYTHONPATH=/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_launchers build --build-base /home/marc/ros2_ws/build/thorn_launchers/build install --record /home/marc/ros2_ws/build/thorn_launchers/install.log --single-version-externally-managed install_data
+[21.085s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers' for CMake module files
+[21.091s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/src/thorn_launchers' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_launchers build --build-base /home/marc/ros2_ws/build/thorn_launchers/build install --record /home/marc/ros2_ws/build/thorn_launchers/install.log --single-version-externally-managed install_data
+[21.095s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers' for CMake config files
+[21.105s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers/lib'
+[21.106s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers/bin'
+[21.107s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers/lib/pkgconfig/thorn_launchers.pc'
+[21.110s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages'
+[21.111s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_launchers', 'pythonpath')
+[21.114s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/hook/pythonpath.ps1'
+[21.122s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/hook/pythonpath.dsv'
+[21.128s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/hook/pythonpath.sh'
+[21.136s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_launchers/bin'
+[21.136s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thorn_launchers)
+[21.140s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/package.ps1'
+[21.148s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/package.dsv'
+[21.155s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/package.sh'
+[21.161s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/package.bash'
+[21.170s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers/package.zsh'
+[21.179s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/thorn_launchers/share/colcon-core/packages/thorn_launchers)
+[21.194s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand' for CMake module files
+[21.201s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/src/test_stand' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/test_stand/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/test_stand build --build-base /home/marc/ros2_ws/build/test_stand/build install --record /home/marc/ros2_ws/build/test_stand/install.log --single-version-externally-managed install_data
+[21.205s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand' for CMake config files
+[21.214s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand/lib'
+[21.215s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand/bin'
+[21.216s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand/lib/pkgconfig/test_stand.pc'
+[21.219s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages'
+[21.220s] Level 1:colcon.colcon_core.shell:create_environment_hook('test_stand', 'pythonpath')
+[21.223s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/test_stand/share/test_stand/hook/pythonpath.ps1'
+[21.228s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/test_stand/share/test_stand/hook/pythonpath.dsv'
+[21.234s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/test_stand/share/test_stand/hook/pythonpath.sh'
+[21.241s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/test_stand/bin'
+[21.242s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(test_stand)
+[21.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/test_stand/share/test_stand/package.ps1'
+[21.252s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/test_stand/share/test_stand/package.dsv'
+[21.258s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/test_stand/share/test_stand/package.sh'
+[21.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/test_stand/share/test_stand/package.bash'
+[21.270s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/test_stand/share/test_stand/package.zsh'
+[21.275s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/test_stand/share/colcon-core/packages/test_stand)
+[21.530s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/marc/ros2_ws/src/thorn_planners': PYTHONPATH=/home/marc/ros2_ws/build/thorn_planners/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_planners build --build-base /home/marc/ros2_ws/build/thorn_planners/build install --record /home/marc/ros2_ws/build/thorn_planners/install.log --single-version-externally-managed install_data
+[24.813s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners' for CMake module files
+[24.818s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/marc/ros2_ws/src/thorn_planners' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/thorn_planners/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_planners build --build-base /home/marc/ros2_ws/build/thorn_planners/build install --record /home/marc/ros2_ws/build/thorn_planners/install.log --single-version-externally-managed install_data
+[24.825s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners' for CMake config files
+[24.834s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners/lib'
+[24.835s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners/bin'
+[24.836s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners/lib/pkgconfig/thorn_planners.pc'
+[24.839s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages'
+[24.840s] Level 1:colcon.colcon_core.shell:create_environment_hook('thorn_planners', 'pythonpath')
+[24.843s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/hook/pythonpath.ps1'
+[24.848s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/hook/pythonpath.dsv'
+[24.852s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/hook/pythonpath.sh'
+[24.859s] Level 1:colcon.colcon_core.environment:checking '/home/marc/ros2_ws/install/thorn_planners/bin'
+[24.860s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thorn_planners)
+[24.863s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/package.ps1'
+[24.869s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/package.dsv'
+[24.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/package.sh'
+[24.879s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/package.bash'
+[24.884s] INFO:colcon.colcon_core.shell:Creating package script '/home/marc/ros2_ws/install/thorn_planners/share/thorn_planners/package.zsh'
+[24.888s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/marc/ros2_ws/install/thorn_planners/share/colcon-core/packages/thorn_planners)
+[24.891s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[24.895s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[24.896s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[24.897s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[25.018s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[25.019s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[25.020s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[25.021s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[25.028s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[25.029s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[25.032s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marc/ros2_ws/install/local_setup.ps1'
+[25.051s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/marc/ros2_ws/install/_local_setup_util_ps1.py'
+[25.070s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marc/ros2_ws/install/setup.ps1'
+[25.086s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marc/ros2_ws/install/local_setup.sh'
+[25.094s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/marc/ros2_ws/install/_local_setup_util_sh.py'
+[25.101s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marc/ros2_ws/install/setup.sh'
+[25.116s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marc/ros2_ws/install/local_setup.bash'
+[25.125s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marc/ros2_ws/install/setup.bash'
+[25.142s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/marc/ros2_ws/install/local_setup.zsh'
+[25.152s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/marc/ros2_ws/install/setup.zsh'

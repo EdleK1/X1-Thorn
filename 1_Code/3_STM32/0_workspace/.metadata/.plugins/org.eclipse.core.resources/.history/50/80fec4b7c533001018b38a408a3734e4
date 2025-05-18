@@ -1,0 +1,253 @@
+/*
+ * Dshot.c
+ *
+ *  Created on: May 15, 2025
+ *      Author: marcv
+ */
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "stm32h7xx_hal.h"
+#include "stm32h7xx_hal_dma.h"
+#include "cmsis_os2.h"
+#include "Dshot.h"
+#include "FreeRTOS.h"
+
+
+
+static uint16_t dshotBuf1[18];
+static uint16_t dshotBuf2[18];
+
+static uint8_t RX_motor1_started = 0;
+static uint8_t RX_motor1_finished = 0;
+static uint8_t motor1btcnt =0;
+static uint32_t telem1 = 0;
+
+static uint8_t RX_motor2_started = 0;
+static uint8_t RX_motor2_finished = 0;
+static uint8_t motor2btcnt =0;
+static uint32_t telem2 = 0;
+
+const uint8_t gcr_reverse[32] = {
+    [0x1E] = 0x0,
+    [0x09] = 0x1,
+    [0x0A] = 0x2,
+    [0x0B] = 0x3,
+    [0x15] = 0x4,
+    [0x16] = 0x5,
+    [0x17] = 0x6,
+    [0x1D] = 0x7,
+    [0x1A] = 0x8,
+    [0x0D] = 0x9,
+    [0x0E] = 0xA,
+    [0x0F] = 0xB,
+    [0x11] = 0xC,
+    [0x13] = 0xD,
+    [0x14] = 0xE,
+    [0x19] = 0xF,
+    // all other indices implicitly zero; zero treated as “invalid”
+};
+
+typedef StaticSemaphore_t osStaticSemaphoreDef_t;
+
+
+uint8_t Dshot_Init(void)
+{
+	// Definition for xDshotRxDoneSemaphore
+	osSemaphoreId_t xDshotRxDoneSemaphoreHandle;
+	osStaticSemaphoreDef_t xDshotRxDoneSemaphoreControlBlock;
+	const osSemaphoreAttr_t xDshotRxDoneSemaphore_attributes = {
+	  .name = "xDshotRxDoneSemaphore",
+	  .cb_mem = &xDshotRxDoneSemaphoreControlBlock,
+	  .cb_size = sizeof(xDshotRxDoneSemaphoreControlBlock),
+	};
+
+	xDshotRxDoneSemaphoreHandle = osSemaphoreNew(1, 0, &xDshotRxDoneSemaphore_attributes);
+
+	return 1;
+}
+
+
+
+uint8_t Dshot_SendFrame(uint16_t throttle1, uint16_t throttle2, uint32_t *last_erpm1, uint32_t *last_erpm2)
+{
+	DShot_MakeFrame(throttle1, dshotBuf1);
+	DShot_MakeFrame(throttle2, dshotBuf2);
+
+	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf1, 18);
+	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf2, 18);
+
+	if (xSemaphoreTake(xDshotRXDoneSemaphore, portMAX_DELAY)!=pdTRUE) // This semaphore is given when the erpm has finished being decoded
+	{
+		return 0;
+	}
+
+	if (DShot_DecodeTelemetry(rawtelem1, last_&erpm1) == 0 || DShot_DecodeTelemetry(rawtelem2) == 0)
+	{
+		return 0;
+	}
+
+	return 1;
+}
+
+
+
+
+void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits)
+{
+    if (throttle > 2047)
+    {
+        throttle = 2047;
+    }
+    // 11 bits throttle, LSB is telemetry flag
+    uint16_t payload = (throttle << 1);
+
+    // 4-bit CRC = inverted XOR of the 3 payload nibbles
+    uint8_t crc = ( payload ^ (payload >>  4) ^ (payload >>  8)) & 0x0F;
+    crc = (~crc) & 0x0F;
+
+    // Frame = payload << 4 | CRC
+    uint16_t frame =  (payload << 4) | crc;
+
+
+    for(int i = 0; i < 16; i++) {
+        // MSB first
+        if (frame & 0x8000)
+        {
+            dshotBits[i] = ESC_BIT_1;
+        } else
+        {
+            dshotBits[i] = ESC_BIT_0;
+        }
+        frame <<= 1;
+    }
+    // Add 2 zero slots to leave the line low after frame (reset gap)
+    dshotBits[16] = 0;
+    dshotBits[17] = 0;
+}
+
+
+
+
+
+uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM)
+{
+
+	uint32_t gcr = (rawtelem ^ (rawtelem >> 1));
+	uint16_t raw16 = 0;
+
+	for (int i = 0; i < 4; i++)
+	{
+	    // Extract symbol #i (i = 0 is the first 5 bits)
+	    uint8_t symbol = (gcr >> (15 - 5*i)) & 0x1F;
+	    uint8_t nibble = gcr_reverse[symbol];
+	    raw16 |= (nibble << (12 - 4*i));
+	}
+
+	uint16_t word12   = raw16 >> 4;      // top 12 bits
+	uint8_t recv_crc  = raw16 & 0x0F;    // low 4 bits
+
+	// Compute CRC of word12
+	uint8_t calc_crc = (word12 ^ (word12 >> 4) ^ (word12 >> 8)) & 0x0F;
+	calc_crc = (~calc_crc) & 0x0F;
+
+	if (calc_crc != recv_crc)
+	{
+	    return 0;
+	}
+
+	uint16_t E = (word12 >> 9) & 0x07;
+	uint16_t M = (word12 >> 0) & 0x01FF;
+	uint32_t period_us = ((uint32_t)M) << E;
+
+	// eRPM (electrical RPM) = 60 000 000 µs/s ÷ period_us
+	uint32_t eRPM = 60000000UL / period_us;
+
+	// mechanical RPM = electrical RPM ÷ (poles/2)
+	mRPM = eRPM / (POLES/2);
+
+	return 1;
+}
+
+
+
+
+
+void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma)
+{
+    if (hdma == &hdma_tim3_ch1)
+    {
+        __HAL_TIM_DISABLE_CHANNEL(&htim3, TIM_CHANNEL_1);
+
+        RX_motor1_started = 0;
+        RX_motor1_finished = 0;
+        motor1btcnt =0;
+        telem1 = 0;
+
+        RX_motor2_started = 0;
+        RX_motor2_finished = 0;
+        motor2btcnt =0;
+        telem2 = 0;
+    }
+    else if (hdma == &hdma_tim3_ch2)
+    {
+        __HAL_TIM_DISABLE_CHANNEL(&htim3, TIM_CHANNEL_2);
+        HAL_TIM_Base_Start_IT(&htim9);
+    }
+}
+
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	uint32_t idr = GPIOD->IDR;
+	uint8_t motor1bit  = (idr >> 8) & 1;
+	uint8_t motor2bit  = (idr >> 9) & 1;
+
+	if (RX_motor1_started == 0 && RX_motor1_finished == 0)
+	{
+		if (motor1bit == 0)
+		{
+			RX_motor1_started = 1;
+		}
+	}
+	else if (RX_motor1_started == 1 && RX_motor1_finished == 0)
+	{
+		if (motor1bitcnt < 20)
+		{
+			telem1 = (telem1 << 1) | motor1bit;
+			motor1bitcnt++;
+		}
+		else
+		{
+			RX_motor1_finished = 1;
+		}
+	}
+
+
+	if (RX_motor2_started == 0 && RX_motor2_finished == 0)
+	{
+		if (motor2bit == 0)
+		{
+			RX_motor2_started = 1;
+		}
+	}
+	else if (RX_motor2_started == 1 && RX_motor2_finished == 0)
+	{
+		if (motor2bitcnt < 20)
+		{
+			telem2 = (telem2 << 1) | motor2bit;
+			motor2bitcnt++;
+		}
+		else
+		{
+			RX_motor2_finished = 1;
+		}
+	}
+
+
+	if (RX_motor1_finished && RX_motor2_finished)
+	{
+		HAL_TIM_Base_Stop_IT(&htim9);
+	}
+}

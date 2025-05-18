@@ -1,0 +1,2 @@
+Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4

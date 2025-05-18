@@ -1,0 +1,6 @@
+../Core/Src/main.c:63:13:MPU_Config	24	static
+../Core/Src/main.c:102:13:CPU_CACHE_Enable	24	static,ignoring_inline_asm
+../Core/Src/main.c:111:6:LED_Blink	16	static
+../Core/Src/main.c:124:5:main	48	static
+../Core/Src/main.c:238:6:SystemClock_Config	128	static
+../Core/Src/main.c:305:6:Error_Handler	8	static

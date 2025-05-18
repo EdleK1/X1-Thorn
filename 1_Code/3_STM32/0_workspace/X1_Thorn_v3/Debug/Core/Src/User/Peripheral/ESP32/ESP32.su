@@ -1,0 +1,4 @@
+../Core/Src/User/Peripheral/ESP32/ESP32.c:36:6:esp32_Init	8	static
+../Core/Src/User/Peripheral/ESP32/ESP32.c:43:9:get_esp32_commands	16	static
+../Core/Src/User/Peripheral/ESP32/ESP32.c:71:6:HAL_UART_RxCpltCallback	24	static
+../Core/Src/User/Peripheral/ESP32/ESP32.c:115:6:HAL_UART_ErrorCallback	16	static

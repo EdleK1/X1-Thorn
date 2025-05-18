@@ -1,0 +1,2 @@
+../Core/Src/User/App/Control/Control.c:18:9:Control_Init	4	static
+../Core/Src/User/App/Control/Control.c:29:6:Control_Loop	4	static

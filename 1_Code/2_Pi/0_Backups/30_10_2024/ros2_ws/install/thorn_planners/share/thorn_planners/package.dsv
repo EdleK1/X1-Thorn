@@ -1,0 +1,6 @@
+source;share/thorn_planners/hook/pythonpath.ps1
+source;share/thorn_planners/hook/pythonpath.dsv
+source;share/thorn_planners/hook/pythonpath.sh
+source;share/thorn_planners/hook/ament_prefix_path.ps1
+source;share/thorn_planners/hook/ament_prefix_path.dsv
+source;share/thorn_planners/hook/ament_prefix_path.sh

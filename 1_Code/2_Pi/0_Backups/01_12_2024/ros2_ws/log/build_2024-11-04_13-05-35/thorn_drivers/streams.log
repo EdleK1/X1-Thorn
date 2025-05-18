@@ -1,0 +1,25 @@
+[0.089s] Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[0.603s] [ 50%] [32mBuilding CXX object CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o[0m
+[359.119s] [100%] [32m[1mLinking CXX executable Servo_Driver_node[0m
+[364.405s] [100%] Built target Servo_Driver_node
+[365.146s] Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[365.740s] Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_drivers
+[365.808s] -- Install configuration: ""
+[365.825s] -- Installing: /home/marc/ros2_ws/install/thorn_drivers/lib/thorn_drivers/Servo_Driver_node
+[365.911s] -- Set runtime path of "/home/marc/ros2_ws/install/thorn_drivers/lib/thorn_drivers/Servo_Driver_node" to ""
+[365.927s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/ament_index/resource_index/package_run_dependencies/thorn_drivers
+[365.931s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/ament_index/resource_index/parent_prefix_path/thorn_drivers
+[365.939s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/ament_prefix_path.sh
+[365.941s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/ament_prefix_path.dsv
+[365.943s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/path.sh
+[365.945s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/path.dsv
+[365.946s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.bash
+[365.948s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.sh
+[365.949s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.zsh
+[365.951s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.dsv
+[365.952s] -- Installing: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.dsv
+[365.956s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/ament_index/resource_index/packages/thorn_drivers
+[365.960s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/cmake/thorn_driversConfig.cmake
+[365.961s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/cmake/thorn_driversConfig-version.cmake
+[365.963s] -- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.xml
+[366.005s] Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_drivers

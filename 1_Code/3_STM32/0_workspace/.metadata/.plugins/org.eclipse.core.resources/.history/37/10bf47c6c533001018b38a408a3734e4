@@ -1,0 +1,20 @@
+/*
+ * Dshot.h
+ *
+ *  Created on: May 15, 2025
+ *      Author: marcv
+ */
+
+#ifndef SRC_USER_LIB_DSHOTPROTOCOL_DSHOT_H_
+#define SRC_USER_LIB_DSHOTPROTOCOL_DSHOT_H_
+
+#define POLES 6
+#define ESC_BIT_0 300
+#define ESC_BIT_1 600
+
+
+
+void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits);
+uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM);
+
+#endif /* SRC_USER_LIB_DSHOTPROTOCOL_DSHOT_H_ */

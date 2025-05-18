@@ -1,0 +1,5 @@
+  File "/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/Test_Stand_Planner_node.py", line 63
+    else if self.write_csv.data != 1:
+         ^^
+SyntaxError: expected ':'
+

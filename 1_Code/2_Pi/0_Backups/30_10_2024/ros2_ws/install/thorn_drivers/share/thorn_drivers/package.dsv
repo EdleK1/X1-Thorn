@@ -1,0 +1,8 @@
+source;share/thorn_drivers/hook/cmake_prefix_path.ps1
+source;share/thorn_drivers/hook/cmake_prefix_path.dsv
+source;share/thorn_drivers/hook/cmake_prefix_path.sh
+source;share/thorn_drivers/local_setup.bash
+source;share/thorn_drivers/local_setup.dsv
+source;share/thorn_drivers/local_setup.ps1
+source;share/thorn_drivers/local_setup.sh
+source;share/thorn_drivers/local_setup.zsh

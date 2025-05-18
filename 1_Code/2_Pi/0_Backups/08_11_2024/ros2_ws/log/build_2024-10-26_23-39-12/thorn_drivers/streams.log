@@ -1,0 +1,10 @@
+[0.088s] Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[0.512s] [31mCMake Error at CMakeLists.txt:41 (target_link_libraries):
+[0.513s]   Cannot specify link libraries for target "Servo_Driver_node" which is not
+[0.514s]   built by this project.
+[0.515s] 
+[0.516s] [0m
+[0.518s] -- Configuring incomplete, errors occurred!
+[0.519s] See also "/home/marc/ros2_ws/build/thorn_drivers/CMakeFiles/CMakeOutput.log".
+[0.534s] gmake: *** [Makefile:267: cmake_check_build_system] Error 1
+[0.550s] Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4

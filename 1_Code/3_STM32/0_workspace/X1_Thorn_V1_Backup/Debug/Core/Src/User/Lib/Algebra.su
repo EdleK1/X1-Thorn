@@ -1,0 +1,7 @@
+../Core/Src/User/Lib/Algebra.c:12:6:vector_cross	0	static
+../Core/Src/User/Lib/Algebra.c:20:6:quaternion_correction	0	static
+../Core/Src/User/Lib/Algebra.c:33:6:rot_x_mat	16	static
+../Core/Src/User/Lib/Algebra.c:45:6:rot_y_mat	16	static
+../Core/Src/User/Lib/Algebra.c:57:6:rot_z_mat	16	static
+../Core/Src/User/Lib/Algebra.c:71:6:matrixToQuat	24	static
+../Core/Src/User/Lib/Algebra.c:104:6:mat3Multiply	28	static

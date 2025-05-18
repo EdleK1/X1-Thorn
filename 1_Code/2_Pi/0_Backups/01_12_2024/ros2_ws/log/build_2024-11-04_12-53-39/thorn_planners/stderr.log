@@ -1,0 +1,4 @@
+  File "/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners/Flight_Planner_node.py", line 98
+    def main(args=None):
+SyntaxError: expected 'except' or 'finally' block
+

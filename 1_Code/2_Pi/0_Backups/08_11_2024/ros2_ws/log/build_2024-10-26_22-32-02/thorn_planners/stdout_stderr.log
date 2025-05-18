@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/thorn_planners/thorn_planners.egg-info
+writing ../../build/thorn_planners/thorn_planners.egg-info/PKG-INFO
+writing dependency_links to ../../build/thorn_planners/thorn_planners.egg-info/dependency_links.txt
+writing entry points to ../../build/thorn_planners/thorn_planners.egg-info/entry_points.txt
+writing requirements to ../../build/thorn_planners/thorn_planners.egg-info/requires.txt
+writing top-level names to ../../build/thorn_planners/thorn_planners.egg-info/top_level.txt
+writing manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'
+reading manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'
+writing manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/marc/ros2_ws/build/thorn_planners/build
+creating /home/marc/ros2_ws/build/thorn_planners/build/lib
+creating /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners
+copying thorn_planners/__init__.py -> /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners
+copying thorn_planners/Flight_Planner_node.py -> /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners
+running install
+running install_lib
+creating /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners
+copying /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners/__init__.py -> /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners
+copying /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners/Flight_Planner_node.py -> /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners
+byte-compiling /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners/Flight_Planner_node.py to Flight_Planner_node.cpython-310.pyc
+running install_data
+creating /home/marc/ros2_ws/install/thorn_planners/share/ament_index
+creating /home/marc/ros2_ws/install/thorn_planners/share/ament_index/resource_index
+creating /home/marc/ros2_ws/install/thorn_planners/share/ament_index/resource_index/packages
+copying resource/thorn_planners -> /home/marc/ros2_ws/install/thorn_planners/share/ament_index/resource_index/packages
+copying package.xml -> /home/marc/ros2_ws/install/thorn_planners/share/thorn_planners
+running install_egg_info
+Copying ../../build/thorn_planners/thorn_planners.egg-info to /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Flight_Planner_node script to /home/marc/ros2_ws/install/thorn_planners/lib/thorn_planners
+writing list of installed files to '/home/marc/ros2_ws/build/thorn_planners/install.log'

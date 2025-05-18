@@ -1,0 +1,2 @@
+../Core/Src/User/Test/TestOdometry/TestOdometry.c:19:6:Odometry_Test_Init	1
+../Core/Src/User/Test/TestOdometry/TestOdometry.c:31:6:Odometry_Test_Loop	1

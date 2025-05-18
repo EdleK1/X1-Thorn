@@ -1,0 +1,24 @@
+[7.001s] Invoking command in '/home/marc/ros2_ws/src/thorn_planners': PYTHONPATH=/home/marc/ros2_ws/build/thorn_planners/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_planners build --build-base /home/marc/ros2_ws/build/thorn_planners/build install --record /home/marc/ros2_ws/build/thorn_planners/install.log --single-version-externally-managed install_data
+[9.688s] running egg_info
+[9.694s] writing ../../build/thorn_planners/thorn_planners.egg-info/PKG-INFO
+[9.698s] writing dependency_links to ../../build/thorn_planners/thorn_planners.egg-info/dependency_links.txt
+[9.701s] writing entry points to ../../build/thorn_planners/thorn_planners.egg-info/entry_points.txt
+[9.702s] writing requirements to ../../build/thorn_planners/thorn_planners.egg-info/requires.txt
+[9.704s] writing top-level names to ../../build/thorn_planners/thorn_planners.egg-info/top_level.txt
+[9.724s] reading manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'
+[9.735s] writing manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'
+[9.737s] running build
+[9.738s] running build_py
+[9.742s] copying thorn_planners/Flight_Planner_node.py -> /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners
+[9.746s] running install
+[9.749s] running install_lib
+[9.760s] copying /home/marc/ros2_ws/build/thorn_planners/build/lib/thorn_planners/Flight_Planner_node.py -> /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners
+[9.769s] byte-compiling /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners/Flight_Planner_node.py to Flight_Planner_node.cpython-310.pyc
+[9.778s] running install_data
+[9.783s] running install_egg_info
+[9.801s] removing '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners-0.0.0-py3.10.egg-info' (and everything under it)
+[9.805s] Copying ../../build/thorn_planners/thorn_planners.egg-info to /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners-0.0.0-py3.10.egg-info
+[9.820s] running install_scripts
+[10.023s] Installing Flight_Planner_node script to /home/marc/ros2_ws/install/thorn_planners/lib/thorn_planners
+[10.028s] writing list of installed files to '/home/marc/ros2_ws/build/thorn_planners/install.log'
+[10.296s] Invoked command in '/home/marc/ros2_ws/src/thorn_planners' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/thorn_planners/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_planners build --build-base /home/marc/ros2_ws/build/thorn_planners/build install --record /home/marc/ros2_ws/build/thorn_planners/install.log --single-version-externally-managed install_data

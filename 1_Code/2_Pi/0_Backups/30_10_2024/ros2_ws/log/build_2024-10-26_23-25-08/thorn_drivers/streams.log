@@ -1,0 +1,38 @@
+[0.090s] Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[0.317s] -- Found ament_cmake: 2.0.6 (/opt/ros/iron/share/ament_cmake/cmake)
+[1.923s] -- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)
+[2.287s] -- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)
+[2.385s] -- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)
+[2.527s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.707s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.452s] -- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)
+[4.467s] -- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)
+[5.975s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[7.868s] -- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)
+[8.232s] -- Found ament_lint_auto: 0.14.4 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[9.013s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[9.014s] -- Configured cppcheck include dirs: 
+[9.015s] -- Configured cppcheck exclude dirs and/or files: 
+[9.022s] -- Added test 'lint_cmake' to check CMake code style
+[9.037s] -- Added test 'uncrustify' to check C / C++ code style
+[9.038s] -- Configured uncrustify additional arguments: 
+[9.042s] -- Added test 'xmllint' to check XML markup files
+[9.051s] -- Configuring done
+[9.279s] -- Generating done
+[9.300s] -- Build files have been written to: /home/marc/ros2_ws/build/thorn_drivers
+[9.615s] [ 50%] [32mBuilding CXX object CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o[0m
+[405.520s] [100%] [32m[1mLinking CXX executable Servo_Driver_node[0m
+[410.309s] /usr/bin/ld: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o: in function `Servo_Driver_node::Servo_Driver_node()':
+[410.321s] Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeC2Ev[_ZN17Servo_Driver_nodeC5Ev]+0x1c4): undefined reference to `pigpio_start'
+[410.322s] /usr/bin/ld: Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeC2Ev[_ZN17Servo_Driver_nodeC5Ev]+0x358): undefined reference to `set_mode'
+[410.323s] /usr/bin/ld: Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeC2Ev[_ZN17Servo_Driver_nodeC5Ev]+0x36c): undefined reference to `set_mode'
+[410.323s] /usr/bin/ld: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o: in function `Servo_Driver_node::~Servo_Driver_node()':
+[410.324s] Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeD2Ev[_ZN17Servo_Driver_nodeD5Ev]+0x34): undefined reference to `pigpio_stop'
+[410.328s] /usr/bin/ld: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o: in function `Servo_Driver_node::topic_callback(std::shared_ptr<std_msgs::msg::Float32MultiArray_<std::allocator<void> > >)':
+[410.332s] Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE[_ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE]+0x250): undefined reference to `set_servo_pulsewidth'
+[410.334s] /usr/bin/ld: Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE[_ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE]+0x268): undefined reference to `set_servo_pulsewidth'
+[410.771s] collect2: error: ld returned 1 exit status
+[410.791s] gmake[2]: *** [CMakeFiles/Servo_Driver_node.dir/build.make:174: Servo_Driver_node] Error 1
+[410.825s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Servo_Driver_node.dir/all] Error 2
+[410.863s] gmake: *** [Makefile:146: all] Error 2
+[411.405s] Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4

@@ -1,0 +1,13 @@
+/usr/bin/ld: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o: in function `Servo_Driver_node::Servo_Driver_node()':
+Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeC2Ev[_ZN17Servo_Driver_nodeC5Ev]+0x1c4): undefined reference to `pigpio_start'
+/usr/bin/ld: Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeC2Ev[_ZN17Servo_Driver_nodeC5Ev]+0x358): undefined reference to `set_mode'
+/usr/bin/ld: Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeC2Ev[_ZN17Servo_Driver_nodeC5Ev]+0x36c): undefined reference to `set_mode'
+/usr/bin/ld: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o: in function `Servo_Driver_node::~Servo_Driver_node()':
+Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_nodeD2Ev[_ZN17Servo_Driver_nodeD5Ev]+0x34): undefined reference to `pigpio_stop'
+/usr/bin/ld: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o: in function `Servo_Driver_node::topic_callback(std::shared_ptr<std_msgs::msg::Float32MultiArray_<std::allocator<void> > >)':
+Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE[_ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE]+0x250): undefined reference to `set_servo_pulsewidth'
+/usr/bin/ld: Servo_Driver_node.cpp:(.text._ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE[_ZN17Servo_Driver_node14topic_callbackESt10shared_ptrIN8std_msgs3msg18Float32MultiArray_ISaIvEEEE]+0x268): undefined reference to `set_servo_pulsewidth'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/Servo_Driver_node.dir/build.make:174: Servo_Driver_node] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Servo_Driver_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

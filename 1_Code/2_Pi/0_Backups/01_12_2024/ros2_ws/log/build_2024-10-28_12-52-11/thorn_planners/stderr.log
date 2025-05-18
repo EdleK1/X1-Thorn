@@ -1,0 +1,2 @@
+/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners/Flight_Planner_node.py:71: SyntaxWarning: 'str' object is not callable; perhaps you missed a comma?
+  self.get_logger().error("Set: %d" (actual_servo_PWM))

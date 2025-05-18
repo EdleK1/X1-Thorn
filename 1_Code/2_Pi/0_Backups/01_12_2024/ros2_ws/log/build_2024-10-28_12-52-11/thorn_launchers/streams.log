@@ -1,0 +1,20 @@
+[8.276s] Invoking command in '/home/marc/ros2_ws/src/thorn_launchers': PYTHONPATH=/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_launchers build --build-base /home/marc/ros2_ws/build/thorn_launchers/build install --record /home/marc/ros2_ws/build/thorn_launchers/install.log --single-version-externally-managed install_data
+[10.953s] running egg_info
+[10.959s] writing ../../build/thorn_launchers/thorn_launchers.egg-info/PKG-INFO
+[10.963s] writing dependency_links to ../../build/thorn_launchers/thorn_launchers.egg-info/dependency_links.txt
+[10.965s] writing entry points to ../../build/thorn_launchers/thorn_launchers.egg-info/entry_points.txt
+[10.967s] writing requirements to ../../build/thorn_launchers/thorn_launchers.egg-info/requires.txt
+[10.969s] writing top-level names to ../../build/thorn_launchers/thorn_launchers.egg-info/top_level.txt
+[10.987s] reading manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'
+[11.000s] writing manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'
+[11.002s] running build
+[11.003s] running build_py
+[11.007s] running install
+[11.010s] running install_lib
+[11.026s] running install_data
+[11.031s] running install_egg_info
+[11.050s] removing '/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers-0.0.0-py3.10.egg-info' (and everything under it)
+[11.054s] Copying ../../build/thorn_launchers/thorn_launchers.egg-info to /home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers-0.0.0-py3.10.egg-info
+[11.069s] running install_scripts
+[11.278s] writing list of installed files to '/home/marc/ros2_ws/build/thorn_launchers/install.log'
+[11.544s] Invoked command in '/home/marc/ros2_ws/src/thorn_launchers' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_launchers build --build-base /home/marc/ros2_ws/build/thorn_launchers/build install --record /home/marc/ros2_ws/build/thorn_launchers/install.log --single-version-externally-managed install_data

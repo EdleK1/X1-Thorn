@@ -1,0 +1,2 @@
+../Core/Src/User/App/GroundCommands/GroundCommands.c:19:6:GroundCommands_Init	8	static
+../Core/Src/User/App/GroundCommands/GroundCommands.c:25:9:get_reference	320	static

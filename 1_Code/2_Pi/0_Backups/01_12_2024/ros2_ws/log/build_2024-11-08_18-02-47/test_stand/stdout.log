@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/test_stand/test_stand.egg-info/PKG-INFO
+writing dependency_links to ../../build/test_stand/test_stand.egg-info/dependency_links.txt
+writing entry points to ../../build/test_stand/test_stand.egg-info/entry_points.txt
+writing requirements to ../../build/test_stand/test_stand.egg-info/requires.txt
+writing top-level names to ../../build/test_stand/test_stand.egg-info/top_level.txt
+reading manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+writing manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+running build
+running build_py
+copying test_stand/Load_Cell_Reader_node.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+running install
+running install_lib
+copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/Load_Cell_Reader_node.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/Load_Cell_Reader_node.py to Load_Cell_Reader_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/test_stand/test_stand.egg-info to /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Load_Cell_Reader_node script to /home/marc/ros2_ws/install/test_stand/lib/test_stand
+Installing Test_Stand_Planner_node script to /home/marc/ros2_ws/install/test_stand/lib/test_stand
+writing list of installed files to '/home/marc/ros2_ws/build/test_stand/install.log'

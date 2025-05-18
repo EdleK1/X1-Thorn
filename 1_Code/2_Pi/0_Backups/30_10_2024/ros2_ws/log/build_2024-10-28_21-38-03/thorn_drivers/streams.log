@@ -1,0 +1,12 @@
+[0.091s] Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[0.589s] [35m[1mConsolidate compiler generated dependencies of target Servo_Driver_node[0m
+[0.956s] [ 50%] [32mBuilding CXX object CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o[0m
+[82.208s] [01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:[m[K In constructor ‘[01m[KServo_Driver_node::Servo_Driver_node()[m[K’:
+[82.264s] [01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:27:64:[m[K [01;31m[Kerror: [m[K‘[01m[KPI_OUTUT[m[K’ was not declared in this scope; did you mean ‘[01m[KPI_OUTPUT[m[K’?
+[82.267s]    27 |         int set_mode_response = set_mode(gpioHandle, PWM_pin1, [01;31m[KPI_OUTUT[m[K);
+[82.268s]       |                                                                [01;31m[K^~~~~~~~[m[K
+[82.269s]       |                                                                [32m[KPI_OUTPUT[m[K
+[106.948s] gmake[2]: *** [CMakeFiles/Servo_Driver_node.dir/build.make:76: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o] Error 1
+[107.050s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Servo_Driver_node.dir/all] Error 2
+[107.052s] gmake: *** [Makefile:146: all] Error 2
+[108.142s] Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4

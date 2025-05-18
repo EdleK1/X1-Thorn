@@ -1,0 +1,8 @@
+[01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:[m[K In constructor ‘[01m[KServo_Driver_node::Servo_Driver_node()[m[K’:
+[01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:27:64:[m[K [01;31m[Kerror: [m[K‘[01m[KPI_OUTUT[m[K’ was not declared in this scope; did you mean ‘[01m[KPI_OUTPUT[m[K’?
+   27 |         int set_mode_response = set_mode(gpioHandle, PWM_pin1, [01;31m[KPI_OUTUT[m[K);
+      |                                                                [01;31m[K^~~~~~~~[m[K
+      |                                                                [32m[KPI_OUTPUT[m[K
+gmake[2]: *** [CMakeFiles/Servo_Driver_node.dir/build.make:76: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Servo_Driver_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

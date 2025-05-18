@@ -1,0 +1,3 @@
+[console_scripts]
+Flight_Planner_node = thorn_planners.Flight_Planner_node:main
+

@@ -1,0 +1,37 @@
+running egg_info
+creating ../../build/test_stand/test_stand.egg-info
+writing ../../build/test_stand/test_stand.egg-info/PKG-INFO
+writing dependency_links to ../../build/test_stand/test_stand.egg-info/dependency_links.txt
+writing entry points to ../../build/test_stand/test_stand.egg-info/entry_points.txt
+writing requirements to ../../build/test_stand/test_stand.egg-info/requires.txt
+writing top-level names to ../../build/test_stand/test_stand.egg-info/top_level.txt
+writing manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+reading manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+writing manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/marc/ros2_ws/build/test_stand/build
+creating /home/marc/ros2_ws/build/test_stand/build/lib
+creating /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+copying test_stand/__init__.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+copying test_stand/Test_Stand_Planner_node.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+copying test_stand/Load_Cell_Reader_node.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+running install
+running install_lib
+creating /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/__init__.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/Test_Stand_Planner_node.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/Load_Cell_Reader_node.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/Test_Stand_Planner_node.py to Test_Stand_Planner_node.cpython-310.pyc
+byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/Load_Cell_Reader_node.py to Load_Cell_Reader_node.cpython-310.pyc
+running install_data
+creating /home/marc/ros2_ws/install/test_stand/share/ament_index
+creating /home/marc/ros2_ws/install/test_stand/share/ament_index/resource_index
+creating /home/marc/ros2_ws/install/test_stand/share/ament_index/resource_index/packages
+copying resource/test_stand -> /home/marc/ros2_ws/install/test_stand/share/ament_index/resource_index/packages
+copying package.xml -> /home/marc/ros2_ws/install/test_stand/share/test_stand
+running install_egg_info
+Copying ../../build/test_stand/test_stand.egg-info to /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/marc/ros2_ws/build/test_stand/install.log'

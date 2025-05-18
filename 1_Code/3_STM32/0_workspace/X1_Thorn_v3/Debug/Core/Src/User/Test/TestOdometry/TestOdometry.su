@@ -1,0 +1,2 @@
+../Core/Src/User/Test/TestOdometry/TestOdometry.c:19:6:Odometry_Test_Init	24	static
+../Core/Src/User/Test/TestOdometry/TestOdometry.c:31:6:Odometry_Test_Loop	32	static

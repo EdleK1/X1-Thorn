@@ -1,0 +1,33 @@
+[18.952s] Invoking command in '/home/marc/ros2_ws/src/thorn_launchers': PYTHONPATH=/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_launchers build --build-base /home/marc/ros2_ws/build/thorn_launchers/build install --record /home/marc/ros2_ws/build/thorn_launchers/install.log --single-version-externally-managed install_data
+[21.886s] running egg_info
+[21.892s] creating ../../build/thorn_launchers/thorn_launchers.egg-info
+[21.894s] writing ../../build/thorn_launchers/thorn_launchers.egg-info/PKG-INFO
+[21.901s] writing dependency_links to ../../build/thorn_launchers/thorn_launchers.egg-info/dependency_links.txt
+[21.904s] writing entry points to ../../build/thorn_launchers/thorn_launchers.egg-info/entry_points.txt
+[21.906s] writing requirements to ../../build/thorn_launchers/thorn_launchers.egg-info/requires.txt
+[21.910s] writing top-level names to ../../build/thorn_launchers/thorn_launchers.egg-info/top_level.txt
+[21.912s] writing manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'
+[21.921s] reading manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'
+[21.931s] writing manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'
+[21.936s] running build
+[21.938s] running build_py
+[21.942s] creating /home/marc/ros2_ws/build/thorn_launchers/build
+[21.948s] creating /home/marc/ros2_ws/build/thorn_launchers/build/lib
+[21.950s] creating /home/marc/ros2_ws/build/thorn_launchers/build/lib/thorn_launchers
+[21.951s] copying thorn_launchers/__init__.py -> /home/marc/ros2_ws/build/thorn_launchers/build/lib/thorn_launchers
+[21.958s] running install
+[21.960s] running install_lib
+[21.964s] creating /home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers
+[21.965s] copying /home/marc/ros2_ws/build/thorn_launchers/build/lib/thorn_launchers/__init__.py -> /home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers
+[21.972s] byte-compiling /home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers/__init__.py to __init__.cpython-310.pyc
+[21.974s] running install_data
+[21.977s] creating /home/marc/ros2_ws/install/thorn_launchers/share/ament_index
+[21.979s] creating /home/marc/ros2_ws/install/thorn_launchers/share/ament_index/resource_index
+[21.982s] creating /home/marc/ros2_ws/install/thorn_launchers/share/ament_index/resource_index/packages
+[21.983s] copying resource/thorn_launchers -> /home/marc/ros2_ws/install/thorn_launchers/share/ament_index/resource_index/packages
+[21.984s] copying package.xml -> /home/marc/ros2_ws/install/thorn_launchers/share/thorn_launchers
+[21.986s] running install_egg_info
+[21.996s] Copying ../../build/thorn_launchers/thorn_launchers.egg-info to /home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers-0.0.0-py3.10.egg-info
+[22.010s] running install_scripts
+[22.228s] writing list of installed files to '/home/marc/ros2_ws/build/thorn_launchers/install.log'
+[22.546s] Invoked command in '/home/marc/ros2_ws/src/thorn_launchers' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thorn_launchers build --build-base /home/marc/ros2_ws/build/thorn_launchers/build install --record /home/marc/ros2_ws/build/thorn_launchers/install.log --single-version-externally-managed install_data

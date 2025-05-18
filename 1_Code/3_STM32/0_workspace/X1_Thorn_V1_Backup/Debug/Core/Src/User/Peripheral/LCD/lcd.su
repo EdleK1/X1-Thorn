@@ -1,0 +1,12 @@
+../Core/Src/User/Peripheral/LCD/lcd.c:268:16:lcd_gettick	0	static
+../Core/Src/User/Peripheral/LCD/lcd.c:321:16:lcd_recvdata	16	static
+../Core/Src/User/Peripheral/LCD/lcd.c:307:16:lcd_senddata	16	static
+../Core/Src/User/Peripheral/LCD/lcd.c:290:16:lcd_readreg	32	static
+../Core/Src/User/Peripheral/LCD/lcd.c:273:16:lcd_writereg	24	static
+../Core/Src/User/Peripheral/LCD/lcd.c:261:16:lcd_init	8	static
+../Core/Src/User/Peripheral/LCD/lcd.c:100:6:LCD_SetBrightness	0	static
+../Core/Src/User/Peripheral/LCD/lcd.c:105:10:LCD_GetBrightness	0	static
+../Core/Src/User/Peripheral/LCD/lcd.c:114:6:LCD_Light	24	static
+../Core/Src/User/Peripheral/LCD/lcd.c:162:6:LCD_ShowChar	96	dynamic
+../Core/Src/User/Peripheral/LCD/lcd.c:246:6:LCD_ShowString	56	static
+../Core/Src/User/Peripheral/LCD/lcd.c:46:6:LCD_LoadScreen	72	static

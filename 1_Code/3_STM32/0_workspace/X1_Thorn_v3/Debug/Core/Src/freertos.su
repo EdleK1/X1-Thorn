@@ -1,0 +1,5 @@
+../Core/Src/freertos.c:142:6:MX_FREERTOS_Init	8	static
+../Core/Src/freertos.c:203:6:StartControlTask	16	static
+../Core/Src/freertos.c:227:6:StartMonitoringTask	16	static
+../Core/Src/freertos.c:245:6:StartESCTask	16	static
+../Core/Src/freertos.c:269:6:StartTestsTask	16	static

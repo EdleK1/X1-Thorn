@@ -1,0 +1,40 @@
+2025-03-15 01:11:06,850 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 342840320 Bytes (947912704)
+2025-03-15 01:11:08,511 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 349131776 Bytes (947912704)
+2025-03-15 01:11:08,921 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 364860416 Bytes (947912704)
+2025-03-15 01:11:09,487 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: LTDC
+2025-03-15 01:11:09,487 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-03-15 01:11:09,487 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: MEMORYMAP
+2025-03-15 01:11:09,487 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-03-15 01:11:09,488 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-03-15 01:11:09,488 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: CORTEX_M7
+2025-03-15 01:11:09,490 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-03-15 01:11:09,491 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-03-15 01:11:09,834 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\license.tmp_save
+2025-03-15 01:11:10,138 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\license.tmp
+2025-03-15 01:11:10,304 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\gpio.tmp_save
+2025-03-15 01:11:10,479 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\gpio.tmp
+2025-03-15 01:11:10,770 [WARN] IPConfigManager:103 - WARNING: Missing Config File for MEMORYMAP ip!!
+2025-03-15 01:11:11,097 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\cortex.tmp_save
+2025-03-15 01:11:11,290 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\cortex.tmp
+2025-03-15 01:11:11,349 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Src\stm32h7xx_it.c_save
+2025-03-15 01:11:11,679 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Src\stm32h7xx_it.c
+2025-03-15 01:11:11,702 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Inc\stm32h7xx_it.h_save
+2025-03-15 01:11:11,806 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Inc\stm32h7xx_it.h
+2025-03-15 01:11:12,006 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Src\stm32h7xx_hal_msp.c_save
+2025-03-15 01:11:12,136 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Src\stm32h7xx_hal_msp.c
+2025-03-15 01:11:12,149 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\system.tmp_save
+2025-03-15 01:11:12,216 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\MXTmpFiles\system.tmp
+2025-03-15 01:11:12,251 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Inc\stm32h7xx_hal_conf.h_save
+2025-03-15 01:11:12,372 [INFO] CodeEngine:343 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Inc\stm32h7xx_hal_conf.h
+2025-03-15 01:11:12,407 [ERROR] ApiDbMcu:464 - Can't load MEMORYMAP-STM32xx root dir null
+2025-03-15 01:11:12,408 [ERROR] ApiDbMcu:536 - Cannot parse MEMORYMAP_Config file : file do not exist
+2025-03-15 01:11:12,436 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Inc\main.h_save
+2025-03-15 01:11:12,526 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Inc\main.h
+2025-03-15 01:11:12,559 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Src\main.c_save
+2025-03-15 01:11:12,688 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\LCD_test_v2\Core\Src\main.c
+2025-03-15 01:11:13,228 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 270mS.
+2025-03-15 01:11:13,237 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-03-15 01:11:13,340 [INFO] ConfigFileManager:1590 - The Die is : DIE450
+2025-03-15 01:11:14,458 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1220mS.
+2025-03-15 01:11:14,458 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-03-15 01:11:14,461 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.

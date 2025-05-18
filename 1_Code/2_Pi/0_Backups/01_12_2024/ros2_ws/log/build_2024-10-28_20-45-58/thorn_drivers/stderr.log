@@ -1,0 +1,19 @@
+In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:43[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+                 from [01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:1[m[K:
+[01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:[m[K In constructor ‘[01m[KServo_Driver_node::Servo_Driver_node()[m[K’:
+[01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:37:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kactual_pwm_value2[m[K’ was not declared in this scope; did you mean ‘[01m[Kactual_pwm_value1[m[K’?
+   37 |         RCLCPP_INFO(this->get_logger(), "Set: Servo1 = %d, Servo2 = %d", actual_pwm_value1, [01;31m[Kactual_pwm_value2[m[K);
+      |                                                                                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/Servo_Driver_node.dir/build.make:76: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Servo_Driver_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

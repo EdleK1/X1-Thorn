@@ -1,0 +1,2 @@
+../Core/Src/custom_syscalls.c:15:27:_gettimeofday_r	2
+../Core/Src/custom_syscalls.c:32:27:_gettimeofday	2

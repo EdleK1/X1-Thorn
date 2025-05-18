@@ -1,0 +1,482 @@
+[0.000000] (-) TimerEvent: {}
+[0.001143] (thorn_controllers) JobQueued: {'identifier': 'thorn_controllers', 'dependencies': OrderedDict()}
+[0.002198] (thorn_drivers) JobQueued: {'identifier': 'thorn_drivers', 'dependencies': OrderedDict()}
+[0.002792] (thorn_launchers) JobQueued: {'identifier': 'thorn_launchers', 'dependencies': OrderedDict()}
+[0.003129] (thorn_planners) JobQueued: {'identifier': 'thorn_planners', 'dependencies': OrderedDict()}
+[0.003415] (thorn_controllers) JobStarted: {'identifier': 'thorn_controllers'}
+[0.093326] (-) TimerEvent: {}
+[0.113968] (thorn_controllers) JobProgress: {'identifier': 'thorn_controllers', 'progress': 'cmake'}
+[0.122523] (thorn_controllers) JobProgress: {'identifier': 'thorn_controllers', 'progress': 'build'}
+[0.128794] (thorn_controllers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/marc/ros2_ws/build/thorn_controllers', '--', '-j4', '-l4'], 'cwd': '/home/marc/ros2_ws/build/thorn_controllers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'marc'), ('SSH_CLIENT', '192.168.0.21 59993 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/iron/lib/aarch64-linux-gnu:/opt/ros/iron/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/marc'), ('OLDPWD', '/home/marc'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/marc/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'marc'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/home/marc/ros2_ws/build/thorn_controllers'), ('SSH_CONNECTION', '192.168.0.21 59993 192.168.0.15 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron')]), 'shell': False}
+[0.193703] (-) TimerEvent: {}
+[0.295264] (-) TimerEvent: {}
+[0.397043] (-) TimerEvent: {}
+[0.498490] (-) TimerEvent: {}
+[0.600405] (-) TimerEvent: {}
+[0.702867] (-) TimerEvent: {}
+[0.804388] (-) TimerEvent: {}
+[0.905895] (-) TimerEvent: {}
+[1.007449] (-) TimerEvent: {}
+[1.108838] (-) TimerEvent: {}
+[1.144328] (thorn_controllers) CommandEnded: {'returncode': 0}
+[1.209153] (-) TimerEvent: {}
+[1.310529] (-) TimerEvent: {}
+[1.366861] (thorn_controllers) JobProgress: {'identifier': 'thorn_controllers', 'progress': 'install'}
+[1.410851] (-) TimerEvent: {}
+[1.437375] (thorn_controllers) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/marc/ros2_ws/build/thorn_controllers'], 'cwd': '/home/marc/ros2_ws/build/thorn_controllers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'marc'), ('SSH_CLIENT', '192.168.0.21 59993 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/iron/lib/aarch64-linux-gnu:/opt/ros/iron/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/marc'), ('OLDPWD', '/home/marc'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/marc/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'marc'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/home/marc/ros2_ws/build/thorn_controllers'), ('SSH_CONNECTION', '192.168.0.21 59993 192.168.0.15 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron')]), 'shell': False}
+[1.507443] (thorn_controllers) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.509247] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/package_run_dependencies/thorn_controllers\n'}
+[1.510917] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/parent_prefix_path/thorn_controllers\n'}
+[1.511986] (-) TimerEvent: {}
+[1.513269] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/ament_prefix_path.sh\n'}
+[1.514791] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/ament_prefix_path.dsv\n'}
+[1.516541] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/path.sh\n'}
+[1.518015] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/path.dsv\n'}
+[1.519398] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.bash\n'}
+[1.521148] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.sh\n'}
+[1.522588] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.zsh\n'}
+[1.523693] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.dsv\n'}
+[1.524713] (thorn_controllers) StdoutLine: {'line': b'-- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.dsv\n'}
+[1.527035] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/packages/thorn_controllers\n'}
+[1.528353] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/cmake/thorn_controllersConfig.cmake\n'}
+[1.529724] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/cmake/thorn_controllersConfig-version.cmake\n'}
+[1.531063] (thorn_controllers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.xml\n'}
+[1.543908] (thorn_controllers) CommandEnded: {'returncode': 0}
+[1.613153] (-) TimerEvent: {}
+[1.715001] (-) TimerEvent: {}
+[1.816316] (-) TimerEvent: {}
+[1.918065] (-) TimerEvent: {}
+[1.979520] (thorn_controllers) JobEnded: {'identifier': 'thorn_controllers', 'rc': 0}
+[1.988948] (thorn_drivers) JobStarted: {'identifier': 'thorn_drivers'}
+[2.018311] (-) TimerEvent: {}
+[2.047641] (thorn_drivers) JobProgress: {'identifier': 'thorn_drivers', 'progress': 'cmake'}
+[2.056728] (thorn_drivers) JobProgress: {'identifier': 'thorn_drivers', 'progress': 'build'}
+[2.059264] (thorn_drivers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/marc/ros2_ws/build/thorn_drivers', '--', '-j4', '-l4'], 'cwd': '/home/marc/ros2_ws/build/thorn_drivers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'marc'), ('SSH_CLIENT', '192.168.0.21 59993 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/iron/lib/aarch64-linux-gnu:/opt/ros/iron/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/marc'), ('OLDPWD', '/home/marc'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/marc/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'marc'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/home/marc/ros2_ws/build/thorn_drivers'), ('SSH_CONNECTION', '192.168.0.21 59993 192.168.0.15 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron')]), 'shell': False}
+[2.118648] (-) TimerEvent: {}
+[2.220077] (-) TimerEvent: {}
+[2.321764] (-) TimerEvent: {}
+[2.388819] (thorn_drivers) StdoutLine: {'line': b'-- Found pigpio: /home/marc/pigpio  \n'}
+[2.393026] (thorn_drivers) StdoutLine: {'line': b'-- Found ament_cmake: 2.0.6 (/opt/ros/iron/share/ament_cmake/cmake)\n'}
+[2.422078] (-) TimerEvent: {}
+[2.523457] (-) TimerEvent: {}
+[2.624782] (-) TimerEvent: {}
+[2.726013] (-) TimerEvent: {}
+[2.827281] (-) TimerEvent: {}
+[2.928702] (-) TimerEvent: {}
+[3.030008] (-) TimerEvent: {}
+[3.131344] (-) TimerEvent: {}
+[3.232704] (-) TimerEvent: {}
+[3.334049] (-) TimerEvent: {}
+[3.435344] (-) TimerEvent: {}
+[3.536562] (-) TimerEvent: {}
+[3.637812] (-) TimerEvent: {}
+[3.739070] (-) TimerEvent: {}
+[3.840325] (-) TimerEvent: {}
+[3.941636] (-) TimerEvent: {}
+[4.043170] (-) TimerEvent: {}
+[4.144639] (-) TimerEvent: {}
+[4.239256] (thorn_drivers) StdoutLine: {'line': b'-- Found rclcpp: 21.0.7 (/opt/ros/iron/share/rclcpp/cmake)\n'}
+[4.244954] (-) TimerEvent: {}
+[4.346336] (-) TimerEvent: {}
+[4.447564] (-) TimerEvent: {}
+[4.548913] (-) TimerEvent: {}
+[4.650339] (-) TimerEvent: {}
+[4.751627] (-) TimerEvent: {}
+[4.852970] (-) TimerEvent: {}
+[4.954204] (-) TimerEvent: {}
+[5.055436] (-) TimerEvent: {}
+[5.156733] (-) TimerEvent: {}
+[5.189228] (thorn_drivers) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.0.1 (/opt/ros/iron/share/rosidl_generator_c/cmake)\n'}
+[5.257010] (-) TimerEvent: {}
+[5.358266] (-) TimerEvent: {}
+[5.432526] (thorn_drivers) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.0.1 (/opt/ros/iron/share/rosidl_generator_cpp/cmake)\n'}
+[5.458540] (-) TimerEvent: {}
+[5.559824] (-) TimerEvent: {}
+[5.661523] (-) TimerEvent: {}
+[5.762913] (-) TimerEvent: {}
+[5.776962] (thorn_drivers) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.863201] (-) TimerEvent: {}
+[5.964533] (-) TimerEvent: {}
+[6.065827] (-) TimerEvent: {}
+[6.132848] (thorn_drivers) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[6.166096] (-) TimerEvent: {}
+[6.267335] (-) TimerEvent: {}
+[6.368768] (-) TimerEvent: {}
+[6.470150] (-) TimerEvent: {}
+[6.572387] (-) TimerEvent: {}
+[6.673696] (-) TimerEvent: {}
+[6.775121] (-) TimerEvent: {}
+[6.876426] (-) TimerEvent: {}
+[6.977734] (-) TimerEvent: {}
+[7.079037] (-) TimerEvent: {}
+[7.180320] (-) TimerEvent: {}
+[7.281658] (-) TimerEvent: {}
+[7.382938] (-) TimerEvent: {}
+[7.484200] (-) TimerEvent: {}
+[7.585507] (-) TimerEvent: {}
+[7.686787] (-) TimerEvent: {}
+[7.788053] (-) TimerEvent: {}
+[7.889340] (-) TimerEvent: {}
+[7.990586] (-) TimerEvent: {}
+[8.091869] (-) TimerEvent: {}
+[8.193249] (-) TimerEvent: {}
+[8.294474] (-) TimerEvent: {}
+[8.395738] (-) TimerEvent: {}
+[8.430917] (thorn_drivers) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.1.0 (/opt/ros/iron/share/rmw_implementation_cmake/cmake)\n'}
+[8.496032] (-) TimerEvent: {}
+[8.497365] (thorn_drivers) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 7.1.4 (/opt/ros/iron/share/rmw_fastrtps_cpp/cmake)\n'}
+[8.596309] (-) TimerEvent: {}
+[8.697667] (-) TimerEvent: {}
+[8.798990] (-) TimerEvent: {}
+[8.900367] (-) TimerEvent: {}
+[9.001955] (-) TimerEvent: {}
+[9.103357] (-) TimerEvent: {}
+[9.204923] (-) TimerEvent: {}
+[9.306216] (-) TimerEvent: {}
+[9.407695] (-) TimerEvent: {}
+[9.509079] (-) TimerEvent: {}
+[9.610490] (-) TimerEvent: {}
+[9.711766] (-) TimerEvent: {}
+[9.813224] (-) TimerEvent: {}
+[9.914549] (-) TimerEvent: {}
+[10.015920] (-) TimerEvent: {}
+[10.064532] (thorn_drivers) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[10.116157] (-) TimerEvent: {}
+[10.217494] (-) TimerEvent: {}
+[10.318722] (-) TimerEvent: {}
+[10.395910] (thorn_drivers) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/iron/include  \n'}
+[10.418988] (-) TimerEvent: {}
+[10.520230] (-) TimerEvent: {}
+[10.621504] (-) TimerEvent: {}
+[10.722732] (-) TimerEvent: {}
+[10.823996] (-) TimerEvent: {}
+[10.925437] (-) TimerEvent: {}
+[10.970939] (thorn_drivers) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[11.025729] (-) TimerEvent: {}
+[11.127031] (-) TimerEvent: {}
+[11.228321] (-) TimerEvent: {}
+[11.329656] (-) TimerEvent: {}
+[11.430936] (-) TimerEvent: {}
+[11.532200] (-) TimerEvent: {}
+[11.633956] (-) TimerEvent: {}
+[11.735348] (-) TimerEvent: {}
+[11.836594] (-) TimerEvent: {}
+[11.937845] (-) TimerEvent: {}
+[12.039124] (-) TimerEvent: {}
+[12.140376] (-) TimerEvent: {}
+[12.241718] (-) TimerEvent: {}
+[12.343052] (-) TimerEvent: {}
+[12.444355] (-) TimerEvent: {}
+[12.545733] (-) TimerEvent: {}
+[12.647143] (-) TimerEvent: {}
+[12.748391] (-) TimerEvent: {}
+[12.849748] (-) TimerEvent: {}
+[12.951068] (-) TimerEvent: {}
+[13.052405] (-) TimerEvent: {}
+[13.153705] (-) TimerEvent: {}
+[13.210057] (thorn_drivers) StdoutLine: {'line': b'-- Found std_msgs: 5.0.1 (/opt/ros/iron/share/std_msgs/cmake)\n'}
+[13.253993] (-) TimerEvent: {}
+[13.355331] (-) TimerEvent: {}
+[13.456630] (-) TimerEvent: {}
+[13.557932] (-) TimerEvent: {}
+[13.609884] (thorn_drivers) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.14.4 (/opt/ros/iron/share/ament_lint_auto/cmake)\n'}
+[13.658178] (-) TimerEvent: {}
+[13.759456] (-) TimerEvent: {}
+[13.860666] (-) TimerEvent: {}
+[13.961928] (-) TimerEvent: {}
+[14.063365] (-) TimerEvent: {}
+[14.164673] (-) TimerEvent: {}
+[14.266033] (-) TimerEvent: {}
+[14.367684] (-) TimerEvent: {}
+[14.433589] (thorn_drivers) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[14.435249] (thorn_drivers) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[14.436148] (thorn_drivers) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[14.447579] (thorn_drivers) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[14.467699] (thorn_drivers) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[14.469206] (-) TimerEvent: {}
+[14.470068] (thorn_drivers) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[14.477217] (thorn_drivers) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[14.492741] (thorn_drivers) StdoutLine: {'line': b'-- Configuring done\n'}
+[14.569571] (-) TimerEvent: {}
+[14.624657] (thorn_drivers) StdoutLine: {'line': b'-- Generating done\n'}
+[14.644249] (thorn_drivers) StdoutLine: {'line': b'-- Build files have been written to: /home/marc/ros2_ws/build/thorn_drivers\n'}
+[14.669869] (-) TimerEvent: {}
+[14.771305] (-) TimerEvent: {}
+[14.850930] (thorn_drivers) CommandEnded: {'returncode': 0}
+[14.871577] (-) TimerEvent: {}
+[14.973037] (-) TimerEvent: {}
+[15.074373] (-) TimerEvent: {}
+[15.078911] (thorn_drivers) JobProgress: {'identifier': 'thorn_drivers', 'progress': 'install'}
+[15.087538] (thorn_drivers) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/marc/ros2_ws/build/thorn_drivers'], 'cwd': '/home/marc/ros2_ws/build/thorn_drivers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'marc'), ('SSH_CLIENT', '192.168.0.21 59993 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/iron/lib/aarch64-linux-gnu:/opt/ros/iron/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/marc'), ('OLDPWD', '/home/marc'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/marc/ros2_ws/install'), ('ROS_DISTRO', 'iron'), ('LOGNAME', 'marc'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('PATH', '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/opt/ros/iron'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('ROS_AUTOMATIC_DISCOVERY_RANGE', 'SUBNET'), ('PWD', '/home/marc/ros2_ws/build/thorn_drivers'), ('SSH_CONNECTION', '192.168.0.21 59993 192.168.0.15 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron')]), 'shell': False}
+[15.151383] (thorn_drivers) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[15.152965] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/ament_index/resource_index/package_run_dependencies/thorn_drivers\n'}
+[15.155186] (thorn_drivers) StdoutLine: {'line': b'-- Installing: /home/marc/ros2_ws/install/thorn_drivers/share/ament_index/resource_index/parent_prefix_path/thorn_drivers\n'}
+[15.160423] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/ament_prefix_path.sh\n'}
+[15.162020] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/ament_prefix_path.dsv\n'}
+[15.163746] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/path.sh\n'}
+[15.165666] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/environment/path.dsv\n'}
+[15.167195] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.bash\n'}
+[15.169042] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.sh\n'}
+[15.170624] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.zsh\n'}
+[15.171819] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/local_setup.dsv\n'}
+[15.173009] (thorn_drivers) StdoutLine: {'line': b'-- Installing: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.dsv\n'}
+[15.174351] (-) TimerEvent: {}
+[15.175692] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/ament_index/resource_index/packages/thorn_drivers\n'}
+[15.177341] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/cmake/thorn_driversConfig.cmake\n'}
+[15.178633] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/cmake/thorn_driversConfig-version.cmake\n'}
+[15.179746] (thorn_drivers) StdoutLine: {'line': b'-- Up-to-date: /home/marc/ros2_ws/install/thorn_drivers/share/thorn_drivers/package.xml\n'}
+[15.189714] (thorn_drivers) CommandEnded: {'returncode': 0}
+[15.274699] (-) TimerEvent: {}
+[15.376176] (-) TimerEvent: {}
+[15.479171] (-) TimerEvent: {}
+[15.549114] (thorn_drivers) JobEnded: {'identifier': 'thorn_drivers', 'rc': 0}
+[15.558797] (thorn_launchers) JobStarted: {'identifier': 'thorn_launchers'}
+[15.580023] (-) TimerEvent: {}
+[15.681551] (-) TimerEvent: {}
+[15.782721] (-) TimerEvent: {}
+[15.884139] (-) TimerEvent: {}
+[15.985508] (-) TimerEvent: {}
+[16.086805] (-) TimerEvent: {}
+[16.188065] (-) TimerEvent: {}
+[16.289385] (-) TimerEvent: {}
+[16.390638] (-) TimerEvent: {}
+[16.491817] (-) TimerEvent: {}
+[16.593267] (-) TimerEvent: {}
+[16.694459] (-) TimerEvent: {}
+[16.795747] (-) TimerEvent: {}
+[16.897035] (-) TimerEvent: {}
+[16.998278] (-) TimerEvent: {}
+[17.099470] (-) TimerEvent: {}
+[17.200726] (-) TimerEvent: {}
+[17.301904] (-) TimerEvent: {}
+[17.403090] (-) TimerEvent: {}
+[17.504280] (-) TimerEvent: {}
+[17.605552] (-) TimerEvent: {}
+[17.706724] (-) TimerEvent: {}
+[17.807934] (-) TimerEvent: {}
+[17.909248] (-) TimerEvent: {}
+[18.010443] (-) TimerEvent: {}
+[18.111717] (-) TimerEvent: {}
+[18.213170] (-) TimerEvent: {}
+[18.314442] (-) TimerEvent: {}
+[18.415836] (-) TimerEvent: {}
+[18.517282] (-) TimerEvent: {}
+[18.618412] (-) TimerEvent: {}
+[18.719580] (-) TimerEvent: {}
+[18.820899] (-) TimerEvent: {}
+[18.922113] (-) TimerEvent: {}
+[19.023341] (-) TimerEvent: {}
+[19.124633] (-) TimerEvent: {}
+[19.226032] (-) TimerEvent: {}
+[19.327313] (-) TimerEvent: {}
+[19.428713] (-) TimerEvent: {}
+[19.529979] (-) TimerEvent: {}
+[19.631218] (-) TimerEvent: {}
+[19.732420] (-) TimerEvent: {}
+[19.833681] (-) TimerEvent: {}
+[19.934900] (-) TimerEvent: {}
+[20.036117] (-) TimerEvent: {}
+[20.137414] (-) TimerEvent: {}
+[20.238618] (-) TimerEvent: {}
+[20.339799] (-) TimerEvent: {}
+[20.441062] (-) TimerEvent: {}
+[20.542282] (-) TimerEvent: {}
+[20.643474] (-) TimerEvent: {}
+[20.744687] (-) TimerEvent: {}
+[20.845948] (-) TimerEvent: {}
+[20.947177] (-) TimerEvent: {}
+[21.048571] (-) TimerEvent: {}
+[21.149776] (-) TimerEvent: {}
+[21.250960] (-) TimerEvent: {}
+[21.352256] (-) TimerEvent: {}
+[21.453662] (-) TimerEvent: {}
+[21.554997] (-) TimerEvent: {}
+[21.656327] (-) TimerEvent: {}
+[21.757917] (-) TimerEvent: {}
+[21.859309] (-) TimerEvent: {}
+[21.960591] (-) TimerEvent: {}
+[22.061804] (-) TimerEvent: {}
+[22.163121] (-) TimerEvent: {}
+[22.264330] (-) TimerEvent: {}
+[22.365631] (-) TimerEvent: {}
+[22.467108] (-) TimerEvent: {}
+[22.568685] (-) TimerEvent: {}
+[22.647983] (thorn_launchers) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/thorn_launchers', 'build', '--build-base', '/home/marc/ros2_ws/build/thorn_launchers/build', 'install', '--record', '/home/marc/ros2_ws/build/thorn_launchers/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/marc/ros2_ws/src/thorn_launchers', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'marc', 'SSH_CLIENT': '192.168.0.21 59993 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/iron/lib/aarch64-linux-gnu:/opt/ros/iron/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/marc', 'OLDPWD': '/home/marc', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/marc/ros2_ws/install', 'ROS_DISTRO': 'iron', 'LOGNAME': 'marc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'PATH': '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/opt/ros/iron', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/marc/ros2_ws/build/thorn_launchers', 'SSH_CONNECTION': '192.168.0.21 59993 192.168.0.15 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/marc/ros2_ws/build/thorn_launchers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers'}, 'shell': False}
+[22.669063] (-) TimerEvent: {}
+[22.770236] (-) TimerEvent: {}
+[22.871483] (-) TimerEvent: {}
+[22.972710] (-) TimerEvent: {}
+[23.073926] (-) TimerEvent: {}
+[23.175114] (-) TimerEvent: {}
+[23.276272] (-) TimerEvent: {}
+[23.377544] (-) TimerEvent: {}
+[23.478735] (-) TimerEvent: {}
+[23.579916] (-) TimerEvent: {}
+[23.681234] (-) TimerEvent: {}
+[23.782573] (-) TimerEvent: {}
+[23.883789] (-) TimerEvent: {}
+[23.985071] (-) TimerEvent: {}
+[24.086283] (-) TimerEvent: {}
+[24.187504] (-) TimerEvent: {}
+[24.288794] (-) TimerEvent: {}
+[24.390079] (-) TimerEvent: {}
+[24.491411] (-) TimerEvent: {}
+[24.592666] (-) TimerEvent: {}
+[24.693841] (-) TimerEvent: {}
+[24.795045] (-) TimerEvent: {}
+[24.896242] (-) TimerEvent: {}
+[24.997523] (-) TimerEvent: {}
+[25.098731] (-) TimerEvent: {}
+[25.199903] (-) TimerEvent: {}
+[25.301192] (-) TimerEvent: {}
+[25.312901] (thorn_launchers) StdoutLine: {'line': b'running egg_info\n'}
+[25.319229] (thorn_launchers) StdoutLine: {'line': b'writing ../../build/thorn_launchers/thorn_launchers.egg-info/PKG-INFO\n'}
+[25.321874] (thorn_launchers) StdoutLine: {'line': b'writing dependency_links to ../../build/thorn_launchers/thorn_launchers.egg-info/dependency_links.txt\n'}
+[25.324138] (thorn_launchers) StdoutLine: {'line': b'writing entry points to ../../build/thorn_launchers/thorn_launchers.egg-info/entry_points.txt\n'}
+[25.326315] (thorn_launchers) StdoutLine: {'line': b'writing requirements to ../../build/thorn_launchers/thorn_launchers.egg-info/requires.txt\n'}
+[25.328006] (thorn_launchers) StdoutLine: {'line': b'writing top-level names to ../../build/thorn_launchers/thorn_launchers.egg-info/top_level.txt\n'}
+[25.345560] (thorn_launchers) StdoutLine: {'line': b"reading manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'\n"}
+[25.358325] (thorn_launchers) StdoutLine: {'line': b"writing manifest file '../../build/thorn_launchers/thorn_launchers.egg-info/SOURCES.txt'\n"}
+[25.359858] (thorn_launchers) StdoutLine: {'line': b'running build\n'}
+[25.361280] (thorn_launchers) StdoutLine: {'line': b'running build_py\n'}
+[25.366013] (thorn_launchers) StdoutLine: {'line': b'running install\n'}
+[25.369182] (thorn_launchers) StdoutLine: {'line': b'running install_lib\n'}
+[25.381041] (thorn_launchers) StdoutLine: {'line': b'running install_data\n'}
+[25.383453] (thorn_launchers) StdoutLine: {'line': b'running install_egg_info\n'}
+[25.401110] (thorn_launchers) StdoutLine: {'line': b"removing '/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[25.402355] (-) TimerEvent: {}
+[25.405315] (thorn_launchers) StdoutLine: {'line': b'Copying ../../build/thorn_launchers/thorn_launchers.egg-info to /home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages/thorn_launchers-0.0.0-py3.10.egg-info\n'}
+[25.418900] (thorn_launchers) StdoutLine: {'line': b'running install_scripts\n'}
+[25.502628] (-) TimerEvent: {}
+[25.603850] (-) TimerEvent: {}
+[25.619792] (thorn_launchers) StdoutLine: {'line': b"writing list of installed files to '/home/marc/ros2_ws/build/thorn_launchers/install.log'\n"}
+[25.704200] (-) TimerEvent: {}
+[25.805799] (-) TimerEvent: {}
+[25.881643] (thorn_launchers) CommandEnded: {'returncode': 0}
+[25.905988] (-) TimerEvent: {}
+[25.957995] (thorn_launchers) JobEnded: {'identifier': 'thorn_launchers', 'rc': 0}
+[25.967593] (thorn_planners) JobStarted: {'identifier': 'thorn_planners'}
+[26.006256] (-) TimerEvent: {}
+[26.107641] (-) TimerEvent: {}
+[26.208908] (-) TimerEvent: {}
+[26.310062] (-) TimerEvent: {}
+[26.411317] (-) TimerEvent: {}
+[26.512669] (-) TimerEvent: {}
+[26.613860] (-) TimerEvent: {}
+[26.715117] (-) TimerEvent: {}
+[26.816641] (-) TimerEvent: {}
+[26.917836] (-) TimerEvent: {}
+[27.019068] (-) TimerEvent: {}
+[27.120224] (-) TimerEvent: {}
+[27.221543] (-) TimerEvent: {}
+[27.322763] (-) TimerEvent: {}
+[27.424028] (-) TimerEvent: {}
+[27.525347] (-) TimerEvent: {}
+[27.626609] (-) TimerEvent: {}
+[27.727814] (-) TimerEvent: {}
+[27.829089] (-) TimerEvent: {}
+[27.930301] (-) TimerEvent: {}
+[28.031561] (-) TimerEvent: {}
+[28.132932] (-) TimerEvent: {}
+[28.234145] (-) TimerEvent: {}
+[28.335360] (-) TimerEvent: {}
+[28.436654] (-) TimerEvent: {}
+[28.537897] (-) TimerEvent: {}
+[28.639097] (-) TimerEvent: {}
+[28.740397] (-) TimerEvent: {}
+[28.841858] (-) TimerEvent: {}
+[28.943181] (-) TimerEvent: {}
+[29.044407] (-) TimerEvent: {}
+[29.145744] (-) TimerEvent: {}
+[29.246940] (-) TimerEvent: {}
+[29.348115] (-) TimerEvent: {}
+[29.449471] (-) TimerEvent: {}
+[29.550728] (-) TimerEvent: {}
+[29.651902] (-) TimerEvent: {}
+[29.753223] (-) TimerEvent: {}
+[29.854389] (-) TimerEvent: {}
+[29.955608] (-) TimerEvent: {}
+[30.056826] (-) TimerEvent: {}
+[30.158023] (-) TimerEvent: {}
+[30.259214] (-) TimerEvent: {}
+[30.360409] (-) TimerEvent: {}
+[30.461790] (-) TimerEvent: {}
+[30.562986] (-) TimerEvent: {}
+[30.664168] (-) TimerEvent: {}
+[30.765464] (-) TimerEvent: {}
+[30.866687] (-) TimerEvent: {}
+[30.967878] (-) TimerEvent: {}
+[31.069136] (-) TimerEvent: {}
+[31.170309] (-) TimerEvent: {}
+[31.271538] (-) TimerEvent: {}
+[31.372812] (-) TimerEvent: {}
+[31.474030] (-) TimerEvent: {}
+[31.575234] (-) TimerEvent: {}
+[31.676566] (-) TimerEvent: {}
+[31.777774] (-) TimerEvent: {}
+[31.879262] (-) TimerEvent: {}
+[31.980512] (-) TimerEvent: {}
+[32.081732] (-) TimerEvent: {}
+[32.182902] (-) TimerEvent: {}
+[32.284068] (-) TimerEvent: {}
+[32.385406] (-) TimerEvent: {}
+[32.486576] (-) TimerEvent: {}
+[32.587804] (-) TimerEvent: {}
+[32.689215] (-) TimerEvent: {}
+[32.790600] (-) TimerEvent: {}
+[32.852265] (thorn_planners) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/thorn_planners', 'build', '--build-base', '/home/marc/ros2_ws/build/thorn_planners/build', 'install', '--record', '/home/marc/ros2_ws/build/thorn_planners/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/marc/ros2_ws/src/thorn_planners', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'marc', 'SSH_CLIENT': '192.168.0.21 59993 22', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/iron/lib/aarch64-linux-gnu:/opt/ros/iron/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/marc', 'OLDPWD': '/home/marc', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/marc/ros2_ws/install', 'ROS_DISTRO': 'iron', 'LOGNAME': 'marc', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'PATH': '/opt/ros/iron/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers:/opt/ros/iron', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/marc/ros2_ws/build/thorn_planners', 'SSH_CONNECTION': '192.168.0.21 59993 192.168.0.15 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/marc/ros2_ws/build/thorn_planners/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages:/home/marc/ros2_ws/install/thorn_launchers/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/marc/ros2_ws/install/thorn_drivers:/home/marc/ros2_ws/install/thorn_controllers'}, 'shell': False}
+[32.890847] (-) TimerEvent: {}
+[32.992115] (-) TimerEvent: {}
+[33.093462] (-) TimerEvent: {}
+[33.194663] (-) TimerEvent: {}
+[33.296029] (-) TimerEvent: {}
+[33.397753] (-) TimerEvent: {}
+[33.498977] (-) TimerEvent: {}
+[33.600224] (-) TimerEvent: {}
+[33.701559] (-) TimerEvent: {}
+[33.802796] (-) TimerEvent: {}
+[33.903981] (-) TimerEvent: {}
+[34.005304] (-) TimerEvent: {}
+[34.106468] (-) TimerEvent: {}
+[34.207671] (-) TimerEvent: {}
+[34.308930] (-) TimerEvent: {}
+[34.410193] (-) TimerEvent: {}
+[34.511382] (-) TimerEvent: {}
+[34.612660] (-) TimerEvent: {}
+[34.713921] (-) TimerEvent: {}
+[34.815115] (-) TimerEvent: {}
+[34.916356] (-) TimerEvent: {}
+[35.017639] (-) TimerEvent: {}
+[35.118873] (-) TimerEvent: {}
+[35.220170] (-) TimerEvent: {}
+[35.321415] (-) TimerEvent: {}
+[35.422641] (-) TimerEvent: {}
+[35.523845] (-) TimerEvent: {}
+[35.541997] (thorn_planners) StdoutLine: {'line': b'running egg_info\n'}
+[35.548272] (thorn_planners) StdoutLine: {'line': b'writing ../../build/thorn_planners/thorn_planners.egg-info/PKG-INFO\n'}
+[35.550921] (thorn_planners) StdoutLine: {'line': b'writing dependency_links to ../../build/thorn_planners/thorn_planners.egg-info/dependency_links.txt\n'}
+[35.553120] (thorn_planners) StdoutLine: {'line': b'writing entry points to ../../build/thorn_planners/thorn_planners.egg-info/entry_points.txt\n'}
+[35.554994] (thorn_planners) StdoutLine: {'line': b'writing requirements to ../../build/thorn_planners/thorn_planners.egg-info/requires.txt\n'}
+[35.556789] (thorn_planners) StdoutLine: {'line': b'writing top-level names to ../../build/thorn_planners/thorn_planners.egg-info/top_level.txt\n'}
+[35.575693] (thorn_planners) StdoutLine: {'line': b"reading manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'\n"}
+[35.586830] (thorn_planners) StdoutLine: {'line': b"writing manifest file '../../build/thorn_planners/thorn_planners.egg-info/SOURCES.txt'\n"}
+[35.588422] (thorn_planners) StdoutLine: {'line': b'running build\n'}
+[35.589701] (thorn_planners) StdoutLine: {'line': b'running build_py\n'}
+[35.593494] (thorn_planners) StdoutLine: {'line': b'running install\n'}
+[35.596551] (thorn_planners) StdoutLine: {'line': b'running install_lib\n'}
+[35.608819] (thorn_planners) StdoutLine: {'line': b'running install_data\n'}
+[35.610728] (thorn_planners) StdoutLine: {'line': b'running install_egg_info\n'}
+[35.624117] (-) TimerEvent: {}
+[35.628308] (thorn_planners) StdoutLine: {'line': b"removing '/home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[35.632356] (thorn_planners) StdoutLine: {'line': b'Copying ../../build/thorn_planners/thorn_planners.egg-info to /home/marc/ros2_ws/install/thorn_planners/lib/python3.10/site-packages/thorn_planners-0.0.0-py3.10.egg-info\n'}
+[35.645900] (thorn_planners) StdoutLine: {'line': b'running install_scripts\n'}
+[35.724335] (-) TimerEvent: {}
+[35.825585] (-) TimerEvent: {}
+[35.848120] (thorn_planners) StdoutLine: {'line': b'Installing Flight_Planner_node script to /home/marc/ros2_ws/install/thorn_planners/lib/thorn_planners\n'}
+[35.851837] (thorn_planners) StdoutLine: {'line': b"writing list of installed files to '/home/marc/ros2_ws/build/thorn_planners/install.log'\n"}
+[35.925930] (-) TimerEvent: {}
+[36.027384] (-) TimerEvent: {}
+[36.113803] (thorn_planners) CommandEnded: {'returncode': 0}
+[36.127635] (-) TimerEvent: {}
+[36.187997] (thorn_planners) JobEnded: {'identifier': 'thorn_planners', 'rc': 0}
+[36.194342] (-) EventReactorShutdown: {}

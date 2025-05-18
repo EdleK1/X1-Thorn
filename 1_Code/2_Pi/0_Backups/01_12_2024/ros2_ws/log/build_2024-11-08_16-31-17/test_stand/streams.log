@@ -1,0 +1,39 @@
+[13.930s] Invoking command in '/home/marc/ros2_ws/src/test_stand': PYTHONPATH=/home/marc/ros2_ws/build/test_stand/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/test_stand build --build-base /home/marc/ros2_ws/build/test_stand/build install --record /home/marc/ros2_ws/build/test_stand/install.log --single-version-externally-managed install_data
+[17.204s] running egg_info
+[17.210s] creating ../../build/test_stand/test_stand.egg-info
+[17.212s] writing ../../build/test_stand/test_stand.egg-info/PKG-INFO
+[17.218s] writing dependency_links to ../../build/test_stand/test_stand.egg-info/dependency_links.txt
+[17.220s] writing entry points to ../../build/test_stand/test_stand.egg-info/entry_points.txt
+[17.222s] writing requirements to ../../build/test_stand/test_stand.egg-info/requires.txt
+[17.224s] writing top-level names to ../../build/test_stand/test_stand.egg-info/top_level.txt
+[17.227s] writing manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+[17.245s] reading manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+[17.255s] writing manifest file '../../build/test_stand/test_stand.egg-info/SOURCES.txt'
+[17.257s] running build
+[17.261s] running build_py
+[17.263s] creating /home/marc/ros2_ws/build/test_stand/build
+[17.264s] creating /home/marc/ros2_ws/build/test_stand/build/lib
+[17.267s] creating /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+[17.268s] copying test_stand/__init__.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+[17.273s] copying test_stand/Test_Stand_Planner_node.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+[17.275s] copying test_stand/Load_Cell_Reader_node.py -> /home/marc/ros2_ws/build/test_stand/build/lib/test_stand
+[17.277s] running install
+[17.280s] running install_lib
+[17.285s] creating /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+[17.289s] copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/__init__.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+[17.292s] copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/Test_Stand_Planner_node.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+[17.295s] copying /home/marc/ros2_ws/build/test_stand/build/lib/test_stand/Load_Cell_Reader_node.py -> /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand
+[17.306s] byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/__init__.py to __init__.cpython-310.pyc
+[17.309s] byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/Test_Stand_Planner_node.py to Test_Stand_Planner_node.cpython-310.pyc
+[17.317s] byte-compiling /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand/Load_Cell_Reader_node.py to Load_Cell_Reader_node.cpython-310.pyc
+[17.328s] running install_data
+[17.330s] creating /home/marc/ros2_ws/install/test_stand/share/ament_index
+[17.332s] creating /home/marc/ros2_ws/install/test_stand/share/ament_index/resource_index
+[17.334s] creating /home/marc/ros2_ws/install/test_stand/share/ament_index/resource_index/packages
+[17.335s] copying resource/test_stand -> /home/marc/ros2_ws/install/test_stand/share/ament_index/resource_index/packages
+[17.337s] copying package.xml -> /home/marc/ros2_ws/install/test_stand/share/test_stand
+[17.341s] running install_egg_info
+[17.363s] Copying ../../build/test_stand/test_stand.egg-info to /home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages/test_stand-0.0.0-py3.10.egg-info
+[17.381s] running install_scripts
+[17.625s] writing list of installed files to '/home/marc/ros2_ws/build/test_stand/install.log'
+[18.036s] Invoked command in '/home/marc/ros2_ws/src/test_stand' returned '0': PYTHONPATH=/home/marc/ros2_ws/build/test_stand/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/marc/ros2_ws/install/test_stand/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/test_stand build --build-base /home/marc/ros2_ws/build/test_stand/build install --record /home/marc/ros2_ws/build/test_stand/install.log --single-version-externally-managed install_data

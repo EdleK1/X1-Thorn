@@ -1,0 +1,23 @@
+[0.090s] Invoking command in '/home/marc/ros2_ws/build/thorn_drivers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4
+[0.588s] [35m[1mConsolidate compiler generated dependencies of target Servo_Driver_node[0m
+[0.956s] [ 50%] [32mBuilding CXX object CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o[0m
+[83.561s] In file included from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[83.616s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/client.hpp:43[m[K,
+[83.620s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[83.622s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[83.623s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[83.625s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[83.626s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[83.628s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[83.633s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[83.634s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[83.635s]                  from [01m[K/opt/ros/iron/include/rclcpp/rclcpp/rclcpp.hpp:167[m[K,
+[83.639s]                  from [01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:1[m[K:
+[83.645s] [01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:[m[K In constructor ‘[01m[KServo_Driver_node::Servo_Driver_node()[m[K’:
+[83.650s] [01m[K/home/marc/ros2_ws/src/thorn_drivers/src/Servo_Driver_node.cpp:37:93:[m[K [01;31m[Kerror: [m[K‘[01m[Kactual_pwm_value2[m[K’ was not declared in this scope; did you mean ‘[01m[Kactual_pwm_value1[m[K’?
+[83.652s]    37 |         RCLCPP_INFO(this->get_logger(), "Set: Servo1 = %d, Servo2 = %d", actual_pwm_value1, [01;31m[Kactual_pwm_value2[m[K);
+[83.653s]       |                                                                                             [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[110.236s] gmake[2]: *** [CMakeFiles/Servo_Driver_node.dir/build.make:76: CMakeFiles/Servo_Driver_node.dir/src/Servo_Driver_node.cpp.o] Error 1
+[110.291s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/Servo_Driver_node.dir/all] Error 2
+[110.292s] gmake: *** [Makefile:146: all] Error 2
+[111.359s] Invoked command in '/home/marc/ros2_ws/build/thorn_drivers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/marc/ros2_ws/install/thorn_planners:/home/marc/ros2_ws/install/thorn_launchers:/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_drivers -- -j4 -l4

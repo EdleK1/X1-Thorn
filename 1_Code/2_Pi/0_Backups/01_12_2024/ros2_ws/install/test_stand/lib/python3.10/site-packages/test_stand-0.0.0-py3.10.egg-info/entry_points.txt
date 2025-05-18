@@ -1,0 +1,4 @@
+[console_scripts]
+Load_Cell_Reader_node = test_stand.Load_Cell_Reader_node:main
+Test_Stand_Planner_node = test_stand.Test_Stand_Planner_node:main
+

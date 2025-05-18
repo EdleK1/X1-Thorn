@@ -1,0 +1,16 @@
+../Core/Src/User/Peripheral/BNO055/BNO055.c:19:6:Check_Status	40	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:89:6:SelectPage	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:104:6:ResetBNO055	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:139:6:ReadData	40	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:226:6:Set_Operation_Mode	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:250:6:SetPowerMODE	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:273:6:Clock_Source	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:286:6:BNO055_Axis	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:305:6:SET_Accel_Range	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:320:6:BNO055_Init	40	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:376:6:getCalibration	40	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:411:6:getSensorOffsets	40	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:437:6:setSensorOffsets	40	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:461:6:isFullyCalibrated	16	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:496:12:getCurrentMode	32	static
+../Core/Src/User/Peripheral/BNO055/BNO055.c:513:6:Calibrate_BNO055	80	static

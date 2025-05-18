@@ -1,0 +1,2 @@
+../Core/Src/User/App/AttitudeMPC/AttitudeMPC.c:60:5:Attitude_MPC_Init	16	static
+../Core/Src/User/App/AttitudeMPC/AttitudeMPC.c:105:8:Get_AttitudeMPC_Result	448	static

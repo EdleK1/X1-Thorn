@@ -1,0 +1,7 @@
+../Core/Src/User/Lib/Algebra/Algebra.c:12:6:vector_cross	1
+../Core/Src/User/Lib/Algebra/Algebra.c:20:6:quaternion_correction	2
+../Core/Src/User/Lib/Algebra/Algebra.c:33:6:rot_x_mat	1
+../Core/Src/User/Lib/Algebra/Algebra.c:45:6:rot_y_mat	1
+../Core/Src/User/Lib/Algebra/Algebra.c:57:6:rot_z_mat	1
+../Core/Src/User/Lib/Algebra/Algebra.c:71:6:matrixToQuat	5
+../Core/Src/User/Lib/Algebra/Algebra.c:104:6:mat3Multiply	4

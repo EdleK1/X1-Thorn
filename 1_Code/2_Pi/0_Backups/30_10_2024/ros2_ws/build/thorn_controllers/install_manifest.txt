@@ -1,0 +1,15 @@
+/home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/package_run_dependencies/thorn_controllers
+/home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/parent_prefix_path/thorn_controllers
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/ament_prefix_path.sh
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/ament_prefix_path.dsv
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/path.sh
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/path.dsv
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.bash
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.sh
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.zsh
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.dsv
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.dsv
+/home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/packages/thorn_controllers
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/cmake/thorn_controllersConfig.cmake
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/cmake/thorn_controllersConfig-version.cmake
+/home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.xml

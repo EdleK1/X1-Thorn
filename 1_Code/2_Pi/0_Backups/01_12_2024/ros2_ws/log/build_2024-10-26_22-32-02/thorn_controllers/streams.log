@@ -1,0 +1,42 @@
+[0.298s] Invoking command in '/home/marc/ros2_ws/build/thorn_controllers': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/marc/ros2_ws/src/thorn_controllers -DCMAKE_INSTALL_PREFIX=/home/marc/ros2_ws/install/thorn_controllers
+[7.497s] -- The C compiler identification is GNU 11.4.0
+[7.505s] -- The CXX compiler identification is GNU 11.4.0
+[7.511s] -- Detecting C compiler ABI info
+[8.090s] -- Detecting C compiler ABI info - done
+[8.176s] -- Check for working C compiler: /usr/bin/cc - skipped
+[8.235s] -- Detecting C compile features
+[8.246s] -- Detecting C compile features - done
+[8.288s] -- Detecting CXX compiler ABI info
+[9.247s] -- Detecting CXX compiler ABI info - done
+[9.333s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[9.337s] -- Detecting CXX compile features
+[9.342s] -- Detecting CXX compile features - done
+[9.511s] -- Found ament_cmake: 2.0.6 (/opt/ros/iron/share/ament_cmake/cmake)
+[11.814s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[13.624s] -- Found ament_lint_auto: 0.14.4 (/opt/ros/iron/share/ament_lint_auto/cmake)
+[15.272s] -- Added test 'lint_cmake' to check CMake code style
+[15.304s] -- Added test 'xmllint' to check XML markup files
+[15.333s] -- Configuring done
+[15.414s] -- Generating done
+[15.427s] -- Build files have been written to: /home/marc/ros2_ws/build/thorn_controllers
+[15.517s] Invoked command in '/home/marc/ros2_ws/build/thorn_controllers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake /home/marc/ros2_ws/src/thorn_controllers -DCMAKE_INSTALL_PREFIX=/home/marc/ros2_ws/install/thorn_controllers
+[15.636s] Invoking command in '/home/marc/ros2_ws/build/thorn_controllers': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_controllers -- -j4 -l4
+[16.043s] Invoked command in '/home/marc/ros2_ws/build/thorn_controllers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --build /home/marc/ros2_ws/build/thorn_controllers -- -j4 -l4
+[16.433s] Invoking command in '/home/marc/ros2_ws/build/thorn_controllers': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_controllers
+[16.510s] -- Install configuration: ""
+[16.513s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/package_run_dependencies/thorn_controllers
+[16.518s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/parent_prefix_path/thorn_controllers
+[16.525s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/ament_prefix_path.sh
+[16.527s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/ament_prefix_path.dsv
+[16.538s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/path.sh
+[16.540s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/environment/path.dsv
+[16.545s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.bash
+[16.548s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.sh
+[16.559s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.zsh
+[16.563s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/local_setup.dsv
+[16.567s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.dsv
+[16.570s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/ament_index/resource_index/packages/thorn_controllers
+[16.574s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/cmake/thorn_controllersConfig.cmake
+[16.575s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/cmake/thorn_controllersConfig-version.cmake
+[16.579s] -- Installing: /home/marc/ros2_ws/install/thorn_controllers/share/thorn_controllers/package.xml
+[16.608s] Invoked command in '/home/marc/ros2_ws/build/thorn_controllers' returned '0': CMAKE_PREFIX_PATH=/opt/ros/iron /usr/bin/cmake --install /home/marc/ros2_ws/build/thorn_controllers

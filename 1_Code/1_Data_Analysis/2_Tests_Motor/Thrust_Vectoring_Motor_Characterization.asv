@@ -1,0 +1,195 @@
+clear
+close all
+
+data = readmatrix("test_stand_results_characterization_servo_4S_v2.csv");
+
+time = data(:,1) - data(1,1);
+servo_PWM = data(:,2);
+temperature = data(:,3);
+rpm = data(:,4);
+voltage = data(:,5);
+current = data(:,6);
+count = data(:,7);
+power = current.*voltage;
+
+load_1 = data(:,8);
+
+Q1 = quantile(load_1, 0.25);
+Q3 = quantile(load_1, 0.75);
+IQR_value = Q3 - Q1;
+lower_bound = Q1 - 1.5 * IQR_value;
+upper_bound = Q3 + 1.5 * IQR_value;
+outliers = (load_1 < lower_bound) | (load_1 > upper_bound);
+load_1(outliers) = NaN; % Replace outliers with NaN
+load_1 = fillmissing(load_1, 'previous');
+
+
+load_2 = data(:,9);
+
+Q1 = quantile(load_2, 0.25);
+Q3 = quantile(load_2, 0.75);
+IQR_value = Q3 - Q1;
+lower_bound = Q1 - 1.5 * IQR_value;
+upper_bound = Q3 + 1.5 * IQR_value;
+outliers = (load_2 < lower_bound) | (load_2 > upper_bound);
+load_2(outliers) = NaN; % Replace outliers with NaN
+load_2 = fillmissing(load_2, 'previous');
+
+load_3 = data(:,10);
+
+Q1 = quantile(load_3, 0.25);
+Q3 = quantile(load_3, 0.75);
+IQR_value = Q3 - Q1;
+lower_bound = Q1 - 1.5 * IQR_value;
+upper_bound = Q3 + 1.5 * IQR_value;
+outliers = (load_3 < lower_bound) | (load_3 > upper_bound);
+load_3(outliers) = NaN; % Replace outliers with NaN
+load_3 = fillmissing(load_3, 'previous');
+
+setpoint = 1600;
+
+
+%% ------------ Post Process Loads ----------------%%
+
+dist_1 = 31.76; %mm
+dist_3 = 144.76; %mm
+
+M_y = - (load_3 * dist_3 + load_1*dist_1) * 0.00981;
+T_z = (load_1 - load_3) * 0.00981;
+T_x = -load_2 * 0.00981;
+
+
+%% --------------------Time Plots-----------------------%%
+
+figure("Name","rpm vs time")
+plot(time,rpm,".")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("EDF RPM","Interpreter","Latex")
+title("EDF RPM vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","voltage vs time")
+plot(time,voltage,".")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("Battery voltage (V)","Interpreter","Latex")
+title("Battery voltage vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","current vs time")
+plot(time,current,".")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("Battery current (A)","Interpreter","Latex")
+title("Battery current vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","Thrust vs time")
+plot(time,T_x,".-")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("Thrust (N)","Interpreter","Latex")
+title("Thrust vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","Fy vs time")
+plot(time,T_z,".-")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("Fy (N)","Interpreter","Latex")
+title("Fy vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","Moment vs time")
+plot(time,M_y,".-")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("Moment (N*mm)","Interpreter","Latex")
+title("Moment vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","Temperature vs time")
+plot(time,temperature,".")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("temperature (degrees)","Interpreter","Latex")
+title("Temperature vs time","Interpreter","Latex")
+grid on
+
+
+figure("Name","Power vs time")
+plot(time,power,".")
+xlabel("time(s)","Interpreter","Latex")
+ylabel("power (Xd)","Interpreter","Latex")
+title("Power vs time","Interpreter","Latex")
+grid on
+
+%% Tx
+
+A_Tx = 3.3e-8;
+B_Tx = 2.5e-3;
+
+Tx_calculated = A_Tx*rpm.^2.*cos((servo_PWM-setpoint)*B_Tx);
+
+% 2D
+
+unique_orientations = unique(servo_PWM);
+figure;
+hold on;
+for i = 1:length(unique_orientations)
+    % Select data for this servo orientation
+    idx = (servo_PWM == unique_orientations(i));
+    plot(rpm(idx), T_x(idx), ".",'DisplayName', sprintf('Servo Orientation %.2f', unique_orientations(i)));
+end
+
+xlabel('RPM');
+ylabel('Thrust');
+title('RPM vs. Thrust for Different Servo Orientations');
+legend('show');
+grid on;
+hold off;
+
+
+% 3D
+
+figure
+plot3(rpm,servo_PWM,T_x,".-")
+grid on
+box on
+hold on
+plot3(rpm,servo_PWM,Tx_calculated,".")
+axis vis3d;  % Prevent deformation when rotating
+
+
+%% My Analysis
+
+A_My = 1.5e-6;
+B_My = 8e-3;
+
+My_calculated = A_My*rpm.^2.*sin((servo_PWM-setpoint)*B_My);
+
+figure
+plot3(rpm,servo_PWM,M_y,".-")
+grid on
+box on
+hold on
+plot3(rpm,servo_PWM,My_calculated,".")
+axis vis3d;  % Prevent deformation when rotating
+
+%% Tz Analysis
+
+A_Tz = 9e-9;
+B_Tz = 8e-3;
+
+Tz_calculated = A_Tz*rpm.^2.*sin((servo_PWM-setpoint)*B_Tz);
+
+% 3D
+
+figure()
+plot3(rpm,servo_PWM,T_z,".-")
+grid on
+box on
+hold on
+plot3(rpm,servo_PWM,Tz_calculated,".")
+axis vis3d;  % Prevent deformation when rotating
+

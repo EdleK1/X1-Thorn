@@ -1,0 +1,33 @@
+/**
+  ******************************************************************************
+  * @file           : TestAttitudeMPC.c
+  * @brief          : Receive the commands from the esp32 and convert them to the reference to follow
+  *
+  *
+  * Odometry, Ref, Omega, prevServoL prevServoR -> ServoL ServoR OmegaL OmegaR, sol_time
+  ******************************************************************************
+*/
+
+
+// standard C headers
+#include <stdio.h>
+#include <stdlib.h>
+#include "../AttitudeMPC/AttitudeMPC.h"
+
+uint8_t Control_Init(void)
+{
+//	Init Odometry
+//	Init Groudn Commands
+//	Init ESC;
+}
+
+
+
+
+void Control_Loop
+
+Control_Loop
+
+bla bla bla
+
+takeSemaphore
