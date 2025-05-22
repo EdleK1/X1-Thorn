@@ -22,19 +22,17 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-Core/Src/User/App/AttitudeMPC \
-Core/Src/User/App/AttitudeMPC/CGeneratedCode/Aircraft_Attitude_model \
-Core/Src/User/App/AttitudeMPC/CGeneratedCode \
 Core/Src/User/App/Control \
 Core/Src/User/App/GroundCommands \
 Core/Src/User/App/Odometry \
 Core/Src/User/Lib/Algebra \
+Core/Src/User/Lib/DShotProtocol \
 Core/Src/User/Peripheral/BNO055 \
 Core/Src/User/Peripheral/ESP32 \
 Core/Src/User/Peripheral/LCD \
 Core/Src/User/Peripheral/Servo \
 Core/Src/User/Test \
-Core/Src/User/Test/TestAttitudeMPC \
+Core/Src/User/Test/TestDShot \
 Core/Src/User/Test/TestESP32 \
 Core/Src/User/Test/TestGroundCommands \
 Core/Src/User/Test/TestOdometry \

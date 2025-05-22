@@ -402,34 +402,114 @@ void Aircraft_Attitude_acados_setup_nlp_in(Aircraft_Attitude_solver_capsule* cap
     else
     {
         // set time_steps
-    double time_step = 0.1;
+    double time_step = 0.02;
         for (int i = 0; i < N; i++)
         {
             ocp_nlp_in_set(nlp_config, nlp_dims, nlp_in, i, "Ts", &time_step);
         }
         // set cost scaling
         double* cost_scaling = malloc((N+1)*sizeof(double));
-        cost_scaling[0] = 0.1;
-        cost_scaling[1] = 0.1;
-        cost_scaling[2] = 0.1;
-        cost_scaling[3] = 0.1;
-        cost_scaling[4] = 0.1;
-        cost_scaling[5] = 0.1;
-        cost_scaling[6] = 0.1;
-        cost_scaling[7] = 0.1;
-        cost_scaling[8] = 0.1;
-        cost_scaling[9] = 0.1;
-        cost_scaling[10] = 0.1;
-        cost_scaling[11] = 0.1;
-        cost_scaling[12] = 0.1;
-        cost_scaling[13] = 0.1;
-        cost_scaling[14] = 0.1;
-        cost_scaling[15] = 0.1;
-        cost_scaling[16] = 0.1;
-        cost_scaling[17] = 0.1;
-        cost_scaling[18] = 0.1;
-        cost_scaling[19] = 0.1;
-        cost_scaling[20] = 1;
+        cost_scaling[0] = 0.02;
+        cost_scaling[1] = 0.02;
+        cost_scaling[2] = 0.02;
+        cost_scaling[3] = 0.02;
+        cost_scaling[4] = 0.02;
+        cost_scaling[5] = 0.02;
+        cost_scaling[6] = 0.02;
+        cost_scaling[7] = 0.02;
+        cost_scaling[8] = 0.02;
+        cost_scaling[9] = 0.02;
+        cost_scaling[10] = 0.02;
+        cost_scaling[11] = 0.02;
+        cost_scaling[12] = 0.02;
+        cost_scaling[13] = 0.02;
+        cost_scaling[14] = 0.02;
+        cost_scaling[15] = 0.02;
+        cost_scaling[16] = 0.02;
+        cost_scaling[17] = 0.02;
+        cost_scaling[18] = 0.02;
+        cost_scaling[19] = 0.02;
+        cost_scaling[20] = 0.02;
+        cost_scaling[21] = 0.02;
+        cost_scaling[22] = 0.02;
+        cost_scaling[23] = 0.02;
+        cost_scaling[24] = 0.02;
+        cost_scaling[25] = 0.02;
+        cost_scaling[26] = 0.02;
+        cost_scaling[27] = 0.02;
+        cost_scaling[28] = 0.02;
+        cost_scaling[29] = 0.02;
+        cost_scaling[30] = 0.02;
+        cost_scaling[31] = 0.02;
+        cost_scaling[32] = 0.02;
+        cost_scaling[33] = 0.02;
+        cost_scaling[34] = 0.02;
+        cost_scaling[35] = 0.02;
+        cost_scaling[36] = 0.02;
+        cost_scaling[37] = 0.02;
+        cost_scaling[38] = 0.02;
+        cost_scaling[39] = 0.02;
+        cost_scaling[40] = 0.02;
+        cost_scaling[41] = 0.02;
+        cost_scaling[42] = 0.02;
+        cost_scaling[43] = 0.02;
+        cost_scaling[44] = 0.02;
+        cost_scaling[45] = 0.02;
+        cost_scaling[46] = 0.02;
+        cost_scaling[47] = 0.02;
+        cost_scaling[48] = 0.02;
+        cost_scaling[49] = 0.02;
+        cost_scaling[50] = 0.02;
+        cost_scaling[51] = 0.02;
+        cost_scaling[52] = 0.02;
+        cost_scaling[53] = 0.02;
+        cost_scaling[54] = 0.02;
+        cost_scaling[55] = 0.02;
+        cost_scaling[56] = 0.02;
+        cost_scaling[57] = 0.02;
+        cost_scaling[58] = 0.02;
+        cost_scaling[59] = 0.02;
+        cost_scaling[60] = 0.02;
+        cost_scaling[61] = 0.02;
+        cost_scaling[62] = 0.02;
+        cost_scaling[63] = 0.02;
+        cost_scaling[64] = 0.02;
+        cost_scaling[65] = 0.02;
+        cost_scaling[66] = 0.02;
+        cost_scaling[67] = 0.02;
+        cost_scaling[68] = 0.02;
+        cost_scaling[69] = 0.02;
+        cost_scaling[70] = 0.02;
+        cost_scaling[71] = 0.02;
+        cost_scaling[72] = 0.02;
+        cost_scaling[73] = 0.02;
+        cost_scaling[74] = 0.02;
+        cost_scaling[75] = 0.02;
+        cost_scaling[76] = 0.02;
+        cost_scaling[77] = 0.02;
+        cost_scaling[78] = 0.02;
+        cost_scaling[79] = 0.02;
+        cost_scaling[80] = 0.02;
+        cost_scaling[81] = 0.02;
+        cost_scaling[82] = 0.02;
+        cost_scaling[83] = 0.02;
+        cost_scaling[84] = 0.02;
+        cost_scaling[85] = 0.02;
+        cost_scaling[86] = 0.02;
+        cost_scaling[87] = 0.02;
+        cost_scaling[88] = 0.02;
+        cost_scaling[89] = 0.02;
+        cost_scaling[90] = 0.02;
+        cost_scaling[91] = 0.02;
+        cost_scaling[92] = 0.02;
+        cost_scaling[93] = 0.02;
+        cost_scaling[94] = 0.02;
+        cost_scaling[95] = 0.02;
+        cost_scaling[96] = 0.02;
+        cost_scaling[97] = 0.02;
+        cost_scaling[98] = 0.02;
+        cost_scaling[99] = 0.02;
+        cost_scaling[100] = 1;
         for (int i = 0; i <= N; i++)
         {
             ocp_nlp_cost_model_set(nlp_config, nlp_dims, nlp_in, i, "scaling", &cost_scaling[i]);
@@ -808,7 +888,7 @@ static void Aircraft_Attitude_acados_create_set_opts(Aircraft_Attitude_solver_ca
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "levenberg_marquardt", &levenberg_marquardt);
 
     /* options QP solver */
-    int qp_solver_cond_N;const int qp_solver_cond_N_ori = 20;
+    int qp_solver_cond_N;const int qp_solver_cond_N_ori = 100;
     qp_solver_cond_N = N < qp_solver_cond_N_ori ? N : qp_solver_cond_N_ori; // use the minimum value here
     ocp_nlp_solver_opts_set(nlp_config, nlp_opts, "qp_cond_N", &qp_solver_cond_N);
 

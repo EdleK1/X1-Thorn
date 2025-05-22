@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdint.h>
-#include "../AttitudeMPC/AttitudeMPC.h"
 
 uint8_t Control_Init(void)
 {

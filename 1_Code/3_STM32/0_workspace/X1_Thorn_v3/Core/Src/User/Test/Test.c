@@ -14,7 +14,6 @@
 #include "TestESP32/TestESP32.h"
 #include "TestGroundCommands/TestGroundCommands.h"
 #include "TestOdometry/TestOdometry.h"
-#include "TestAttitudeMPC/TestAttitudeMPC.h"
 
 /* USER CODE END Includes */
 

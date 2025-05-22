@@ -1,0 +1,22 @@
+/*
+ * TestDShot.c
+ *
+ *  Created on: May 18, 2025
+ *      Author: marcv
+ */
+
+
+
+#include "../../Lib/DShotProtocol/DShot.h"
+
+
+static uint16_t thorttle1 = 400;
+static uint16_t thorttle2 = 800;
+
+void DShot_Test(void)
+{
+
+	DShot_Init();
+
+	DShot_SendFrame(throttle1, throttle2, &last_erpm1, &last_erpm2);
+}

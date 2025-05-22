@@ -56,31 +56,31 @@ void GroundCommands_Test(void)
 
 
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  /* Prevent unused argument(s) compilation warning */
-  if (htim == &htim17)
-  {
-
-	  tick1 = HAL_GetTick();
-	  Odometry_Read(&curr_odometry);
-	  tick2 = HAL_GetTick();
-
-	  curr_attitude.w = curr_odometry.q0;
-	  curr_attitude.x = curr_odometry.q1;
-	  curr_attitude.y = curr_odometry.q2;
-	  curr_attitude.z = curr_odometry.q3;
-
-	  tick3 = HAL_GetTick();
-	  active = get_reference(&curr_attitude, &curr_reference);
-	  tick4 = HAL_GetTick();
-
-	  timdelta1 = tick1 - tick2;
-	  timdelta2 = tick3 - tick4;
-
-  }
-
-  /* NOTE : This function should not be modified, when the callback is needed,
-            the HAL_TIM_PeriodElapsedCallback could be implemented in the user file
-   */
-}
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+//{
+//  /* Prevent unused argument(s) compilation warning */
+//  if (htim == &htim17)
+//  {
+//
+//	  tick1 = HAL_GetTick();
+//	  Odometry_Read(&curr_odometry);
+//	  tick2 = HAL_GetTick();
+//
+//	  curr_attitude.w = curr_odometry.q0;
+//	  curr_attitude.x = curr_odometry.q1;
+//	  curr_attitude.y = curr_odometry.q2;
+//	  curr_attitude.z = curr_odometry.q3;
+//
+//	  tick3 = HAL_GetTick();
+//	  active = get_reference(&curr_attitude, &curr_reference);
+//	  tick4 = HAL_GetTick();
+//
+//	  timdelta1 = tick1 - tick2;
+//	  timdelta2 = tick3 - tick4;
+//
+//  }
+//
+//  /* NOTE : This function should not be modified, when the callback is needed,
+//            the HAL_TIM_PeriodElapsedCallback could be implemented in the user file
+//   */
+//}

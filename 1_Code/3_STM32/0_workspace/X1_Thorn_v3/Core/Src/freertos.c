@@ -204,15 +204,15 @@ void StartControlTask(void *argument)
 {
   /* USER CODE BEGIN StartControlTask */
 
-	Control_Init();
+//	Control_Init();
 
   /* Infinite loop */
   for(;;)
   {
-	  if (xSemaphoreTake(ESCTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
-	  {
-		  Control_Loop();
-	  }
+//	  if (xSemaphoreTake(ESCTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+//	  {
+//		  Control_Loop();
+//	  }
   }
   /* USER CODE END StartControlTask */
 }
@@ -230,7 +230,7 @@ void StartMonitoringTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+//    osDelay(1);
   }
   /* USER CODE END StartMonitoringTask */
 }
@@ -246,15 +246,15 @@ void StartESCTask(void *argument)
 {
   /* USER CODE BEGIN StartESCTask */
 
-	ESC_Init();
+//	ESC_Init();
 
   /* Infinite loop */
   for(;;)
   {
-	  if (xSemaphoreTake(ESCTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
-	  {
-		  ESC_Loop();
-	  }
+//	  if (xSemaphoreTake(ESCTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+//	  {
+//		  ESC_Loop();
+//	  }
   }
   /* USER CODE END StartESCTask */
 }
@@ -270,15 +270,15 @@ void StartTestsTask(void *argument)
 {
   /* USER CODE BEGIN StartTestsTask */
 
-  Tests_Init();
+//  Tests_Init();
 
   /* Infinite loop */
   for(;;)
   {
-	  if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
-	  {
-		  Tests_Loop();
-	  }
+//	  if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+//	  {
+//		  Tests_Loop();
+//	  }
   }
   /* USER CODE END StartTestsTask */
 }

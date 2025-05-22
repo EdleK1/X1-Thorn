@@ -32,6 +32,7 @@ Core/Src/User/Peripheral/ESP32 \
 Core/Src/User/Peripheral/LCD \
 Core/Src/User/Peripheral/Servo \
 Core/Src/User/Test \
+Core/Src/User/Test/TestDShot \
 Core/Src/User/Test/TestESP32 \
 Core/Src/User/Test/TestGroundCommands \
 Core/Src/User/Test/TestOdometry \

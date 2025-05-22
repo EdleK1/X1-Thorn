@@ -48,7 +48,7 @@ classdef Aircraft_Attitude_mex_solver < handle
             obj.C_ocp = acados_mex_create_Aircraft_Attitude();
             % to have path to destructor when changing directory
             addpath('.')
-            obj.N = 20;
+            obj.N = 100;
             obj.name = 'Aircraft_Attitude';
         end
 

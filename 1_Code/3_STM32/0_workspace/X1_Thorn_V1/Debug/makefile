@@ -18,6 +18,7 @@ RM := rm -rf
 -include Core/Src/User/Test/TestOdometry/subdir.mk
 -include Core/Src/User/Test/TestGroundCommands/subdir.mk
 -include Core/Src/User/Test/TestESP32/subdir.mk
+-include Core/Src/User/Test/TestDShot/subdir.mk
 -include Core/Src/User/Test/subdir.mk
 -include Core/Src/User/Peripheral/Servo/subdir.mk
 -include Core/Src/User/Peripheral/LCD/subdir.mk

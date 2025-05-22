@@ -29,8 +29,6 @@
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
-typedef StaticTask_t osStaticThreadDef_t;
-typedef StaticSemaphore_t osStaticSemaphoreDef_t;
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
@@ -56,34 +54,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for ESCTask */
-osThreadId_t ESCTaskHandle;
-uint32_t ESCTaskBuffer[ 500 ];
-osStaticThreadDef_t ESCTaskControlBlock;
-const osThreadAttr_t ESCTask_attributes = {
-  .name = "ESCTask",
-  .cb_mem = &ESCTaskControlBlock,
-  .cb_size = sizeof(ESCTaskControlBlock),
-  .stack_mem = &ESCTaskBuffer[0],
-  .stack_size = sizeof(ESCTaskBuffer),
-  .priority = (osPriority_t) osPriorityRealtime,
-};
-/* Definitions for xDshotTxDoneSemaphore */
-osSemaphoreId_t xDshotTxDoneSemaphoreHandle;
-osStaticSemaphoreDef_t xDshotTxDoneSemaphoreControlBlock;
-const osSemaphoreAttr_t xDshotTxDoneSemaphore_attributes = {
-  .name = "xDshotTxDoneSemaphore",
-  .cb_mem = &xDshotTxDoneSemaphoreControlBlock,
-  .cb_size = sizeof(xDshotTxDoneSemaphoreControlBlock),
-};
-/* Definitions for xDshotRxDoneSemaphore */
-osSemaphoreId_t xDshotRxDoneSemaphoreHandle;
-osStaticSemaphoreDef_t xDshotRxDoneSemaphoreControlBlock;
-const osSemaphoreAttr_t xDshotRxDoneSemaphore_attributes = {
-  .name = "xDshotRxDoneSemaphore",
-  .cb_mem = &xDshotRxDoneSemaphoreControlBlock,
-  .cb_size = sizeof(xDshotRxDoneSemaphoreControlBlock),
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -91,7 +61,6 @@ const osSemaphoreAttr_t xDshotRxDoneSemaphore_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void StartESCTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -109,13 +78,6 @@ void MX_FREERTOS_Init(void) {
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
-  /* Create the semaphores(s) */
-  /* creation of xDshotTxDoneSemaphore */
-  xDshotTxDoneSemaphoreHandle = osSemaphoreNew(1, 0, &xDshotTxDoneSemaphore_attributes);
-
-  /* creation of xDshotRxDoneSemaphore */
-  xDshotRxDoneSemaphoreHandle = osSemaphoreNew(1, 0, &xDshotRxDoneSemaphore_attributes);
-
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -131,9 +93,6 @@ void MX_FREERTOS_Init(void) {
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* creation of ESCTask */
-  ESCTaskHandle = osThreadNew(StartESCTask, NULL, &ESCTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -161,24 +120,6 @@ void StartDefaultTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
-}
-
-/* USER CODE BEGIN Header_StartESCTask */
-/**
-* @brief Function implementing the ESCTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartESCTask */
-void StartESCTask(void *argument)
-{
-  /* USER CODE BEGIN StartESCTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartESCTask */
 }
 
 /* Private application code --------------------------------------------------*/

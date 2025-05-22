@@ -3,6 +3,12 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="user"/>
+		<item value="text"/>
+		<item value="mem"/>
+		<item value="Aircraft_Attitude_acados_create"/>
+		<item value="erpm"/>
+		<item value="HAL_TIM_Base_Stop_IT"/>
 		<item value="HAL_DMA_"/>
 		<item value="DMA1"/>
 		<item value="DMA"/>
@@ -12,11 +18,5 @@
 		<item value="yref_e"/>
 		<item value="ocp_nlp_cost_model_set"/>
 		<item value="AIRCRAFT_ATTITUDE_NBX0"/>
-		<item value="NBX0"/>
-		<item value="NP_GLOBAL"/>
-		<item value="USART"/>
-		<item value="hi2c1"/>
-		<item value="{"/>
-		<item value="PeriodElapsedCallback"/>
 	</list>
 </section>

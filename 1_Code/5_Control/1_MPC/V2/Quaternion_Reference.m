@@ -11,9 +11,9 @@ q3 = 0;
 % q2 = q_ref(3);
 % q3 = q_ref(4);
 
-pitch = 0.3;
-roll = 0;
-p = 1;
+pitch = 0;
+roll = 0.3;
+p = 0;
 
 
 vec_x_Aircraft = [1-2*(q2^2+q3^2); 2*(q1*q2 + q0*q3); 2*(q1*q3 - q0*q2)];

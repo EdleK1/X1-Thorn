@@ -45,7 +45,7 @@
 
 #include "simstruc.h"
 
-#define SAMPLINGTIME 0.1
+#define SAMPLINGTIME 0.02
 
 
   
@@ -71,7 +71,7 @@ static void mdlInitializeSizes (SimStruct *S)
     ssSetNumContStates(S, 0);
     ssSetNumDiscStates(S, 0);
 
-    int N = 20;
+    int N = 100;
 
   
 
@@ -101,17 +101,17 @@ static void mdlInitializeSizes (SimStruct *S)
 
 
     // y_ref
-    ssSetInputPortVectorDimension(S, 3, 266);
+    ssSetInputPortVectorDimension(S, 3, 1386);
     // y_ref_e
     ssSetInputPortVectorDimension(S, 4, 11);
     // lbx
-    ssSetInputPortVectorDimension(S, 5, 209);
+    ssSetInputPortVectorDimension(S, 5, 1089);
     // ubx
-    ssSetInputPortVectorDimension(S, 6, 209);
+    ssSetInputPortVectorDimension(S, 6, 1089);
     // lbu
-    ssSetInputPortVectorDimension(S, 7, 60);
+    ssSetInputPortVectorDimension(S, 7, 300);
     // ubu
-    ssSetInputPortVectorDimension(S, 8, 60);/* specify dimension information for the OUTPUT ports */
+    ssSetInputPortVectorDimension(S, 8, 300);/* specify dimension information for the OUTPUT ports */
     ssSetOutputPortVectorDimension(S, 0, 3 );
     ssSetOutputPortVectorDimension(S, 1, 1 );
     ssSetOutputPortVectorDimension(S, 2, 1 );
@@ -181,12 +181,12 @@ static void mdlOutputs(SimStruct *S, int_T tid)
 
     InputRealPtrsType in_sign;
 
-    int N = 20;  
+    int N = 100;  
 
     
 
     // local buffer
-    double buffer[231];
+    double buffer[1111];
     double tmp_double;
     int tmp_offset, tmp_int;
     

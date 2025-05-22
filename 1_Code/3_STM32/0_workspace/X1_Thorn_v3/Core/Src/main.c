@@ -20,6 +20,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
+#include "dma.h"
 #include "i2c.h"
 #include "memorymap.h"
 #include "spi.h"
@@ -31,6 +32,8 @@
 /* USER CODE BEGIN Includes */
 
 #include "freertos.h"
+#include "C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_V1/Core/Src/User/Test/Test.h"
+#include "User/Lib/DShotProtocol/DShot.h"
 
 /* USER CODE END Includes */
 
@@ -96,6 +99,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI4_Init();
   MX_TIM1_Init();
   MX_ADC3_Init();
@@ -103,6 +107,7 @@ int main(void)
   MX_I2C2_Init();
   MX_UART5_Init();
   MX_TIM16_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -207,22 +212,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	BaseType_t xHigherPriorityTaskWoken_Control = pdFALSE;
 	BaseType_t xHigherPriorityTaskWoken_Tests = pdFALSE;
 
-	if (htim->Instance == TIM16)
+
+	if (htim->Instance == TIM3)
 	{
-		if (ESCTaskSemaphoreHandle != NULL)
-		{
-			xSemaphoreGiveFromISR(ESCTaskSemaphoreHandle, &xHigherPriorityTaskWoken_ESC);
-		}
+		TIM_PeriodElapsedCallback_TIM3();
 	}
 
-	if (htim->Instance == TIM17)
-	{
-		if (ControlTaskSemaphoreHandle != NULL)
-		{
-			xSemaphoreGiveFromISR(ControlTaskSemaphoreHandle, &xHigherPriorityTaskWoken_Control);
-			xSemaphoreGiveFromISR(TestsTaskSemaphoreHandle, &xHigherPriorityTaskWoken_Tests);
-		}
-	}
 
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM7)
@@ -231,7 +226,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
 
-  if (xHigherPriorityTaskWoken_ESC || xHigherPriorityTaskWoken_Control)
+  if (xHigherPriorityTaskWoken_ESC || xHigherPriorityTaskWoken_Control || xHigherPriorityTaskWoken_Tests)
   {
           portYIELD_FROM_ISR(pdTRUE);
   }

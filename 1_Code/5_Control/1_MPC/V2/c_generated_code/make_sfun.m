@@ -126,23 +126,23 @@ i_in = i_in + 1;
 
 
 input_note = strcat(input_note, num2str(i_in), ') y_ref - concatenated for stages 1 to N-1,',...
-                    ' size [266]\n ');
-sfun_input_names = [sfun_input_names; 'y_ref [266]'];
+                    ' size [1386]\n ');
+sfun_input_names = [sfun_input_names; 'y_ref [1386]'];
 i_in = i_in + 1;
 input_note = strcat(input_note, num2str(i_in), ') y_ref_e - size [11]\n ');
 sfun_input_names = [sfun_input_names; 'y_ref_e [11]'];
 i_in = i_in + 1;
-input_note = strcat(input_note, num2str(i_in), ') lbx values concatenated for stages 1 to N-1, size [209]\n ');
-sfun_input_names = [sfun_input_names; 'lbx [209]'];
+input_note = strcat(input_note, num2str(i_in), ') lbx values concatenated for stages 1 to N-1, size [1089]\n ');
+sfun_input_names = [sfun_input_names; 'lbx [1089]'];
 i_in = i_in + 1;
-input_note = strcat(input_note, num2str(i_in), ') ubx values concatenated for stages 1 to N-1, size [209]\n ');
-sfun_input_names = [sfun_input_names; 'ubx [209]'];
+input_note = strcat(input_note, num2str(i_in), ') ubx values concatenated for stages 1 to N-1, size [1089]\n ');
+sfun_input_names = [sfun_input_names; 'ubx [1089]'];
 i_in = i_in + 1;
-input_note = strcat(input_note, num2str(i_in), ') lbu for stages 0 to N-1, size [60]\n ');
-sfun_input_names = [sfun_input_names; 'lbu [60]'];
+input_note = strcat(input_note, num2str(i_in), ') lbu for stages 0 to N-1, size [300]\n ');
+sfun_input_names = [sfun_input_names; 'lbu [300]'];
 i_in = i_in + 1;
-input_note = strcat(input_note, num2str(i_in), ') ubu for stages 0 to N-1, size [60]\n ');
-sfun_input_names = [sfun_input_names; 'ubu [60]'];
+input_note = strcat(input_note, num2str(i_in), ') ubu for stages 0 to N-1, size [300]\n ');
+sfun_input_names = [sfun_input_names; 'ubu [300]'];
 i_in = i_in + 1;
 
 

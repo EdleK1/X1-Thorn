@@ -5,13 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/User/Lib/DShotProtocol/Dshot.c 
+../Core/Src/User/Lib/DShotProtocol/DShot.c 
 
 OBJS += \
-./Core/Src/User/Lib/DShotProtocol/Dshot.o 
+./Core/Src/User/Lib/DShotProtocol/DShot.o 
 
 C_DEPS += \
-./Core/Src/User/Lib/DShotProtocol/Dshot.d 
+./Core/Src/User/Lib/DShotProtocol/DShot.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +21,7 @@ Core/Src/User/Lib/DShotProtocol/%.o Core/Src/User/Lib/DShotProtocol/%.su Core/Sr
 clean: clean-Core-2f-Src-2f-User-2f-Lib-2f-DShotProtocol
 
 clean-Core-2f-Src-2f-User-2f-Lib-2f-DShotProtocol:
-	-$(RM) ./Core/Src/User/Lib/DShotProtocol/Dshot.cyclo ./Core/Src/User/Lib/DShotProtocol/Dshot.d ./Core/Src/User/Lib/DShotProtocol/Dshot.o ./Core/Src/User/Lib/DShotProtocol/Dshot.su
+	-$(RM) ./Core/Src/User/Lib/DShotProtocol/DShot.cyclo ./Core/Src/User/Lib/DShotProtocol/DShot.d ./Core/Src/User/Lib/DShotProtocol/DShot.o ./Core/Src/User/Lib/DShotProtocol/DShot.su
 
 .PHONY: clean-Core-2f-Src-2f-User-2f-Lib-2f-DShotProtocol
 

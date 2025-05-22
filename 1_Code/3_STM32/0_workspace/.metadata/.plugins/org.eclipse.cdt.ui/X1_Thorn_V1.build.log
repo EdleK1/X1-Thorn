@@ -1,36 +1,10 @@
-16:07:10 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+00:06:50 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/Dshot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H750xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/Dshot.d" -MT"Core/Src/User/Lib/DShotProtocol/Dshot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/Dshot.o"
-../Core/Src/User/Lib/DShotProtocol/Dshot.c: In function 'Dshot_Init':
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:58:25: warning: variable 'xDshotRxDoneSemaphoreHandle' set but not used [-Wunused-but-set-variable]
-   58 |         osSemaphoreId_t xDshotRxDoneSemaphoreHandle;
-      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/Dshot.c: In function 'Dshot_SendFrame':
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:81:13: warning: implicit declaration of function 'xSemaphoreTake'; did you mean 'xSemaphoreHandle'? [-Wimplicit-function-declaration]
-   81 |         if (xSemaphoreTake(xDshotRxDoneSemaphoreHandle, portMAX_DELAY)!=pdTRUE) // This semaphore is given when the erpm has finished being decoded
-      |             ^~~~~~~~~~~~~~
-      |             xSemaphoreHandle
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:81:28: error: 'xDshotRxDoneSemaphoreHandle' undeclared (first use in this function)
-   81 |         if (xSemaphoreTake(xDshotRxDoneSemaphoreHandle, portMAX_DELAY)!=pdTRUE) // This semaphore is given when the erpm has finished being decoded
-      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:81:28: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/User/Lib/DShotProtocol/Dshot.c: In function 'HAL_DMA_XferCpltCallback':
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:181:18: error: 'hdma_tim3_ch1' undeclared (first use in this function)
-  181 |     if (hdma == &hdma_tim3_ch1)
-      |                  ^~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:183:9: warning: implicit declaration of function '__HAL_TIM_DISABLE_CHANNEL' [-Wimplicit-function-declaration]
-  183 |         __HAL_TIM_DISABLE_CHANNEL(&htim3, TIM_CHANNEL_1);
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:195:23: error: 'hdma_tim3_ch2' undeclared (first use in this function)
-  195 |     else if (hdma == &hdma_tim3_ch2)
-      |                       ^~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/Dshot.c: In function 'HAL_TIM_PeriodElapsedCallback':
-../Core/Src/User/Lib/DShotProtocol/Dshot.c:254:39: error: 'htim9' undeclared (first use in this function); did you mean 'htim'?
-  254 |                 HAL_TIM_Base_Stop_IT(&htim9);
-      |                                       ^~~~~
-      |                                       htim
-make: *** [Core/Src/User/Lib/DShotProtocol/subdir.mk:19: Core/Src/User/Lib/DShotProtocol/Dshot.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
 
-16:07:11 Build Failed. 5 errors, 3 warnings. (took 1s.16ms)
+00:06:51 Build Finished. 0 errors, 0 warnings. (took 661ms)
 

@@ -1,9 +1,10 @@
 clear all
 close all
 
-addpath('C:\Users\marcv\acados\external\casadi-matlab\')
-addpath('C:\Users\marcv\acados\interfaces\acados_matlab_octave\')
-addpath('C:\Users\marcv\acados\interfaces\acados_template\acados_template\')
+ROOT = 'C:\Users\marcv\acados\acados-v0.5.0';
+addpath(fullfile(ROOT,'external','casadi-matlab'));
+addpath(fullfile(ROOT,'interfaces','acados_matlab_octave'));
+addpath(fullfile(ROOT,'interfaces','acados_template'));
 
 check_acados_requirements
 simulink_opts = get_acados_simulink_opts;
@@ -30,8 +31,8 @@ nu = model.u.rows();
 
 %% Solver Options
 
-N = 20;         % shooting nodes
-ts = 100e-3;     % Sampling Rate
+N = 100;         % shooting nodes
+ts = 20e-3;     % Sampling Rate
 tf = N*ts;      % Prediction Horizon
 
 
@@ -241,5 +242,8 @@ cd c_generated_code
 make_sfun; % ocp solver
 make_sfun_sim;
 cd ..
+
+
+%%
 
 X1_Thorn_SIMSCAPE_DataFile
