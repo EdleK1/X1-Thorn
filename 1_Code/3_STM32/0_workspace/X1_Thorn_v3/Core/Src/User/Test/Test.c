@@ -14,6 +14,7 @@
 #include "TestESP32/TestESP32.h"
 #include "TestGroundCommands/TestGroundCommands.h"
 #include "TestOdometry/TestOdometry.h"
+#include "TestDShot/TestDShot.h"
 
 /* USER CODE END Includes */
 
@@ -31,10 +32,12 @@ void Test_Init(void)
 
     LCD_LoadScreen();
 
-    Odometry_Test_Init();
+//    Odometry_Test_Init();
 //    ESP32_Test();
 //    GroundCommands_Test();
 //    AttitudeMPC_Test_Init(void)
+    DShot_Test();
+
 
 
 }

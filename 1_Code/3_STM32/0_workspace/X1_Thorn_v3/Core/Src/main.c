@@ -213,9 +213,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	BaseType_t xHigherPriorityTaskWoken_Tests = pdFALSE;
 
 
-	if (htim->Instance == TIM3)
+	if (htim->Instance == TIM16) //DShot sampling telemetry timer
 	{
-		TIM_PeriodElapsedCallback_TIM3();
+		TIM_PeriodElapsedCallback_TIM16();
 	}
 
 

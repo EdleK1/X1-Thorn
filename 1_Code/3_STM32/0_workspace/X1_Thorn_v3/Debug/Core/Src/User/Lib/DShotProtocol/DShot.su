@@ -2,5 +2,5 @@
 ../Core/Src/User/Lib/DShotProtocol/DShot.c:69:9:DShot_SendFrame	24	static
 ../Core/Src/User/Lib/DShotProtocol/DShot.c:93:6:DShot_MakeFrame	32	static
 ../Core/Src/User/Lib/DShotProtocol/DShot.c:130:9:DShot_DecodeTelemetry	48	static
-../Core/Src/User/Lib/DShotProtocol/DShot.c:170:6:TIM_PeriodElapsedCallback_TIM3	24	static,ignoring_inline_asm
+../Core/Src/User/Lib/DShotProtocol/DShot.c:170:6:TIM_PeriodElapsedCallback_TIM16	24	static,ignoring_inline_asm
 ../Core/Src/User/Lib/DShotProtocol/DShot.c:229:6:HAL_DMA_XferCpltCallback	16	static

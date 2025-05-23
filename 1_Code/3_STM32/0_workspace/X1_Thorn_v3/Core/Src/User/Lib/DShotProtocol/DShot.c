@@ -167,7 +167,7 @@ uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM)
 }
 
 
-void TIM_PeriodElapsedCallback_TIM3(void)
+void TIM_PeriodElapsedCallback_TIM16(void)
 {
 	uint32_t idr = GPIOD->IDR;
 	uint8_t motor1bit  = (idr >> 8) & 1;
@@ -230,7 +230,8 @@ void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma)
 {
     if (hdma == &hdma_tim3_ch1)
     {
-        __HAL_TIM_DISABLE_CHANNEL(&htim3, TIM_CHANNEL_1);
+    	HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_1);
+    	HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
 
         RX_motor1_started = 0;
         RX_motor1_finished = 0;
@@ -244,7 +245,8 @@ void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma)
     }
     else if (hdma == &hdma_tim3_ch2)
     {
-        __HAL_TIM_DISABLE_CHANNEL(&htim3, TIM_CHANNEL_2);
+    	HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_2);
+    	HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
         HAL_TIM_Base_Start_IT(&htim16);
     }
 }

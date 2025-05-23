@@ -5,3 +5,378 @@ arm-none-eabi-size  X1_Thorn_V1.elf
   83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
 Finished building: default.size.stdout
  
+12:35:37 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+12:35:39 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+  78284	    476	  57228	 135988	  21334	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+12:42:25 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+12:42:26 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Test/TestDShot/TestDShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/TestDShot/TestDShot.d" -MT"Core/Src/User/Test/TestDShot/TestDShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/TestDShot/TestDShot.o"
+arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+  78284	    476	  57228	 135988	  21334	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+12:44:47 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+12:44:48 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
+../Core/Src/User/Lib/DShotProtocol/DShot.c: In function 'HAL_DMA_XferCpltCallback':
+../Core/Src/User/Lib/DShotProtocol/DShot.c:234:9: warning: implicit declaration of function 'LL_TIM_DisableChannel' [-Wimplicit-function-declaration]
+  234 |         LL_TIM_DisableChannel(TIM3, LL_TIM_CHANNEL_CH1);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+../Core/Src/User/Lib/DShotProtocol/DShot.c:234:37: error: 'LL_TIM_CHANNEL_CH1' undeclared (first use in this function); did you mean 'TIM_CHANNEL_1'?
+  234 |         LL_TIM_DisableChannel(TIM3, LL_TIM_CHANNEL_CH1);
+      |                                     ^~~~~~~~~~~~~~~~~~
+      |                                     TIM_CHANNEL_1
+../Core/Src/User/Lib/DShotProtocol/DShot.c:234:37: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/User/Lib/DShotProtocol/subdir.mk:19: Core/Src/User/Lib/DShotProtocol/DShot.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:55:48 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+12:55:50 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+  78284	    476	  57228	 135988	  21334	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:04:57 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:04:58 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c: In function 'StartTestsTask':
+../Core/Src/freertos.c:273:3: warning: implicit declaration of function 'Tests_Init' [-Wimplicit-function-declaration]
+  273 |   Tests_Init();
+      |   ^~~~~~~~~~
+../Core/Src/freertos.c:278:15: warning: implicit declaration of function 'xSemaphoreTake'; did you mean 'xSemaphoreHandle'? [-Wimplicit-function-declaration]
+  278 |           if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+      |               ^~~~~~~~~~~~~~
+      |               xSemaphoreHandle
+../Core/Src/freertos.c:280:19: warning: implicit declaration of function 'Tests_Loop' [-Wimplicit-function-declaration]
+  280 |                   Tests_Loop();
+      |                   ^~~~~~~~~~
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/freertos.o: in function `StartTestsTask':
+C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:273:(.text.StartTestsTask+0x8): undefined reference to `Tests_Init'
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:278:(.text.StartTestsTask+0x16): undefined reference to `xSemaphoreTake'
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:280:(.text.StartTestsTask+0x20): undefined reference to `Tests_Loop'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:82: X1_Thorn_v3.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:07:57 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:07:58 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c: In function 'StartTestsTask':
+../Core/Src/freertos.c:275:3: warning: implicit declaration of function 'Tests_Init'; did you mean 'Test_Init'? [-Wimplicit-function-declaration]
+  275 |   Tests_Init();
+      |   ^~~~~~~~~~
+      |   Test_Init
+../Core/Src/freertos.c:280:15: warning: implicit declaration of function 'xSemaphoreTake'; did you mean 'xSemaphoreHandle'? [-Wimplicit-function-declaration]
+  280 |           if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+      |               ^~~~~~~~~~~~~~
+      |               xSemaphoreHandle
+../Core/Src/freertos.c:282:19: warning: implicit declaration of function 'Tests_Loop'; did you mean 'Test_Loop'? [-Wimplicit-function-declaration]
+  282 |                   Tests_Loop();
+      |                   ^~~~~~~~~~
+      |                   Test_Loop
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/freertos.o: in function `StartTestsTask':
+C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:275:(.text.StartTestsTask+0x8): undefined reference to `Tests_Init'
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:280:(.text.StartTestsTask+0x16): undefined reference to `xSemaphoreTake'
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:282:(.text.StartTestsTask+0x20): undefined reference to `Tests_Loop'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:82: X1_Thorn_v3.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:08:43 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:08:44 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c: In function 'StartTestsTask':
+../Core/Src/freertos.c:280:15: warning: implicit declaration of function 'xSemaphoreTake'; did you mean 'xSemaphoreHandle'? [-Wimplicit-function-declaration]
+  280 |           if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+      |               ^~~~~~~~~~~~~~
+      |               xSemaphoreHandle
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/freertos.o: in function `StartTestsTask':
+C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:280:(.text.StartTestsTask+0x16): undefined reference to `xSemaphoreTake'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:82: X1_Thorn_v3.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:09:10 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:09:11 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c: In function 'StartTestsTask':
+../Core/Src/freertos.c:281:15: warning: implicit declaration of function 'xSemaphoreTake'; did you mean 'xSemaphoreHandle'? [-Wimplicit-function-declaration]
+  281 |           if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
+      |               ^~~~~~~~~~~~~~
+      |               xSemaphoreHandle
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/freertos.o: in function `StartTestsTask':
+C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Debug/../Core/Src/freertos.c:281:(.text.StartTestsTask+0x16): undefined reference to `xSemaphoreTake'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:82: X1_Thorn_v3.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:09:34 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:09:35 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 126076	    620	  58756	 185452	  2d46c	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:13:54 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:13:55 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+../Core/Src/freertos.c: In function 'StartTestsTask':
+../Core/Src/freertos.c:245:3: error: 'xDshotRxDoneSemaphoreHandle' undeclared (first use in this function)
+  245 |   xDshotRxDoneSemaphoreHandle = xSemaphoreCreateBinaryStatic(&xDshotRxDoneSemaphoreControlBlock);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/freertos.c:245:3: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Core/Src/freertos.c:30:
+../Core/Src/freertos.c:245:63: error: 'xDshotRxDoneSemaphoreControlBlock' undeclared (first use in this function); did you mean 'TestsTaskSemaphoreControlBlock'?
+  245 |   xDshotRxDoneSemaphoreHandle = xSemaphoreCreateBinaryStatic(&xDshotRxDoneSemaphoreControlBlock);
+      |                                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:221:151: note: in definition of macro 'xSemaphoreCreateBinaryStatic'
+  221 |         #define xSemaphoreCreateBinaryStatic( pxStaticSemaphore ) xQueueGenericCreateStatic( ( UBaseType_t ) 1, semSEMAPHORE_QUEUE_ITEM_LENGTH, NULL, pxStaticSemaphore, queueQUEUE_TYPE_BINARY_SEMAPHORE )
+      |                                                                                                                                                       ^~~~~~~~~~~~~~~~~
+../Core/Src/freertos.c: At top level:
+../Core/Src/freertos.c:238:26: warning: 'TestsTaskSemaphoreControlBlock' defined but not used [-Wunused-variable]
+  238 | static StaticSemaphore_t TestsTaskSemaphoreControlBlock;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:67: Core/Src/freertos.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:14:04 **** Incremental Build of configuration Debug for project X1_Thorn_V1 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_V1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  83804	    588	  23412	 107804	  1a51c	X1_Thorn_V1.elf
+Finished building: default.size.stdout
+ 
+13:14:05 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 125148	    620	  58588	 184356	  2d024	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:15:09 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 125148	    620	  58588	 184356	  2d024	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:15:49 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 124916	    620	  24284	 149820	  2493c	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:19:06 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 124916	    620	  24284	 149820	  2493c	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:26:19 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Test/Test.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/Test.d" -MT"Core/Src/User/Test/Test.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/Test.o"
+../Core/Src/User/Test/Test.c: In function 'Test_Init':
+../Core/Src/User/Test/Test.c:38:5: warning: implicit declaration of function 'DShot_Test' [-Wimplicit-function-declaration]
+   38 |     DShot_Test();
+      |     ^~~~~~~~~~
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 126988	    624	  24448	 152060	  251fc	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:26:35 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Test/Test.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/Test.d" -MT"Core/Src/User/Test/Test.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/Test.o"
+../Core/Src/User/Test/Test.c: In function 'Test_Init':
+../Core/Src/User/Test/Test.c:39:5: warning: implicit declaration of function 'DShot_Test' [-Wimplicit-function-declaration]
+   39 |     DShot_Test();
+      |     ^~~~~~~~~~
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 126988	    624	  24448	 152060	  251fc	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:26:48 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Test/Test.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/Test.d" -MT"Core/Src/User/Test/Test.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/Test.o"
+../Core/Src/User/Test/Test.c: In function 'Test_Init':
+../Core/Src/User/Test/Test.c:39:5: warning: implicit declaration of function 'DShot_Test' [-Wimplicit-function-declaration]
+   39 |     DShot_Test();
+      |     ^~~~~~~~~~
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 126988	    624	  24448	 152060	  251fc	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:27:09 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Test/Test.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/acados_c" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/blasfeo/include" -I"C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Lib/AcadosAPI/include/hpipm/include" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/Test.d" -MT"Core/Src/User/Test/Test.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/Test.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"  -lacados -lhpipm -lblasfeo -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 126988	    624	  24448	 152060	  251fc	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+13:27:21 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 126988	    624	  24448	 152060	  251fc	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 

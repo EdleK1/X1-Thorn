@@ -42,7 +42,8 @@ Core/Src/User/Test/Test.o: ../Core/Src/User/Test/Test.c \
  ../Core/Src/User/Test/TestESP32/TestESP32.h \
  ../Core/Inc/../../Core/Src/User/Peripheral/ESP32/ESP32.h \
  ../Core/Src/User/Test/TestGroundCommands/TestGroundCommands.h \
- ../Core/Src/User/Test/TestOdometry/TestOdometry.h
+ ../Core/Src/User/Test/TestOdometry/TestOdometry.h \
+ ../Core/Src/User/Test/TestDShot/TestDShot.h
 ../Core/Inc/../../Core/Src/User/Peripheral/LCD/lcd.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -88,3 +89,4 @@ Core/Src/User/Test/Test.o: ../Core/Src/User/Test/Test.c \
 ../Core/Inc/../../Core/Src/User/Peripheral/ESP32/ESP32.h:
 ../Core/Src/User/Test/TestGroundCommands/TestGroundCommands.h:
 ../Core/Src/User/Test/TestOdometry/TestOdometry.h:
+../Core/Src/User/Test/TestDShot/TestDShot.h:
