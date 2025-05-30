@@ -71,6 +71,14 @@ uint8_t DShot_SendFrame(uint16_t throttle1, uint16_t throttle2, uint32_t *last_r
 	DShot_MakeFrame(throttle1, dshotBuf1);
 	DShot_MakeFrame(throttle2, dshotBuf2);
 
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitStruct.Pin = DShot_MOTOR1_Pin|DShot_MOTOR2_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf1, 18);
 	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf2, 18);
 
@@ -169,9 +177,9 @@ uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM)
 
 void TIM_PeriodElapsedCallback_TIM16(void)
 {
-	uint32_t idr = GPIOD->IDR;
-	uint8_t motor1bit  = (idr >> 8) & 1;
-	uint8_t motor2bit  = (idr >> 9) & 1;
+	uint32_t idr = GPIOA->IDR;
+	uint8_t motor1bit  = (idr >> 6) & 1;
+	uint8_t motor2bit  = (idr >> 7) & 1;
 
 	if (RX_motor1_started == 0 && RX_motor1_finished == 0)
 	{
@@ -226,27 +234,45 @@ void TIM_PeriodElapsedCallback_TIM16(void)
 
 
 
-void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma)
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 {
-    if (hdma == &hdma_tim3_ch1)
-    {
-    	HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_1);
-    	HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+	if (htim->Instance == TIM3)
+	{
+		if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+		{
+			HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
 
-        RX_motor1_started = 0;
-        RX_motor1_finished = 0;
-        motor1bitcnt = 0;
-        rawtelem1 = 0;
+		    GPIO_InitTypeDef GPIO_Init = {0};
+		    GPIO_Init.Pin  = GPIO_PIN_6;
+		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
+		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
+		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
 
-        RX_motor2_started = 0;
-        RX_motor2_finished = 0;
-        motor2bitcnt =0;
-        rawtelem2 = 0;
-    }
-    else if (hdma == &hdma_tim3_ch2)
-    {
-    	HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_2);
-    	HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
-        HAL_TIM_Base_Start_IT(&htim16);
-    }
+			RX_motor1_started = 0;
+			RX_motor1_finished = 0;
+			motor1bitcnt = 0;
+			rawtelem1 = 0;
+
+			RX_motor2_started = 0;
+			RX_motor2_finished = 0;
+			motor2bitcnt =0;
+			rawtelem2 = 0;
+		}
+		else if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+		{
+			HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_2);
+			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
+
+		    GPIO_InitTypeDef GPIO_Init = {0};
+		    GPIO_Init.Pin  = GPIO_PIN_7;
+		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
+		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
+		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
+
+			HAL_TIM_Base_Start_IT(&htim16);
+		}
+	}
 }

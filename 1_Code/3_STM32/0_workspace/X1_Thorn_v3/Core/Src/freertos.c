@@ -141,11 +141,11 @@ void MX_FREERTOS_Init(void) {
   /* Create the thread(s) */
   /* creation of ControlTask */
 //  ControlTaskHandle = osThreadNew(StartControlTask, NULL, &ControlTask_attributes);
-
-  /* creation of MonitoringTask */
+//
+//  /* creation of MonitoringTask */
 //  MonitoringTaskHandle = osThreadNew(StartMonitoringTask, NULL, &MonitoringTask_attributes);
-
-  /* creation of ESCTask */
+//
+//  /* creation of ESCTask */
 //  ESCTaskHandle = osThreadNew(StartESCTask, NULL, &ESCTask_attributes);
 
   /* creation of TestsTask */

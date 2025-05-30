@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="DMA_"/>
 		<item value="user"/>
 		<item value="text"/>
 		<item value="mem"/>
@@ -17,6 +18,5 @@
 		<item value="create"/>
 		<item value="yref_e"/>
 		<item value="ocp_nlp_cost_model_set"/>
-		<item value="AIRCRAFT_ATTITUDE_NBX0"/>
 	</list>
 </section>
