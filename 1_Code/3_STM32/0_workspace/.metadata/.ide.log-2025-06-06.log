@@ -1,0 +1,139 @@
+2025-06-07 00:35:55,318 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 731256376 Bytes (1073741824)
+2025-06-07 00:35:58,584 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 772281504 Bytes (1073741824)
+2025-06-07 00:36:00,233 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 911085112 Bytes (1073741824)
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: MEMORYMAP
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-06-07 00:36:00,904 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: VREFBUF
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2025-06-07 00:36:00,905 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DEBUG
+2025-06-07 00:36:00,907 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-06-07 00:36:00,909 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-06-07 00:36:01,227 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\license.tmp_save
+2025-06-07 00:36:01,877 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\license.tmp
+2025-06-07 00:36:02,066 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\gpio.c_save
+2025-06-07 00:36:02,213 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\gpio.c
+2025-06-07 00:36:02,241 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\gpio.h_save
+2025-06-07 00:36:02,383 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\gpio.h
+2025-06-07 00:36:02,830 [WARN] IPConfigManager:103 - WARNING: Missing Config File for DEBUG ip!!
+2025-06-07 00:36:03,147 [WARN] IPConfigManager:103 - WARNING: Missing Config File for MEMORYMAP ip!!
+2025-06-07 00:36:04,262 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-06-07 00:36:04,289 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp_save
+2025-06-07 00:36:04,418 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp
+2025-06-07 00:36:04,435 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp_save
+2025-06-07 00:36:04,672 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp
+2025-06-07 00:36:04,688 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-06-07 00:36:04,784 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp
+2025-06-07 00:36:04,802 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp_save
+2025-06-07 00:36:04,910 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp
+2025-06-07 00:36:04,925 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp_save
+2025-06-07 00:36:05,012 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp
+2025-06-07 00:36:05,026 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp_save
+2025-06-07 00:36:05,103 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp
+2025-06-07 00:36:05,117 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-06-07 00:36:05,209 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp
+2025-06-07 00:36:05,226 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp_save
+2025-06-07 00:36:05,324 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp
+2025-06-07 00:36:05,343 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp_save
+2025-06-07 00:36:05,411 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp
+2025-06-07 00:36:05,445 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-06-07 00:36:05,457 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp_save
+2025-06-07 00:36:05,538 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp
+2025-06-07 00:36:05,546 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp_save
+2025-06-07 00:36:05,610 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp
+2025-06-07 00:36:05,618 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-06-07 00:36:05,690 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp
+2025-06-07 00:36:05,701 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp_save
+2025-06-07 00:36:05,785 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp
+2025-06-07 00:36:05,809 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp_save
+2025-06-07 00:36:05,930 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp
+2025-06-07 00:36:05,939 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp_save
+2025-06-07 00:36:06,011 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp
+2025-06-07 00:36:06,028 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-06-07 00:36:06,090 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp
+2025-06-07 00:36:06,097 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp_save
+2025-06-07 00:36:06,161 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp
+2025-06-07 00:36:06,169 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp_save
+2025-06-07 00:36:06,225 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp
+2025-06-07 00:36:06,257 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\FreeRTOSConfig.h_save
+2025-06-07 00:36:06,396 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\FreeRTOSConfig.h
+2025-06-07 00:36:06,424 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\freertos.c_save
+2025-06-07 00:36:06,554 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\freertos.c
+2025-06-07 00:36:06,590 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\adc.c_save
+2025-06-07 00:36:06,771 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\adc.c
+2025-06-07 00:36:06,801 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\adc.h_save
+2025-06-07 00:36:06,906 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\adc.h
+2025-06-07 00:36:06,934 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\cortex.tmp_save
+2025-06-07 00:36:07,028 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\cortex.tmp
+2025-06-07 00:36:07,118 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\dma.c_save
+2025-06-07 00:36:07,216 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\dma.c
+2025-06-07 00:36:07,239 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\dma.h_save
+2025-06-07 00:36:07,334 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\dma.h
+2025-06-07 00:36:07,360 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\i2c.c_save
+2025-06-07 00:36:07,486 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\i2c.c
+2025-06-07 00:36:07,493 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\i2c.h_save
+2025-06-07 00:36:07,589 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\i2c.h
+2025-06-07 00:36:07,615 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\memorymap.c_save
+2025-06-07 00:36:07,719 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\memorymap.c
+2025-06-07 00:36:07,726 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\memorymap.h_save
+2025-06-07 00:36:07,812 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\memorymap.h
+2025-06-07 00:36:07,840 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\spi.c_save
+2025-06-07 00:36:07,950 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\spi.c
+2025-06-07 00:36:07,959 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\spi.h_save
+2025-06-07 00:36:08,048 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\spi.h
+2025-06-07 00:36:08,072 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\tim.c_save
+2025-06-07 00:36:08,210 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\tim.c
+2025-06-07 00:36:08,219 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\tim.h_save
+2025-06-07 00:36:08,326 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\tim.h
+2025-06-07 00:36:08,354 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\usart.c_save
+2025-06-07 00:36:08,495 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\usart.c
+2025-06-07 00:36:08,504 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\usart.h_save
+2025-06-07 00:36:08,604 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\usart.h
+2025-06-07 00:36:08,662 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_it.c_save
+2025-06-07 00:36:08,819 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_it.c
+2025-06-07 00:36:08,844 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_it.h_save
+2025-06-07 00:36:08,935 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_it.h
+2025-06-07 00:36:09,065 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_msp.c_save
+2025-06-07 00:36:09,196 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_msp.c
+2025-06-07 00:36:09,214 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\system.tmp_save
+2025-06-07 00:36:09,306 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\system.tmp
+2025-06-07 00:36:09,329 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2025-06-07 00:36:09,427 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_timebase_tim.c
+2025-06-07 00:36:09,468 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_hal_conf.h_save
+2025-06-07 00:36:09,571 [INFO] CodeEngine:343 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_hal_conf.h
+2025-06-07 00:36:09,642 [INFO] ApiDbMcu:508 - Load IP Config File for ADC3
+2025-06-07 00:36:09,645 [INFO] ApiDbMcu:508 - Load IP Config File for I2C2
+2025-06-07 00:36:09,646 [ERROR] ApiDbMcu:464 - Can't load MEMORYMAP-STM32xx root dir null
+2025-06-07 00:36:09,646 [ERROR] ApiDbMcu:536 - Cannot parse MEMORYMAP_Config file : file do not exist
+2025-06-07 00:36:09,649 [INFO] ApiDbMcu:508 - Load IP Config File for SPI4
+2025-06-07 00:36:09,664 [INFO] ApiDbMcu:508 - Load IP Config File for TIM1
+2025-06-07 00:36:09,679 [INFO] ApiDbMcu:508 - Load IP Config File for TIM3
+2025-06-07 00:36:09,693 [INFO] ApiDbMcu:508 - Load IP Config File for TIM16
+2025-06-07 00:36:09,704 [INFO] ApiDbMcu:508 - Load IP Config File for TIM17
+2025-06-07 00:36:09,721 [INFO] ApiDbMcu:508 - Load IP Config File for UART5
+2025-06-07 00:36:09,732 [INFO] ApiDbMcu:508 - Load IP Config File for UART8
+2025-06-07 00:36:09,738 [INFO] ApiDbMcu:508 - Load IP Config File for RCC
+2025-06-07 00:36:09,781 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\main.h_save
+2025-06-07 00:36:09,916 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\main.h
+2025-06-07 00:36:09,946 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\main.c_save
+2025-06-07 00:36:10,105 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\main.c
+2025-06-07 00:36:11,078 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 663mS.
+2025-06-07 00:36:11,091 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-06-07 00:36:11,191 [INFO] ConfigFileManager:1590 - The Die is : DIE450
+2025-06-07 00:36:11,219 [INFO] ApiDbMcu:508 - Load IP Config File for FATFS
+2025-06-07 00:36:11,233 [INFO] ApiDbMcu:508 - Load IP Config File for LIBJPEG
+2025-06-07 00:36:11,257 [INFO] ApiDbMcu:508 - Load IP Config File for LWIP
+2025-06-07 00:36:11,272 [INFO] ApiDbMcu:508 - Load IP Config File for MBEDTLS
+2025-06-07 00:36:11,290 [INFO] ApiDbMcu:508 - Load IP Config File for USB_DEVICE
+2025-06-07 00:36:11,302 [INFO] ApiDbMcu:508 - Load IP Config File for USB_HOST

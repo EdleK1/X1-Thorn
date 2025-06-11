@@ -15,6 +15,8 @@
 #include "TestGroundCommands/TestGroundCommands.h"
 #include "TestOdometry/TestOdometry.h"
 #include "TestDShot/TestDShot.h"
+#include "TestServo/TestServo.h"
+
 
 /* USER CODE END Includes */
 
@@ -33,10 +35,13 @@ void Test_Init(void)
     LCD_LoadScreen();
 
 //    Odometry_Test_Init();
-//    ESP32_Test();
+//    ESP32_Test_Init();
 //    GroundCommands_Test();
 //    AttitudeMPC_Test_Init(void)
-    DShot_Test();
+//    DShot_Test();
+    Servo_Test_Init();
+
+
 
 
 
@@ -48,5 +53,8 @@ void Test_Init(void)
 
 void Test_Loop(void)
 {
-	Odometry_Test_Loop();
+
+//	Odometry_Test_Loop();
+//	ESP32_Test_Loop();
+
 }

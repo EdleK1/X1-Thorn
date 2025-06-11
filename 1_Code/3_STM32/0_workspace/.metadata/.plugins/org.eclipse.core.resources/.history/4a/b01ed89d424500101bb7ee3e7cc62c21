@@ -1,0 +1,49 @@
+/*
+ * Servo.c
+ *
+ *  Created on: Apr 25, 2025
+ *      Author: marcv
+ */
+
+#include "Servo.h"
+
+
+int Servo_Init(servo_t *servo, TIM_HandleTypeDef *htim, uint32_t channel, uint16_t setpoint)
+{
+	int result;
+
+	servo->htim = htim;
+	servo->channel = channel;
+	servo->setpoint = setpoint;
+
+
+	if ( TIM_CHANNEL_STATE_GET(htim,channel) != HAL_TIM_CHANNEL_STATE_BUSY )
+	{
+	    result = HAL_TIM_PWM_Start(htim, channel);
+
+	    if (result == SUCCESS)
+	    {
+	    	Servo_Set_Position(servo, 0);
+			return SUCCESS;
+	    }
+	    else
+	    {
+	        return ERROR;
+	    }
+	}
+	else
+	{
+	    return ERROR;
+	}
+}
+
+
+void Servo_Set_Position(servo_t *servo, uint16_t position)
+{
+	uint16_t period = position + servo->setpoint;
+
+    if (period < 1000) period = 1000;
+    if (period > 2000) period = 2000;
+
+    __HAL_TIM_SET_COMPARE(servo->htim, servo->channel, period);
+}

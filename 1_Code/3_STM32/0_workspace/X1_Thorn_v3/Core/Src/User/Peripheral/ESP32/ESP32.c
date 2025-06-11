@@ -33,14 +33,14 @@ static uint8_t collect_buf[20];
 
 
 
-void esp32_Init(void)
+void ESP32_Init(void)
 {
 	HAL_UART_Receive_IT(&huart5, &rx_byte, 1);
 }
 
 
 
-uint8_t get_esp32_commands(esp32_commands_t *esp32_commands)
+uint8_t ESP32_Get_Commands(esp32_commands_t *esp32_commands)
 {
 	if (uart_data_ready)
 	{
@@ -65,6 +65,18 @@ uint8_t get_esp32_commands(esp32_commands_t *esp32_commands)
 			return 0;
 		}
 	}
+}
+
+
+void ESP32_Send_ESC_Status(uint8_t ESC_Status)
+{
+
+	HAL_UART_Transmit(&huart5, &ESC_Status, 1, 10); // Status == 1 means its active
+
+
+//    HAL_StatusTypeDef hret = HAL_UART_Transmit(&huart5, &ESC_Status, 1, 10); // Status == 1 means its active
+//    return (hret == HAL_OK) ? 1 : 0;
+
 }
 
 

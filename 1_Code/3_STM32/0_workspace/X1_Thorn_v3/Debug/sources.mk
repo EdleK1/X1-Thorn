@@ -23,6 +23,10 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Core/Src/User/App/Control \
+Core/Src/User/App/Control/PitchController \
+Core/Src/User/App/Control/RollController \
+Core/Src/User/App/Control/ThrustController \
+Core/Src/User/App/Control/YawController \
 Core/Src/User/App/GroundCommands \
 Core/Src/User/App/Odometry \
 Core/Src/User/Lib/Algebra \
@@ -36,6 +40,7 @@ Core/Src/User/Test/TestDShot \
 Core/Src/User/Test/TestESP32 \
 Core/Src/User/Test/TestGroundCommands \
 Core/Src/User/Test/TestOdometry \
+Core/Src/User/Test/TestServo \
 Core/Src \
 Core/Startup \
 Drivers/STM32H7xx_HAL_Driver/Src \

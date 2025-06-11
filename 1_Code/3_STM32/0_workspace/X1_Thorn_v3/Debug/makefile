@@ -15,6 +15,7 @@ RM := rm -rf
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32H7xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
+-include Core/Src/User/Test/TestServo/subdir.mk
 -include Core/Src/User/Test/TestOdometry/subdir.mk
 -include Core/Src/User/Test/TestGroundCommands/subdir.mk
 -include Core/Src/User/Test/TestESP32/subdir.mk
@@ -28,6 +29,10 @@ RM := rm -rf
 -include Core/Src/User/Lib/Algebra/subdir.mk
 -include Core/Src/User/App/Odometry/subdir.mk
 -include Core/Src/User/App/GroundCommands/subdir.mk
+-include Core/Src/User/App/Control/YawController/subdir.mk
+-include Core/Src/User/App/Control/ThrustController/subdir.mk
+-include Core/Src/User/App/Control/RollController/subdir.mk
+-include Core/Src/User/App/Control/PitchController/subdir.mk
 -include Core/Src/User/App/Control/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -79,7 +84,7 @@ main-build: X1_Thorn_v3.elf secondary-outputs
 
 # Tool invocations
 X1_Thorn_v3.elf X1_Thorn_v3.map: $(OBJS) $(USER_OBJS) C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -L"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\User\Lib\AcadosAPI\lib" -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

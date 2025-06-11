@@ -36,6 +36,8 @@ extern TIM_HandleTypeDef htim1;
 
 extern TIM_HandleTypeDef htim3;
 
+extern TIM_HandleTypeDef htim5;
+
 extern TIM_HandleTypeDef htim16;
 
 extern TIM_HandleTypeDef htim17;
@@ -49,6 +51,7 @@ extern DMA_HandleTypeDef hdma_tim3_ch2;
 
 void MX_TIM1_Init(void);
 void MX_TIM3_Init(void);
+void MX_TIM5_Init(void);
 void MX_TIM16_Init(void);
 void MX_TIM17_Init(void);
 

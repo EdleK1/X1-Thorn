@@ -13,9 +13,9 @@
 #include "../../Core/Src/User/App/GroundCommands/GroundCommands.h"
 #include "../../Core/Src/User/App/Odometry/Odometry.h"
 
-reference_t curr_reference;
-odometry_t curr_odometry;
-quaternion_t curr_attitude;
+reference_t curr_reference_test;
+odometry_t curr_odometry_test;
+quaternion_t curr_attitude_test;
 static uint8_t text[50];
 static uint8_t active;
 
@@ -40,24 +40,24 @@ void GroundCommands_Test_Init(void)
 void GroundCommands_Test_Loop(void)
 {
   tick1 = HAL_GetTick();
-  Odometry_Read(&curr_odometry);
+  Odometry_Read(&curr_odometry_test);
   tick2 = HAL_GetTick();
 
-  curr_attitude.w = curr_odometry.q0;
-  curr_attitude.x = curr_odometry.q1;
-  curr_attitude.y = curr_odometry.q2;
-  curr_attitude.z = curr_odometry.q3;
+  curr_attitude_test.w = curr_odometry_test.q0;
+  curr_attitude_test.x = curr_odometry_test.q1;
+  curr_attitude_test.y = curr_odometry_test.q2;
+  curr_attitude_test.z = curr_odometry_test.q3;
 
   tick3 = HAL_GetTick();
-  active = get_reference(&curr_attitude, &curr_reference);
+  active = get_reference(curr_attitude_test, &curr_reference_test);
   tick4 = HAL_GetTick();
 
   timdelta1 = tick2 - tick1;
   timdelta2 = tick4 - tick3;
 
-  sprintf((char *)&text, "q0=%.2f q1=%.2f                  ",curr_reference.q0_ref,curr_reference.q1_ref);
+  sprintf((char *)&text, "ax_ref=%.3f p_ref=%.3f                  ",curr_reference_test.ax_ref,curr_reference_test.p_ref);
   LCD_ShowString(4, 20, ST7735Ctx.Width, 16, 16, text);
 
-  sprintf((char *)&text, "q2=%.2f q3=%.2f                  ",curr_reference.q2_ref,curr_reference.q3_ref);
+  sprintf((char *)&text, "q_ref=%.3f r_ref=%.3f                  ",curr_reference_test.q_ref,curr_reference_test.r_ref);
   LCD_ShowString(4, 35, ST7735Ctx.Width, 16, 16, text);
 }

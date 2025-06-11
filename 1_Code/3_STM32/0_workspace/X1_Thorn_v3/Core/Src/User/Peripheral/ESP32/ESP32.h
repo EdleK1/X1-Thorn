@@ -18,8 +18,8 @@ typedef struct {
 } esp32_commands_t;
 
 
-void esp32_Init(void);
-uint8_t get_esp32_commands(esp32_commands_t *esp32_commands);
-
+void ESP32_Init(void);
+uint8_t ESP32_Get_Commands(esp32_commands_t *esp32_commands);
+void ESP32_Send_ESC_Status(uint8_t ESC_Status);
 
 #endif /* SRC_USER_PERIPHERAL_ESP32_ESP32_H_ */

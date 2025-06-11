@@ -3,6 +3,14 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="actuators"/>
+		<item value="omega1"/>
+		<item value="curr_odometry"/>
+		<item value="curr_reference"/>
+		<item value="curr_attitude"/>
+		<item value="newFlightControlOutputs"/>
+		<item value="pid-&gt;"/>
+		<item value="pid"/>
 		<item value="DMA_"/>
 		<item value="user"/>
 		<item value="text"/>
@@ -10,13 +18,10 @@
 		<item value="Aircraft_Attitude_acados_create"/>
 		<item value="erpm"/>
 		<item value="HAL_TIM_Base_Stop_IT"/>
-		<item value="HAL_DMA_"/>
-		<item value="DMA1"/>
-		<item value="DMA"/>
-		<item value="Semaphore"/>
-		<item value="Task"/>
-		<item value="create"/>
-		<item value="yref_e"/>
-		<item value="ocp_nlp_cost_model_set"/>
+	</list>
+	<list key="replacehistory">
+		<item value="curr_odometry_test"/>
+		<item value="curr_reference_test"/>
+		<item value="curr_attitude_test"/>
 	</list>
 </section>

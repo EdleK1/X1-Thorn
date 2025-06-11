@@ -1,8 +1,6 @@
 #include <Bluepad32.h>
 #include <Wire.h>
 
-#define I2C_SLAVE_ADDR 0x08 
-
 int last_buttons = 0x0000;
 float ax_max = 1;
 float p_max = 0.5;
@@ -10,7 +8,9 @@ float roll_max = 0.3;
 float pitch_max = 0.3;
 float Ground_Commands[5];
 float inactivity_counter = 0;
-int activate = 0;
+uint8_t active = 0;
+uint8_t token_Init = 0;
+uint8_t ESC_Status = 0;
 
 ControllerPtr myControllers[BP32_MAX_GAMEPADS];
 
@@ -77,26 +77,26 @@ void dumpGamepad(ControllerPtr ctl) {
 }
 
 
-void processGamepad(ControllerPtr ctl) {
-
+void processGamepad(ControllerPtr ctl) 
+{
   Ground_Commands[0] = (ctl->throttle() - ctl->brake()) / 1020.0 * ax_max;
 
-  if (ctl->axisY() < -25 || ctl->axisY() > 25) {
-
+  if (ctl->axisY() < -25 || ctl->axisY() > 25) 
+  {
     Ground_Commands[2] = ctl->axisY() / 508.0 * pitch_max;
   }
-  else {
-
+  else 
+  {
     Ground_Commands[2] = 0.0;
   }
 
 
-  if (ctl->axisX() < -25 || ctl->axisX() > 25) {
-
+  if (ctl->axisX() < -25 || ctl->axisX() > 25) 
+  {
     Ground_Commands[3] = ctl->axisX() / 508.0 * roll_max;
   }
-  else {
-
+  else 
+  {
     Ground_Commands[3] = 0.0;
   }
 
@@ -105,26 +105,36 @@ void processGamepad(ControllerPtr ctl) {
 
     Ground_Commands[1] = -ctl->axisRX() / 508.0 * p_max;
   }
-  else {
-
+  else 
+  {
     Ground_Commands[1] = 0.0;
   }
 
 
-
-  if (last_buttons == 0x0000 && ctl->buttons() == 0x0008) {
-
-    if (Ground_Commands[4] == 0) {
-
-      activate = 1;
-      ctl->setColorLED(0,255,0);
+  if (last_buttons == 0x0000 && ctl->buttons() == 0x0008) 
+  {
+    if (active == 1)
+    {
+      active = 2;
     }
-    else {
-
-      activate = 0;
-      ctl->setColorLED(255,0,0);
+    else if (active == 2)
+    {
+      active = 1;
     }
   }
+
+  if (last_buttons == 0x0000 && ctl->buttons() == 0x0002) 
+  {
+    if (active == 0) 
+    {
+      active = 1;
+    }
+    else 
+    {
+      active = 0;
+    }
+  }
+
 
   last_buttons = ctl->buttons();
 
@@ -148,21 +158,6 @@ void processControllers() {
     }
   }
 }
-
-
-
-
-void sendData() {
-  
-  //printf("I2C received\n");
-  //Serial.printf("xdot = %4f, ydot = %4f, zdot = %4f, p = %4f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
-
-  // uint8_t buffer[sizeof(Ground_Commands)];
-  // memcpy(buffer, Ground_Commands, sizeof(Ground_Commands));
-  // Wire.write(buffer, sizeof(buffer));
-
-}
-
 
 
 // Arduino setup function. Runs in CPU 1
@@ -211,39 +206,73 @@ void loop() {
 
   bool dataUpdated = BP32.update();
   
-  if (dataUpdated)
+  if (dataUpdated) // If we received new data from the DS4
   {
     processControllers();
-    Ground_Commands[4] = activate;
+    Ground_Commands[4] = active;
     inactivity_counter = 0;
+
+    ControllerPtr ctl = myControllers[0];
+
+    if (ctl && ctl->isConnected()) 
+    {
+      if      (active == 2) ctl->setColorLED(0, 255, 0);
+      else if (active == 1) ctl->setColorLED(255, 222, 33);
+      else                  ctl->setColorLED(255,   0,  0);
+    }
+
   }
-  else
+  else // If we did not receive new data from the DS4
   {
     inactivity_counter += 1;
 
-    if (inactivity_counter > 400)
+    if (inactivity_counter > 200)
     {
-      Ground_Commands[4] = 0;
-      
+      if (active == 0) 
+      {
+        Ground_Commands[4] = 0;
+      }
+      else
+      {
+        Ground_Commands[4] = 1; // No cambiem el active ja que aixi si recupera la senyal tindra el active antic
+      }
+       
     }
   }
+
+  if (active == 0)
+  {
+    token_Init = 0;
+  }
+  else if (active == 2)
+  {
+    token_Init = 1;
+  }
+
+
+  if (active == 1 && token_Init == 1 && ESC_Status == 0)
+  {
+    active = 0;
+  }
+
+
+  // Send Ground Commands
 
   uint8_t out[22];
   out[0] = 0x55;
   out[1] = 0xAA;
   memcpy(out + 2, Ground_Commands, sizeof(Ground_Commands));
   Serial1.write(out, sizeof(out));  // sends 22 bytes every loop
+  
+  // Receive ESC Status to check if motors have been turned off
 
-  // printf("%d\n",sizeof(Ground_Commands));
+  uint8_t STM32Read = Serial1.read();
+
+  if (STM32Read != -1)
+  {
+    ESC_Status = STM32Read;
+  }
 
 
-
-    // The main loop must have some kind of "yield to lower priority task" event.
-    // Otherwise, the watchdog will get triggered.
-    // If your main loop doesn't have one, just add a simple `vTaskDelay(1)`.
-    // Detailed info here:
-    // https://stackoverflow.com/questions/66278271/task-watchdog-got-triggered-the-tasks-did-not-reset-the-watchdog-in-time
-
-    //     vTaskDelay(1);
   delay(20);
 }

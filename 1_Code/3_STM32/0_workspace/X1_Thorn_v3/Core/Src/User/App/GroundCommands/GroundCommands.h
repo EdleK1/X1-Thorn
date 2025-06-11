@@ -13,11 +13,10 @@
 
 typedef struct {
 	float ax_ref;			  				// longitudinal acceleration
-    float p_ref;        					// roll rate
-    float q0_ref, q1_ref, q2_ref, q3_ref; 	// attitude quaternion
+    float p_ref, q_ref, r_ref;        		// body rates
 } reference_t;
 
 void GroundCommands_Init(void);
-uint8_t get_reference(const quaternion_t *curr_attitude, reference_t *curr_reference);
+uint8_t get_reference(quaternion_t curr_attitude, reference_t *curr_reference);
 
 #endif /* SRC_USER_APP_GROUNDCOMMANDS_GROUNDCOMMANDS_H_ */

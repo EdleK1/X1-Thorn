@@ -51,53 +51,17 @@ typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
-/* Definitions for ControlTask */
-osThreadId_t ControlTaskHandle;
-uint32_t ControlTaskBuffer[ 8192 ];
-osStaticThreadDef_t ControlTaskControlBlock;
-const osThreadAttr_t ControlTask_attributes = {
-  .name = "ControlTask",
-  .cb_mem = &ControlTaskControlBlock,
-  .cb_size = sizeof(ControlTaskControlBlock),
-  .stack_mem = &ControlTaskBuffer[0],
-  .stack_size = sizeof(ControlTaskBuffer),
+/* Definitions for TestTask */
+osThreadId_t TestTaskHandle;
+uint32_t TestTaskBuffer[ 8192 ];
+osStaticThreadDef_t TestTaskControlBlock;
+const osThreadAttr_t TestTask_attributes = {
+  .name = "TestTask",
+  .cb_mem = &TestTaskControlBlock,
+  .cb_size = sizeof(TestTaskControlBlock),
+  .stack_mem = &TestTaskBuffer[0],
+  .stack_size = sizeof(TestTaskBuffer),
   .priority = (osPriority_t) osPriorityHigh,
-};
-/* Definitions for MonitoringTask */
-osThreadId_t MonitoringTaskHandle;
-uint32_t MonitoringTaskBuffer[ 128 ];
-osStaticThreadDef_t MonitoringTaskControlBlock;
-const osThreadAttr_t MonitoringTask_attributes = {
-  .name = "MonitoringTask",
-  .cb_mem = &MonitoringTaskControlBlock,
-  .cb_size = sizeof(MonitoringTaskControlBlock),
-  .stack_mem = &MonitoringTaskBuffer[0],
-  .stack_size = sizeof(MonitoringTaskBuffer),
-  .priority = (osPriority_t) osPriorityLow,
-};
-/* Definitions for ESCTask */
-osThreadId_t ESCTaskHandle;
-uint32_t ESCTaskBuffer[ 128 ];
-osStaticThreadDef_t ESCTaskControlBlock;
-const osThreadAttr_t ESCTask_attributes = {
-  .name = "ESCTask",
-  .cb_mem = &ESCTaskControlBlock,
-  .cb_size = sizeof(ESCTaskControlBlock),
-  .stack_mem = &ESCTaskBuffer[0],
-  .stack_size = sizeof(ESCTaskBuffer),
-  .priority = (osPriority_t) osPriorityRealtime,
-};
-/* Definitions for TestsTask */
-osThreadId_t TestsTaskHandle;
-uint32_t TestsTaskBuffer[ 128 ];
-osStaticThreadDef_t TestsTaskControlBlock;
-const osThreadAttr_t TestsTask_attributes = {
-  .name = "TestsTask",
-  .cb_mem = &TestsTaskControlBlock,
-  .cb_size = sizeof(TestsTaskControlBlock),
-  .stack_mem = &TestsTaskBuffer[0],
-  .stack_size = sizeof(TestsTaskBuffer),
-  .priority = (osPriority_t) osPriorityLow,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,10 +69,7 @@ const osThreadAttr_t TestsTask_attributes = {
 
 /* USER CODE END FunctionPrototypes */
 
-void StartControlTask(void *argument);
-void StartMonitoringTask(void *argument);
-void StartESCTask(void *argument);
-void StartTestsTask(void *argument);
+void StartTestTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -139,17 +100,8 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of ControlTask */
-//  ControlTaskHandle = osThreadNew(StartControlTask, NULL, &ControlTask_attributes);
-//
-//  /* creation of MonitoringTask */
-//  MonitoringTaskHandle = osThreadNew(StartMonitoringTask, NULL, &MonitoringTask_attributes);
-//
-//  /* creation of ESCTask */
-//  ESCTaskHandle = osThreadNew(StartESCTask, NULL, &ESCTask_attributes);
-
-  /* creation of TestsTask */
-  TestsTaskHandle = osThreadNew(StartTestsTask, NULL, &TestsTask_attributes);
+  /* creation of TestTask */
+  TestTaskHandle = osThreadNew(StartTestTask, NULL, &TestTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -161,100 +113,26 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartControlTask */
+/* USER CODE BEGIN Header_StartTestTask */
 /**
-  * @brief  Function implementing the ControlTask thread.
+  * @brief  Function implementing the TestTask thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartControlTask */
-void StartControlTask(void *argument)
+/* USER CODE END Header_StartTestTask */
+void StartTestTask(void *argument)
 {
-  /* USER CODE BEGIN StartControlTask */
+  /* USER CODE BEGIN StartTestTask */
 
-//	Control_Init();
+	Test_Init();
 
   /* Infinite loop */
   for(;;)
   {
-//	  if (xSemaphoreTake(ESCTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
-//	  {
-//		  Control_Loop();
-//	  }
+	Test_Loop();
+    osDelay(40);
   }
-  /* USER CODE END StartControlTask */
-}
-
-/* USER CODE BEGIN Header_StartMonitoringTask */
-/**
-* @brief Function implementing the MonitoringTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartMonitoringTask */
-void StartMonitoringTask(void *argument)
-{
-  /* USER CODE BEGIN StartMonitoringTask */
-  /* Infinite loop */
-  for(;;)
-  {
-//    osDelay(1);
-  }
-  /* USER CODE END StartMonitoringTask */
-}
-
-/* USER CODE BEGIN Header_StartESCTask */
-/**
-* @brief Function implementing the ESCTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartESCTask */
-void StartESCTask(void *argument)
-{
-  /* USER CODE BEGIN StartESCTask */
-
-//	ESC_Init();
-
-  /* Infinite loop */
-  for(;;)
-  {
-//	  if (xSemaphoreTake(ESCTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
-//	  {
-//		  ESC_Loop();
-//	  }
-  }
-  /* USER CODE END StartESCTask */
-}
-
-/* USER CODE BEGIN Header_StartTestsTask */
-/**
-* @brief Function implementing the TestsTask thread.
-* @param argument: Not used
-* @retval None
-*/
-
-static SemaphoreHandle_t TestsTaskSemaphoreHandle;
-static StaticSemaphore_t TestsTaskSemaphoreControlBlock;
-
-/* USER CODE END Header_StartTestsTask */
-void StartTestsTask(void *argument)
-{
-  /* USER CODE BEGIN StartTestsTask */
-
-  TestsTaskSemaphoreHandle = xSemaphoreCreateBinaryStatic(&TestsTaskSemaphoreControlBlock);
-
-  Test_Init();
-
-  /* Infinite loop */
-  for(;;)
-  {
-	  if (xSemaphoreTake(TestsTaskSemaphoreHandle, portMAX_DELAY) == pdTRUE)
-	  {
-		  Test_Loop();
-	  }
-  }
-  /* USER CODE END StartTestsTask */
+  /* USER CODE END StartTestTask */
 }
 
 /* Private application code --------------------------------------------------*/

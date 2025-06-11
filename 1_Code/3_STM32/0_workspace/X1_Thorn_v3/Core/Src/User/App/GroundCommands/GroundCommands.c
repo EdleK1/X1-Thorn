@@ -18,20 +18,20 @@ esp32_commands_t curr_esp32_commands;
 
 void GroundCommands_Init(void)
 {
-	esp32_Init();
+	ESP32_Init();
 }
 
 
-uint8_t get_reference(const quaternion_t *curr_attitude, reference_t *curr_reference)
+uint8_t get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 {
 	Vec3 vec_y_world, vec_z_world, vec_y_aircraft;
 
 	quaternion_t q_ref;
-	Mat3 Rx, Ry, Rz, R0;
+	Mat3 Rx, Ry, R0;
 
-	vec_y_aircraft[0] = 2.0f*(curr_attitude->x*curr_attitude->y - curr_attitude->w*curr_attitude->z);
-	vec_y_aircraft[1] = 1.0f - 2.0f*(curr_attitude->x*curr_attitude->x + curr_attitude->z*curr_attitude->z);
-	vec_y_aircraft[2] = 2.0f*(curr_attitude->y*curr_attitude->z + curr_attitude->w*curr_attitude->x);
+	vec_y_aircraft[0] = 2.0f*(curr_attitude.x*curr_attitude.y - curr_attitude.w*curr_attitude.z);
+	vec_y_aircraft[1] = 1.0f - 2.0f*(curr_attitude.x*curr_attitude.x + curr_attitude.z*curr_attitude.z);
+	vec_y_aircraft[2] = 2.0f*(curr_attitude.y*curr_attitude.z + curr_attitude.w*curr_attitude.x);
 
 	vector_cross(VEC_X_WORLD, vec_y_aircraft, vec_z_world);
 	vector_cross(vec_z_world, VEC_X_WORLD, vec_y_world);
@@ -48,46 +48,48 @@ uint8_t get_reference(const quaternion_t *curr_attitude, reference_t *curr_refer
 	R0[1][2] = vec_z_world[1];
 	R0[2][2] = vec_z_world[2];
 
-	active = get_esp32_commands(&curr_esp32_commands);
+	active = ESP32_Get_Commands(&curr_esp32_commands);
 
-
-	if (active != 1)
+	if (active != 2)
 	{
-		matrixToQuat(R0, &q_ref);
-
-		curr_reference->ax_ref = -0.5;
-		curr_reference->p_ref = 0;
-		curr_reference->q0_ref = q_ref.w;
-		curr_reference->q1_ref = q_ref.x;
-		curr_reference->q2_ref = q_ref.y;
-		curr_reference->q3_ref = q_ref.z;
+		curr_esp32_commands.ax_command = -0.5;
+		curr_esp32_commands.p_command = 0;
+		curr_esp32_commands.pitch_command = 0;
+		curr_esp32_commands.roll_command = 0;
 	}
 
-	else
-	{
-		rot_x_mat(Rx, -curr_esp32_commands.roll_command);
-		rot_y_mat(Ry, curr_esp32_commands.pitch_command);
-		rot_z_mat(Rz, curr_esp32_commands.p_command/2); // el 2 s'ha de tunejar
+	rot_x_mat(Rx, -curr_esp32_commands.roll_command);
+	rot_y_mat(Ry, curr_esp32_commands.pitch_command);
 
-		// R_ref = Ry * Rx * Rz * R0;
+	// R_ref = Ry * Rx * R0;
 
-		Mat3 temp_mat1, temp_mat2, R_ref;
+	Mat3 temp_mat, R_ref;
 
-		mat3Multiply(Ry, Rx, temp_mat1);
-		mat3Multiply(R0, temp_mat1, temp_mat2);
-		mat3Multiply(Rz, temp_mat2, R_ref);
+	mat3Multiply(Ry, Rx, temp_mat);
+	mat3Multiply(R0, temp_mat, R_ref);
 
-		matrixToQuat(R_ref, &q_ref);
-		quaternion_correction(curr_attitude, &q_ref);
+	matrixToQuat(R_ref, &q_ref);
+	quaternion_correction(&curr_attitude, &q_ref);
 
-		curr_reference->ax_ref = curr_esp32_commands.ax_command;
-		curr_reference->p_ref = curr_esp32_commands.p_command;
-		curr_reference->q0_ref = q_ref.w;
-		curr_reference->q1_ref = q_ref.x;
-		curr_reference->q2_ref = q_ref.y;
-		curr_reference->q3_ref = q_ref.z;
-	}
+	quaternion_t dq; // dq = q_ref - q_curr
+	dq.w = q_ref.w - curr_attitude.w;
+	dq.x = q_ref.x - curr_attitude.x;
+	dq.y = q_ref.y - curr_attitude.y;
+	dq.z = q_ref.z - curr_attitude.z;
+
+
+	// esentially using that dq = M(omega) * q, it can be also done with deviation but this is faster to implement
+
+	float p_delta, q_delta, r_delta;
+
+	p_delta = 2 * (-curr_attitude.x * dq.w + curr_attitude.w * dq.x + curr_attitude.z * dq.y - curr_attitude.y * dq.z);
+	q_delta = 2 * (-curr_attitude.y * dq.w - curr_attitude.z * dq.x + curr_attitude.w * dq.y + curr_attitude.x * dq.z);
+	r_delta = 2 * (-curr_attitude.z * dq.w + curr_attitude.y * dq.x - curr_attitude.x * dq.y + curr_attitude.w * dq.z);
+
+	curr_reference->ax_ref = curr_esp32_commands.ax_command;
+	curr_reference->p_ref = p_delta + curr_esp32_commands.p_command;
+	curr_reference->q_ref = q_delta;
+	curr_reference->r_ref = r_delta;
 
 	return active;
-
 }

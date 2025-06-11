@@ -1,5 +1,2 @@
-../Core/Src/freertos.c:120:6:MX_FREERTOS_Init	1
-../Core/Src/freertos.c:171:6:StartControlTask	1
-../Core/Src/freertos.c:195:6:StartMonitoringTask	1
-../Core/Src/freertos.c:213:6:StartESCTask	1
-../Core/Src/freertos.c:241:6:StartTestsTask	2
+../Core/Src/freertos.c:81:6:MX_FREERTOS_Init	1
+../Core/Src/freertos.c:123:6:StartTestTask	1

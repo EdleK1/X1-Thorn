@@ -1,0 +1,33 @@
+/*
+ * Servo.c
+ *
+ *  Created on: Apr 25, 2025
+ *      Author: marcv
+ */
+
+#include "Servo.h"
+
+
+void Servo_Init(Servo_t *servo, TIM_HandleTypeDef *htim, uint32_t channel, uint16_t setpoint)
+{
+	servo->htim = htim;
+	servo->channel = channel;
+	servo->setpoint = setpoint;
+	HAL_TIM_PWM_Start(htim, channel);
+
+	__HAL_TIM_SET_COMPARE(htim, channel, setpoint); // Set initial pulse width
+
+}
+
+
+void Servo_Set_Position(Servo_t servo, uint16_t position)
+{
+
+	uint16_t period = position + servo.setpoint;
+
+    if (period < 1000) period = 1000;
+    if (period > 2000) period = 2000;
+
+    __HAL_TIM_SET_COMPARE(servo.htim, servo.channel, period);
+
+}

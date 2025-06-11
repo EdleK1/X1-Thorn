@@ -8,6 +8,29 @@
 #ifndef SRC_USER_APP_CONTROL_CONTROL_H_
 #define SRC_USER_APP_CONTROL_CONTROL_H_
 
+#include <stdint.h>
+
+
+typedef struct {
+    uint16_t servo_R;
+    uint16_t servo_L;
+    float omega_R;
+    float omega_L;
+} Actuators_t;
+
+typedef struct {
+    float aileron;
+    float elevator;
+    float rudder;
+    float omegaThrustController_R;
+    float omegaThrustController_L;
+} FlightControlOutputs_t;
+
+
+Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs);
+void Control_Loop(void);
+uint8_t Control_Init(void);
+void Omega_Distribution(float omega, FlightControlOutputs_t *newFlightControlOutputs);
 
 
 #endif /* SRC_USER_APP_CONTROL_CONTROL_H_ */

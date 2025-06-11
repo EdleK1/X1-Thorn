@@ -9,5 +9,6 @@
 #define SRC_USER_TEST_TESTDSHOT_TESTDSHOT_H_
 
 void DShot_Test(void);
+void DShot_Test_Loop(void);
 
 #endif /* SRC_USER_TEST_TESTDSHOT_TESTDSHOT_H_ */

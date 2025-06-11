@@ -8,10 +8,13 @@
 
 
 #include "../../Lib/DShotProtocol/DShot.h"
+#include "FreeRTOS.h"
+#include "semphr.h"
+#include "tim.h"
 
 
-static uint16_t throttle1 = 400;
-static uint16_t throttle2 = 800;
+//static uint16_t throttle1 = 400;
+//static uint16_t throttle2 = 800;
 uint32_t last_rpm1;
 uint32_t last_rpm2;
 static uint8_t DShotResult;
@@ -21,6 +24,28 @@ void DShot_Test(void)
 
 	DShot_Init();
 
-	DShotResult = DShot_SendFrame(throttle1, throttle2, &last_rpm1, &last_rpm2);
+	// Init ESC
 
+//	const TickType_t xStartTime = xTaskGetTickCount();
+//	const TickType_t xArmTime   = pdMS_TO_TICKS(10000);
+
+	HAL_TIM_Base_Start_IT(&htim17);
+
+//	while ((xTaskGetTickCount() - xStartTime) < xArmTime)
+//	{
+//		DShotResult = DShot_SendFrame(0, 0, &last_rpm1, &last_rpm2);
+//
+//		vTaskDelay(pdMS_TO_TICKS(1));
+//	}
+
+
+}
+
+
+
+void DShot_Test_Loop(void)
+{
+
+	DShotResult = DShot_SendFrame(0, 0, &last_rpm1, &last_rpm2);
+//	DShotResult = DShot_SendFrame(throttle1, throttle2, &last_rpm1, &last_rpm2);
 }

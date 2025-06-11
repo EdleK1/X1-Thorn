@@ -87,16 +87,17 @@ void Sensor_Init(void)
 
 		/*-=-=-=-=-=-=Calibration Part-=-=-=-=-=-=*/
 
-//		if(Calibrate_BNO055())
-//		{
-//			getSensorOffsets(OffsetDatas);
-//		}
-//		else
-//		{
-//			printf("Sensor calibration failed.\nFailed to retrieve offset data\n");
-//		}
-//
-//		Check_Status(&Status);
+		if(Calibrate_BNO055())
+		{
+			getSensorOffsets(OffsetDatas);
+		}
+		else
+		{
+			printf("Sensor calibration failed.\nFailed to retrieve offset data\n");
+		}
+
+		Check_Status(&Status);
+
 //		printf("Selftest Result: %d\t",Status.STresult);
 //		printf("System Status: %d\t",Status.SYSStatus);
 //		printf("System Error: %d\n",Status.SYSError);

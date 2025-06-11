@@ -1,2 +1,4 @@
-../Core/Src/User/App/Control/Control.c:17:9:Control_Init	4	static
-../Core/Src/User/App/Control/Control.c:28:6:Control_Loop	4	static
+../Core/Src/User/App/Control/Control.c:37:9:Control_Init	8	static
+../Core/Src/User/App/Control/Control.c:57:6:Control_Loop	72	static
+../Core/Src/User/App/Control/Control.c:103:13:Control_To_Actuators	40	static
+../Core/Src/User/App/Control/Control.c:138:6:Omega_Distribution	24	static
