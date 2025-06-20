@@ -31,14 +31,12 @@ reference_t curr_reference;
 static quaternion_t curr_attitude;
 static Actuators_t newActuators;
 static FlightControlOutputs_t newFlightControlOutputs;
-static uint8_t active;
 
 
 uint8_t Control_Init(void)
 {
 //	Init Odometry
-//	Init Groudn Commands
-//	Init ESC;
+//	Init Ground Commands
 
 
 	// Initialize all PIDs
@@ -67,7 +65,7 @@ void Control_Loop(void)
 
 	// Get reference from ground commands (p,q,r,ax)
 
-	active = get_reference(curr_attitude, &curr_reference);
+	get_reference(curr_attitude, &curr_reference);
 
 	// Calculate the errors, from the way q_ref and r_ref are calculated, they do not need to be substracted their actual value, otherwise the control response is much slower
 
@@ -96,6 +94,7 @@ void Control_Loop(void)
 
 	// Set the new motor RPM and servo PWM setpoints
 
+	ESC_Set_RPMs(newActuators.omega_L, newActuators.omega_R);
 
 
 	}

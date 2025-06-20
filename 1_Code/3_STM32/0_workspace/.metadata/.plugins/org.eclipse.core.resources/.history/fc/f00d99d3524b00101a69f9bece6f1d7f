@@ -1,0 +1,27 @@
+/**
+  ******************************************************************************
+  * @file           : ESC.c
+  * @brief          : Provides a way of communicating with the ESC
+  ******************************************************************************
+*/
+
+
+uint8_t ESC_Init(void)
+{
+
+
+}
+
+
+uint8_t ESC_Set_RPMs(uint32_t *mRPM_L, uint32_t *mRPM_R)
+{
+
+
+}
+
+uint8_t Read_Telemetry(telemetry_t New_Telemetry)
+{
+
+
+
+}

@@ -14,6 +14,7 @@
 #include <string.h>
 #include "usart.h"
 #include <stdbool.h>
+#include "../Lib/Globals/Globals.h"
 
 typedef enum {
     SYNC_WAIT_1,
@@ -40,7 +41,7 @@ void ESP32_Init(void)
 
 
 
-uint8_t ESP32_Get_Commands(esp32_commands_t *esp32_commands)
+void ESP32_Get_Commands(esp32_commands_t *esp32_commands)
 {
 	if (uart_data_ready)
 	{
@@ -50,28 +51,28 @@ uint8_t ESP32_Get_Commands(esp32_commands_t *esp32_commands)
 		esp32_commands->p_command = received_floats[1];
 		esp32_commands->pitch_command = received_floats[2];
 		esp32_commands->roll_command = received_floats[3];
-		return  received_floats[4];									// Return status activate
+		g_Status = received_floats[4];									// Return status activate
 	}
 	else
 	{
 		if (inactivity < 100)
 		{
 			inactivity++;
-			return received_floats[4];
+			g_Status = received_floats[4];
 		}
 		else
 		{
 			inactivity++;
-			return 0;
+			g_Status = 0;
 		}
 	}
 }
 
 
-void ESP32_Send_ESC_Status(uint8_t ESC_Status)
+void ESP32_Send_ESC_Status(void)
 {
 
-	HAL_UART_Transmit(&huart5, &ESC_Status, 1, 10); // Status == 1 means its active
+	HAL_UART_Transmit(&huart5, &g_ESC_Active, 1, 10); // Status == 1 means its active
 
 
 //    HAL_StatusTypeDef hret = HAL_UART_Transmit(&huart5, &ESC_Status, 1, 10); // Status == 1 means its active
@@ -80,58 +81,55 @@ void ESP32_Send_ESC_Status(uint8_t ESC_Status)
 }
 
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+void UART_ESP32_RxCpltCallback(void)
 {
-    if (huart == &huart5)
+	// 1) Clear Overrun just in case
+	__HAL_UART_CLEAR_OREFLAG(&huart5);
+
+    // 2) State machine
+    switch (frame_state)
     {
-        // 1) Clear Overrun just in case
-        __HAL_UART_CLEAR_OREFLAG(&huart5);
-
-        // 2) State machine
-        switch (frame_state)
-        {
-            case SYNC_WAIT_1:
-                if (rx_byte == 0x55)
-                    frame_state = SYNC_WAIT_2;
-                break;
-
-            case SYNC_WAIT_2:
-                if (rx_byte == 0xAA)
-                {
-                    frame_state = SYNC_COLLECT;
-                    collect_count = 0;
-                }
-                else
-                    frame_state = SYNC_WAIT_1; // false alarm, restart
-                break;
-
-            case SYNC_COLLECT:
-                collect_buf[collect_count++] = rx_byte;
-                if (collect_count >= sizeof(collect_buf))
-                {
-                    // got full payload: copy to floats
-                    memcpy(received_floats, collect_buf, sizeof(collect_buf));
-                    uart_data_ready = true;
-                    // restart framing
-                    frame_state = SYNC_WAIT_1;
-                }
-                break;
-        }
-
-        // 3) re-arm for next byte
-        HAL_UART_Receive_IT(&huart5, &rx_byte, 1);
+    	case SYNC_WAIT_1:
+    		if (rx_byte == 0x55)
+    		{
+    			frame_state = SYNC_WAIT_2;
+    			break;
+    		}
+        case SYNC_WAIT_2:
+        	if (rx_byte == 0xAA)
+        	{
+            	rame_state = SYNC_COLLECT;
+                collect_count = 0;
+            }
+            else
+            {
+				frame_state = SYNC_WAIT_1; // false alarm, restart
+				break;
+            }
+        case SYNC_COLLECT:
+        	collect_buf[collect_count++] = rx_byte;
+            if (collect_count >= sizeof(collect_buf))
+            {
+                // got full payload: copy to floats
+            	memcpy(received_floats, collect_buf, sizeof(collect_buf));
+                uart_data_ready = true;
+                // restart framing
+                frame_state = SYNC_WAIT_1;
+             }
+             break;
     }
+
+    // 3) re-arm for next byte
+    HAL_UART_Receive_IT(&huart5, &rx_byte, 1);
 }
 
 
-void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+
+void UART_ESP32_ErrorCallback(void)
 {
-    if (huart == &huart5)
-    {
-        // Clear the error flags
-        __HAL_UART_CLEAR_OREFLAG(&huart5);
-        // Optionally log huart5.ErrorCode
-        // Re-arm reception so you don’t lock up
-        HAL_UART_Receive_IT(&huart5, &rx_byte, 1);
-    }
+	// Clear the error flags
+	__HAL_UART_CLEAR_OREFLAG(&huart5);
+	// Optionally log huart5.ErrorCode
+	// Re-arm reception so you don’t lock up
+	HAL_UART_Receive_IT(&huart5, &rx_byte, 1);
 }

@@ -1,0 +1,27 @@
+/*
+ * ESC.h
+ *
+ *  Created on: Jun 17, 2025
+ *      Author: marcv
+ */
+
+#ifndef SRC_USER_PERIPHERAL_ESC_ESC_H_
+#define SRC_USER_PERIPHERAL_ESC_ESC_H_
+
+typedef struct {
+	uint8_t Temperature;
+    uint16_t Voltage, Current, Consumption;
+    uint32_t
+} telemetry_t;
+
+
+New_Telemetry-> = raw_telem[0];
+New_Telemetry-> = raw_telem[1]<<1 | raw_telem[2];
+New_Telemetry-> = raw_telem[3]<<1 | raw_telem[4];
+New_Telemetry->Consumption = raw_telem[5]<<1 | raw_telem[6];
+New_Telemetry->RPM2 = curr_mRPM_2;
+New_Telemetry->RPM2 = curr_mRPM_4;
+New_Telemetry->CRC_bit = raw_telem[9];
+
+
+#endif /* SRC_USER_PERIPHERAL_ESC_ESC_H_ */

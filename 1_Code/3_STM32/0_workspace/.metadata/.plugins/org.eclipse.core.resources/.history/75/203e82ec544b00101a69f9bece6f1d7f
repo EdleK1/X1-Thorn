@@ -1,0 +1,48 @@
+/**
+  ******************************************************************************
+  * @file           : ESC.c
+  * @brief          : Provides a way of communicating with the ESC
+  ******************************************************************************
+*/
+
+uint8_t ESC_Active = 0;
+uint16_t Last_Throttle_L = 0;
+uint16_t Last_Throttle_R = 0;
+uint16_t Curr_mRPM_L = 0;
+uint16_t Curr_mRPM_R = 0;
+
+
+uint8_t ESC_Init(void)
+{
+
+
+}
+
+
+uint8_t ESC_Set_RPMs(uint32_t *target_mRPM_L, uint32_t *target_mRPM_R)
+{
+	uint8_t result = DShot_SendFrame(Last_Throttle_L, Last_Throttle_R, *Curr_mRPM_L, *Curr_mRPM_R, 1);
+
+	New_Throttle_L= Motor_PID(PID_handle_L, Curr_mRPM_L);
+	New_Throttle_R= Motor_PID(PID_handle_R, Curr_mRPM_R);
+
+
+	if (target_mRPM_L == 0 && target_mRPM_R == 0 && curr_mRPM_L == 0 && curr_mRPM_R == 0)
+	{
+		ESC_Active = 0;
+	}
+
+	else
+	{
+		ESC_Active = 1;
+	}
+
+	return ESC_Active;
+}
+
+uint8_t Read_Telemetry(telemetry_t New_Telemetry)
+{
+
+
+
+}

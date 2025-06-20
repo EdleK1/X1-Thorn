@@ -22,7 +22,7 @@ void GroundCommands_Init(void)
 }
 
 
-uint8_t get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
+void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 {
 	Vec3 vec_y_world, vec_z_world, vec_y_aircraft;
 
@@ -48,9 +48,11 @@ uint8_t get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	R0[1][2] = vec_z_world[1];
 	R0[2][2] = vec_z_world[2];
 
-	active = ESP32_Get_Commands(&curr_esp32_commands);
 
-	if (active != 2)
+	ESP32_Get_Commands(&curr_esp32_commands);
+	ESP32_Send_ESC_Status();
+
+	if (g_Status != 2)
 	{
 		curr_esp32_commands.ax_command = -0.5;
 		curr_esp32_commands.p_command = 0;
@@ -90,6 +92,4 @@ uint8_t get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	curr_reference->p_ref = p_delta + curr_esp32_commands.p_command;
 	curr_reference->q_ref = q_delta;
 	curr_reference->r_ref = r_delta;
-
-	return active;
 }

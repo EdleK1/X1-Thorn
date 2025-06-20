@@ -1,0 +1,17 @@
+/**
+  ******************************************************************************
+  * @file           : Globals.c
+  * @brief          : Defines global variables that are used by all functions.
+  *
+  *
+  * Odometry, GroundCommands -> actuators_t
+  ******************************************************************************
+*/
+
+
+#include "globals.h"
+
+/* Initialize to status 0 & ESC 0 (inactive) */
+
+volatile bool g_Status = 0;
+volatile bool g_ESC_Active = 0;

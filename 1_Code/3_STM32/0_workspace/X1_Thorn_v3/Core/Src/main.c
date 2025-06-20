@@ -228,6 +228,30 @@ void PeriphCommonClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart == &huart5)
+    {
+    	UART_ESP32_RxCpltCallback();
+    }
+    if (huart == &huart8)
+    {
+    	UART_ESC_RxCpltCallback();
+    }
+}
+
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    if (huart == &huart5)
+    {
+    	UART_ESP32_ErrorCallback();
+    }
+    if (huart == &huart8)
+    {
+    	UART_ESC_ErrorCallback();
+    }
+}
+
 /* USER CODE END 4 */
 
 /**
@@ -249,12 +273,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	if (htim->Instance == TIM16) //DShot sampling telemetry timer
 	{
-		TIM_PeriodElapsedCallback_TIM16();
+		TIM_PeriodElapsedCallback_DShot_Timer();
 	}
 
-	if (htim->Instance == TIM17) // Dshot Test timer
+	if (htim->Instance == TIM17) // ESC control loop timer
 	{
-		DShot_Test_Loop();
+		TIM_PeriodElapsedCallback_ESC_Timer();
 	}
 
 

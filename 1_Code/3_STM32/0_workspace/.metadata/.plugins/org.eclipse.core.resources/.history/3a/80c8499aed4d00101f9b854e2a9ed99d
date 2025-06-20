@@ -1,0 +1,17 @@
+/*
+ * ESC.h
+ *
+ *  Created on: Jun 17, 2025
+ *      Author: marcv
+ */
+
+#ifndef SRC_USER_PERIPHERAL_ESC_ESC_H_
+#define SRC_USER_PERIPHERAL_ESC_ESC_H_
+
+typedef struct {
+	float ax_command;			  				// longitudinal acceleration
+    float p_command;        					// roll rate
+    float pitch_command, roll_command; 			// pitch and roll angles
+} esp32_commands_t;
+
+#endif /* SRC_USER_PERIPHERAL_ESC_ESC_H_ */

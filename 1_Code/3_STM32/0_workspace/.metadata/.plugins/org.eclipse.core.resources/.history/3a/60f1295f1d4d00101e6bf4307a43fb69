@@ -1,0 +1,59 @@
+/**
+  ******************************************************************************
+  * @file           : ESC.c
+  * @brief          : Provides a way of communicating with the ESC
+  ******************************************************************************
+*/
+
+uint8_t ESC_Active = 0;
+uint16_t Last_Throttle_2 = 0;
+uint16_t Last_Throttle_4 = 0;
+uint16_t Curr_mRPM_2 = 0;
+uint16_t Curr_mRPM_4 = 0;
+PID_handle_t PID_handle_2;
+PID_handle_t PID_handle_4;
+
+
+uint8_t ESC_Init(void)
+{
+	// Init PID
+
+
+
+	// Init ESC (We have to wait for it to start actually sending RPMs
+
+
+
+	return
+}
+
+
+
+uint8_t ESC_Set_Throttle(uint32_t target_mRPM_2, uint32_t target_mRPM_4)
+{
+	uint8_t result = DShot_SendFrame(Last_Throttle_2, Last_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
+
+	New_Throttle_2= Motor_PID(PID_handle_2, Curr_mRPM_2);
+	New_Throttle_4= Motor_PID(PID_handle_4, Curr_mRPM_4);
+
+	uint8_t result = DShot_SendFrame(New_Throttle_2, New_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
+
+	if (target_mRPM_2 == 0 && target_mRPM_4 == 0 && curr_mRPM_2 == 0 && curr_mRPM_4 == 0)
+	{
+		ESC_Active = 0;
+	}
+
+	else
+	{
+		ESC_Active = 1;
+	}
+
+	return ESC_Active;
+}
+
+uint8_t Read_Telemetry(telemetry_t New_Telemetry)
+{
+
+
+
+}

@@ -1,0 +1,15 @@
+/**
+  ******************************************************************************
+  * @file           : Globals.c
+  * @brief          : Defines global variables that are used by all functions.
+  *
+  *
+  * Odometry, GroundCommands -> actuators_t
+  ******************************************************************************
+*/
+
+
+#include "globals.h"
+
+/* Initialize to disarmed (inactive) */
+volatile bool g_flightActive = false;

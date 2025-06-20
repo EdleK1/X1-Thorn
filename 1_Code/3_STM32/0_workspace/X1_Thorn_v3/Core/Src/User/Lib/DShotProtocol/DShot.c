@@ -1,9 +1,9 @@
-/*
- * Dshot.c
- *
- *  Created on: May 15, 2025
- *      Author: marcv
- */
+/**
+  ******************************************************************************
+  * @file           : DShot.c
+  * @brief          : Provides the Dshot protocol. If Expect telemetry = 1 it will decode it. This is done since until the ESC is armed it wont send back dshot
+  ******************************************************************************
+*/
 
 
 #include <stdbool.h>
@@ -15,36 +15,36 @@
 
 
 
-static uint16_t dshotBuf1[18];
 static uint16_t dshotBuf2[18];
-
-static uint8_t RX_motor1_started = 0;
-static uint8_t RX_motor1_finished = 0;
-static uint8_t motor1bitcnt =0;
-static uint32_t rawtelem1 = 0;
+static uint16_t dshotBuf4[18];
 
 static uint8_t RX_motor2_started = 0;
 static uint8_t RX_motor2_finished = 0;
-static uint8_t motor2bitcnt =0;
+static uint8_t motor2bitcnt = 0;
 static uint32_t rawtelem2 = 0;
 
+static uint8_t RX_motor4_started = 0;
+static uint8_t RX_motor4_finished = 0;
+static uint8_t motor4bitcnt = 0;
+static uint32_t rawtelem4 = 0;
+
 const uint8_t gcr_reverse[32] = {
-    [0x1E] = 0x0,
-    [0x09] = 0x1,
-    [0x0A] = 0x2,
-    [0x0B] = 0x3,
-    [0x15] = 0x4,
-    [0x16] = 0x5,
-    [0x17] = 0x6,
-    [0x1D] = 0x7,
+    [0x19] = 0x0,
+    [0x1B] = 0x1,
+    [0x12] = 0x2,
+    [0x13] = 0x3,
+    [0x1D] = 0x4,
+    [0x15] = 0x5,
+    [0x16] = 0x6,
+    [0x17] = 0x7,
     [0x1A] = 0x8,
-    [0x0D] = 0x9,
-    [0x0E] = 0xA,
-    [0x0F] = 0xB,
-    [0x11] = 0xC,
-    [0x13] = 0xD,
-    [0x14] = 0xE,
-    [0x19] = 0xF,
+    [0x09] = 0x9,
+    [0x0A] = 0xA,
+    [0x0B] = 0xB,
+    [0x1E] = 0xC,
+    [0x0D] = 0xD,
+    [0x0E] = 0xE,
+    [0x0F] = 0xF,
     // all other indices implicitly zero; zero treated as “invalid”
 };
 
@@ -58,18 +58,18 @@ uint8_t DShot_Init(void)
 
     if (xDshotRxDoneSemaphoreHandle == NULL)
     {
-        return 0; // Semaphore creation failed
+        return 1; // Semaphore creation failed
     }
 
-	return 1;
+	return 0;
 }
 
 
 
-uint8_t DShot_SendFrame(uint16_t throttle1, uint16_t throttle2, uint32_t *last_rpm1, uint32_t *last_rpm2)
+uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_rpm2, uint32_t *last_rpm4, uint8_t expect_telemetry)
 {
-	DShot_MakeFrame(throttle1, dshotBuf1);
 	DShot_MakeFrame(throttle2, dshotBuf2);
+	DShot_MakeFrame(throttle4, dshotBuf4);
 
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
     GPIO_InitStruct.Pin = DShot_MOTOR2_Pin|DShot_MOTOR4_Pin;
@@ -79,18 +79,21 @@ uint8_t DShot_SendFrame(uint16_t throttle1, uint16_t throttle2, uint32_t *last_r
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf1, 18);
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf2, 18);
+	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf2, 18);
+	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf4, 18);
 
-//	if (xSemaphoreTake(xDshotRxDoneSemaphoreHandle, pdMS_TO_TICKS(1))!=pdTRUE) // This semaphore is given when the erpm has finished being decoded
-//	{
-//		return 0;
-//	}
-//
-//	if (DShot_DecodeTelemetry(rawtelem1, last_rpm1) == 0 || DShot_DecodeTelemetry(rawtelem2, last_rpm2) == 0)
-//	{
-//		return 0;
-//	}
+	if (expect_telemetry == 1)
+	{
+		if (xSemaphoreTake(xDshotRxDoneSemaphoreHandle, pdMS_TO_TICKS(1))!=pdTRUE) // This semaphore is given when the erpm has finished being decoded
+		{
+			return 0;
+		}
+
+		if (DShot_DecodeTelemetry(rawtelem2, last_rpm2) == 0 || DShot_DecodeTelemetry(rawtelem4, &last_rpm4) == 0)
+		{
+			return 0;
+		}
+	}
 
 	return 1;
 }
@@ -175,32 +178,11 @@ uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM)
 }
 
 
-void TIM_PeriodElapsedCallback_TIM16(void)
+void TIM_PeriodElapsedCallback_DShot_Timer(void)
 {
 	uint32_t idr = GPIOA->IDR;
-	uint8_t motor1bit  = (idr >> 6) & 1;
-	uint8_t motor2bit  = (idr >> 7) & 1;
-
-	if (RX_motor1_started == 0 && RX_motor1_finished == 0)
-	{
-		if (motor1bit == 0)
-		{
-			RX_motor1_started = 1;
-		}
-	}
-	else if (RX_motor1_started == 1 && RX_motor1_finished == 0)
-	{
-		if (motor1bitcnt < 20)
-		{
-			rawtelem1 = (rawtelem1 << 1) | motor1bit;
-			motor1bitcnt++;
-		}
-		else
-		{
-			RX_motor1_finished = 1;
-		}
-	}
-
+	uint8_t motor2bit  = (idr >> 6) & 1;
+	uint8_t motor4bit  = (idr >> 7) & 1;
 
 	if (RX_motor2_started == 0 && RX_motor2_finished == 0)
 	{
@@ -223,7 +205,28 @@ void TIM_PeriodElapsedCallback_TIM16(void)
 	}
 
 
-	if (RX_motor1_finished && RX_motor2_finished)
+	if (RX_motor4_started == 0 && RX_motor4_finished == 0)
+	{
+		if (motor4bit == 0)
+		{
+			RX_motor4_started = 1;
+		}
+	}
+	else if (RX_motor4_started == 1 && RX_motor4_finished == 0)
+	{
+		if (motor4bitcnt < 20)
+		{
+			rawtelem4 = (rawtelem4 << 1) | motor4bit;
+			motor4bitcnt++;
+		}
+		else
+		{
+			RX_motor4_finished = 1;
+		}
+	}
+
+
+	if (RX_motor2_finished && RX_motor4_finished)
 	{
 		HAL_TIM_Base_Stop_IT(&htim16);
 		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
@@ -244,21 +247,21 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
 
 		    GPIO_InitTypeDef GPIO_Init = {0};
-		    GPIO_Init.Pin  = GPIO_PIN_6;
+		    GPIO_Init.Pin  = DShot_MOTOR2_Pin;
 		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
 		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
 		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
 
-			RX_motor1_started = 0;
-			RX_motor1_finished = 0;
-			motor1bitcnt = 0;
-			rawtelem1 = 0;
-
 			RX_motor2_started = 0;
 			RX_motor2_finished = 0;
-			motor2bitcnt =0;
+			motor2bitcnt = 0;
 			rawtelem2 = 0;
+
+			RX_motor4_started = 0;
+			RX_motor4_finished = 0;
+			motor4bitcnt =0;
+			rawtelem4 = 0;
 		}
 		else if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
 		{
@@ -266,13 +269,16 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
 
 		    GPIO_InitTypeDef GPIO_Init = {0};
-		    GPIO_Init.Pin  = GPIO_PIN_7;
+		    GPIO_Init.Pin  = DShot_MOTOR4_Pin;
 		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
 		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
 		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
 
-//			HAL_TIM_Base_Start_IT(&htim16);
+			if (expect_telemetry == 1)
+			{
+				HAL_TIM_Base_Start_IT(&htim16);
+			}
 		}
 	}
 }
