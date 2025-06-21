@@ -37,7 +37,8 @@ Core/Src/User/Peripheral/ESP32/ESP32.o: \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
- ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+ ../Core/Src/User/Peripheral/ESP32/../../Lib/Globals/Globals.h
 ../Core/Src/User/Peripheral/ESP32/ESP32.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/main.h:
@@ -78,3 +79,4 @@ Core/Src/User/Peripheral/ESP32/ESP32.o: \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
+../Core/Src/User/Peripheral/ESP32/../../Lib/Globals/Globals.h:

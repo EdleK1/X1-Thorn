@@ -10,10 +10,10 @@
 
 #include "GroundCommands.h"
 #include "../../Peripheral/ESP32/ESP32.h"
+#include "../../Lib/Globals/Globals.h"
 
 
 static const Vec3 VEC_X_WORLD = { 0.0f, 0.0f, 1.0f };
-static uint8_t active;
 esp32_commands_t curr_esp32_commands;
 
 void GroundCommands_Init(void)

@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+///**
+//  ******************************************************************************
+//  * File Name          : freertos.c
+//  * Description        : Code for freertos applications
+//  ******************************************************************************
+//  * @attention
+//  *
+//  * Copyright (c) 2025 STMicroelectronics.
+//  * All rights reserved.
+//  *
+//  * This software is licensed under terms that can be found in the LICENSE file
+//  * in the root directory of this software component.
+//  * If no LICENSE file comes with this software, it is provided AS-IS.
+//  *
+//  ******************************************************************************
+//  */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -25,31 +25,33 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
-#include "User/Test/Test.h"
-#include "semphr.h"
-
+//
+//#include "User/Test/Test.h"
+//#include "semphr.h"
+//
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 typedef StaticTask_t osStaticThreadDef_t;
 /* USER CODE BEGIN PTD */
-
+//
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+//
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-
+//
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+//
+//
+//
 /* USER CODE END Variables */
 /* Definitions for TestTask */
 osThreadId_t TestTaskHandle;
@@ -66,7 +68,7 @@ const osThreadAttr_t TestTask_attributes = {
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+//
 /* USER CODE END FunctionPrototypes */
 
 void StartTestTask(void *argument);
@@ -80,23 +82,23 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+//
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
+//  /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
+//  /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
+//  /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
+//  /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -104,39 +106,39 @@ void MX_FREERTOS_Init(void) {
   TestTaskHandle = osThreadNew(StartTestTask, NULL, &TestTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+//  /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
-  /* add events, ... */
+//  /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
 
 }
 
 /* USER CODE BEGIN Header_StartTestTask */
-/**
-  * @brief  Function implementing the TestTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
+///**
+//  * @brief  Function implementing the TestTask thread.
+//  * @param  argument: Not used
+//  * @retval None
+//  */
 /* USER CODE END Header_StartTestTask */
 void StartTestTask(void *argument)
 {
   /* USER CODE BEGIN StartTestTask */
-
-	Test_Init();
-
-  /* Infinite loop */
-  for(;;)
-  {
-	Test_Loop();
-    osDelay(40);
-  }
+//
+//	Test_Init();
+//
+//  /* Infinite loop */
+//  for(;;)
+//  {
+//	Test_Loop();
+//    osDelay(40);
+//  }
   /* USER CODE END StartTestTask */
 }
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
-
+//
 /* USER CODE END Application */
 

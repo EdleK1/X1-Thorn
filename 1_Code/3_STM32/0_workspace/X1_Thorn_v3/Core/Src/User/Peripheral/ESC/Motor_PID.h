@@ -43,7 +43,7 @@ typedef struct {
 void PID_Init(pid_handle_t *pid,
               float Kp, float Ki, float Kd,
               float dt,
-              float outputMin, float outputMax,
+			  uint16_t outputMin, uint16_t outputMax,
               float integratorMin, float integratorMax,
               float tau);
 
@@ -54,6 +54,6 @@ void PID_Init(pid_handle_t *pid,
  * @param  measurement Current measured value
  * @retval control output (clamped between outputMin, outputMax)
  */
-float PID_Update(pid_handle_t *pid, float measurement, float setpoint);
+uint16_t PID_Update(pid_handle_t *pid, float measurement, float setpoint);
 
 #endif /* SRC_USER_PERIPHERAL_ESC_MOTOR_PID_H_ */

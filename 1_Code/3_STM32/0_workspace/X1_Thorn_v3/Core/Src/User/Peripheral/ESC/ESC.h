@@ -8,6 +8,18 @@
 #ifndef SRC_USER_PERIPHERAL_ESC_ESC_H_
 #define SRC_USER_PERIPHERAL_ESC_ESC_H_
 
+#include <stdint.h>
+#include "cmsis_os2.h"
+#include "usart.h"
+
+
+typedef struct
+{
+    osThreadId_t                  taskHandle;
+    osThreadAttr_t                taskAttr;                   /*!< Task attributes    */
+} esc_task_t;
+
+
 typedef struct {
 	uint8_t Temperature;
     float Voltage, Current, Consumption;
@@ -16,12 +28,15 @@ typedef struct {
 } telemetry_t;
 
 
-uint8_t ESC_Init(void);
+void ESC_Init(void);
+void ESC_Task(void *argument);
+uint8_t ESC_Start(void);
 void ESC_Set_RPMs(uint32_t mRPM_2, uint32_t mRPM_4);
-void ESC_Control_Loop(void);
+void ESC_Loop(void);
 void Read_Telemetry(telemetry_t *New_Telemetry);
-void UART_ESC_RxCpltCallback(UART_HandleTypeDef *huart);
-void UART_ESC_ErrorCallback(UART_HandleTypeDef *huart);
+void UART_ESC_RxCpltCallback();
+void UART_ESC_ErrorCallback();
+void TIM_PeriodElapsedCallback_ESC_Timer(void);
 
 
 #endif /* SRC_USER_PERIPHERAL_ESC_ESC_H_ */

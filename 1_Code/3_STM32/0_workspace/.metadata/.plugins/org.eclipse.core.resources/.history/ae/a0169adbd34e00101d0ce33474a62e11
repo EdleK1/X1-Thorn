@@ -1,0 +1,31 @@
+/**
+  ******************************************************************************
+  * @file           : SystemMonitor.c
+  * @brief          : Displays the critical variables on the LCD display and logs more data into the SD card
+  *
+  ******************************************************************************
+*/
+
+
+void SystemMonitor_Init(void)
+{
+	if (ESC.taskHandle == NULL)
+	{
+		ESC.taskAttr.name = "ESC_Task";
+		ESC.taskAttr.priority = (osPriority_t) osPriorityHigh;
+		ESC.taskAttr.stack_size = 10 * 1024;
+		ESC.taskHandle = osThreadNew(ESC_Task, NULL, &ESC.taskAttr);
+	}
+}
+
+
+void SystemMonitor_Init_Task(void *argument)
+{
+	ESC_Start();
+
+  for(;;)
+  {
+	  osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
+	  ESC_Loop();
+  }
+}

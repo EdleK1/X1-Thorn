@@ -31,10 +31,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "freertos.h"
 #include "C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_V1/Core/Src/User/Test/Test.h"
 #include "User/Lib/DShotProtocol/DShot.h"
 #include "User/Test/TestDShot/TestDShot.h"
+#include "User/Peripheral/ESC/ESC.h"
+#include "User/Peripheral/ESP32/ESP32.h"
+#include "User/App/Control/Control.h"
 
 /* USER CODE END Includes */
 
@@ -116,7 +118,10 @@ int main(void)
   MX_UART8_Init();
   MX_TIM5_Init();
   MX_ADC2_Init();
+  MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
+
+  Control_Init();
 
   /* USER CODE END 2 */
 
@@ -266,17 +271,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   /* USER CODE BEGIN Callback 0 */
 
-	BaseType_t xHigherPriorityTaskWoken_ESC = pdFALSE;
-	BaseType_t xHigherPriorityTaskWoken_Control = pdFALSE;
-	BaseType_t xHigherPriorityTaskWoken_Tests = pdFALSE;
+//	BaseType_t xHigherPriorityTaskWoken_ESC = pdFALSE; // only needed with freertos, not cmsis2
 
+	if (htim->Instance == TIM15) // ESC loop timer
+	{
+//		TIM_PeriodElapsedCallback_Control_Timer();
+	}
 
 	if (htim->Instance == TIM16) //DShot sampling telemetry timer
 	{
 		TIM_PeriodElapsedCallback_DShot_Timer();
 	}
 
-	if (htim->Instance == TIM17) // ESC control loop timer
+	if (htim->Instance == TIM17) // ESC loop timer
 	{
 		TIM_PeriodElapsedCallback_ESC_Timer();
 	}
@@ -289,10 +296,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
 
-  if (xHigherPriorityTaskWoken_ESC || xHigherPriorityTaskWoken_Control || xHigherPriorityTaskWoken_Tests)
-  {
-          portYIELD_FROM_ISR(pdTRUE);
-  }
+//  if (xHigherPriorityTaskWoken_ESC || xHigherPriorityTaskWoken_Control || xHigherPriorityTaskWoken_Tests)
+//  {
+//          portYIELD_FROM_ISR(pdTRUE);
+//  }
 
   /* USER CODE END Callback 1 */
 }

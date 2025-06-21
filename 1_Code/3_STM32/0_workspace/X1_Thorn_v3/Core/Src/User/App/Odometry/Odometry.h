@@ -39,7 +39,7 @@ typedef struct {
 
 void Odometry_Read(odometry_t *Curr_Read);
 void Odometry_Init(void);
-
+void Sensor_Init(void);
 
 
 

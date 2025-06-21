@@ -5,31 +5,63 @@
   ******************************************************************************
 */
 
+#include "ESC.h"
 #include "Motor_PID.h"
-#include "../Lib/Globals/Globals.h"
+#include "../../Lib/Globals/Globals.h"
+#include "cmsis_os2.h"
+#include "tim.h"
+#include "../../Lib/DshotProtocol/DShot.h"
 
 uint8_t ESC_Active = 0;
-uint16_t Last_Throttle_2 = 0;
-uint16_t Last_Throttle_4 = 0;
-uint16_t Curr_mRPM_2 = 0;
-uint16_t Curr_mRPM_4 = 0;
+uint16_t New_Throttle_2 = 0;
+uint16_t New_Throttle_4 = 0;
+uint32_t Curr_mRPM_2 = 0;
+uint32_t Curr_mRPM_4 = 0;
 pid_handle_t PID_handle_2;
 pid_handle_t PID_handle_4;
 uint8_t ESC_Ready_Flag = 0;
 static uint32_t Target_mRPM_2 = 0;
 static uint32_t Target_mRPM_4 = 0;
-SemaphoreHandle_t xESC_Loop_SemaphoreHandle;
-StaticSemaphore_t xESC_Loop_SemaphoreControlBlock;
+osSemaphoreId_t  ESC_Loop_Semaphore;
+esc_task_t ESC;
+uint8_t raw_telem[10];
 
 
 
-uint8_t ESC_Init(void)
+void ESC_Init(void)
+{
+	if (ESC.taskHandle == NULL)
+	{
+		ESC.taskAttr.name = "ESC_Task";
+		ESC.taskAttr.priority = (osPriority_t) osPriorityHigh;
+		ESC.taskAttr.stack_size = 10 * 1024;
+		ESC.taskHandle = osThreadNew(ESC_Task, NULL, &ESC.taskAttr);
+	}
+}
+
+
+void ESC_Task(void *argument)
+{
+	ESC_Start();
+
+  for(;;)
+  {
+	  osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
+	  ESC_Loop();
+  }
+}
+
+
+
+
+
+uint8_t ESC_Start(void)
 {
 	// Initialize Semaphore
 
-	xESC_Loop_SemaphoreHandle = xSemaphoreCreateBinaryStatic(&xESC_Loop_SemaphoreControlBlock);
+	ESC_Loop_Semaphore = osSemaphoreNew(1, 0, NULL);
 
-	if (xDshotRxDoneSemaphoreHandle == NULL)
+	if (ESC_Loop_Semaphore == NULL)
 	{
 		return 1; // Semaphore creation failed
 	}
@@ -40,29 +72,28 @@ uint8_t ESC_Init(void)
 	float Ki = 1;
 	float Kd = 1;
 	float Ts = 1/200;
-	float output_min = 0;
-	float output_max = 2047;
+	uint16_t output_min = 0;
+	uint16_t output_max = 2047;
 	float integrator_min = 0;
 	float integrator_max = 2047;
 	float tau = 1;
 
-	PID_Init(PID_handle_2, Motor_Kp, Motor_Ki, Motor_Kd, Ts, output_min, output_max, integrator_min, integrator_max, tau);
-	PID_Init(PID_handle_4, Motor_Kp, Motor_Ki, Motor_Kd, Ts, output_min, output_max, integrator_min, integrator_max, tau);
+	PID_Init(&PID_handle_2, Kp, Ki, Kd, Ts, output_min, output_max, integrator_min, integrator_max, tau);
+	PID_Init(&PID_handle_4, Kp, Ki, Kd, Ts, output_min, output_max, integrator_min, integrator_max, tau);
 
 	// Initialize UART
 
-	HAL_UART_Receive_IT(&huart8, &raw_telem, 10);
+	HAL_UART_Receive_IT(&huart8, raw_telem, 10);
 
 	// Init ESC (We have to wait for it to start actually sending RPMs
 
 	HAL_TIM_Base_Start_IT(&htim17); // Initialize ESC timer to give
 
-	TickType_t start_time = xTaskGetTickCount();
-
-	while ((xTaskGetTickCount() - start_time) < pdMS_TO_TICKS(500))
+	uint32_t armCycles = 50;  // Arm cycles. a bit overkill
+	for (uint32_t i = 0; i < armCycles; i++)
 	{
-		xSemaphoreTake(xESC_Loop_SemaphoreHandle, pdMS_TO_TICKS(1));
-		uint8_t result_DShot = DShot_SendFrame(0, 0, *Curr_mRPM_2, *Curr_mRPM_4, 0);
+		osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
+	    DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 0);
 	}
 
 	return 0;
@@ -77,27 +108,27 @@ void ESC_Set_RPMs(uint32_t mRPM_2, uint32_t mRPM_4)
 
 
 
-void ESC_Control_Loop(void)
+void ESC_Loop(void)
 {
 //	uint8_t result = DShot_SendFrame(Last_Throttle_2, Last_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
 
-	if (g_Status == 1 | g_Status == 2)
+	if (g_Status == 1 || g_Status == 2)
 	{
-		New_Throttle_2 = Motor_PID(PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
-		New_Throttle_4 = Motor_PID(PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
+		New_Throttle_2 = PID_Update(&PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
+		New_Throttle_4 = PID_Update(&PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
 
-		uint8_t result = DShot_SendFrame(New_Throttle_2, New_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
+		uint8_t result = DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1);
 
 		g_ESC_Active = 1;
 
-		if (target_mRPM_2 == 0 && target_mRPM_4 == 0 && curr_mRPM_2 < 500 && curr_mRPM_4< 500)
+		if (Target_mRPM_2 == 0 && Target_mRPM_4 == 0 && Curr_mRPM_2 < 500 && Curr_mRPM_4 < 500)
 		{
 			g_ESC_Active = 0;
 		}
 	}
 	else
 	{
-		DShot_SendFrame(0, 0, *Curr_mRPM_2, *Curr_mRPM_4, 1);
+		DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1);
 	}
 }
 
@@ -110,27 +141,32 @@ void Read_Telemetry(telemetry_t *New_Telemetry)
 	New_Telemetry->Voltage = (raw_telem[1]<<1 | raw_telem[2])/100;
 	New_Telemetry->Current = (raw_telem[3]<<1 | raw_telem[4])/100;
 	New_Telemetry->Consumption = (raw_telem[5]<<1 | raw_telem[6]);
-	New_Telemetry->RPM2 = curr_mRPM_2;
-	New_Telemetry->RPM4 = curr_mRPM_4;
+	New_Telemetry->RPM2 = Curr_mRPM_2;
+	New_Telemetry->RPM4 = Curr_mRPM_4;
 	New_Telemetry->CRC_bit = raw_telem[9];
 
 }
 
 
-
-void UART_ESC_RxCpltCallback(UART_HandleTypeDef *huart)
+void TIM_PeriodElapsedCallback_ESC_Timer(void)
 {
-	HAL_UART_Receive_IT(&huart8, &raw_telem, 10);
+	osSemaphoreRelease(ESC_Loop_Semaphore);
 }
 
 
-void UART_ESC_ErrorCallback(UART_HandleTypeDef *huart)
+void UART_ESC_RxCpltCallback()
+{
+	HAL_UART_Receive_IT(&huart8, raw_telem, 10);
+}
+
+
+void UART_ESC_ErrorCallback()
 {
 	// Clear the error flags
 	__HAL_UART_CLEAR_OREFLAG(&huart8);
 	// Optionally log huart5.ErrorCode
 	// Re-arm reception so you don’t lock up
-	HAL_UART_Receive_IT(&huart8, &raw_telem, 10);
+	HAL_UART_Receive_IT(&huart8, raw_telem, 10);
 }
 
 

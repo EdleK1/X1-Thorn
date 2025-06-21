@@ -1,0 +1,9 @@
+../Core/Src/User/Peripheral/ESC/ESC.c:31:6:ESC_Init	8	static
+../Core/Src/User/Peripheral/ESC/ESC.c:43:6:ESC_Task	16	static
+../Core/Src/User/Peripheral/ESC/ESC.c:58:9:ESC_Start	56	static
+../Core/Src/User/Peripheral/ESC/ESC.c:103:6:ESC_Set_RPMs	16	static
+../Core/Src/User/Peripheral/ESC/ESC.c:111:6:ESC_Loop	24	static
+../Core/Src/User/Peripheral/ESC/ESC.c:137:6:Read_Telemetry	16	static
+../Core/Src/User/Peripheral/ESC/ESC.c:151:6:TIM_PeriodElapsedCallback_ESC_Timer	8	static
+../Core/Src/User/Peripheral/ESC/ESC.c:157:6:UART_ESC_RxCpltCallback	8	static
+../Core/Src/User/Peripheral/ESC/ESC.c:163:6:UART_ESC_ErrorCallback	8	static

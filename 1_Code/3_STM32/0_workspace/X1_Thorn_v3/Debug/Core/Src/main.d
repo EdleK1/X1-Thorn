@@ -50,10 +50,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/adc.h ../Core/Inc/main.h ../Core/Inc/dma.h ../Core/Inc/i2c.h \
  ../Core/Inc/memorymap.h ../Core/Inc/spi.h ../Core/Inc/tim.h \
  ../Core/Inc/usart.h ../Core/Inc/gpio.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
  C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_V1/Core/Src/User/Test/Test.h \
  ../Core/Src/User/Lib/DShotProtocol/DShot.h \
- ../Core/Src/User/Test/TestDShot/TestDShot.h
+ ../Core/Src/User/Test/TestDShot/TestDShot.h \
+ ../Core/Src/User/Peripheral/ESC/ESC.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+ ../Core/Src/User/Peripheral/ESP32/ESP32.h \
+ ../Core/Src/User/App/Control/Control.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -112,7 +115,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/tim.h:
 ../Core/Inc/usart.h:
 ../Core/Inc/gpio.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
 C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_V1/Core/Src/User/Test/Test.h:
 ../Core/Src/User/Lib/DShotProtocol/DShot.h:
 ../Core/Src/User/Test/TestDShot/TestDShot.h:
+../Core/Src/User/Peripheral/ESC/ESC.h:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
+../Core/Src/User/Peripheral/ESP32/ESP32.h:
+../Core/Src/User/App/Control/Control.h:

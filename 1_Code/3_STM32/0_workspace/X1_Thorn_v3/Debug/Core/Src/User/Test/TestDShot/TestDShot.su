@@ -1,2 +1,2 @@
 ../Core/Src/User/Test/TestDShot/TestDShot.c:22:6:DShot_Test	8	static
-../Core/Src/User/Test/TestDShot/TestDShot.c:46:6:DShot_Test_Loop	8	static
+../Core/Src/User/Test/TestDShot/TestDShot.c:46:6:DShot_Test_Loop	16	static

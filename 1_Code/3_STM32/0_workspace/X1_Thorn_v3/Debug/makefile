@@ -24,7 +24,9 @@ RM := rm -rf
 -include Core/Src/User/Peripheral/Servo/subdir.mk
 -include Core/Src/User/Peripheral/LCD/subdir.mk
 -include Core/Src/User/Peripheral/ESP32/subdir.mk
+-include Core/Src/User/Peripheral/ESC/subdir.mk
 -include Core/Src/User/Peripheral/BNO055/subdir.mk
+-include Core/Src/User/Lib/Globals/subdir.mk
 -include Core/Src/User/Lib/DShotProtocol/subdir.mk
 -include Core/Src/User/Lib/Algebra/subdir.mk
 -include Core/Src/User/App/Odometry/subdir.mk

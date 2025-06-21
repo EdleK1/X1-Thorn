@@ -25,8 +25,8 @@ void ESP32_Test_Init(void)
 
 void ESP32_Test_Loop(void)
 {
-  active = ESP32_Get_Commands(&curr_esp32_commands_test);
-  ESP32_Send_ESC_Status(0);
+  ESP32_Get_Commands(&curr_esp32_commands_test);
+  ESP32_Send_ESC_Status();
 
   sprintf((char *)&text, "ax=%.2f p=%.2f                  ",curr_esp32_commands_test.ax_command,curr_esp32_commands_test.p_command);
   LCD_ShowString(4, 22, ST7735Ctx.Width, 16, 16, text);

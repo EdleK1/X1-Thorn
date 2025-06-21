@@ -9,10 +9,10 @@
 #include "Motor_PID.h"
 #include <math.h>
 
-void PID_Init(PID_HandleTypeDef *pid,
+void PID_Init(pid_handle_t *pid,
               float Kp, float Ki, float Kd,
               float dt,
-              float outputMin, float outputMax,
+              uint16_t outputMin, uint16_t outputMax,
               float integratorMin, float integratorMax,
               float tau)
 {
@@ -33,7 +33,7 @@ void PID_Init(PID_HandleTypeDef *pid,
     pid->dTermFilt  = 0.0f;
 }
 
-float PID_Update(PID_HandleTypeDef *pid, float measurement, float setpoint)
+uint16_t PID_Update(pid_handle_t *pid, float measurement, float setpoint)
 {
     /* 1) Compute error */
     float error = setpoint - measurement;

@@ -9,7 +9,7 @@
 */
 
 
-#include "../../App/Odometry/Odometry.h"
+#include "Odometry.h"
 #include "../../Peripheral/BNO055/BNO055.h"
 
 
@@ -18,18 +18,13 @@ BNO055_Sensors_t BNO055;
 uint8_t OffsetDatas[22];
 odometry_t Curr_Read;
 
-void Sensor_Init(void);
-
-
 
 
 
 
 void Odometry_Init(void)
 {
-
 	Sensor_Init();
-
 }
 
 

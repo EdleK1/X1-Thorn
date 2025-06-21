@@ -9,7 +9,13 @@
 #define SRC_USER_APP_CONTROL_CONTROL_H_
 
 #include <stdint.h>
+#include "cmsis_os2.h"
 
+typedef struct
+{
+    osThreadId_t                  taskHandle;
+    osThreadAttr_t                taskAttr;                   /*!< Task attributes    */
+} control_task_t;
 
 typedef struct {
     uint16_t servo_R;
@@ -27,9 +33,13 @@ typedef struct {
 } FlightControlOutputs_t;
 
 
-Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs);
+
+void Control_Init(void);
+uint8_t Control_Start(void);
 void Control_Loop(void);
-uint8_t Control_Init(void);
+void Control_Task(void *argument);
+
+Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs);
 void Omega_Distribution(float omega, FlightControlOutputs_t *newFlightControlOutputs);
 
 

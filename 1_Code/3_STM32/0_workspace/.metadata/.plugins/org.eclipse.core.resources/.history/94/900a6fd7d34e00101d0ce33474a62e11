@@ -1,0 +1,9 @@
+/**
+  ******************************************************************************
+  * @file           : SystemMonitor.c
+  * @brief          : Displays the critical variables on the LCD display and logs more data into the SD card
+  *
+  ******************************************************************************
+*/
+
+

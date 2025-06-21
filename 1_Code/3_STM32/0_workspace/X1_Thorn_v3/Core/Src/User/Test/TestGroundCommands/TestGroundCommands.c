@@ -17,7 +17,6 @@ reference_t curr_reference_test;
 odometry_t curr_odometry_test;
 quaternion_t curr_attitude_test;
 static uint8_t text[50];
-static uint8_t active;
 
 
 
@@ -49,7 +48,7 @@ void GroundCommands_Test_Loop(void)
   curr_attitude_test.z = curr_odometry_test.q3;
 
   tick3 = HAL_GetTick();
-  active = get_reference(curr_attitude_test, &curr_reference_test);
+  get_reference(curr_attitude_test, &curr_reference_test);
   tick4 = HAL_GetTick();
 
   timdelta1 = tick2 - tick1;
