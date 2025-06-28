@@ -29,6 +29,7 @@ Core/Src/User/App/Control/ThrustController \
 Core/Src/User/App/Control/YawController \
 Core/Src/User/App/GroundCommands \
 Core/Src/User/App/Odometry \
+Core/Src/User/App/SystemMonitor \
 Core/Src/User/Lib/Algebra \
 Core/Src/User/Lib/DShotProtocol \
 Core/Src/User/Lib/Globals \
@@ -37,6 +38,7 @@ Core/Src/User/Peripheral/ESC \
 Core/Src/User/Peripheral/ESP32 \
 Core/Src/User/Peripheral/LCD \
 Core/Src/User/Peripheral/Servo \
+Core/Src/User/Test/MotorCharacterization \
 Core/Src/User/Test \
 Core/Src/User/Test/TestDShot \
 Core/Src/User/Test/TestESP32 \

@@ -13,13 +13,6 @@
 #include "usart.h"
 
 
-typedef struct
-{
-    osThreadId_t                  taskHandle;
-    osThreadAttr_t                taskAttr;                   /*!< Task attributes    */
-} esc_task_t;
-
-
 typedef struct {
 	uint8_t Temperature;
     float Voltage, Current, Consumption;

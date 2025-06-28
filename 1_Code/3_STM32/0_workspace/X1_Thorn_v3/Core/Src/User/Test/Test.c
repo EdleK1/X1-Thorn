@@ -32,14 +32,14 @@
 void Test_Init(void)
 {
 
-    LCD_LoadScreen();
+//    LCD_LoadScreen();
 
 //    Odometry_Test_Init();
 //    ESP32_Test_Init();
 //    GroundCommands_Test();
 //    AttitudeMPC_Test_Init(void)
 //    DShot_Test();
-    Servo_Test_Init();
+//    Servo_Test_Init();
 
 
 

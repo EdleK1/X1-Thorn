@@ -79,7 +79,11 @@ void dumpGamepad(ControllerPtr ctl) {
 
 void processGamepad(ControllerPtr ctl) 
 {
-  Ground_Commands[0] = (ctl->throttle() - ctl->brake()) / 1020.0 * ax_max;
+
+  // Ground_Commands[0] = (ctl->throttle() - ctl->brake()) / 1020.0 * ax_max;
+
+  Ground_Commands[0] = ctl->throttle() * 2.0;
+  Ground_Commands[1] = ctl->brake() * 2.0;
 
   if (ctl->axisY() < -25 || ctl->axisY() > 25) 
   {
@@ -101,14 +105,14 @@ void processGamepad(ControllerPtr ctl)
   }
 
 
-  if (ctl->axisRX() < -25 || ctl->axisRX() > 25) {
+  // if (ctl->axisRX() < -25 || ctl->axisRX() > 25) {
 
-    Ground_Commands[1] = -ctl->axisRX() / 508.0 * p_max;
-  }
-  else 
-  {
-    Ground_Commands[1] = 0.0;
-  }
+  //   Ground_Commands[1] = -ctl->axisRX() / 508.0 * p_max;
+  // }
+  // else 
+  // {
+  //   Ground_Commands[1] = 0.0;
+  // }
 
 
   if (last_buttons == 0x0000 && ctl->buttons() == 0x0008) 
@@ -261,6 +265,7 @@ void loop() {
   uint8_t out[22];
   out[0] = 0x55;
   out[1] = 0xAA;
+
   memcpy(out + 2, Ground_Commands, sizeof(Ground_Commands));
   Serial1.write(out, sizeof(out));  // sends 22 bytes every loop
   

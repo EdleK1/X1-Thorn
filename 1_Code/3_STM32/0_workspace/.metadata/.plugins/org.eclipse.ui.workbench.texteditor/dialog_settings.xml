@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="esc"/>
+		<item value="ESC_Task"/>
 		<item value="collect_buf"/>
 		<item value="actuators"/>
 		<item value="omega1"/>
@@ -16,8 +18,6 @@
 		<item value="user"/>
 		<item value="text"/>
 		<item value="mem"/>
-		<item value="Aircraft_Attitude_acados_create"/>
-		<item value="erpm"/>
 	</list>
 	<list key="replacehistory">
 		<item value="curr_odometry_test"/>

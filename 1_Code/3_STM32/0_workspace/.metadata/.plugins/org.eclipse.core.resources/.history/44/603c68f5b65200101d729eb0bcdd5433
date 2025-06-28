@@ -1,0 +1,89 @@
+/**
+  ******************************************************************************
+  * @file           : SystemMonitor.c
+  * @brief          : Displays the critical variables on the LCD display and logs more data into the SD card
+  *
+  ******************************************************************************
+*/
+
+#include "cmsis_os2.h"
+#include "SystemMonitor.h"
+#include "../../Peripheral/LCD/lcd.h"
+#include "../../Lib/Globals/Globals.h"
+#include "../../Test/MotorCharacterization/MotorCharacterization.h"
+
+system_monitor_task_t System_Monitor;
+uint16_t Throttle_2_LCD;
+uint16_t Throttle_4_LCD;
+uint32_t mRPM_2_LCD;
+uint32_t mRPM_4_LCD;
+static uint8_t text[50];
+
+
+void System_Monitor_Init(void)
+{
+	if (System_Monitor.taskHandle == NULL)
+	{
+		System_Monitor.taskAttr.name = "System_Monitor_Task";
+		System_Monitor.taskAttr.priority = (osPriority_t) osPriorityHigh5;
+		System_Monitor.taskAttr.stack_size = 10 * 1024;
+		System_Monitor.taskHandle = osThreadNew(System_Monitor_Task, NULL, &System_Monitor.taskAttr);
+	}
+}
+
+
+void System_Monitor_Task(void *argument)
+{
+	System_Monitor_Start();
+
+  for(;;)
+  {
+	  System_Monitor_Loop();
+	  osDelay(50);
+  }
+}
+
+
+
+void System_Monitor_Start(void)
+{
+	LCD_LoadScreen(); // Ideally it would be nice if it logged things while the loadscreen is loading, as it is purely cosmetic but idgaf
+}
+
+
+
+
+void System_Monitor_Loop(void)
+{
+//	if (g_Status == 1)
+//	{
+//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, YELLOW);
+//	}
+//	else if (g_Status == 2)
+//	{
+//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, GREEN);
+//	}
+//	else
+//	{
+//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, RED);
+//	} // Crec que es veura com el cul
+
+	// get rpms, voltage and temeperature from ESC telemetry
+	// get Servo?
+
+	get_LCD_display(&Throttle_2_LCD, &Throttle_4_LCD,&mRPM_2_LCD, &mRPM_4_LCD);
+
+	sprintf((char *)&text, "Throtle2=%d                   	", Throttle_2_LCD);
+	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "Throtle4=%d                   	", Throttle_4_LCD);
+	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "rpm2=%lu                                  	", mRPM_2_LCD);
+	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "rpm4=%lu                  					", mRPM_4_LCD);
+	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
+
+}
+

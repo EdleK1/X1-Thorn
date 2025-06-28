@@ -1,2 +1,2 @@
-../Core/Src/User/Test/Test.c:32:6:Test_Init	8	static
+../Core/Src/User/Test/Test.c:32:6:Test_Init	4	static
 ../Core/Src/User/Test/Test.c:54:6:Test_Loop	4	static

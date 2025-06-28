@@ -93,8 +93,8 @@ void UART_ESP32_RxCpltCallback(void)
     		if (rx_byte == 0x55)
     		{
     			frame_state = SYNC_WAIT_2;
-    			break;
     		}
+    		break;
         case SYNC_WAIT_2:
         	if (rx_byte == 0xAA)
         	{
@@ -104,8 +104,8 @@ void UART_ESP32_RxCpltCallback(void)
             else
             {
 				frame_state = SYNC_WAIT_1; // false alarm, restart
-				break;
             }
+        	break;
         case SYNC_COLLECT:
         	collect_buf[collect_count++] = rx_byte;
             if (collect_count >= sizeof(collect_buf))

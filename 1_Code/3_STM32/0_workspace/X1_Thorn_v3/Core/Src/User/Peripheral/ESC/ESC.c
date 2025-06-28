@@ -9,6 +9,7 @@
 #include "Motor_PID.h"
 #include "../../Lib/Globals/Globals.h"
 #include "cmsis_os2.h"
+#include "FreeRTOS.h"
 #include "tim.h"
 #include "../../Lib/DshotProtocol/DShot.h"
 
@@ -23,20 +24,28 @@ uint8_t ESC_Ready_Flag = 0;
 static uint32_t Target_mRPM_2 = 0;
 static uint32_t Target_mRPM_4 = 0;
 osSemaphoreId_t  ESC_Loop_Semaphore;
-esc_task_t ESC;
 uint8_t raw_telem[10];
+
+// Definitions for ESC_Task
+
+osThreadId_t ESC_TaskHandle;
+uint32_t ESC_TaskBuffer[ 8192 ];
+StaticTask_t ESC_TaskControlBlock;
+const osThreadAttr_t ESC_Task_attributes = {
+  .name = "ESC_Task",
+  .cb_mem = &ESC_TaskControlBlock,
+  .cb_size = sizeof(ESC_TaskControlBlock),
+  .stack_mem = &ESC_TaskBuffer[0],
+  .stack_size = sizeof(ESC_TaskBuffer),
+  .priority = (osPriority_t) osPriorityHigh,
+};
+
 
 
 
 void ESC_Init(void)
 {
-	if (ESC.taskHandle == NULL)
-	{
-		ESC.taskAttr.name = "ESC_Task";
-		ESC.taskAttr.priority = (osPriority_t) osPriorityHigh;
-		ESC.taskAttr.stack_size = 10 * 1024;
-		ESC.taskHandle = osThreadNew(ESC_Task, NULL, &ESC.taskAttr);
-	}
+	ESC_TaskHandle = osThreadNew(ESC_Task, NULL, &ESC_Task_attributes);
 }
 
 

@@ -21,4 +21,10 @@ typedef struct
 
 
 
+void System_Monitor_Init(void);
+void System_Monitor_Task(void *argument);
+void System_Monitor_Start(void);
+void System_Monitor_Loop(void);
+
+
 #endif /* SRC_USER_APP_SYSTEMMONITOR_SYSTEMMONITOR_H_ */

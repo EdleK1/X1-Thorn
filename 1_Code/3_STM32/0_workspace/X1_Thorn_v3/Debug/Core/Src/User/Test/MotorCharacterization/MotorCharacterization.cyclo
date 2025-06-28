@@ -1,0 +1,4 @@
+../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.c:39:6:Motor_Characterization_Init	1
+../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.c:45:6:Motor_Characterization_Task	3
+../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.c:107:6:get_LCD_display	1
+../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.c:116:6:TIM_PeriodElapsedCallback_MotorCharacterization_Timer	1

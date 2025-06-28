@@ -13,9 +13,11 @@
 
 
 
+static uint8_t telemetry_buffer[60];
+static uint8_t index_telem_buffer = 0;
 
-static uint16_t dshotBuf2[18];
-static uint16_t dshotBuf4[18];
+static uint16_t dshotBuf2[17];
+static uint16_t dshotBuf4[17];
 
 static uint8_t RX_motor2_started = 0;
 static uint8_t RX_motor2_finished = 0;
@@ -54,6 +56,8 @@ static osSemaphoreId_t DshotRxDoneSemaphore;
 
 uint8_t DShot_Init(void)
 {
+	HAL_TIM_Base_Start_IT(&htim16);
+
 	// Definition for xDshotRxDoneSemaphore
 
 	DshotRxDoneSemaphore = osSemaphoreNew(1, 0, NULL);
@@ -83,8 +87,8 @@ uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_r
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf2, 18);
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf4, 18);
+	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf2, 17);
+	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf4, 17);
 
 	if (expect_telemetry == 1)
 	{
@@ -93,7 +97,7 @@ uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_r
 			return 1;
 		}
 
-		if (DShot_DecodeTelemetry(rawtelem2, last_rpm2) == 1 || DShot_DecodeTelemetry(rawtelem4, last_rpm4) == 1)
+		if (DShot_DecodeTelemetry(rawtelem2, last_rpm2) == 1 ) //|| DShot_DecodeTelemetry(rawtelem4, last_rpm4) == 1)
 		{
 			return 1;
 		}
@@ -133,9 +137,8 @@ void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits)
         }
         frame <<= 1;
     }
-    // Add 2 zero slots to leave the line low after frame (reset gap)
+    // Add 1 zero slots to leave the line low after frame (reset gap)
     dshotBits[16] = 0;
-    dshotBits[17] = 0;
 }
 
 
@@ -165,8 +168,11 @@ uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM)
 
 	if (calc_crc != recv_crc)
 	{
-	    return 1;
+		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);
+		return 1;
 	}
+
+//	HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);
 
 	uint16_t E = (word12 >> 9) & 0x07;
 	uint16_t M = (word12 >> 0) & 0x01FF;
@@ -184,9 +190,24 @@ uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM)
 
 void TIM_PeriodElapsedCallback_DShot_Timer(void)
 {
+
+//	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_3);
+
 	uint32_t idr = GPIOA->IDR;
 	uint8_t motor2bit  = (idr >> 6) & 1;
 	uint8_t motor4bit  = (idr >> 7) & 1;
+
+//
+//	telemetry_buffer[index_telem_buffer] = (idr >> 6) & 1;
+//	index_telem_buffer++;
+//
+//
+//	if (index_telem_buffer == 59)
+//	{
+//		HAL_TIM_Base_Stop_IT(&htim16);
+//		osSemaphoreRelease(DshotRxDoneSemaphore);
+//	}
+
 
 	if (RX_motor2_started == 0 && RX_motor2_finished == 0)
 	{
@@ -229,18 +250,21 @@ void TIM_PeriodElapsedCallback_DShot_Timer(void)
 		}
 	}
 
+//	Telem_timout_cnt++;
+
+//	if (Telem_timout_cnt>100)
+//	{
+//		Telem_timout_cnt = 0;
+//		osSemaphoreRelease(DshotRxDoneSemaphore);
+//	}
 
 	if (RX_motor2_finished && RX_motor4_finished)
 	{
 		HAL_TIM_Base_Stop_IT(&htim16);
-
 		osSemaphoreRelease(DshotRxDoneSemaphore);
-
-//		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-//		xSemaphoreGiveFromISR(xDshotRxDoneSemaphoreHandle, &xHigherPriorityTaskWoken);
-//		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 	}
 }
+
 
 
 
@@ -267,7 +291,7 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 
 			RX_motor4_started = 0;
 			RX_motor4_finished = 0;
-			motor4bitcnt =0;
+			motor4bitcnt = 0;
 			rawtelem4 = 0;
 		}
 		else if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)

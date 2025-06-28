@@ -56,7 +56,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/User/Peripheral/ESC/ESC.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../Core/Src/User/Peripheral/ESP32/ESP32.h \
- ../Core/Src/User/App/Control/Control.h
+ ../Core/Src/User/App/Control/Control.h \
+ ../Core/Src/User/App/SystemMonitor/SystemMonitor.h \
+ ../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -122,3 +124,5 @@ C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_V1/Core/Src/
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Core/Src/User/Peripheral/ESP32/ESP32.h:
 ../Core/Src/User/App/Control/Control.h:
+../Core/Src/User/App/SystemMonitor/SystemMonitor.h:
+../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.h:
