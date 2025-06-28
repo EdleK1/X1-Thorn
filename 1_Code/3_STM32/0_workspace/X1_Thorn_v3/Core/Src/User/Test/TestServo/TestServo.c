@@ -14,7 +14,7 @@ servo_t servoL;
 
 void Servo_Test_Init(void)
 {
-	int result = Servo_Init(&servoL, &htim5, TIM_CHANNEL_1, 1500);
+	Servo_Init(&servoL, &htim5, TIM_CHANNEL_1, 1500);
 
 //	Servo_Set_Position(&servoL, 200);
 //	Servo_Set_Position(&servoL, -200);

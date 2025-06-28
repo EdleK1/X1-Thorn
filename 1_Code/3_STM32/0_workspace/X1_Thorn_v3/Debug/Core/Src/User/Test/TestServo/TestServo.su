@@ -1,2 +1,2 @@
-../Core/Src/User/Test/TestServo/TestServo.c:15:6:Servo_Test_Init	16	static
+../Core/Src/User/Test/TestServo/TestServo.c:15:6:Servo_Test_Init	8	static
 ../Core/Src/User/Test/TestServo/TestServo.c:27:6:Servo_Test_Loop	4	static

@@ -126,7 +126,7 @@ void ESC_Loop(void)
 		New_Throttle_2 = PID_Update(&PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
 		New_Throttle_4 = PID_Update(&PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
 
-		uint8_t result = DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1);
+		DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1);
 
 		g_ESC_Active = 1;
 

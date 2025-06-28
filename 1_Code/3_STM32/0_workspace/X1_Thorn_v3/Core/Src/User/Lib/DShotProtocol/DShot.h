@@ -21,11 +21,7 @@
 uint8_t DShot_Init(void);
 uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_erpm2, uint32_t *last_erpm4, uint8_t expect_telemetry);
 void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits);
-uint8_t DShot_DecodeTelemetry(uint32_t rawtelem, uint32_t *mRPM);
-void TIM_PeriodElapsedCallback_DShot_Timer(void);
-void HAL_DMA_XferCpltCallback(DMA_HandleTypeDef *hdma);
-
-
-
+uint8_t DShot_DecodeTelemetry(unsigned GPIO_bit_pos, const uint16_t *telemetry_buffer, uint32_t *mRPM);
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA();
 
 #endif /* SRC_USER_LIB_DSHOTPROTOCOL_DSHOT_H_ */

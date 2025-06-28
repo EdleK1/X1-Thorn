@@ -103,7 +103,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* creation of TestTask */
-  TestTaskHandle = osThreadNew(StartTestTask, NULL, &TestTask_attributes);
+//  TestTaskHandle = osThreadNew(StartTestTask, NULL, &TestTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
 //  /* add threads, ... */

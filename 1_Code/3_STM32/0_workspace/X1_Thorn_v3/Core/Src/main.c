@@ -132,7 +132,10 @@ int main(void)
   osKernelInitialize();
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
-  MX_FREERTOS_Init();
+//  MX_FREERTOS_Init();
+
+  System_Monitor_Init();
+  Motor_Characterization_Init();
 
   /* Start scheduler */
   osKernelStart();
@@ -276,15 +279,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 //	BaseType_t xHigherPriorityTaskWoken_ESC = pdFALSE; // only needed with freertos, not cmsis2
 
-	if (htim->Instance == TIM15) // Control loop timer
-	{
+//	if (htim->Instance == TIM15) // Control loop timer
+//	{
 //		TIM_PeriodElapsedCallback_Control_Timer();
-	}
+//	}
 
-	if (htim->Instance == TIM16) //DShot sampling telemetry timer
-	{
-		TIM_PeriodElapsedCallback_DShot_Timer();
-	}
+//	if (htim->Instance == TIM16) //DShot sampling telemetry timer
+//	{
+//		TIM_PeriodElapsedCallback_Xfer_Cplt_DMA();
+//	}
 
 	if (htim->Instance == TIM17) // ESC loop timer
 	{
@@ -299,11 +302,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
-
-//  if (xHigherPriorityTaskWoken_ESC || xHigherPriorityTaskWoken_Control || xHigherPriorityTaskWoken_Tests)
-//  {
-//          portYIELD_FROM_ISR(pdTRUE);
-//  }
 
   /* USER CODE END Callback 1 */
 }
