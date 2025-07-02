@@ -49,6 +49,7 @@ extern TIM_HandleTypeDef htim17;
 extern DMA_HandleTypeDef hdma_tim3_ch1;
 extern DMA_HandleTypeDef hdma_tim3_ch2;
 extern DMA_HandleTypeDef hdma_tim16_up;
+extern DMA_HandleTypeDef hdma_tim15_up;
 
 /* USER CODE END Private defines */
 

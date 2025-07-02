@@ -46,6 +46,6 @@ void DShot_Test(void)
 void DShot_Test_Loop(void)
 {
 
-	DShotResult = DShot_SendFrame(0, 0, &last_rpm1, &last_rpm2, 0);
+	DShotResult = DShot_SendFrame(0, 0, &last_rpm1, &last_rpm2, 0, 0);
 //	DShotResult = DShot_SendFrame(throttle1, throttle2, &last_rpm1, &last_rpm2);
 }

@@ -6,12 +6,12 @@
 */
 
 #include "ESC.h"
-#include "Motor_PID.h"
 #include "../../Lib/Globals/Globals.h"
 #include "cmsis_os2.h"
 #include "FreeRTOS.h"
 #include "tim.h"
 #include "../../Lib/DshotProtocol/DShot.h"
+#include "Motor_PI.h"
 
 uint8_t ESC_Active = 0;
 uint16_t New_Throttle_2 = 0;
@@ -21,10 +21,11 @@ uint32_t Curr_mRPM_4 = 0;
 pid_handle_t PID_handle_2;
 pid_handle_t PID_handle_4;
 uint8_t ESC_Ready_Flag = 0;
-static uint32_t Target_mRPM_2 = 0;
-static uint32_t Target_mRPM_4 = 0;
+static uint32_t Target_mRPM_2 = 8000;
+static uint32_t Target_mRPM_4 = 8000;
 osSemaphoreId_t  ESC_Loop_Semaphore;
 uint8_t raw_telem[10];
+static uint8_t telemetry_ARR = 0;
 
 // Definitions for ESC_Task
 
@@ -53,11 +54,10 @@ void ESC_Task(void *argument)
 {
 	ESC_Start();
 
-  for(;;)
-  {
-	  osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
-	  ESC_Loop();
-  }
+	for(;;)
+	{
+		ESC_Loop();
+	}
 }
 
 
@@ -75,20 +75,20 @@ uint8_t ESC_Start(void)
 		return 1; // Semaphore creation failed
 	}
 
+	DShot_Init();
+
 	// Init PIDs
 
-	float Kp = 1;
-	float Ki = 1;
-	float Kd = 1;
-	float Ts = 1/200;
-	uint16_t output_min = 0;
-	uint16_t output_max = 2047;
-	float integrator_min = 0;
-	float integrator_max = 2047;
-	float tau = 1;
+	float Kp = 0.25;
+	float Ki = 10;
+	float Ts = 1/2000.0;
+	uint16_t output_min = 48;
+	uint16_t output_max = 800;
+	float integrator_min = -1000;
+	float integrator_max = 1200;
 
-	PID_Init(&PID_handle_2, Kp, Ki, Kd, Ts, output_min, output_max, integrator_min, integrator_max, tau);
-	PID_Init(&PID_handle_4, Kp, Ki, Kd, Ts, output_min, output_max, integrator_min, integrator_max, tau);
+	PID_Init(&PID_handle_2, Kp, Ki, Ts, output_min, output_max, integrator_min, integrator_max);
+	PID_Init(&PID_handle_4, Kp, Ki, Ts, output_min, output_max, integrator_min, integrator_max);
 
 	// Initialize UART
 
@@ -96,16 +96,65 @@ uint8_t ESC_Start(void)
 
 	// Init ESC (We have to wait for it to start actually sending RPMs
 
+	uint32_t armCycles = 8000;  // Arm cycles. a bit overkill
+
 	HAL_TIM_Base_Start_IT(&htim17); // Initialize ESC timer to give
 
-	uint32_t armCycles = 50;  // Arm cycles. a bit overkill
 	for (uint32_t i = 0; i < armCycles; i++)
 	{
 		osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
-	    DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 0);
+	    DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0);
 	}
 
 	return 0;
+}
+
+
+void ESC_Loop(void)
+{
+//	uint8_t result = DShot_SendFrame(Last_Throttle_2, Last_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
+
+	if (g_Status == 1 || g_Status == 2) // Aircraft either activated or in landing mode
+	{
+		New_Throttle_2 = PID_Update(&PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
+		New_Throttle_4 = PID_Update(&PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
+
+		if (++telemetry_ARR <= 40)
+		{
+			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
+			DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0); // change the 0 0
+		}
+
+		else
+		{
+			telemetry_ARR = 0;
+			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
+			DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1, 1);  // change the 0 0
+		}
+
+
+		g_ESC_Active = 1;
+
+		if (Target_mRPM_2 == 0 && Target_mRPM_4 == 0 && Curr_mRPM_2 < 500 && Curr_mRPM_4 < 500)
+		{
+			g_ESC_Active = 0;
+		}
+	}
+	else // Aircraft Deactivated
+	{
+		if (++telemetry_ARR <= 40)
+		{
+			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
+			DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0);
+		}
+
+		else
+		{
+			telemetry_ARR = 0;
+			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
+			DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 1);
+		}
+	}
 }
 
 
@@ -116,44 +165,15 @@ void ESC_Set_RPMs(uint32_t mRPM_2, uint32_t mRPM_4)
 }
 
 
-
-void ESC_Loop(void)
+void Read_ESC_Telemetry(telemetry_t *New_Telemetry)
 {
-//	uint8_t result = DShot_SendFrame(Last_Throttle_2, Last_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
-
-	if (g_Status == 1 || g_Status == 2)
-	{
-		New_Throttle_2 = PID_Update(&PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
-		New_Throttle_4 = PID_Update(&PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
-
-		DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1);
-
-		g_ESC_Active = 1;
-
-		if (Target_mRPM_2 == 0 && Target_mRPM_4 == 0 && Curr_mRPM_2 < 500 && Curr_mRPM_4 < 500)
-		{
-			g_ESC_Active = 0;
-		}
-	}
-	else
-	{
-		DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1);
-	}
-}
-
-
-
-void Read_Telemetry(telemetry_t *New_Telemetry)
-{
-
 	New_Telemetry->Temperature = raw_telem[0];
-	New_Telemetry->Voltage = (raw_telem[1]<<1 | raw_telem[2])/100;
-	New_Telemetry->Current = (raw_telem[3]<<1 | raw_telem[4])/100;
-	New_Telemetry->Consumption = (raw_telem[5]<<1 | raw_telem[6]);
+	New_Telemetry->Voltage = (raw_telem[1]<<8 | raw_telem[2])/100.0;
+	New_Telemetry->Current = (raw_telem[3]<<8 | raw_telem[4])/100;
+	New_Telemetry->Consumption = (raw_telem[5]<<8 | raw_telem[6]);
 	New_Telemetry->RPM2 = Curr_mRPM_2;
 	New_Telemetry->RPM4 = Curr_mRPM_4;
 	New_Telemetry->CRC_bit = raw_telem[9];
-
 }
 
 

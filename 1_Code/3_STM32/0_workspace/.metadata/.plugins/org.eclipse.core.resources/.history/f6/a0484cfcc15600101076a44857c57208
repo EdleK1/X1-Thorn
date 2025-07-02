@@ -1,0 +1,108 @@
+/**
+  ******************************************************************************
+  * @file           : SystemMonitor.c
+  * @brief          : Displays the critical variables on the LCD display and logs more data into the SD card
+  *
+  ******************************************************************************
+*/
+
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "SystemMonitor.h"
+#include "../../Peripheral/LCD/lcd.h"
+#include "../../Lib/Globals/Globals.h"
+#include "../../Test/MotorCharacterization/MotorCharacterization.h"
+
+uint16_t Throttle_2_LCD;
+uint16_t mRPM_2_LCD_Telemetry;
+uint32_t mRPM_2_LCD;
+float Voltage_Telemetry;
+static uint8_t text[50];
+MCtelemetry_t MC_New_Telemetry;
+
+
+
+
+
+
+osThreadId_t SystemMonitor_TaskHandle;
+uint32_t SystemMonitor_TaskBuffer[ 8192 ];
+StaticTask_t SystemMonitor_TaskControlBlock;
+const osThreadAttr_t SystemMonitor_Task_attributes = {
+  .name = "SystemMonitor_Task",
+  .cb_mem = &SystemMonitor_TaskControlBlock,
+  .cb_size = sizeof(SystemMonitor_TaskControlBlock),
+  .stack_mem = &SystemMonitor_TaskBuffer[0],
+  .stack_size = sizeof(SystemMonitor_TaskBuffer),
+  .priority = (osPriority_t) osPriorityLow,
+};
+
+
+
+
+void System_Monitor_Init(void)
+{
+	SystemMonitor_TaskHandle = osThreadNew(System_Monitor_Task, NULL, &SystemMonitor_Task_attributes);
+}
+
+
+
+
+
+void System_Monitor_Task(void *argument)
+{
+	System_Monitor_Start();
+
+  for(;;)
+  {
+	  System_Monitor_Loop();
+	  osDelay(50);
+  }
+}
+
+
+
+void System_Monitor_Start(void)
+{
+	LCD_LoadScreen(); // Ideally it would be nice if it logged things while the loadscreen is loading, as it is purely cosmetic but idgaf
+}
+
+
+
+
+void System_Monitor_Loop(void)
+{
+//	if (g_Status == 1)
+//	{
+//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, YELLOW);
+//	}
+//	else if (g_Status == 2)
+//	{
+//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, GREEN);
+//	}
+//	else
+//	{
+//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, RED);
+//	} // Crec que es veura com el cul
+
+	// get rpms, voltage and temeperature from ESC telemetry
+	// get Servo?
+
+	MC_Read_Telemetry(&MC_New_Telemetry);
+
+	ESC_get_LCD_display(&Throttle_2_LCD, &mRPM_2_LCD_Telemetry, &mRPM_2_LCD, &Voltage_Telemetry);
+
+	sprintf((char *)&text, "Throtle2=%d                   	", Throttle_2_LCD);
+	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "rpm2_T=%d                   	", mRPM_2_LCD_Telemetry);
+	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "rpm2=%lu                                  	", mRPM_2_LCD);
+	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "Volt=%.2f                  					", Voltage_Telemetry);
+	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
+
+}
+

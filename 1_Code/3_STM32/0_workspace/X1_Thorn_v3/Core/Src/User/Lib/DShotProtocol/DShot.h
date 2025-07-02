@@ -19,9 +19,10 @@
 
 
 uint8_t DShot_Init(void);
-uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_erpm2, uint32_t *last_erpm4, uint8_t expect_telemetry);
-void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits);
+uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_rpm2, uint32_t *last_rpm4, uint8_t expect_telemetry, uint8_t request_telemetry);
+void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits, uint8_t telemetry_bit);
 uint8_t DShot_DecodeTelemetry(unsigned GPIO_bit_pos, const uint16_t *telemetry_buffer, uint32_t *mRPM);
-void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA();
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor2();
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor4();
 
 #endif /* SRC_USER_LIB_DSHOTPROTOCOL_DSHOT_H_ */

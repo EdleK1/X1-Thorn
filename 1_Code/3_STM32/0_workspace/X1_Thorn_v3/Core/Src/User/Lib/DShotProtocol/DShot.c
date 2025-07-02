@@ -12,17 +12,20 @@
 #include "tim.h"
 #include "dma.h"
 #include "stm32h7xx_hal_dma.h"
+#include <string.h>
 
 
 static uint16_t dshotBuf2[17];
 static uint16_t dshotBuf4[17];
 
-static uint8_t s_expect_telemetry = 0;
-#define TELEMETRY_SAMPLES 60
-#define GPIO_Motor_2 6
-#define GPIO_Motor_4 7
-static uint16_t telemetry_buffer[TELEMETRY_SAMPLES];
-
+#define TELEMETRY_SAMPLES 35
+#define GPIO_Motor_2 7
+#define GPIO_Motor_4 6
+static uint32_t ErrorFrameCnt_MOT2  = 0;
+static uint32_t ErrorFrameCnt_MOT4  = 0;
+static uint32_t ErrorFrameCnt_2  = 0;
+__attribute__((section(".dma_buffer"))) static uint16_t telemetry_buffer_2[TELEMETRY_SAMPLES];
+__attribute__((section(".dma_buffer"))) static uint16_t telemetry_buffer_4[TELEMETRY_SAMPLES];
 
 const uint8_t gcr_reverse[32] = {
     [0x19] = 0x0,
@@ -50,7 +53,13 @@ static osSemaphoreId_t DshotRxDoneSemaphore;
 uint8_t DShot_Init(void)
 {
 
-    if (HAL_DMA_RegisterCallback(&hdma_tim16_up, HAL_DMA_XFER_CPLT_CB_ID, TIM_PeriodElapsedCallback_Xfer_Cplt_DMA) != HAL_OK)
+    if (HAL_DMA_RegisterCallback(&hdma_tim15_up, HAL_DMA_XFER_CPLT_CB_ID, TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor2) != HAL_OK)
+    {
+      // Handle Initialization Error
+      return 1;
+    }
+
+    if (HAL_DMA_RegisterCallback(&hdma_tim16_up, HAL_DMA_XFER_CPLT_CB_ID, TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor4) != HAL_OK)
     {
       // Handle Initialization Error
       return 1;
@@ -64,12 +73,12 @@ uint8_t DShot_Init(void)
 
 
 
-uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_rpm2, uint32_t *last_rpm4, uint8_t expect_telemetry)
+uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_rpm2, uint32_t *last_rpm4, uint8_t expect_telemetry, uint8_t request_telemetry)
 {
-	s_expect_telemetry = expect_telemetry;
 
-	DShot_MakeFrame(throttle2, dshotBuf2);
-	DShot_MakeFrame(throttle4, dshotBuf4);
+	DShot_MakeFrame(throttle2, dshotBuf2, request_telemetry); // only telemetry on motor 2
+	DShot_MakeFrame(throttle4, dshotBuf4, 0);
+
 
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
     GPIO_InitStruct.Pin = DShot_MOTOR2_Pin|DShot_MOTOR4_Pin;
@@ -79,8 +88,9 @@ uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_r
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf2, 17);
-	HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf4, 17);
+
+    HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf2, 17);
+    HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf4, 17);
 
 	if (expect_telemetry == 1)
 	{
@@ -89,7 +99,7 @@ uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_r
 			return 1;
 		}
 
-		if (DShot_DecodeTelemetry(GPIO_Motor_2, telemetry_buffer, last_rpm2) == 1 || DShot_DecodeTelemetry(GPIO_Motor_4, telemetry_buffer, last_rpm4) == 1 ) //|| DShot_DecodeTelemetry(rawtelem4, last_rpm4) == 1)
+		if (DShot_DecodeTelemetry(GPIO_Motor_2, telemetry_buffer_2, last_rpm2) == 1 || DShot_DecodeTelemetry(GPIO_Motor_4, telemetry_buffer_4, last_rpm4) == 1 )
 		{
 			return 1;
 		}
@@ -101,14 +111,14 @@ uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_r
 
 
 
-void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits)
+void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits, uint8_t telemetry_bit)
 {
     if (throttle > 2047)
     {
         throttle = 2047;
     }
     // 11 bits throttle, LSB is telemetry flag
-    uint16_t payload = (throttle << 1);
+    uint16_t payload = (throttle << 1) | telemetry_bit;
 
     // 4-bit CRC = inverted XOR of the 3 payload nibbles
     uint8_t crc = ( payload ^ (payload >>  4) ^ (payload >>  8));
@@ -156,6 +166,7 @@ uint8_t DShot_DecodeTelemetry(unsigned GPIO_bit_pos, const uint16_t *telemetry_b
 
     if (first_zero == TELEMETRY_SAMPLES || (TELEMETRY_SAMPLES - first_zero) < 21)
     {
+    	ErrorFrameCnt_2++;
         return 1;
     }
 
@@ -191,7 +202,14 @@ uint8_t DShot_DecodeTelemetry(unsigned GPIO_bit_pos, const uint16_t *telemetry_b
 
 	if (calc_crc != recv_crc)
 	{
-//		HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);
+		if (GPIO_bit_pos == GPIO_Motor_2)
+		{
+			ErrorFrameCnt_MOT2++;
+		}
+		if (GPIO_bit_pos == GPIO_Motor_4)
+		{
+			ErrorFrameCnt_MOT4++;
+		}
 		return 1;
 	}
 
@@ -219,11 +237,12 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
 
 		    GPIO_InitTypeDef GPIO_Init = {0};
-		    GPIO_Init.Pin  = DShot_MOTOR2_Pin;
+		    GPIO_Init.Pin  = DShot_MOTOR4_Pin;
 		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
 		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
 		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
+
 		}
 		else if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
 		{
@@ -231,26 +250,38 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
 
 		    GPIO_InitTypeDef GPIO_Init = {0};
-		    GPIO_Init.Pin  = DShot_MOTOR4_Pin;
+		    GPIO_Init.Pin  = DShot_MOTOR2_Pin;
 		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
 		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
 		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
 
-			if (s_expect_telemetry == 1)
-			{
-			    HAL_DMA_Start_IT(&hdma_tim16_up, (uint32_t)&GPIOA->IDR, (uint32_t)telemetry_buffer, TELEMETRY_SAMPLES);
-			    __HAL_TIM_ENABLE_DMA(&htim16, TIM_DMA_UPDATE);
-			    HAL_TIM_Base_Start(&htim16);
-			}
+		    // Read Dshot Telemetry
+
+			memset(telemetry_buffer_2, 0xFF, sizeof(telemetry_buffer_2));
+			HAL_DMA_Start_IT(&hdma_tim15_up, (uint32_t)&GPIOA->IDR, (uint32_t)telemetry_buffer_2, TELEMETRY_SAMPLES);
+			__HAL_TIM_ENABLE_DMA(&htim15, TIM_DMA_UPDATE);
+			HAL_TIM_Base_Start(&htim15);
+
+			memset(telemetry_buffer_4, 0xFF, sizeof(telemetry_buffer_4));
+			HAL_DMA_Start_IT(&hdma_tim16_up, (uint32_t)&GPIOA->IDR, (uint32_t)telemetry_buffer_4, TELEMETRY_SAMPLES);
+			__HAL_TIM_ENABLE_DMA(&htim16, TIM_DMA_UPDATE);
+			HAL_TIM_Base_Start(&htim16);
 		}
 	}
 }
 
 
-void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA()
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor2()
+{
+	HAL_TIM_Base_Stop(&htim15); // Stop the timer so no more DMA triggers occur
+	__HAL_TIM_DISABLE_DMA(&htim15, TIM_DMA_UPDATE);
+}
+
+
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor4()
 {
 	HAL_TIM_Base_Stop(&htim16); // Stop the timer so no more DMA triggers occur
 	__HAL_TIM_DISABLE_DMA(&htim16, TIM_DMA_UPDATE);
-	osSemaphoreRelease(DshotRxDoneSemaphore); // Release the task so it can decode the buffer:
+	osSemaphoreRelease(DshotRxDoneSemaphore); // Release the task so it can decode the buffer. Since motor4 always is fired after motor2, we ensure motor4 will ahve finished
 }

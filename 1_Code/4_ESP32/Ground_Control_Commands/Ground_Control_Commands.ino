@@ -254,7 +254,7 @@ void loop() {
   }
 
 
-  if (active == 1 && token_Init == 1 && ESC_Status == 0)
+  if (active == 1 && token_Init == 1 && ESC_Status != 1)
   {
     active = 0;
   }

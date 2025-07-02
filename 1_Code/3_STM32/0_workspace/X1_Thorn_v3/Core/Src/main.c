@@ -135,7 +135,9 @@ int main(void)
 //  MX_FREERTOS_Init();
 
   System_Monitor_Init();
-  Motor_Characterization_Init();
+  ESC_Init();
+
+//  Motor_Characterization_Init();
 
   /* Start scheduler */
   osKernelStart();
@@ -248,6 +250,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     if (huart == &huart8)
     {
     	UART_ESC_RxCpltCallback();
+//    	UART_ESC_Motor_CharRxCpltCallback();
     }
 }
 
@@ -260,6 +263,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
     if (huart == &huart8)
     {
     	UART_ESC_ErrorCallback();
+//    	UART_ESC_Motor_CharErrorCallback();
     }
 }
 
@@ -284,15 +288,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //		TIM_PeriodElapsedCallback_Control_Timer();
 //	}
 
-//	if (htim->Instance == TIM16) //DShot sampling telemetry timer
-//	{
-//		TIM_PeriodElapsedCallback_Xfer_Cplt_DMA();
-//	}
-
 	if (htim->Instance == TIM17) // ESC loop timer
 	{
-//		TIM_PeriodElapsedCallback_ESC_Timer();
-		TIM_PeriodElapsedCallback_MotorCharacterization_Timer();
+		TIM_PeriodElapsedCallback_ESC_Timer();
+//		TIM_PeriodElapsedCallback_MotorCharacterization_Timer();
 	}
 
 

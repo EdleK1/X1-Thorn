@@ -1,0 +1,295 @@
+2025-07-01 00:10:21,046 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-07-01 00:10:30,616 [INFO] Gpio:277 - dependency for GPIO [ADC2, DEBUG, I2C2, RCC, SPI4, TIM1, TIM3, TIM5, UART5, UART8]
+2025-07-01 00:11:06,107 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 949992960 Bytes (1073741824)
+2025-07-01 00:11:07,932 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 722996648 Bytes (1073741824)
+2025-07-01 00:11:08,510 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 845679392 Bytes (1073741824)
+2025-07-01 00:11:08,796 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SPI
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: FREERTOS
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: RCC
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: I2C
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: MEMORYMAP
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-07-01 00:11:08,797 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: TIM1_8H7
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: SYS
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: ADC
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: NVIC
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DMA
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: VREFBUF
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: UART
+2025-07-01 00:11:08,798 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: DEBUG
+2025-07-01 00:11:08,799 [INFO] BlockDiagram:2775 - set Specific Code input for plugin: GPIO
+2025-07-01 00:11:08,801 [INFO] CodeGenerator:882 - code generatio: config db path: C:\ST\STM32CubeIDE_1.18.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.14.0.202502271554\\db\
+2025-07-01 00:11:08,956 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-07-01 00:11:08,957 [INFO] Argument:327 - 	 sub Args: 
+2025-07-01 00:11:08,957 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream0
+2025-07-01 00:11:08,957 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream0
+2025-07-01 00:11:08,957 [INFO] Argument:325 - Argument : Initvalue: null
+2025-07-01 00:11:08,957 [INFO] Argument:327 - 	 sub Args: 
+2025-07-01 00:11:08,957 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_TIM3_CH1
+2025-07-01 00:11:08,957 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_TIM3_CH1
+2025-07-01 00:11:08,957 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-07-01 00:11:08,957 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-07-01 00:11:08,958 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-07-01 00:11:08,958 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-07-01 00:11:08,958 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-07-01 00:11:08,958 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-07-01 00:11:08,958 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-07-01 00:11:08,958 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-07-01 00:11:08,958 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-07-01 00:11:08,958 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-07-01 00:11:08,959 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-07-01 00:11:08,959 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-07-01 00:11:08,959 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_HIGH
+2025-07-01 00:11:08,959 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_HIGH
+2025-07-01 00:11:08,959 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-07-01 00:11:08,961 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-07-01 00:11:08,962 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-07-01 00:11:08,962 [INFO] Argument:325 - Argument : Statevalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:335 - Argument : Statevalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2025-07-01 00:11:08,963 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:325 - Argument : XferM1HalfCpltCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:335 - Argument : XferM1HalfCpltCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:325 - Argument : StreamBaseAddressvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:335 - Argument : StreamBaseAddressvalue: null
+2025-07-01 00:11:08,964 [INFO] Argument:325 - Argument : StreamIndexvalue: null
+2025-07-01 00:11:08,965 [INFO] Argument:335 - Argument : StreamIndexvalue: null
+2025-07-01 00:11:08,965 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-07-01 00:11:08,966 [INFO] Argument:327 - 	 sub Args: 
+2025-07-01 00:11:08,966 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream1
+2025-07-01 00:11:08,966 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream1
+2025-07-01 00:11:08,966 [INFO] Argument:325 - Argument : Initvalue: null
+2025-07-01 00:11:08,966 [INFO] Argument:327 - 	 sub Args: 
+2025-07-01 00:11:08,966 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_TIM3_CH2
+2025-07-01 00:11:08,966 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_TIM3_CH2
+2025-07-01 00:11:08,966 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-07-01 00:11:08,966 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-07-01 00:11:08,966 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-07-01 00:11:08,967 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-07-01 00:11:08,967 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-07-01 00:11:08,968 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-07-01 00:11:08,968 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-07-01 00:11:08,968 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-07-01 00:11:08,968 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-07-01 00:11:08,968 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-07-01 00:11:08,968 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-07-01 00:11:08,968 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-07-01 00:11:08,968 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_HIGH
+2025-07-01 00:11:08,969 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_HIGH
+2025-07-01 00:11:08,969 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-07-01 00:11:08,969 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-07-01 00:11:08,969 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2025-07-01 00:11:08,969 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2025-07-01 00:11:08,969 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2025-07-01 00:11:08,969 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2025-07-01 00:11:08,969 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2025-07-01 00:11:08,969 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2025-07-01 00:11:08,969 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:325 - Argument : Statevalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:335 - Argument : Statevalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2025-07-01 00:11:08,970 [INFO] Argument:325 - Argument : XferM1HalfCpltCallbackvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:335 - Argument : XferM1HalfCpltCallbackvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:325 - Argument : StreamBaseAddressvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:335 - Argument : StreamBaseAddressvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:325 - Argument : StreamIndexvalue: null
+2025-07-01 00:11:08,971 [INFO] Argument:335 - Argument : StreamIndexvalue: null
+2025-07-01 00:11:09,028 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-07-01 00:11:09,029 [INFO] Argument:327 - 	 sub Args: 
+2025-07-01 00:11:09,029 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Stream2
+2025-07-01 00:11:09,029 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Stream2
+2025-07-01 00:11:09,029 [INFO] Argument:325 - Argument : Initvalue: null
+2025-07-01 00:11:09,029 [INFO] Argument:327 - 	 sub Args: 
+2025-07-01 00:11:09,029 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_TIM16_UP
+2025-07-01 00:11:09,029 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_TIM16_UP
+2025-07-01 00:11:09,029 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-07-01 00:11:09,029 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-07-01 00:11:09,029 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-07-01 00:11:09,029 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-07-01 00:11:09,030 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-07-01 00:11:09,030 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-07-01 00:11:09,030 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-07-01 00:11:09,030 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_HALFWORD
+2025-07-01 00:11:09,030 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-07-01 00:11:09,030 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_HALFWORD
+2025-07-01 00:11:09,030 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-07-01 00:11:09,030 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-07-01 00:11:09,030 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2025-07-01 00:11:09,030 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_VERY_HIGH
+2025-07-01 00:11:09,030 [INFO] Argument:325 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : FIFOModevalue: DMA_FIFOMODE_DISABLE
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : FIFOThresholdvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : FIFOThresholdvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : MemBurstvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : MemBurstvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : PeriphBurstvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : PeriphBurstvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : Statevalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : Statevalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-07-01 00:11:09,031 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : XferM1CpltCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : XferM1CpltCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : XferM1HalfCpltCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : XferM1HalfCpltCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : StreamBaseAddressvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : StreamBaseAddressvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:325 - Argument : StreamIndexvalue: null
+2025-07-01 00:11:09,032 [INFO] Argument:335 - Argument : StreamIndexvalue: null
+2025-07-01 00:11:09,192 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\license.tmp_save
+2025-07-01 00:11:09,487 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\license.tmp
+2025-07-01 00:11:09,609 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\gpio.c_save
+2025-07-01 00:11:09,791 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\gpio.c
+2025-07-01 00:11:09,802 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\gpio.h_save
+2025-07-01 00:11:09,911 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\gpio.h
+2025-07-01 00:11:10,248 [WARN] IPConfigManager:103 - WARNING: Missing Config File for DEBUG ip!!
+2025-07-01 00:11:10,615 [WARN] IPConfigManager:103 - WARNING: Missing Config File for MEMORYMAP ip!!
+2025-07-01 00:11:12,024 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-07-01 00:11:12,033 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp_save
+2025-07-01 00:11:12,125 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp
+2025-07-01 00:11:12,131 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp_save
+2025-07-01 00:11:12,191 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp
+2025-07-01 00:11:12,196 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-07-01 00:11:12,260 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp
+2025-07-01 00:11:12,267 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp_save
+2025-07-01 00:11:12,332 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp
+2025-07-01 00:11:12,337 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp_save
+2025-07-01 00:11:12,411 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp
+2025-07-01 00:11:12,416 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp_save
+2025-07-01 00:11:12,467 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp
+2025-07-01 00:11:12,472 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-07-01 00:11:12,534 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp
+2025-07-01 00:11:12,540 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp_save
+2025-07-01 00:11:12,599 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp
+2025-07-01 00:11:12,604 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp_save
+2025-07-01 00:11:12,654 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp
+2025-07-01 00:11:12,690 [INFO] Middleware:1452 - No code input for Bsp Dependency
+2025-07-01 00:11:12,701 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp_save
+2025-07-01 00:11:12,769 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_inc.tmp
+2025-07-01 00:11:12,776 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp_save
+2025-07-01 00:11:12,851 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelInit.tmp
+2025-07-01 00:11:12,859 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp_save
+2025-07-01 00:11:12,926 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_kernelStart.tmp
+2025-07-01 00:11:12,934 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp_save
+2025-07-01 00:11:13,003 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_typedefs.tmp
+2025-07-01 00:11:13,020 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp_save
+2025-07-01 00:11:13,088 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_vars.tmp
+2025-07-01 00:11:13,095 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp_save
+2025-07-01 00:11:13,212 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_pfp.tmp
+2025-07-01 00:11:13,228 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp_save
+2025-07-01 00:11:13,294 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_obj_creat.tmp
+2025-07-01 00:11:13,302 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp_save
+2025-07-01 00:11:13,364 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_default_thread.tmp
+2025-07-01 00:11:13,371 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp_save
+2025-07-01 00:11:13,422 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\rtos_threads.tmp
+2025-07-01 00:11:13,438 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\FreeRTOSConfig.h_save
+2025-07-01 00:11:13,514 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\FreeRTOSConfig.h
+2025-07-01 00:11:13,534 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\freertos.c_save
+2025-07-01 00:11:13,626 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\freertos.c
+2025-07-01 00:11:13,656 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\adc.c_save
+2025-07-01 00:11:13,765 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\adc.c
+2025-07-01 00:11:13,774 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\adc.h_save
+2025-07-01 00:11:13,839 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\adc.h
+2025-07-01 00:11:13,851 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\cortex.tmp_save
+2025-07-01 00:11:13,931 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\cortex.tmp
+2025-07-01 00:11:14,021 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\dma.c_save
+2025-07-01 00:11:14,098 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\dma.c
+2025-07-01 00:11:14,105 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\dma.h_save
+2025-07-01 00:11:14,169 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\dma.h
+2025-07-01 00:11:14,193 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\i2c.c_save
+2025-07-01 00:11:14,269 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\i2c.c
+2025-07-01 00:11:14,276 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\i2c.h_save
+2025-07-01 00:11:14,333 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\i2c.h
+2025-07-01 00:11:14,360 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\memorymap.c_save
+2025-07-01 00:11:14,446 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\memorymap.c
+2025-07-01 00:11:14,453 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\memorymap.h_save
+2025-07-01 00:11:14,524 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\memorymap.h
+2025-07-01 00:11:14,546 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\spi.c_save
+2025-07-01 00:11:14,627 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\spi.c
+2025-07-01 00:11:14,634 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\spi.h_save
+2025-07-01 00:11:14,700 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\spi.h
+2025-07-01 00:11:14,724 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\tim.c_save
+2025-07-01 00:11:14,855 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\tim.c
+2025-07-01 00:11:14,862 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\tim.h_save
+2025-07-01 00:11:14,922 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\tim.h
+2025-07-01 00:11:14,946 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\usart.c_save
+2025-07-01 00:11:15,058 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\usart.c
+2025-07-01 00:11:15,066 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\usart.h_save
+2025-07-01 00:11:15,135 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\usart.h
+2025-07-01 00:11:15,174 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_it.c_save
+2025-07-01 00:11:15,334 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_it.c
+2025-07-01 00:11:15,341 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_it.h_save
+2025-07-01 00:11:15,401 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_it.h
+2025-07-01 00:11:15,518 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_msp.c_save
+2025-07-01 00:11:15,597 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_msp.c
+2025-07-01 00:11:15,603 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\system.tmp_save
+2025-07-01 00:11:15,655 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\MXTmpFiles\system.tmp
+2025-07-01 00:11:15,670 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_timebase_tim.c_save
+2025-07-01 00:11:15,736 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\stm32h7xx_hal_timebase_tim.c
+2025-07-01 00:11:15,762 [INFO] CodeEngine:319 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_hal_conf.h_save
+2025-07-01 00:11:15,865 [INFO] CodeEngine:343 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\stm32h7xx_hal_conf.h
+2025-07-01 00:11:15,911 [ERROR] ApiDbMcu:464 - Can't load MEMORYMAP-STM32xx root dir null
+2025-07-01 00:11:15,911 [ERROR] ApiDbMcu:536 - Cannot parse MEMORYMAP_Config file : file do not exist
+2025-07-01 00:11:15,935 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\main.h_save
+2025-07-01 00:11:16,025 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Inc\main.h
+2025-07-01 00:11:16,041 [INFO] CodeEngine:263 - oldGeneratedFile, C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\main.c_save
+2025-07-01 00:11:16,132 [INFO] CodeEngine:287 - Generated code: C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\Core\Src\main.c
+2025-07-01 00:11:16,860 [INFO] ProjectBuilder:3324 - Time for Copy HAL[1] : 479mS.
+2025-07-01 00:11:16,867 [INFO] ProjectBuilder:4912 - Project Generator version: 4.6.0-B36
+2025-07-01 00:11:16,952 [INFO] ConfigFileManager:1590 - The Die is : DIE450
+2025-07-01 00:11:18,388 [INFO] ProjectBuilder:5191 - Time for Generating toolchain IDE Files: 1521mS.
+2025-07-01 00:11:18,389 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 1mS.
+2025-07-01 00:11:18,417 [INFO] ProjectBuilder:3181 - Time for Copy CMSIS : 0mS.
+2025-07-01 00:29:06,379 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-07-01 00:30:17,583 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]

@@ -11,14 +11,16 @@
 #include "SystemMonitor.h"
 #include "../../Peripheral/LCD/lcd.h"
 #include "../../Lib/Globals/Globals.h"
-#include "../../Test/MotorCharacterization/MotorCharacterization.h"
+#include "../../Peripheral/ESC/ESC.h"
+//#include "../../Test/MotorCharacterization/MotorCharacterization.h"
 
 uint16_t Throttle_2_LCD;
-uint16_t Throttle_4_LCD;
+uint16_t mRPM_2_LCD_Telemetry;
 uint32_t mRPM_2_LCD;
-uint32_t mRPM_4_LCD;
+float Voltage_Telemetry;
 static uint8_t text[50];
 
+telemetry_t New_Telemetry;
 
 
 
@@ -84,21 +86,23 @@ void System_Monitor_Loop(void)
 //		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, RED);
 //	} // Crec que es veura com el cul
 
-	// get rpms, voltage and temeperature from ESC telemetry
+
 	// get Servo?
 
-	get_LCD_display(&Throttle_2_LCD, &Throttle_4_LCD, &mRPM_2_LCD, &mRPM_4_LCD);
 
-	sprintf((char *)&text, "Throtle2=%d                   	", Throttle_2_LCD);
+
+	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry
+
+	sprintf((char *)&text, "rpm2=%lu                   	", New_Telemetry.RPM2);
 	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "Throtle4=%d                   	", Throttle_4_LCD);
+	sprintf((char *)&text, "rpm4=%lu                   	", New_Telemetry.RPM4);
 	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "rpm2=%lu                                  	", mRPM_2_LCD);
+	sprintf((char *)&text, "Volt=%.2f                        ", New_Telemetry.Voltage);
 	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "rpm4=%lu                  					", mRPM_4_LCD);
+	sprintf((char *)&text, "Temp=%d                  		", New_Telemetry.Temperature);
 	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
 
 }

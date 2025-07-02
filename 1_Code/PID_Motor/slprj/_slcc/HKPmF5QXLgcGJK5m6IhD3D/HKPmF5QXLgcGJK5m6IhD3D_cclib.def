@@ -1,0 +1,5 @@
+EXPORTS
+    PID_Init_HKPmF5QXLgcGJK5m6IhD3D @1
+    PID_Update_HKPmF5QXLgcGJK5m6IhD3D @2
+    get_checksum_source_info @3
+    get_dll_checksum_HKPmF5QXLgcGJK5m6IhD3D @4

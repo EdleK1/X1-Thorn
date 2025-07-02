@@ -11,7 +11,7 @@
 "./Core/Src/User/Lib/Globals/Globals.o"
 "./Core/Src/User/Peripheral/BNO055/BNO055.o"
 "./Core/Src/User/Peripheral/ESC/ESC.o"
-"./Core/Src/User/Peripheral/ESC/Motor_PID.o"
+"./Core/Src/User/Peripheral/ESC/Motor_PI.o"
 "./Core/Src/User/Peripheral/ESP32/ESP32.o"
 "./Core/Src/User/Peripheral/LCD/lcd.o"
 "./Core/Src/User/Peripheral/LCD/logo_160_80.o"

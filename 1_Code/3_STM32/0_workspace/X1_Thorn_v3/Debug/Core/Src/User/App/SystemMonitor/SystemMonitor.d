@@ -50,7 +50,8 @@ Core/Src/User/App/SystemMonitor/SystemMonitor.o: \
  ../Core/Src/User/App/SystemMonitor/../../Peripheral/LCD/st7735.h \
  ../Core/Src/User/App/SystemMonitor/../../Peripheral/LCD/st7735_reg.h \
  ../Core/Src/User/App/SystemMonitor/../../Lib/Globals/Globals.h \
- ../Core/Src/User/App/SystemMonitor/../../Test/MotorCharacterization/MotorCharacterization.h
+ ../Core/Src/User/App/SystemMonitor/../../Peripheral/ESC/ESC.h \
+ ../Core/Inc/usart.h ../Core/Inc/main.h
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -102,4 +103,6 @@ Core/Src/User/App/SystemMonitor/SystemMonitor.o: \
 ../Core/Src/User/App/SystemMonitor/../../Peripheral/LCD/st7735.h:
 ../Core/Src/User/App/SystemMonitor/../../Peripheral/LCD/st7735_reg.h:
 ../Core/Src/User/App/SystemMonitor/../../Lib/Globals/Globals.h:
-../Core/Src/User/App/SystemMonitor/../../Test/MotorCharacterization/MotorCharacterization.h:
+../Core/Src/User/App/SystemMonitor/../../Peripheral/ESC/ESC.h:
+../Core/Inc/usart.h:
+../Core/Inc/main.h:

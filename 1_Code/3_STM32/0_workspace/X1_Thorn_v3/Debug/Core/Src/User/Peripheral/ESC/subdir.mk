@@ -6,15 +6,15 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/User/Peripheral/ESC/ESC.c \
-../Core/Src/User/Peripheral/ESC/Motor_PID.c 
+../Core/Src/User/Peripheral/ESC/Motor_PI.c 
 
 OBJS += \
 ./Core/Src/User/Peripheral/ESC/ESC.o \
-./Core/Src/User/Peripheral/ESC/Motor_PID.o 
+./Core/Src/User/Peripheral/ESC/Motor_PI.o 
 
 C_DEPS += \
 ./Core/Src/User/Peripheral/ESC/ESC.d \
-./Core/Src/User/Peripheral/ESC/Motor_PID.d 
+./Core/Src/User/Peripheral/ESC/Motor_PI.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +24,7 @@ Core/Src/User/Peripheral/ESC/%.o Core/Src/User/Peripheral/ESC/%.su Core/Src/User
 clean: clean-Core-2f-Src-2f-User-2f-Peripheral-2f-ESC
 
 clean-Core-2f-Src-2f-User-2f-Peripheral-2f-ESC:
-	-$(RM) ./Core/Src/User/Peripheral/ESC/ESC.cyclo ./Core/Src/User/Peripheral/ESC/ESC.d ./Core/Src/User/Peripheral/ESC/ESC.o ./Core/Src/User/Peripheral/ESC/ESC.su ./Core/Src/User/Peripheral/ESC/Motor_PID.cyclo ./Core/Src/User/Peripheral/ESC/Motor_PID.d ./Core/Src/User/Peripheral/ESC/Motor_PID.o ./Core/Src/User/Peripheral/ESC/Motor_PID.su
+	-$(RM) ./Core/Src/User/Peripheral/ESC/ESC.cyclo ./Core/Src/User/Peripheral/ESC/ESC.d ./Core/Src/User/Peripheral/ESC/ESC.o ./Core/Src/User/Peripheral/ESC/ESC.su ./Core/Src/User/Peripheral/ESC/Motor_PI.cyclo ./Core/Src/User/Peripheral/ESC/Motor_PI.d ./Core/Src/User/Peripheral/ESC/Motor_PI.o ./Core/Src/User/Peripheral/ESC/Motor_PI.su
 
 .PHONY: clean-Core-2f-Src-2f-User-2f-Peripheral-2f-ESC
 

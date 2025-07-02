@@ -16,7 +16,7 @@
 typedef struct {
 	uint8_t Temperature;
     float Voltage, Current, Consumption;
-    float RPM2, RPM4;
+    uint32_t RPM2, RPM4;
     uint8_t CRC_bit;
 } telemetry_t;
 
@@ -26,7 +26,7 @@ void ESC_Task(void *argument);
 uint8_t ESC_Start(void);
 void ESC_Set_RPMs(uint32_t mRPM_2, uint32_t mRPM_4);
 void ESC_Loop(void);
-void Read_Telemetry(telemetry_t *New_Telemetry);
+void Read_ESC_Telemetry(telemetry_t *New_Telemetry);
 void UART_ESC_RxCpltCallback();
 void UART_ESC_ErrorCallback();
 void TIM_PeriodElapsedCallback_ESC_Timer(void);

@@ -13,5 +13,5 @@
 
 /* Initialize to status 0 & ESC 0 (inactive) */
 
-volatile uint8_t g_Status = 0;
+volatile uint8_t g_Status = 1;
 volatile uint8_t g_ESC_Active = 0;

@@ -39,7 +39,6 @@ Core/Src/User/Peripheral/ESC/ESC.o: ../Core/Src/User/Peripheral/ESC/ESC.c \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
- ../Core/Src/User/Peripheral/ESC/Motor_PID.h \
  ../Core/Src/User/Peripheral/ESC/../../Lib/Globals/Globals.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
@@ -50,7 +49,7 @@ Core/Src/User/Peripheral/ESC/ESC.o: ../Core/Src/User/Peripheral/ESC/ESC.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Core/Inc/tim.h \
  ../Core/Src/User/Peripheral/ESC/../../Lib/DshotProtocol/DShot.h \
- ../Core/Inc/dma.h
+ ../Core/Inc/dma.h ../Core/Src/User/Peripheral/ESC/Motor_PI.h
 ../Core/Src/User/Peripheral/ESC/ESC.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Core/Inc/usart.h:
@@ -92,7 +91,6 @@ Core/Src/User/Peripheral/ESC/ESC.o: ../Core/Src/User/Peripheral/ESC/ESC.c \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
-../Core/Src/User/Peripheral/ESC/Motor_PID.h:
 ../Core/Src/User/Peripheral/ESC/../../Lib/Globals/Globals.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -104,3 +102,4 @@ Core/Src/User/Peripheral/ESC/ESC.o: ../Core/Src/User/Peripheral/ESC/ESC.c \
 ../Core/Inc/tim.h:
 ../Core/Src/User/Peripheral/ESC/../../Lib/DshotProtocol/DShot.h:
 ../Core/Inc/dma.h:
+../Core/Src/User/Peripheral/ESC/Motor_PI.h:

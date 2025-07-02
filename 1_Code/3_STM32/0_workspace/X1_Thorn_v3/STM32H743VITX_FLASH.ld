@@ -79,6 +79,15 @@ SECTIONS
     _etext = .;        /* define a global symbols at end of code */
   } >FLASH
 
+  .dma_buffer :
+  {
+    . = ALIGN(4);
+    *(.dma_buffer)
+    *(.dma_buffer*)
+    . = ALIGN(4);
+  } >RAM_D2 /* Or RAM_D3, depending on your setup */
+
+
   /* Constant data goes into FLASH */
   .rodata :
   {

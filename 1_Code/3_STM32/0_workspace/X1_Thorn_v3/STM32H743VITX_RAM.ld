@@ -79,6 +79,16 @@ SECTIONS
     . = ALIGN(4);
     _etext = .;        /* define a global symbols at end of code */
   } >RAM_EXEC
+  
+  
+    .dma_buffer :
+  {
+    . = ALIGN(4);
+    *(.dma_buffer)
+    *(.dma_buffer*)
+    . = ALIGN(4);
+  } >RAM_D2 /* Or RAM_D3, depending on your setup */
+  
 
   /* Constant data goes into RAM_EXEC */
   .rodata :

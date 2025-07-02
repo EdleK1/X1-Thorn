@@ -1,0 +1,18 @@
+{
+  "SimulinkCodeImporterVersion": 1,
+  "LibraryFileName": "PID_Tests_Motor",
+  "OutputFolder": "C:\\Users\\marcv\\Desktop\\X1-Thorn\\1_Code\\PID_Motor",
+  "CustomCode": {
+    "SourceFiles": ".\\cCode\\Motor_PID.c",
+    "InterfaceHeaders": "Motor_PID.h",
+    "IncludePaths": ".\\cCode",
+    "Language": "C",
+    "GlobalVariableInterface": false,
+    "FunctionArrayLayout": "NotSpecified"
+  },
+  "FunctionsToImport": [
+    "PID_Init",
+    "PID_Update"
+  ],
+  "TypesToImport": "pid_handle_t"
+}

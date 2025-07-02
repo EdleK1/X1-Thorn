@@ -3,21 +3,21 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="DshotInit"/>
+		<item value="expect_telemetry"/>
+		<item value="ErrorFrameCnt"/>
+		<item value="teleme"/>
+		<item value="s_expect_telemetry"/>
+		<item value="Voltage_Telemetry"/>
+		<item value="__HAL_LINKDMA"/>
+		<item value="HAL_DMA_Xfe"/>
+		<item value="HAL_DMA_Init"/>
 		<item value="esc"/>
 		<item value="ESC_Task"/>
 		<item value="collect_buf"/>
 		<item value="actuators"/>
 		<item value="omega1"/>
 		<item value="curr_odometry"/>
-		<item value="curr_reference"/>
-		<item value="curr_attitude"/>
-		<item value="newFlightControlOutputs"/>
-		<item value="pid-&gt;"/>
-		<item value="pid"/>
-		<item value="DMA_"/>
-		<item value="user"/>
-		<item value="text"/>
-		<item value="mem"/>
 	</list>
 	<list key="replacehistory">
 		<item value="curr_odometry_test"/>

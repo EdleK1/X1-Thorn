@@ -67,10 +67,10 @@ void Error_Handler(void);
 #define ServoL_SIGNAL_GPIO_Port GPIOA
 #define Debug2_Pin GPIO_PIN_3
 #define Debug2_GPIO_Port GPIOA
-#define DShot_MOTOR2_Pin GPIO_PIN_6
-#define DShot_MOTOR2_GPIO_Port GPIOA
-#define DShot_MOTOR4_Pin GPIO_PIN_7
+#define DShot_MOTOR4_Pin GPIO_PIN_6
 #define DShot_MOTOR4_GPIO_Port GPIOA
+#define DShot_MOTOR2_Pin GPIO_PIN_7
+#define DShot_MOTOR2_GPIO_Port GPIOA
 #define ADC_CURR_Pin GPIO_PIN_0
 #define ADC_CURR_GPIO_Port GPIOB
 #define Debug1_Pin GPIO_PIN_9

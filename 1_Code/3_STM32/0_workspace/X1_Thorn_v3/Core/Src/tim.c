@@ -32,6 +32,7 @@ TIM_HandleTypeDef htim16;
 TIM_HandleTypeDef htim17;
 DMA_HandleTypeDef hdma_tim3_ch1;
 DMA_HandleTypeDef hdma_tim3_ch2;
+DMA_HandleTypeDef hdma_tim15_up;
 DMA_HandleTypeDef hdma_tim16_up;
 
 /* TIM1 init function */
@@ -234,7 +235,7 @@ void MX_TIM15_Init(void)
   htim15.Instance = TIM15;
   htim15.Init.Prescaler = 0;
   htim15.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim15.Init.Period = 65535;
+  htim15.Init.Period = 614;
   htim15.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim15.Init.RepetitionCounter = 0;
   htim15.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -302,7 +303,7 @@ void MX_TIM16_Init(void)
   htim16.Instance = TIM16;
   htim16.Init.Prescaler = 0;
   htim16.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim16.Init.Period = 610;
+  htim16.Init.Period = 614;
   htim16.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim16.Init.RepetitionCounter = 0;
   htim16.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -487,9 +488,25 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* tim_baseHandle)
     /* TIM15 clock enable */
     __HAL_RCC_TIM15_CLK_ENABLE();
 
-    /* TIM15 interrupt Init */
-    HAL_NVIC_SetPriority(TIM15_IRQn, 5, 0);
-    HAL_NVIC_EnableIRQ(TIM15_IRQn);
+    /* TIM15 DMA Init */
+    /* TIM15_UP Init */
+    hdma_tim15_up.Instance = DMA1_Stream3;
+    hdma_tim15_up.Init.Request = DMA_REQUEST_TIM15_UP;
+    hdma_tim15_up.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_tim15_up.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_tim15_up.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_tim15_up.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    hdma_tim15_up.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    hdma_tim15_up.Init.Mode = DMA_NORMAL;
+    hdma_tim15_up.Init.Priority = DMA_PRIORITY_VERY_HIGH;
+    hdma_tim15_up.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    if (HAL_DMA_Init(&hdma_tim15_up) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(tim_baseHandle,hdma[TIM_DMA_ID_UPDATE],hdma_tim15_up);
+
   /* USER CODE BEGIN TIM15_MspInit 1 */
 
   /* USER CODE END TIM15_MspInit 1 */
@@ -576,7 +593,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
     PA6     ------> TIM3_CH1
     PA7     ------> TIM3_CH2
     */
-    GPIO_InitStruct.Pin = DShot_MOTOR2_Pin|DShot_MOTOR4_Pin;
+    GPIO_InitStruct.Pin = DShot_MOTOR4_Pin|DShot_MOTOR2_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_PULLUP;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -665,8 +682,8 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
     /* Peripheral clock disable */
     __HAL_RCC_TIM15_CLK_DISABLE();
 
-    /* TIM15 interrupt Deinit */
-    HAL_NVIC_DisableIRQ(TIM15_IRQn);
+    /* TIM15 DMA DeInit */
+    HAL_DMA_DeInit(tim_baseHandle->hdma[TIM_DMA_ID_UPDATE]);
   /* USER CODE BEGIN TIM15_MspDeInit 1 */
 
   /* USER CODE END TIM15_MspDeInit 1 */
