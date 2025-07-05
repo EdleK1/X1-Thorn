@@ -8,9 +8,9 @@
   ******************************************************************************
 */
 
-
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
 #include "Control.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -24,28 +24,38 @@
 #include "YawController/YawController.h"
 #include "../../Peripheral/ESC/ESC.h"
 #include "../../Peripheral/Servo/Servo.h"
-
+#include "../../Service/Logger/SD_Logger.h"
 
 
 odometry_t curr_odometry;
 reference_t curr_reference;
-static quaternion_t curr_attitude;
-static Actuators_t newActuators;
-static FlightControlOutputs_t newFlightControlOutputs;
-control_task_t Control;
+quaternion_t curr_attitude;
+Actuators_t newActuators;
+FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L;
 servo_t Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
 
+
+// Definitions for Control_Task
+
+osThreadId_t Control_TaskHandle;
+uint32_t Control_TaskBuffer[ 8192 ];
+StaticTask_t Control_TaskControlBlock;
+const osThreadAttr_t Control_Task_attributes = {
+  .name = "Control_Task",
+  .cb_mem = &Control_TaskControlBlock,
+  .cb_size = sizeof(Control_TaskControlBlock),
+  .stack_mem = &Control_TaskBuffer[0],
+  .stack_size = sizeof(Control_TaskBuffer),
+  .priority = (osPriority_t) osPriorityHigh,
+};
+
+
 void Control_Init(void)
 {
-	if (Control.taskHandle == NULL)
-	{
-		Control.taskAttr.name = "Control_Task";
-		Control.taskAttr.priority = (osPriority_t) osPriorityHigh;
-		Control.taskAttr.stack_size = 10 * 1024;
-		Control.taskHandle = osThreadNew(Control_Task, NULL, &Control.taskAttr);
-	}
+	Control_TaskHandle = osThreadNew(Control_Task, NULL, &Control_Task_attributes);
+	Control_Loop_Semaphore = osSemaphoreNew(1, 0, NULL);
 }
 
 
@@ -55,7 +65,7 @@ void Control_Task(void *argument)
 
   for(;;)
   {
-	  osSemaphoreAcquire(Control_Loop_Semaphore, 50);
+	  osSemaphoreAcquire(Control_Loop_Semaphore, 100);
 	  Control_Loop();
   }
 }
@@ -83,6 +93,31 @@ uint8_t Control_Start(void)
 	PitchController_Init();
 	ThrustController_Init();
 
+	// Initialize the logger
+
+	SD_Logger_RegisterVariable(&curr_odometry.ax, LOG_TYPE_FLOAT, "curr_ax");
+	SD_Logger_RegisterVariable(&curr_odometry.p, LOG_TYPE_FLOAT, "curr_roll_rate");
+	SD_Logger_RegisterVariable(&curr_odometry.q, LOG_TYPE_FLOAT, "curr_pitch_rate");
+	SD_Logger_RegisterVariable(&curr_odometry.r, LOG_TYPE_FLOAT, "curr_yaw_rate");
+	SD_Logger_RegisterVariable(&curr_odometry.qw, LOG_TYPE_FLOAT, "curr_qw");
+	SD_Logger_RegisterVariable(&curr_odometry.qx, LOG_TYPE_FLOAT, "curr_qx");
+	SD_Logger_RegisterVariable(&curr_odometry.qy, LOG_TYPE_FLOAT, "curr_qy");
+	SD_Logger_RegisterVariable(&curr_odometry.qz, LOG_TYPE_FLOAT, "curr_qz");
+	SD_Logger_RegisterVariable(&curr_reference.ax_ref, LOG_TYPE_FLOAT, "ax_ref");
+	SD_Logger_RegisterVariable(&curr_reference.p_ref, LOG_TYPE_FLOAT, "p_ref");
+	SD_Logger_RegisterVariable(&curr_reference.q_ref, LOG_TYPE_FLOAT, "q_ref");
+	SD_Logger_RegisterVariable(&curr_reference.r_ref, LOG_TYPE_FLOAT, "r_ref");
+	SD_Logger_RegisterVariable(&newActuators.omega_L, LOG_TYPE_FLOAT, "omega_L_ref");
+	SD_Logger_RegisterVariable(&newActuators.omega_R, LOG_TYPE_FLOAT, "omega_R_ref");
+	SD_Logger_RegisterVariable(&newActuators.servo_L, LOG_TYPE_UINT32, "servo_L_ref");
+	SD_Logger_RegisterVariable(&newActuators.servo_R, LOG_TYPE_UINT32, "servo_R_ref");
+
+	SD_Logger_Init();
+
+	// Initialize the Control timer
+
+	HAL_TIM_Base_Start_IT(&htim2);
+
 	return 0;
 }
 
@@ -95,16 +130,16 @@ void Control_Loop(void)
 
 	Odometry_Read(&curr_odometry);
 
-	curr_attitude.w = curr_odometry.q0;
-	curr_attitude.x = curr_odometry.q1;
-	curr_attitude.y = curr_odometry.q2;
-	curr_attitude.z = curr_odometry.q3;
+	curr_attitude.w = curr_odometry.qw;
+	curr_attitude.x = curr_odometry.qx;
+	curr_attitude.y = curr_odometry.qy;
+	curr_attitude.z = curr_odometry.qz;
 
-	// Get reference from ground commands (p,q,r,ax)
+	// Get reference from ground commands (p_ref, q_ref, r_ref, ax_ref)
 
 	get_reference(curr_attitude, &curr_reference);
 
-	// Calculate the errors, from the way q_ref and r_ref are calculated, they do not need to be substracted their actual value, otherwise the control response is much slower
+	// Calculate the errors, from the way q_ref and r_ref are calculated, they do not need to be substracted their actual value
 
 	float ax_error, p_error, q_error, r_error;
 
@@ -116,7 +151,6 @@ void Control_Loop(void)
 	// Thrust Control: Calculate required rpm1 and rpm2 from ThrustController
 
 	float omega = ThrustController_Update(ax_error);
-
 	Omega_Distribution(omega, &newFlightControlOutputs); // Calculates the new values for omegaL and omegaR from the ThrustPID output and the previous omegaL and omegaR setpoints (we asume the motor dynamics are fast enough that the real omega is the setpoint)
 
 	// Attitude Control: Calculate required elevator, rudder and aileron from Roll, Pitch and Yaw controllers
@@ -134,8 +168,9 @@ void Control_Loop(void)
 	ESC_Set_RPMs(newActuators.omega_L, newActuators.omega_R);
 	Servo_Set_Position(&Servo_L, newActuators.servo_L);
 	Servo_Set_Position(&Servo_R, newActuators.servo_R);
+}
 
-	}
+
 
 Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs)
 {
@@ -177,4 +212,10 @@ void Omega_Distribution(float omega, FlightControlOutputs_t *newFlightControlOut
 	float delta = (newFlightControlOutputs->omegaThrustController_R - newFlightControlOutputs->omegaThrustController_L)/2;
 	newFlightControlOutputs->omegaThrustController_R = omega + delta;
 	newFlightControlOutputs->omegaThrustController_L = omega - delta;
+}
+
+
+void TIM_PeriodElapsedCallback_Control_Timer(void)
+{
+	osSemaphoreRelease(Control_Loop_Semaphore);
 }

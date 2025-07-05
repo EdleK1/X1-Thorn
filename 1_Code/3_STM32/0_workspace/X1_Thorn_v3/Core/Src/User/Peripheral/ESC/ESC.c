@@ -13,6 +13,10 @@
 #include "../../Lib/DshotProtocol/DShot.h"
 #include "Motor_PI.h"
 
+
+#include "../../Service/Logger/SD_Logger.h"
+
+
 uint8_t ESC_Active = 0;
 uint16_t New_Throttle_2 = 0;
 uint16_t New_Throttle_4 = 0;
@@ -21,8 +25,8 @@ uint32_t Curr_mRPM_4 = 0;
 pid_handle_t PID_handle_2;
 pid_handle_t PID_handle_4;
 uint8_t ESC_Ready_Flag = 0;
-static uint32_t Target_mRPM_2 = 8000;
-static uint32_t Target_mRPM_4 = 8000;
+static uint32_t Target_mRPM_2 = 0;
+static uint32_t Target_mRPM_4 = 0;
 osSemaphoreId_t  ESC_Loop_Semaphore;
 uint8_t raw_telem[10];
 static uint8_t telemetry_ARR = 0;
@@ -47,6 +51,7 @@ const osThreadAttr_t ESC_Task_attributes = {
 void ESC_Init(void)
 {
 	ESC_TaskHandle = osThreadNew(ESC_Task, NULL, &ESC_Task_attributes);
+	ESC_Loop_Semaphore = osSemaphoreNew(1, 0, NULL);
 }
 
 
@@ -66,15 +71,6 @@ void ESC_Task(void *argument)
 
 uint8_t ESC_Start(void)
 {
-	// Initialize Semaphore
-
-	ESC_Loop_Semaphore = osSemaphoreNew(1, 0, NULL);
-
-	if (ESC_Loop_Semaphore == NULL)
-	{
-		return 1; // Semaphore creation failed
-	}
-
 	DShot_Init();
 
 	// Init PIDs
@@ -96,7 +92,7 @@ uint8_t ESC_Start(void)
 
 	// Init ESC (We have to wait for it to start actually sending RPMs
 
-	uint32_t armCycles = 8000;  // Arm cycles. a bit overkill
+	uint32_t armCycles = 4000;  // Arm cycles. a bit overkill
 
 	HAL_TIM_Base_Start_IT(&htim17); // Initialize ESC timer to give
 
@@ -104,6 +100,12 @@ uint8_t ESC_Start(void)
 	{
 		osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
 	    DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0);
+	}
+
+	for (uint32_t i = 0; i < armCycles; i++) // Proba per fer que sigui mes suau
+	{
+		osSemaphoreAcquire(ESC_Loop_Semaphore, 1);
+	    DShot_SendFrame(150, 150, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0);
 	}
 
 	return 0;

@@ -8,7 +8,7 @@
 #ifndef SRC_USER_TEST_TESTSERVO_TESTSERVO_H_
 #define SRC_USER_TEST_TESTSERVO_TESTSERVO_H_
 
-void Servo_Test_Init(void);
+void Servo_Test_Start(void);
 void Servo_Test_Loop(void);
 
 #endif /* SRC_USER_TEST_TESTSERVO_TESTSERVO_H_ */

@@ -42,10 +42,10 @@ void GroundCommands_Test_Loop(void)
   Odometry_Read(&curr_odometry_test);
   tick2 = HAL_GetTick();
 
-  curr_attitude_test.w = curr_odometry_test.q0;
-  curr_attitude_test.x = curr_odometry_test.q1;
-  curr_attitude_test.y = curr_odometry_test.q2;
-  curr_attitude_test.z = curr_odometry_test.q3;
+  curr_attitude_test.w = curr_odometry_test.qw;
+  curr_attitude_test.x = curr_odometry_test.qy;
+  curr_attitude_test.y = curr_odometry_test.qx;
+  curr_attitude_test.z = curr_odometry_test.qz;
 
   tick3 = HAL_GetTick();
   get_reference(curr_attitude_test, &curr_reference_test);

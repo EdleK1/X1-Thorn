@@ -11,12 +11,6 @@
 #include <stdint.h>
 #include "cmsis_os2.h"
 
-typedef struct
-{
-    osThreadId_t                  taskHandle;
-    osThreadAttr_t                taskAttr;                   /*!< Task attributes    */
-} control_task_t;
-
 typedef struct {
     uint16_t servo_R;
     uint16_t servo_L;
@@ -41,6 +35,6 @@ void Control_Task(void *argument);
 
 Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs);
 void Omega_Distribution(float omega, FlightControlOutputs_t *newFlightControlOutputs);
-
+void TIM_PeriodElapsedCallback_Control_Timer(void);
 
 #endif /* SRC_USER_APP_CONTROL_CONTROL_H_ */

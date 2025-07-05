@@ -1,4 +1,4 @@
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:44:6:System_Monitor_Init	8	static
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:53:6:System_Monitor_Task	16	static
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:66:6:System_Monitor_Start	8	static
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:74:6:System_Monitor_Loop	16	static
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c:37:6:System_Monitor_Init	8	static
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c:46:6:System_Monitor_Task	16	static
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c:59:6:System_Monitor_Start	8	static
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c:76:6:System_Monitor_Loop	16	static

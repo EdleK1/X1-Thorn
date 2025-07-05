@@ -16,20 +16,45 @@
 #include "TestOdometry/TestOdometry.h"
 #include "TestDShot/TestDShot.h"
 #include "TestServo/TestServo.h"
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "Test.h"
+#include "TestESC/TestESC.h"
 
 
-/* USER CODE END Includes */
+osThreadId_t Test_TaskHandle;
+uint32_t Test_TaskBuffer[ 8192 ];
+StaticTask_t Test_TaskControlBlock;
+const osThreadAttr_t Test_Task_attributes = {
+  .name = "Test_Task",
+  .cb_mem = &Test_TaskControlBlock,
+  .cb_size = sizeof(Test_TaskControlBlock),
+  .stack_mem = &Test_TaskBuffer[0],
+  .stack_size = sizeof(Test_TaskBuffer),
+  .priority = (osPriority_t) osPriorityHigh,
+};
 
-
-/* USER CODE BEGIN Variable Declaration */
-
-
-
-/* USER CODE END Variable Declaration */
 
 
 
 void Test_Init(void)
+{
+	Test_TaskHandle = osThreadNew(Test_Task, NULL, &Test_Task_attributes);
+}
+
+
+void Test_Task(void *argument)
+{
+	Test_Start();
+
+	for(;;)
+	{
+		Test_Loop();
+	}
+}
+
+
+void Test_Start(void)
 {
 
 //    LCD_LoadScreen();
@@ -39,12 +64,8 @@ void Test_Init(void)
 //    GroundCommands_Test();
 //    AttitudeMPC_Test_Init(void)
 //    DShot_Test();
-//    Servo_Test_Init();
-
-
-
-
-
+//    Servo_Test_Start();
+	ESC_Test_Start();
 }
 
 
@@ -57,4 +78,6 @@ void Test_Loop(void)
 //	Odometry_Test_Loop();
 //	ESP32_Test_Loop();
 
+//    Servo_Test_Loop();
+//    osDelay(50);
 }

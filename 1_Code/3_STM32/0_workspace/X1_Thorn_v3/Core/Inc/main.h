@@ -65,16 +65,12 @@ void Error_Handler(void);
 #define ServoR_SIGNAL_GPIO_Port GPIOA
 #define ServoL_SIGNAL_Pin GPIO_PIN_1
 #define ServoL_SIGNAL_GPIO_Port GPIOA
-#define Debug2_Pin GPIO_PIN_3
-#define Debug2_GPIO_Port GPIOA
 #define DShot_MOTOR4_Pin GPIO_PIN_6
 #define DShot_MOTOR4_GPIO_Port GPIOA
 #define DShot_MOTOR2_Pin GPIO_PIN_7
 #define DShot_MOTOR2_GPIO_Port GPIOA
 #define ADC_CURR_Pin GPIO_PIN_0
 #define ADC_CURR_GPIO_Port GPIOB
-#define Debug1_Pin GPIO_PIN_9
-#define Debug1_GPIO_Port GPIOE
 #define LCD_CS_Pin GPIO_PIN_11
 #define LCD_CS_GPIO_Port GPIOE
 #define LCD_WR_RS_Pin GPIO_PIN_13

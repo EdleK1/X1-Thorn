@@ -1,0 +1,81 @@
+/**
+  ******************************************************************************
+  * @file           : Test.c
+  * @brief          : Main test program body
+  ******************************************************************************
+*/
+
+
+
+
+/* USER CODE BEGIN Includes */
+
+#include "../../Core/Src/User/Peripheral/LCD/lcd.h"
+#include "TestESP32/TestESP32.h"
+#include "TestGroundCommands/TestGroundCommands.h"
+#include "TestOdometry/TestOdometry.h"
+#include "TestDShot/TestDShot.h"
+#include "TestServo/TestServo.h"
+
+
+osThreadId_t Test_TaskHandle;
+uint32_t Test_TaskBuffer[ 8192 ];
+StaticTask_t Test_TaskControlBlock;
+const osThreadAttr_t Test_Task_attributes = {
+  .name = "Test_Task",
+  .cb_mem = &Test_TaskControlBlock,
+  .cb_size = sizeof(Test_TaskControlBlock),
+  .stack_mem = &Test_TaskBuffer[0],
+  .stack_size = sizeof(Test_TaskBuffer),
+  .priority = (osPriority_t) osPriorityHigh,
+};
+
+
+
+
+void ESC_Init(void)
+{
+	ESC_TaskHandle = osThreadNew(ESC_Task, NULL, &ESC_Task_attributes);
+}
+
+
+void ESC_Task(void *argument)
+{
+	ESC_Start();
+
+	for(;;)
+	{
+		ESC_Loop();
+	}
+}
+
+
+void Test_Init(void)
+{
+
+//    LCD_LoadScreen();
+
+//    Odometry_Test_Init();
+//    ESP32_Test_Init();
+//    GroundCommands_Test();
+//    AttitudeMPC_Test_Init(void)
+//    DShot_Test();
+//    Servo_Test_Init();
+
+
+
+
+
+}
+
+
+
+
+
+void Test_Loop(void)
+{
+
+//	Odometry_Test_Loop();
+//	ESP32_Test_Loop();
+
+}

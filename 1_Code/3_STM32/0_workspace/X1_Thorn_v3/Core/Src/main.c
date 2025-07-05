@@ -21,8 +21,10 @@
 #include "cmsis_os.h"
 #include "adc.h"
 #include "dma.h"
+#include "fatfs.h"
 #include "i2c.h"
 #include "memorymap.h"
+#include "sdmmc.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -31,9 +33,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_V1/Core/Src/User/Test/Test.h"
+#include "C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/User/Test/Test.h"
 #include "User/Lib/DShotProtocol/DShot.h"
-#include "User/Test/TestDShot/TestDShot.h"
 #include "User/Peripheral/ESC/ESC.h"
 #include "User/Peripheral/ESP32/ESP32.h"
 #include "User/App/Control/Control.h"
@@ -123,6 +124,9 @@ int main(void)
   MX_TIM5_Init();
   MX_ADC2_Init();
   MX_TIM15_Init();
+  MX_TIM2_Init();
+  MX_FATFS_Init();
+  MX_SDMMC1_SD_Init();
   /* USER CODE BEGIN 2 */
 
 
@@ -134,10 +138,8 @@ int main(void)
   /* Call init function for freertos objects (in cmsis_os2.c) */
 //  MX_FREERTOS_Init();
 
+  Test_Init();
   System_Monitor_Init();
-  ESC_Init();
-
-//  Motor_Characterization_Init();
 
   /* Start scheduler */
   osKernelStart();
@@ -224,15 +226,15 @@ void PeriphCommonClock_Config(void)
   /** Initializes the peripherals clock
   */
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-  PeriphClkInitStruct.PLL2.PLL2M = 6;
-  PeriphClkInitStruct.PLL2.PLL2N = 40;
-  PeriphClkInitStruct.PLL2.PLL2P = 2;
-  PeriphClkInitStruct.PLL2.PLL2Q = 1;
-  PeriphClkInitStruct.PLL2.PLL2R = 2;
-  PeriphClkInitStruct.PLL2.PLL2RGE = RCC_PLL2VCIRANGE_2;
-  PeriphClkInitStruct.PLL2.PLL2VCOSEL = RCC_PLL2VCOMEDIUM;
-  PeriphClkInitStruct.PLL2.PLL2FRACN = 0;
-  PeriphClkInitStruct.AdcClockSelection = RCC_ADCCLKSOURCE_PLL2;
+  PeriphClkInitStruct.PLL3.PLL3M = 5;
+  PeriphClkInitStruct.PLL3.PLL3N = 40;
+  PeriphClkInitStruct.PLL3.PLL3P = 2;
+  PeriphClkInitStruct.PLL3.PLL3Q = 2;
+  PeriphClkInitStruct.PLL3.PLL3R = 2;
+  PeriphClkInitStruct.PLL3.PLL3RGE = RCC_PLL3VCIRANGE_2;
+  PeriphClkInitStruct.PLL3.PLL3VCOSEL = RCC_PLL3VCOWIDE;
+  PeriphClkInitStruct.PLL3.PLL3FRACN = 0;
+  PeriphClkInitStruct.AdcClockSelection = RCC_ADCCLKSOURCE_PLL3;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -283,10 +285,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 //	BaseType_t xHigherPriorityTaskWoken_ESC = pdFALSE; // only needed with freertos, not cmsis2
 
-//	if (htim->Instance == TIM15) // Control loop timer
-//	{
-//		TIM_PeriodElapsedCallback_Control_Timer();
-//	}
+	if (htim->Instance == TIM2) // Control loop timer
+	{
+		TIM_PeriodElapsedCallback_Control_Timer();
+	}
 
 	if (htim->Instance == TIM17) // ESC loop timer
 	{

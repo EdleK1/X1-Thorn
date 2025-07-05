@@ -33,13 +33,12 @@ static const float S_CG[3] = {
 typedef struct {
 	float ax;			  // longitudinal acceleration
     float p, q, r;        // angular rates
-    float q0, q1, q2, q3; // attitude quaternion
+    float qw, qx, qy, qz; // attitude quaternion
 } odometry_t;
 
 
 void Odometry_Read(odometry_t *Curr_Read);
 void Odometry_Init(void);
-void Sensor_Init(void);
 
 
 

@@ -38,9 +38,11 @@ Core/Src/User/Peripheral/ESC \
 Core/Src/User/Peripheral/ESP32 \
 Core/Src/User/Peripheral/LCD \
 Core/Src/User/Peripheral/Servo \
+Core/Src/User/Service/Logger \
 Core/Src/User/Test/MotorCharacterization \
 Core/Src/User/Test \
 Core/Src/User/Test/TestDShot \
+Core/Src/User/Test/TestESC \
 Core/Src/User/Test/TestESP32 \
 Core/Src/User/Test/TestGroundCommands \
 Core/Src/User/Test/TestOdometry \
@@ -48,6 +50,10 @@ Core/Src/User/Test/TestServo \
 Core/Src \
 Core/Startup \
 Drivers/STM32H7xx_HAL_Driver/Src \
+FATFS/App \
+FATFS/Target \
+Middlewares/Third_Party/FatFs/src \
+Middlewares/Third_Party/FatFs/src/option \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \

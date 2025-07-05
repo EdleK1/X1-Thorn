@@ -9,6 +9,8 @@
 #define SRC_USER_TEST_TEST_H_
 
 void Test_Init(void);
+void Test_Task(void *argument);
+void Test_Start(void);
 void Test_Loop(void);
 
 #endif /* SRC_USER_TEST_TEST_H_ */

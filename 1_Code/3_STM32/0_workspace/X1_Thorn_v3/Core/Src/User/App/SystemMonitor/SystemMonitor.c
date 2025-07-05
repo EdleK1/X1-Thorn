@@ -12,18 +12,11 @@
 #include "../../Peripheral/LCD/lcd.h"
 #include "../../Lib/Globals/Globals.h"
 #include "../../Peripheral/ESC/ESC.h"
-//#include "../../Test/MotorCharacterization/MotorCharacterization.h"
+#include "../../Service/Logger/SD_Logger.h"
 
-uint16_t Throttle_2_LCD;
-uint16_t mRPM_2_LCD_Telemetry;
-uint32_t mRPM_2_LCD;
-float Voltage_Telemetry;
+
 static uint8_t text[50];
-
 telemetry_t New_Telemetry;
-
-
-
 
 
 osThreadId_t SystemMonitor_TaskHandle;
@@ -65,7 +58,13 @@ void System_Monitor_Task(void *argument)
 
 void System_Monitor_Start(void)
 {
-	LCD_LoadScreen(); // Ideally it would be nice if it logged things while the loadscreen is loading, as it is purely cosmetic but idgaf
+
+	SD_Logger_RegisterVariable(&New_Telemetry.Temperature, LOG_TYPE_UINT32, "Temperature");
+	SD_Logger_RegisterVariable(&New_Telemetry.Voltage, LOG_TYPE_FLOAT, "Voltage");
+	SD_Logger_RegisterVariable(&New_Telemetry.RPM2, LOG_TYPE_UINT32, "RPM2");
+	SD_Logger_RegisterVariable(&New_Telemetry.RPM4, LOG_TYPE_UINT32, "RPM4");
+
+	LCD_LoadScreen();
 }
 
 
@@ -85,10 +84,6 @@ void System_Monitor_Loop(void)
 //	{
 //		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, RED);
 //	} // Crec que es veura com el cul
-
-
-	// get Servo?
-
 
 
 	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry

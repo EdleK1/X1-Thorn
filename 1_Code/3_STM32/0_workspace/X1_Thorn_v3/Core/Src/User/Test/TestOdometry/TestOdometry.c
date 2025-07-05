@@ -35,6 +35,6 @@ void Odometry_Test_Loop(void)
 	sprintf((char *)&text, "%.2f %.2f %.2f              ",result.p,result.q,result.r);
 	LCD_ShowString(4, 22, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "%.2f %.2f %.2f %.2f          ",result.q0,result.q1,result.q2,result.q3);
+	sprintf((char *)&text, "%.2f %.2f %.2f %.2f          ",result.qw,result.qx,result.qy,result.qz);
 	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 }
