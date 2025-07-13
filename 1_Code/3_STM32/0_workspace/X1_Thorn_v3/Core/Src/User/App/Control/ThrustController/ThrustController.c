@@ -9,20 +9,20 @@
 */
 
 
+#include "ThrustController.h"
+#include <math.h>
+
+
 // Controller Parameters
 
-static const float Kp = 4.0f;
-static const float Ki = 0.5f;
-static const float Kd = 0.1f;
+static const float Kp = 1e6f;
+static const float Ki = 100e6f;
 static const float dt  = 0.01f;
-static const float tau = 0.01f;    // ~10 ms derivative filter
 
 // Saturation Limits
 
-static const float outputMin = -1.0f;
-static const float outputMax = +1.0f;
-static const float integratorMin = -0.5f;
-static const float integratorMax = +0.5f;
+static const float outputMin = 0.0f;
+static const float outputMax = +20e8f; // Limitat a unes 31600 RPMs (sqrt(20e8/2))
 
 // File-local state variables
 
@@ -31,7 +31,7 @@ static float prevError = 0.0f;
 static float dTermFilt = 0.0f;
 
 
-void ThrustController_Init(void)
+void Thrust_Controller_Init(void)
 {
     integrator = 0.0f;
     prevError  = 0.0f;
@@ -40,51 +40,33 @@ void ThrustController_Init(void)
 
 
 
-float ThrustController_Update(float curr_error)
+float Thrust_Controller_Update(float curr_error)
 {
     // 1) Proportional term:
+
     float Pout = Kp * curr_error;
 
-    // 2) Integral term with conditional‐integration anti-windup:
+    // 2) Integral term with conditional‐integration anti-windup: (since both here and in the ESC PID the integrator will do the most amount of work integratormax = outputnmax. Possible issue is that the integrator cannot be negative, but since the nominal value for the itegrator is quite high when the drone is flying that is not a problem)
 
-    float deltaI = 0.5f * Ki * dt * (curr_error + prevError); // Trapezoidal (Tustin) increment:
+    integrator += 0.5f * Ki * dt * (curr_error + prevError);
 
-    if (integrator >= integratorMax && deltaI > 0.0f) // Check if integrator is at an upper limit AND deltaI would push it higher:
+    if (integrator > outputMax)
     {
-        // Skip incrementing. Prevents further positive windup.
+        integrator = outputMax;
     }
-    else if (integrator <= integratorMin && deltaI < 0.0f) // Check if integrator is at a lower limit AND deltaI would push it lower:
+    else if (integrator < outputMin)
     {
-        // Skip incrementing. Prevents further negative windup.
-    }
-    else // Safe to integrate:
-    {
-        integrator += deltaI; // There exists the possibility that this pushes it over the limit, but we dont care
+        integrator = outputMin;
     }
 
-    float Iout = Ki * integrator;
+    float Iout = integrator;
 
-    // 3) Derivative term:
+    // 3) Combine P, I, D:
 
-    float derivativeRaw = (curr_error - prevError) / dt;
+    float output = Pout + Iout;
 
+    // 4) Saturate final output to [outputMin, outputMax]:
 
-    float Dout;
-    if (tau <= 0.0f)     // If Ts == 0, skip filtering (i.e. purely P(difference)/dt). Otherwise do:
-    {
-        Dout = Kd * derivativeRaw;
-        dTermFilt = derivativeRaw; // store for completeness
-    }
-    else {
-        float alpha = dt / (tau + dt);
-        dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
-        Dout = Kd * dTermFilt;
-    }
-
-    // 5) Combine P, I, D:
-    float output = Pout + Iout + Dout;
-
-    // 6) Saturate final output to [outputMin, outputMax]:
     if (output > outputMax)
     {
         output = outputMax;
@@ -94,8 +76,10 @@ float ThrustController_Update(float curr_error)
         output = outputMin;
     }
 
-    // 7) Save current error for next cycle:
+    // 5) Save current error for next cycle:
+
     prevError = curr_error;
 
     return output;
 }
+

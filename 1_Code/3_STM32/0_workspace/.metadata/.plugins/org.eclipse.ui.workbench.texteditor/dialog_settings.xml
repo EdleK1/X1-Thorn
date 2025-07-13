@@ -3,6 +3,8 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="FlightControlOutputs_t"/>
+		<item value="PID_handle_4"/>
 		<item value="Voltage_Telemetry"/>
 		<item value="d,"/>
 		<item value="d"/>
@@ -16,8 +18,6 @@
 		<item value="HAL_DMA_Xfe"/>
 		<item value="HAL_DMA_Init"/>
 		<item value="esc"/>
-		<item value="ESC_Task"/>
-		<item value="collect_buf"/>
 	</list>
 	<list key="replacehistory">
 		<item value="LOG_TYPE_FLOAT"/>

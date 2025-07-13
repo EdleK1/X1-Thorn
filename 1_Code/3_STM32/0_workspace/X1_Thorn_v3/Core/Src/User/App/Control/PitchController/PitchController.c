@@ -8,21 +8,25 @@
   ******************************************************************************
 */
 
+#include "PitchController.h"
+#include <math.h>
+
+
 
 // Controller Parameters
 
-static const float Kp = 4.0f;
-static const float Ki = 0.5f;
-static const float Kd = 0.1f;
+static const float Kp = -300.0f;
+static const float Ki = -50.0f;
+static const float Kd = -10.0f;
 static const float dt  = 0.01f;
-static const float tau = 0.01f;    // ~10 ms derivative filter
+static const float tau = 1.0f/20.0f;    // N = 20
 
 // Saturation Limits
 
-static const float outputMin = -1.0f;
-static const float outputMax = +1.0f;
-static const float integratorMin = -0.5f;
-static const float integratorMax = +0.5f;
+static const float outputMin = -200.0f;
+static const float outputMax = +200.0f;
+static const float integratorMin = -100.0f;
+static const float integratorMax = +100.0f;
 
 // File-local state variables
 
@@ -31,7 +35,7 @@ static float prevError = 0.0f;
 static float dTermFilt = 0.0f;
 
 
-void PitchController_Init(void)
+void Pitch_Controller_Init(void)
 {
     integrator = 0.0f;
     prevError  = 0.0f;
@@ -40,51 +44,41 @@ void PitchController_Init(void)
 
 
 
-float PitchController_Update(float curr_error)
+float Pitch_Controller_Update(float curr_error)
 {
     // 1) Proportional term:
+
     float Pout = Kp * curr_error;
 
     // 2) Integral term with conditional‐integration anti-windup:
 
-    float deltaI = 0.5f * Ki * dt * (curr_error + prevError); // Trapezoidal (Tustin) increment:
+    integrator += 0.5f * Ki * dt * (curr_error + prevError);
 
-    if (integrator >= integratorMax && deltaI > 0.0f) // Check if integrator is at an upper limit AND deltaI would push it higher:
+    if (integrator > integratorMax)
     {
-        // Skip incrementing. Prevents further positive windup.
+        integrator = integratorMax;
     }
-    else if (integrator <= integratorMin && deltaI < 0.0f) // Check if integrator is at a lower limit AND deltaI would push it lower:
+    else if (integrator < integratorMin)
     {
-        // Skip incrementing. Prevents further negative windup.
-    }
-    else // Safe to integrate:
-    {
-        integrator += deltaI; // There exists the possibility that this pushes it over the limit, but we dont care
+        integrator = integratorMin;
     }
 
-    float Iout = Ki * integrator;
+    float Iout = integrator;
 
     // 3) Derivative term:
 
     float derivativeRaw = (curr_error - prevError) / dt;
 
+	float alpha = dt / (tau + dt);
+	dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
+    float  Dout = Kd * dTermFilt;
 
-    float Dout;
-    if (tau <= 0.0f)     // If Ts == 0, skip filtering (i.e. purely P(difference)/dt). Otherwise do:
-    {
-        Dout = Kd * derivativeRaw;
-        dTermFilt = derivativeRaw; // store for completeness
-    }
-    else {
-        float alpha = dt / (tau + dt);
-        dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
-        Dout = Kd * dTermFilt;
-    }
+    // 4) Combine P, I, D:
 
-    // 5) Combine P, I, D:
     float output = Pout + Iout + Dout;
 
-    // 6) Saturate final output to [outputMin, outputMax]:
+    // 5) Saturate final output to [outputMin, outputMax]:
+
     if (output > outputMax)
     {
         output = outputMax;
@@ -94,7 +88,8 @@ float PitchController_Update(float curr_error)
         output = outputMin;
     }
 
-    // 7) Save current error for next cycle:
+    // 6) Save current error for next cycle:
+
     prevError = curr_error;
 
     return output;

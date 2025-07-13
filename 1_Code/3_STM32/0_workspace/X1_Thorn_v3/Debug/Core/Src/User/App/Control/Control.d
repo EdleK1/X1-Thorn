@@ -71,7 +71,11 @@ Core/Src/User/App/Control/Control.o: \
  ../FATFS/Target/fatfs_platform.h \
  ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
- ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h
+ ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
+ ../Core/Src/User/App/Control/../SystemMonitor/SystemMonitor.h \
+ ../Core/Src/User/App/Control/../../Peripheral/LCD/lcd.h \
+ ../Core/Src/User/App/Control/../../Peripheral/LCD/st7735.h \
+ ../Core/Src/User/App/Control/../../Peripheral/LCD/st7735_reg.h
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -150,3 +154,7 @@ Core/Src/User/App/Control/Control.o: \
 ../Middlewares/Third_Party/FatFs/src/diskio.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../FATFS/Target/sd_diskio.h:
+../Core/Src/User/App/Control/../SystemMonitor/SystemMonitor.h:
+../Core/Src/User/App/Control/../../Peripheral/LCD/lcd.h:
+../Core/Src/User/App/Control/../../Peripheral/LCD/st7735.h:
+../Core/Src/User/App/Control/../../Peripheral/LCD/st7735_reg.h:

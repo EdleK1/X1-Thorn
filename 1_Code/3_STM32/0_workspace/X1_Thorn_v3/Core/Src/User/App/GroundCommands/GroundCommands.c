@@ -27,7 +27,7 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	Vec3 vec_y_world, vec_z_world, vec_y_aircraft;
 
 	quaternion_t q_ref;
-	Mat3 Rx, Ry, R0;
+	Mat3 Rz, Ry, R0;
 
 	vec_y_aircraft[0] = 2.0f*(curr_attitude.x*curr_attitude.y - curr_attitude.w*curr_attitude.z);
 	vec_y_aircraft[1] = 1.0f - 2.0f*(curr_attitude.x*curr_attitude.x + curr_attitude.z*curr_attitude.z);
@@ -52,23 +52,23 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	ESP32_Get_Commands(&curr_esp32_commands);
 	ESP32_Send_ESC_Status();
 
-	if (g_Status != 2)
+	if (g_Status != 2) // Landing / Off mode
 	{
-		curr_esp32_commands.ax_command = -0.5;
+		curr_esp32_commands.ax_command = -0.2;
 		curr_esp32_commands.p_command = 0;
 		curr_esp32_commands.pitch_command = 0;
-		curr_esp32_commands.roll_command = 0;
+		curr_esp32_commands.yaw_command = 0;
 	}
 
-	rot_x_mat(Rx, -curr_esp32_commands.roll_command);
+	rot_z_mat(Rz, curr_esp32_commands.yaw_command);
 	rot_y_mat(Ry, curr_esp32_commands.pitch_command);
 
 	// R_ref = Ry * Rx * R0;
 
 	Mat3 temp_mat, R_ref;
 
-	mat3Multiply(Ry, Rx, temp_mat);
-	mat3Multiply(R0, temp_mat, R_ref);
+	mat3Multiply(R0, Ry, temp_mat);
+	mat3Multiply(temp_mat, Rz, R_ref);
 
 	matrixToQuat(R_ref, &q_ref);
 	quaternion_correction(&curr_attitude, &q_ref);

@@ -1,2 +1,2 @@
-../Core/Src/User/App/Control/YawController/YawController.c:34:6:YawController_Init	4	static
-../Core/Src/User/App/Control/YawController/YawController.c:43:7:YawController_Update	48	static
+../Core/Src/User/App/Control/YawController/YawController.c:38:6:Yaw_Controller_Init	4	static
+../Core/Src/User/App/Control/YawController/YawController.c:47:7:Yaw_Controller_Update	40	static

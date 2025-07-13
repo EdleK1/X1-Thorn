@@ -8,8 +8,8 @@
 #ifndef SRC_USER_APP_CONTROL_THRUSTCONTROLLER_THRUSTCONTROLLER_H_
 #define SRC_USER_APP_CONTROL_THRUSTCONTROLLER_THRUSTCONTROLLER_H_
 
-void ThrustController_Init(void);
-float ThrustController_Update(float curr_error);
+void Thrust_Controller_Init(void);
+float Thrust_Controller_Update(float curr_error);
 
 
 #endif /* SRC_USER_APP_HIGHLEVELCONTROL_CONTROL_H_ */

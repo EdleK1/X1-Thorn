@@ -50,7 +50,7 @@ void ESP32_Get_Commands(esp32_commands_t *esp32_commands)
 		esp32_commands->ax_command = received_floats[0];
 		esp32_commands->p_command = received_floats[1];
 		esp32_commands->pitch_command = received_floats[2];
-		esp32_commands->roll_command = received_floats[3];
+		esp32_commands->yaw_command = received_floats[3];
 		g_Status = received_floats[4];									// Return status activate
 	}
 	else

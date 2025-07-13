@@ -1,0 +1,94 @@
+/**
+  ******************************************************************************
+  * @file           : YawController.c
+  * @brief          : PID controller for the Yaw movement
+  *
+  *
+  * r_error -> rudder
+  ******************************************************************************
+*/
+
+
+#include "YawController.h"
+#include <math.h>
+
+
+// Controller Parameters
+
+static const float Kp = 20e6f;
+static const float Ki = 9e6f;
+static const float Kd = 18e6f;
+static const float dt  = 0.01f;
+static const float tau = 1.0f/10.0f;	// N = 10
+
+// Saturation Limits
+
+static const float outputMin = -1e8f;
+static const float outputMax = +1e8f;
+static const float integratorMin = -5e5f;
+static const float integratorMax = +5e5f;
+
+// File-local state variables
+
+static float integrator = 0.0f;
+static float prevError = 0.0f;
+static float dTermFilt = 0.0f;
+
+
+void YawController_Init(void)
+{
+    integrator = 0.0f;
+    prevError  = 0.0f;
+    dTermFilt  = 0.0f;
+}
+
+
+
+float YawController_Update(float curr_error)
+{
+    // 1) Proportional term:
+    float Pout = Kp * curr_error;
+
+    // 2) Integral term with conditional‐integration anti-windup:
+
+    integrator += 0.5f * Ki * dt * (curr_error + prevError);
+
+    if (integrator > integratorMax)
+    {
+        integrator = integratorMax;
+    }
+    else if (integrator < integratorMin)
+    {
+        integrator = integratorMin;
+    }
+
+
+    float Iout = integrator;
+
+    // 3) Derivative term:
+
+    float derivativeRaw = (curr_error - prevError) / dt;
+
+	float alpha = dt / (tau + dt);
+	dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
+    float  Dout = Kd * dTermFilt;
+
+    // 5) Combine P, I, D:
+
+    float output = Pout + Iout + Dout;
+
+    // 6) Saturate final output to [outputMin, outputMax]:
+    if (output > outputMax)
+    {
+        output = outputMax;
+    }
+    else if (output < outputMin)
+    {
+        output = outputMin;
+    }
+
+    // 7) Save current error for next cycle:
+    prevError = curr_error;
+
+    return output;
+}

@@ -1,2 +1,2 @@
-../Core/Src/User/App/Control/ThrustController/ThrustController.c:34:6:ThrustController_Init	1
-../Core/Src/User/App/Control/ThrustController/ThrustController.c:43:7:ThrustController_Update	8
+../Core/Src/User/App/Control/ThrustController/ThrustController.c:34:6:Thrust_Controller_Init	1
+../Core/Src/User/App/Control/ThrustController/ThrustController.c:43:7:Thrust_Controller_Update	5

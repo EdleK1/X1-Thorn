@@ -31,7 +31,7 @@ void ESP32_Test_Loop(void)
   sprintf((char *)&text, "ax=%.2f p=%.2f                  ",curr_esp32_commands_test.ax_command,curr_esp32_commands_test.p_command);
   LCD_ShowString(4, 22, ST7735Ctx.Width, 16, 16, text);
 
-  sprintf((char *)&text, "roll=%.2f pitch=%.2f            ",curr_esp32_commands_test.roll_command,curr_esp32_commands_test.pitch_command);
+  sprintf((char *)&text, "roll=%.2f pitch=%.2f            ",curr_esp32_commands_test.yaw_command,curr_esp32_commands_test.pitch_command);
   LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 
   sprintf((char *)&text, "active=%u            ",active);

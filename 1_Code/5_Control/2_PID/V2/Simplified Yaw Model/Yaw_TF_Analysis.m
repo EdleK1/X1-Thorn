@@ -43,10 +43,10 @@ hold on
 
 clear
 
-Kp_PitchRate_val = 20e6; % A priori Kr = 0.05 fa que vagi millor pero depen de la velocitat del actuador
-Ki_PitchRate_val = 9e6;
-Kd_PitchRate_val = 18e6;
-Kr_val = 0.1;
+Kp_PitchRate_val = 40e6; % A priori Kr = 0.05 fa que vagi millor pero depen de la velocitat del actuador
+Ki_PitchRate_val = 60e6;
+Kd_PitchRate_val = 7e6;
+Kr_val = 0.20;
 Kg_val = 8.7258e-7;
 N_PitchRate_val = 10;
 Ts_val = 0.01;

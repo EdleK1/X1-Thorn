@@ -43,10 +43,10 @@ hold on
 
 clear
 
-Kp_PitchRate_val = -150;
-Ki_PitchRate_val = -90;
-Kd_PitchRate_val = -70;
-Kq_val = 0.15;
+Kp_PitchRate_val = -300;
+Ki_PitchRate_val = -50;
+Kd_PitchRate_val = -10;
+Kq_val = 0.4;
 Kg_val = -0.22365;
 N_PitchRate_val = 20;
 Ts_val = 0.01;

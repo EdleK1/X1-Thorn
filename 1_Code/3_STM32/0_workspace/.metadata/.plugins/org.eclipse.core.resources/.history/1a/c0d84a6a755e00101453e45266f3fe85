@@ -1,0 +1,81 @@
+/**
+  ******************************************************************************
+  * @file           : ThrustController.c
+  * @brief          : Thrust controller for the ax acceleration
+  *
+  *
+  * ax_error -> omega
+  ******************************************************************************
+*/
+
+
+// Controller Parameters
+
+static const float Kp = 1e6f;
+static const float Ki = 100e6f;
+static const float dt  = 0.01f;
+
+// Saturation Limits
+
+static const float outputMin = 0.0f;
+static const float outputMax = +10e8f; // Limitat a unes 22000 RPMs (sqrt(10e8/2))
+
+// File-local state variables
+
+static float integrator = 0.0f;
+static float prevError = 0.0f;
+static float dTermFilt = 0.0f;
+
+
+void ThrustController_Init(void)
+{
+    integrator = 0.0f;
+    prevError  = 0.0f;
+    dTermFilt  = 0.0f;
+}
+
+
+
+float ThrustController_Update(float curr_error)
+{
+    // 1) Proportional term:
+
+    float Pout = Kp * curr_error;
+
+    // 2) Integral term with conditional‐integration anti-windup:
+
+    integrator += 0.5f * Ki * dt * (curr_error + prevError);
+
+    if (integrator > outputMax)
+    {
+        integrator = outputMax;
+    }
+    else if (integrator < outputMin)
+    {
+        integrator = outputMin;
+    }
+
+    float Iout = integrator;
+
+    // 5) Combine P, I, D:
+
+    float output = Pout + Iout;
+
+    // 6) Saturate final output to [outputMin, outputMax]:
+
+    if (output > outputMax)
+    {
+        output = outputMax;
+    }
+    else if (output < outputMin)
+    {
+        output = outputMin;
+    }
+
+    // 7) Save current error for next cycle:
+
+    prevError = curr_error;
+
+    return output;
+}
+

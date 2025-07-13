@@ -19,10 +19,6 @@ typedef struct {
     float outputMin;
     float outputMax;
 
-    /* For anti‐windup: we’ll clamp integrator so that output stays in bounds. */
-    float integratorMin;
-    float integratorMax;
-
     float dt;         // timestep (s)
 } pid_handle_t;
 
@@ -35,7 +31,7 @@ typedef struct {
  * @param  integratorMin/Max  Limits on integrator term (anti‐windup)
  * @param  tau       Derivative filter time constant (if zero, do plain D)
  */
-void PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t outputMin, uint16_t outputMax, float integratorMin, float integratorMax);
+void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t outputMin, uint16_t outputMax);
 
 /**
  * @brief  Compute PID output given setpoint and measurement
@@ -44,6 +40,6 @@ void PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t outputMi
  * @param  measurement Current measured value
  * @retval control output (clamped between outputMin, outputMax)
  */
-uint16_t PID_Update(pid_handle_t *pid, float measurement, float setpoint);
+uint16_t Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint);
 
 #endif /* SRC_USER_PERIPHERAL_ESC_MOTOR_PI_H_ */

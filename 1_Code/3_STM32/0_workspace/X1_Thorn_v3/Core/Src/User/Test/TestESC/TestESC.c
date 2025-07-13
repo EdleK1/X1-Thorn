@@ -10,7 +10,7 @@
 #include "../../Core/Src/User/Service/Logger/SD_Logger.h"
 #include "../../Peripheral/LCD/lcd.h"
 #include "../../Lib/Globals/Globals.h"
-
+#include "../../App/SystemMonitor/SystemMonitor.h"
 
 uint32_t rpm_target_2 = 5000;
 uint32_t rpm_target_4 = 5000;
@@ -20,10 +20,16 @@ uint32_t rpm_target_4 = 5000;
 
 void ESC_Test_Start(void)
 {
+	ESC_Init();
+
+	LCD_LoadScreen();
+
+	System_Monitor_Init();
+
 	SD_Logger_RegisterVariable(&rpm_target_2, LOG_TYPE_UINT32, "rpm_target_2");
 	SD_Logger_RegisterVariable(&rpm_target_4, LOG_TYPE_UINT32, "rpm_target_4");
 
-	ESC_Init();
+	SD_Logger_Init();
 
 	ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, BLACK);
 

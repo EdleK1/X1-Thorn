@@ -13,8 +13,8 @@ q3 = 0;
 
 q_curr = [q0;q1;q2;q3];
 
-pitch = -0;
-roll = 0.2;
+pitch = 0;
+yaw = -0.2;
 p = 0;
 
 
@@ -33,20 +33,21 @@ vec_y_World = cross(vec_z_World,vec_x_World);
 R0 = [vec_x_World, vec_y_World, vec_z_World];
 
 %% 4) Build small rotations about world-frame X then Y
-Rx = [ 1,         0,          0;
-       0, cos(-roll), -sin(-roll);
-       0, sin(-roll),  cos(-roll)];
+
+% Rx = [ 1,         0,          0;
+%        0, cos(-roll), -sin(-roll);
+%        0, sin(-roll),  cos(-roll)];
    
 Ry = [ cos(pitch), 0, sin(pitch);
              0, 1,       0;
       -sin(pitch), 0, cos(pitch)];
 
-Rz = [cos(p), -sin(p), 0;
-      sin(p), cos(p),  0;
+Rz = [cos(yaw), -sin(yaw), 0;
+      sin(yaw), cos(yaw),  0;
       0,      0,      1];
 
 % Composite: first roll (Rx), then pitch (Ry) in the *world frame*
-R_ref = Rx * Ry * R0 ;
+R_ref = R0 * Rz * Ry;
 
 % Extract reference axes
 x_ref = R_ref(:,1);

@@ -7,10 +7,12 @@
 #include "SD_Logger.h"
 #include <stdbool.h>
 
-#define SD_LOGGER_MAX_VARIABLES         16                                  /*!< Máximo número de variables a registrar */
+
+#define SD_LOGGER_MAX_VARIABLES         20                                  /*!< Máximo número de variables a registrar */
 #define SD_LOGGER_FREQUENCY_HZ          10                                  /*!< Frecuencia de logging en Hertz */
 
 #define SD_LOGGER_STACK_SIZE			(configMINIMAL_STACK_SIZE * 16)		/*!< Stack size	*/
+
 
 
 typedef struct {
@@ -70,7 +72,7 @@ void SD_Logger_Init(void)
 
 void SD_Logger_Task(void * argument)
 {
-	osDelay(500); // Esperar a que se registren las variables
+	osDelay(1000); // Esperar a que se registren las variables
 
     if (sd_logger.num_registered_vars == 0)
     {
@@ -80,9 +82,12 @@ void SD_Logger_Task(void * argument)
 
 	SD_Logger_Start();
 
+    TickType_t xLastWakeTime = xTaskGetTickCount();  // Marca de tiempo inicial
 
 	for(;;)
 	{
+	    f_printf(&sd_logger.fil, "%lu,", HAL_GetTick());
+
         for (uint8_t i = 0; i < sd_logger.num_registered_vars; i++)
         {
             switch (sd_logger.registered_vars[i].type)
@@ -107,7 +112,7 @@ void SD_Logger_Task(void * argument)
         f_printf(&sd_logger.fil, "\n");
         f_sync(&sd_logger.fil);
 
-		osDelay(sd_logger.log_delay_ms > 0 ? sd_logger.log_delay_ms : 1);
+        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(sd_logger.log_delay_ms));
 	}
 
 }
@@ -204,7 +209,8 @@ uint8_t SD_Logger_Start(void)
     {
 //        SD_Logger_Printf("SD_Logger: File %s created correctly, writting the header", filename_buffer);
 
-        // Escribir la cabecera del CSV
+        f_printf(&sd_logger.fil, "Timestamp,");
+
         for (uint8_t i = 0; i < sd_logger.num_registered_vars; i++)
         {
             f_printf(&sd_logger.fil, "%s", sd_logger.registered_vars[i].header);

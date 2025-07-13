@@ -58,7 +58,7 @@ Tfs = collect(simplify(Tfs));
 Tfs_val = subs(Tfs, [K_G, K_q, Kp, Ki, Kd, tau_act], [K_G_val, K_q_val, Kp_val, Ki_val, Kd_val, tau_act_val]);
 
 
-[num_sym, den_sym] = numden(simplify(T_val));
+[num_sym, den_sym] = numden(simplify(Tfs_val));
 
 
 % 2) Turn them into vectors of coefficients

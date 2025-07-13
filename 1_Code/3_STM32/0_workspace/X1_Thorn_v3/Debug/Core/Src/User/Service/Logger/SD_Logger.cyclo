@@ -1,4 +1,4 @@
-../Core/Src/User/Service/Logger/SD_Logger.c:51:6:SD_Logger_Init	1
-../Core/Src/User/Service/Logger/SD_Logger.c:71:6:SD_Logger_Task	9
-../Core/Src/User/Service/Logger/SD_Logger.c:117:9:SD_Logger_Start	19
-../Core/Src/User/Service/Logger/SD_Logger.c:230:9:SD_Logger_RegisterVariable	4
+../Core/Src/User/Service/Logger/SD_Logger.c:53:6:SD_Logger_Init	1
+../Core/Src/User/Service/Logger/SD_Logger.c:73:6:SD_Logger_Task	8
+../Core/Src/User/Service/Logger/SD_Logger.c:122:9:SD_Logger_Start	19
+../Core/Src/User/Service/Logger/SD_Logger.c:236:9:SD_Logger_RegisterVariable	4

@@ -11,7 +11,7 @@
 
 #include "Odometry.h"
 #include "../../Peripheral/BNO055/BNO055.h"
-
+#include <math.h>
 
 
 BNO055_Sensors_t BNO055;
@@ -60,7 +60,7 @@ void Odometry_Init(void)
 	}
 	else
 	{
-		printf("Sensor calibration failed.\nFailed to retrieve offset data\n");
+//		printf("Sensor calibration failed.\nFailed to retrieve offset data\n");
 	}
 
 	Check_Status(&Status);
@@ -76,9 +76,9 @@ void Odometry_Read(odometry_t *Curr_Read)
 	ReadData(&BNO055, SENSOR_LINACC|SENSOR_GYRO|SENSOR_QUATERNION);
 
 	Curr_Read->ax = BNO055.LineerAcc.X;
-	Curr_Read->p = BNO055.Gyro.X;
-	Curr_Read->q = BNO055.Gyro.Y;
-	Curr_Read->r = BNO055.Gyro.Z;
+	Curr_Read->p = BNO055.Gyro.X * (float)M_PI / 180.0f;
+	Curr_Read->q = BNO055.Gyro.Y * (float)M_PI / 180.0f;
+	Curr_Read->r = BNO055.Gyro.Z * (float)M_PI / 180.0f;
 	Curr_Read->qw = BNO055.Quaternion.W;
 	Curr_Read->qx = BNO055.Quaternion.X;
 	Curr_Read->qy = BNO055.Quaternion.Y;

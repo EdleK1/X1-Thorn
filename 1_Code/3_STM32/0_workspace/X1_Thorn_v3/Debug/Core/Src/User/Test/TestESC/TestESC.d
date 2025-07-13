@@ -66,7 +66,8 @@ Core/Src/User/Test/TestESC/TestESC.o: \
  ../Core/Src/User/Test/TestESC/../../Peripheral/LCD/lcd.h \
  ../Core/Src/User/Test/TestESC/../../Peripheral/LCD/st7735.h \
  ../Core/Src/User/Test/TestESC/../../Peripheral/LCD/st7735_reg.h \
- ../Core/Src/User/Test/TestESC/../../Lib/Globals/Globals.h
+ ../Core/Src/User/Test/TestESC/../../Lib/Globals/Globals.h \
+ ../Core/Src/User/Test/TestESC/../../App/SystemMonitor/SystemMonitor.h
 ../Core/Inc/../../Core/Src/User/Peripheral/ESC/ESC.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Core/Inc/usart.h:
@@ -139,3 +140,4 @@ Core/Src/User/Test/TestESC/TestESC.o: \
 ../Core/Src/User/Test/TestESC/../../Peripheral/LCD/st7735.h:
 ../Core/Src/User/Test/TestESC/../../Peripheral/LCD/st7735_reg.h:
 ../Core/Src/User/Test/TestESC/../../Lib/Globals/Globals.h:
+../Core/Src/User/Test/TestESC/../../App/SystemMonitor/SystemMonitor.h:

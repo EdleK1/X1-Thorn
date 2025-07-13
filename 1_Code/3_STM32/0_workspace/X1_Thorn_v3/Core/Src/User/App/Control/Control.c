@@ -25,6 +25,8 @@
 #include "../../Peripheral/ESC/ESC.h"
 #include "../../Peripheral/Servo/Servo.h"
 #include "../../Service/Logger/SD_Logger.h"
+#include "../SystemMonitor/SystemMonitor.h"
+#include "../../Peripheral/LCD/lcd.h"
 
 
 odometry_t curr_odometry;
@@ -35,6 +37,10 @@ FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L;
 servo_t Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
+const static float Kq_PitchRate = 0.4f;
+const static float Kr_YawRate = 0.2f;
+const static int16_t ServoLim = 200;
+
 
 
 // Definitions for Control_Task
@@ -72,6 +78,10 @@ void Control_Task(void *argument)
 
 uint8_t Control_Start(void)
 {
+	// Initialize LCD (we need it to calibrate the BNO055 sensor
+
+	LCD_LoadScreen();
+
     // Initialize Odometry
 
 	Odometry_Init();
@@ -83,15 +93,19 @@ uint8_t Control_Start(void)
 	// Initialize Actuators
 
 	ESC_Init();
-	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1600);
-	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1600);
+	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1570);
+	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1550);
+
+	// Initialize System Monitor Task
+
+	System_Monitor_Init();
 
 	// Initialize PIDs
 
-	YawController_Init();
-	RollController_Init();
-	PitchController_Init();
-	ThrustController_Init();
+	Yaw_Controller_Init();
+	Roll_Controller_Init();
+	Pitch_Controller_Init();
+	Thrust_Controller_Init();
 
 	// Initialize the logger
 
@@ -107,10 +121,10 @@ uint8_t Control_Start(void)
 	SD_Logger_RegisterVariable(&curr_reference.p_ref, LOG_TYPE_FLOAT, "p_ref");
 	SD_Logger_RegisterVariable(&curr_reference.q_ref, LOG_TYPE_FLOAT, "q_ref");
 	SD_Logger_RegisterVariable(&curr_reference.r_ref, LOG_TYPE_FLOAT, "r_ref");
-	SD_Logger_RegisterVariable(&newActuators.omega_L, LOG_TYPE_FLOAT, "omega_L_ref");
-	SD_Logger_RegisterVariable(&newActuators.omega_R, LOG_TYPE_FLOAT, "omega_R_ref");
-	SD_Logger_RegisterVariable(&newActuators.servo_L, LOG_TYPE_UINT32, "servo_L_ref");
-	SD_Logger_RegisterVariable(&newActuators.servo_R, LOG_TYPE_UINT32, "servo_R_ref");
+	SD_Logger_RegisterVariable(&newActuators.omega_L, LOG_TYPE_UINT32, "omega_L_ref");
+	SD_Logger_RegisterVariable(&newActuators.omega_R, LOG_TYPE_UINT32, "omega_R_ref");
+	SD_Logger_RegisterVariable(&newActuators.servo_L, LOG_TYPE_INT32, "servo_L_ref");
+	SD_Logger_RegisterVariable(&newActuators.servo_R, LOG_TYPE_INT32, "servo_R_ref");
 
 	SD_Logger_Init();
 
@@ -145,19 +159,18 @@ void Control_Loop(void)
 
 	ax_error = curr_reference.ax_ref - curr_odometry.ax;
 	p_error = curr_reference.p_ref - curr_odometry.p;
-	q_error = curr_reference.q_ref;
-	r_error = curr_reference.r_ref;
+	q_error = curr_reference.q_ref - Kq_PitchRate * curr_odometry.q;
+	r_error = curr_reference.r_ref - Kr_YawRate * curr_odometry.r;
 
 	// Thrust Control: Calculate required rpm1 and rpm2 from ThrustController
 
-	float omega = ThrustController_Update(ax_error);
-	Omega_Distribution(omega, &newFlightControlOutputs); // Calculates the new values for omegaL and omegaR from the ThrustPID output and the previous omegaL and omegaR setpoints (we asume the motor dynamics are fast enough that the real omega is the setpoint)
+	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(ax_error);
 
 	// Attitude Control: Calculate required elevator, rudder and aileron from Roll, Pitch and Yaw controllers
 
-	newFlightControlOutputs.aileron = RollController_Update(p_error);
-	newFlightControlOutputs.elevator = PitchController_Update(q_error);
-	newFlightControlOutputs.rudder = YawController_Update(r_error);
+	newFlightControlOutputs.aileron = Roll_Controller_Update(p_error);
+	newFlightControlOutputs.elevator = Pitch_Controller_Update(q_error);
+	newFlightControlOutputs.rudder = Yaw_Controller_Update(r_error);
 
 	// Convert Controller outputs to servo PWM and motor RPM
 
@@ -176,43 +189,57 @@ Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs)
 {
 	Actuators_t actuators_output;
 
-	float omega_squared = FlightControlOutputs.omegaThrustController_R*FlightControlOutputs.omegaThrustController_R + FlightControlOutputs.omegaThrustController_L*FlightControlOutputs.omegaThrustController_L;
-
-	if (omega_squared/2 - FlightControlOutputs.rudder < 0)
+	if (FlightControlOutputs.omegaThrustController/2 + FlightControlOutputs.rudder < 0)
 	{
 		actuators_output.omega_R = 0;
 	}
 	else
 	{
-		actuators_output.omega_R = sqrt(omega_squared/2 - FlightControlOutputs.rudder);
+		actuators_output.omega_R = (uint32_t) roundf(sqrt(FlightControlOutputs.omegaThrustController/2 + FlightControlOutputs.rudder));
 	}
 
 
-	if (omega_squared/2 + FlightControlOutputs.rudder < 0)
+	if (FlightControlOutputs.omegaThrustController/2 - FlightControlOutputs.rudder < 0)
 	{
 		actuators_output.omega_L = 0;
 	}
 	else
 	{
-		actuators_output.omega_L = sqrt(omega_squared/2 + FlightControlOutputs.rudder);
+		actuators_output.omega_L = (uint32_t) roundf(sqrt(FlightControlOutputs.omegaThrustController/2 - FlightControlOutputs.rudder));
+	}
+
+	// Limit Servo range and make it round instead of truncating
+
+	actuators_output.servo_R = (int32_t) roundf(-FlightControlOutputs.aileron - FlightControlOutputs.elevator);
+	actuators_output.servo_L = (int32_t) roundf(-FlightControlOutputs.aileron + FlightControlOutputs.elevator);
+
+
+	if (actuators_output.servo_R < -ServoLim)
+	{
+		actuators_output.servo_R = -ServoLim;
+	}
+
+	else if (actuators_output.servo_R > ServoLim)
+	{
+		actuators_output.servo_R = ServoLim;
 	}
 
 
-	// Limit Servo PWM range to setpoint +- 250
+	if (actuators_output.servo_L < -ServoLim)
+	{
+		actuators_output.servo_L = -ServoLim;
+	}
 
-	actuators_output.servo_R = -FlightControlOutputs.aileron - FlightControlOutputs.elevator;
-	actuators_output.servo_L = -FlightControlOutputs.aileron + FlightControlOutputs.elevator;
+	else if (actuators_output.servo_L > ServoLim)
+	{
+		actuators_output.servo_L = ServoLim;
+	}
+
+
 
 	return actuators_output;
 }
 
-
-void Omega_Distribution(float omega, FlightControlOutputs_t *newFlightControlOutputs)
-{
-	float delta = (newFlightControlOutputs->omegaThrustController_R - newFlightControlOutputs->omegaThrustController_L)/2;
-	newFlightControlOutputs->omegaThrustController_R = omega + delta;
-	newFlightControlOutputs->omegaThrustController_L = omega - delta;
-}
 
 
 void TIM_PeriodElapsedCallback_Control_Timer(void)

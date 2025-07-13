@@ -3,9 +3,9 @@
 
 int last_buttons = 0x0000;
 float ax_max = 1;
-float p_max = 0.5;
-float roll_max = 0.3;
-float pitch_max = 0.3;
+float p_max = 1;
+float roll_max = 0.2;
+float pitch_max = 0.2;
 float Ground_Commands[5];
 float inactivity_counter = 0;
 uint8_t active = 0;
@@ -80,10 +80,8 @@ void dumpGamepad(ControllerPtr ctl) {
 void processGamepad(ControllerPtr ctl) 
 {
 
-  // Ground_Commands[0] = (ctl->throttle() - ctl->brake()) / 1020.0 * ax_max;
+  Ground_Commands[0] = (ctl->throttle() - ctl->brake()) / 1020.0 * ax_max;
 
-  Ground_Commands[0] = ctl->throttle() * 2.0;
-  Ground_Commands[1] = ctl->brake() * 2.0;
 
   if (ctl->axisY() < -25 || ctl->axisY() > 25) 
   {
@@ -105,14 +103,14 @@ void processGamepad(ControllerPtr ctl)
   }
 
 
-  // if (ctl->axisRX() < -25 || ctl->axisRX() > 25) {
+  if (ctl->axisRX() < -25 || ctl->axisRX() > 25) {
 
-  //   Ground_Commands[1] = -ctl->axisRX() / 508.0 * p_max;
-  // }
-  // else 
-  // {
-  //   Ground_Commands[1] = 0.0;
-  // }
+    Ground_Commands[1] = ctl->axisRX() / 508.0 * p_max;
+  }
+  else 
+  {
+    Ground_Commands[1] = 0.0;
+  }
 
 
   if (last_buttons == 0x0000 && ctl->buttons() == 0x0008) 
@@ -143,7 +141,7 @@ void processGamepad(ControllerPtr ctl)
   last_buttons = ctl->buttons();
 
 
-  // Serial.printf("xdot = %4f, ydot = %4f, zdot = %4f, p = %4f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
+  // Serial.printf("ax = %4f, p = %4f, pitch = %4f, yaw = %4f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
 
   // dumpGamepad(ctl);
 
