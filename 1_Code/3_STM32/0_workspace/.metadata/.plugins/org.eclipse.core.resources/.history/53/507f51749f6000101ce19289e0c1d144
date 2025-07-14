@@ -1,0 +1,18 @@
+/*
+ * ErrorHandler.c
+ *
+ *  Created on: Jul 14, 2025
+ *      Author: marcv
+ */
+
+
+#include "ErrorHandler.h"
+
+
+
+
+void ErrorHandler_Set(uint8_t Error_Code)
+{
+
+
+}

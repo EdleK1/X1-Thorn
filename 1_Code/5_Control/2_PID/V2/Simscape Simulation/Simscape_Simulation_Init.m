@@ -8,10 +8,10 @@ Ts_val = 0.01;
 
 %% Pitch Controller
 
-Kp_PitchRate_val = -200;        % OK % -150
+Kp_PitchRate_val = -150;        % OK % -150
 Ki_PitchRate_val = -90;         % OK % -90
-Kd_PitchRate_val = -10;         % OK % -70
-Kq_PitchRate_val = 0.25;        % OK % 0.15
+Kd_PitchRate_val = -70;         % OK % -70
+Kq_PitchRate_val = 0.15;        % OK % 0.15
 N_PitchRate_val = 20;           % OK
 
 %% Yaw Controller

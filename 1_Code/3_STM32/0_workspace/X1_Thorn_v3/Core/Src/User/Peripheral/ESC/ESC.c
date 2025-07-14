@@ -170,6 +170,8 @@ void Read_ESC_Telemetry(telemetry_t *New_Telemetry)
 	New_Telemetry->RPM2 = Curr_mRPM_2;
 	New_Telemetry->RPM4 = Curr_mRPM_4;
 	New_Telemetry->CRC_bit = raw_telem[9];
+	New_Telemetry->Throttle2 = New_Throttle_2;
+	New_Telemetry->Throttle4 = New_Throttle_4;
 }
 
 

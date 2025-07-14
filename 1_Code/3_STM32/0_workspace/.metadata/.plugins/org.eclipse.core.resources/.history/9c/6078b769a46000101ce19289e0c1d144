@@ -1,0 +1,290 @@
+/**
+  ******************************************************************************
+  * @file           : DShot.c
+  * @brief          : Provides the Dshot protocol. If Expect telemetry = 1 it will decode it. This is done since until the ESC is armed it wont send back dshot
+  ******************************************************************************
+*/
+
+
+#include <stdbool.h>
+#include "DShot.h"
+#include "cmsis_os2.h"
+#include "tim.h"
+#include "dma.h"
+#include "stm32h7xx_hal_dma.h"
+#include <string.h>
+
+
+static uint16_t dshotBuf2[17];
+static uint16_t dshotBuf4[17];
+
+#define TELEMETRY_SAMPLES 35
+#define GPIO_Motor_2 7
+#define GPIO_Motor_4 6
+static uint32_t ErrorFrameCnt_MOT2  = 0;
+static uint32_t ErrorFrameCnt_MOT4  = 0;
+static uint32_t ErrorFrameCnt_2  = 0;
+__attribute__((section(".dma_buffer"))) static uint16_t telemetry_buffer_2[TELEMETRY_SAMPLES];
+__attribute__((section(".dma_buffer"))) static uint16_t telemetry_buffer_4[TELEMETRY_SAMPLES];
+
+const uint8_t gcr_reverse[32] = {
+    [0x19] = 0x0,
+    [0x1B] = 0x1,
+    [0x12] = 0x2,
+    [0x13] = 0x3,
+    [0x1D] = 0x4,
+    [0x15] = 0x5,
+    [0x16] = 0x6,
+    [0x17] = 0x7,
+    [0x1A] = 0x8,
+    [0x09] = 0x9,
+    [0x0A] = 0xA,
+    [0x0B] = 0xB,
+    [0x1E] = 0xC,
+    [0x0D] = 0xD,
+    [0x0E] = 0xE,
+    [0x0F] = 0xF,
+    // all other indices implicitly zero; zero treated as “invalid”
+};
+
+static osSemaphoreId_t DshotRxDoneSemaphore;
+
+
+uint8_t DShot_Init(void)
+{
+
+
+
+
+    if (HAL_DMA_RegisterCallback(&hdma_tim15_up, HAL_DMA_XFER_CPLT_CB_ID, TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor2) != HAL_OK)
+    {
+      // Handle Initialization Error
+      return 1;
+    }
+
+    if (HAL_DMA_RegisterCallback(&hdma_tim16_up, HAL_DMA_XFER_CPLT_CB_ID, TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor4) != HAL_OK)
+    {
+      // Handle Initialization Error
+      return 1;
+    }
+
+	// Definition for xDshotRxDoneSemaphore
+
+	DshotRxDoneSemaphore = osSemaphoreNew(1, 0, NULL);
+	return (DshotRxDoneSemaphore != NULL) ? 0 : 1;
+}
+
+
+
+uint8_t DShot_SendFrame(uint16_t throttle2, uint16_t throttle4, uint32_t *last_rpm2, uint32_t *last_rpm4, uint8_t expect_telemetry, uint8_t request_telemetry)
+{
+
+	DShot_MakeFrame(throttle2, dshotBuf2, request_telemetry); // only telemetry on motor 2
+	DShot_MakeFrame(throttle4, dshotBuf4, 0);
+
+
+	GPIO_InitTypeDef GPIO_InitStruct = {0};
+    GPIO_InitStruct.Pin = DShot_MOTOR2_Pin|DShot_MOTOR4_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF2_TIM3;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+
+    HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_2, (uint32_t*)dshotBuf2, 17);
+    HAL_TIM_PWM_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t*)dshotBuf4, 17);
+
+	if (expect_telemetry == 1)
+	{
+		if (osSemaphoreAcquire(DshotRxDoneSemaphore, 1)!=osOK) // This semaphore is given when the erpm has finished being sampled
+		{
+			return 1;
+		}
+
+		if (DShot_DecodeTelemetry(GPIO_Motor_2, telemetry_buffer_2, last_rpm2) == 1 || DShot_DecodeTelemetry(GPIO_Motor_4, telemetry_buffer_4, last_rpm4) == 1 )
+		{
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+
+
+
+void DShot_MakeFrame(uint16_t throttle, uint16_t *dshotBits, uint8_t telemetry_bit)
+{
+    if (throttle > 2047)
+    {
+        throttle = 2047;
+    }
+    // 11 bits throttle, LSB is telemetry flag
+    uint16_t payload = (throttle << 1) | telemetry_bit;
+
+    // 4-bit CRC = inverted XOR of the 3 payload nibbles
+    uint8_t crc = ( payload ^ (payload >>  4) ^ (payload >>  8));
+    crc = (~crc) & 0x0F;
+
+    // Frame = payload << 4 | CRC
+    uint16_t frame =  (payload << 4) | crc;
+
+
+    for(int i = 0; i < 16; i++) {
+        // MSB first
+        if (frame & 0x8000)
+        {
+            dshotBits[i] = ESC_BIT_1;
+        } else
+        {
+            dshotBits[i] = ESC_BIT_0;
+        }
+        frame <<= 1;
+    }
+    // Add 1 zero slots to leave the line low after frame (reset gap)
+    dshotBits[16] = 0;
+}
+
+
+
+
+
+uint8_t DShot_DecodeTelemetry(unsigned GPIO_bit_pos, const uint16_t *telemetry_buffer, uint32_t *mRPM)
+{
+
+	// Extracting the rawtelem from the telemetry_buffer
+
+	size_t first_zero = TELEMETRY_SAMPLES;
+
+    for (size_t i = 0; i < TELEMETRY_SAMPLES; i++)
+    {
+        uint8_t bit = (telemetry_buffer[i] >> GPIO_bit_pos) & 1;
+        if (bit == 0)
+        {
+            first_zero = i;
+            break;
+        }
+    }
+
+    if (first_zero == TELEMETRY_SAMPLES || (TELEMETRY_SAMPLES - first_zero) < 21)
+    {
+    	ErrorFrameCnt_2++;
+        return 1;
+    }
+
+    uint32_t rawtelem = 0;
+    for (size_t j = 0; j < 21; j++)
+    {
+    	rawtelem <<= 1;
+        uint8_t bit = (telemetry_buffer[first_zero + j] >> GPIO_bit_pos) & 1;
+        rawtelem |= bit;
+    }
+
+
+    // Decoding the actual telemetry
+
+
+	uint32_t gcr = (rawtelem ^ (rawtelem >> 1));
+	uint16_t raw16 = 0;
+
+	for (int i = 0; i < 4; i++)
+	{
+	    // Extract symbol #i (i = 0 is the first 5 bits)
+	    uint8_t symbol = (gcr >> (15 - 5*i)) & 0x1F;
+	    uint8_t nibble = gcr_reverse[symbol];
+	    raw16 |= (nibble << (12 - 4*i));
+	}
+
+	uint16_t word12   = raw16 >> 4;      // top 12 bits
+	uint8_t recv_crc  = raw16 & 0x0F;    // low 4 bits
+
+	// Compute CRC of word12
+	uint8_t calc_crc = (word12 ^ (word12 >> 4) ^ (word12 >> 8));
+	calc_crc = (~calc_crc) & 0x0F;
+
+	if (calc_crc != recv_crc)
+	{
+		if (GPIO_bit_pos == GPIO_Motor_2)
+		{
+			ErrorFrameCnt_MOT2++;
+		}
+		if (GPIO_bit_pos == GPIO_Motor_4)
+		{
+			ErrorFrameCnt_MOT4++;
+		}
+		return 1;
+	}
+
+	uint16_t E = (word12 >> 9) & 0x07;
+	uint16_t M = (word12 >> 0) & 0x01FF;
+	uint32_t period_us = ((uint32_t)M) << E;
+
+	// eRPM (electrical RPM) = 60 000 000 µs/s ÷ period_us
+	uint32_t eRPM = 60000000UL / period_us;
+
+	// mechanical RPM = electrical RPM ÷ (poles/2)
+	*mRPM = eRPM / (POLES/2);
+
+	return 0;
+}
+
+
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance == TIM3)
+	{
+		if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
+		{
+			HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+
+		    GPIO_InitTypeDef GPIO_Init = {0};
+		    GPIO_Init.Pin  = DShot_MOTOR4_Pin;
+		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
+		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
+		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
+
+		}
+		else if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+		{
+			HAL_TIM_PWM_Stop_DMA(&htim3, TIM_CHANNEL_2);
+			HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
+
+		    GPIO_InitTypeDef GPIO_Init = {0};
+		    GPIO_Init.Pin  = DShot_MOTOR2_Pin;
+		    GPIO_Init.Mode = GPIO_MODE_INPUT;       // turn off AF-PP
+		    GPIO_Init.Pull = GPIO_PULLUP;           // idle high for inverted DShot
+		    GPIO_Init.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+		    HAL_GPIO_Init(GPIOA, &GPIO_Init);
+
+		    // Read Dshot Telemetry
+
+			memset(telemetry_buffer_2, 0xFF, sizeof(telemetry_buffer_2));
+			HAL_DMA_Start_IT(&hdma_tim15_up, (uint32_t)&GPIOA->IDR, (uint32_t)telemetry_buffer_2, TELEMETRY_SAMPLES);
+			__HAL_TIM_ENABLE_DMA(&htim15, TIM_DMA_UPDATE);
+			HAL_TIM_Base_Start(&htim15);
+
+			memset(telemetry_buffer_4, 0xFF, sizeof(telemetry_buffer_4));
+			HAL_DMA_Start_IT(&hdma_tim16_up, (uint32_t)&GPIOA->IDR, (uint32_t)telemetry_buffer_4, TELEMETRY_SAMPLES);
+			__HAL_TIM_ENABLE_DMA(&htim16, TIM_DMA_UPDATE);
+			HAL_TIM_Base_Start(&htim16);
+		}
+	}
+}
+
+
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor2()
+{
+	HAL_TIM_Base_Stop(&htim15); // Stop the timer so no more DMA triggers occur
+	__HAL_TIM_DISABLE_DMA(&htim15, TIM_DMA_UPDATE);
+}
+
+
+void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor4()
+{
+	HAL_TIM_Base_Stop(&htim16); // Stop the timer so no more DMA triggers occur
+	__HAL_TIM_DISABLE_DMA(&htim16, TIM_DMA_UPDATE);
+	osSemaphoreRelease(DshotRxDoneSemaphore); // Release the task so it can decode the buffer. Since motor4 always is fired after motor2, we ensure motor4 will ahve finished
+}

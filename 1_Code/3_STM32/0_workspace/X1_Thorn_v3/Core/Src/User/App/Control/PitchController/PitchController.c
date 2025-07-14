@@ -15,9 +15,9 @@
 
 // Controller Parameters
 
-static const float Kp = -300.0f;
-static const float Ki = -50.0f;
-static const float Kd = -10.0f;
+static const float Kp = -150.0f; // -300
+static const float Ki = -90.0f; // -50
+static const float Kd = -70.0f; // -10
 static const float dt  = 0.01f;
 static const float tau = 1.0f/20.0f;    // N = 20
 

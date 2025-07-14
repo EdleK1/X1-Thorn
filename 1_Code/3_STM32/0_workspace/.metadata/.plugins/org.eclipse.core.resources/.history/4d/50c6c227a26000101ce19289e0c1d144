@@ -1,0 +1,93 @@
+/**
+  ******************************************************************************
+  * @file           : SystemMonitor.c
+  * @brief          : Displays the critical variables on the LCD display and logs more data into the SD card
+  *
+  ******************************************************************************
+*/
+
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"
+#include "SystemMonitor.h"
+#include "../../Peripheral/LCD/lcd.h"
+#include "../../Lib/Globals/Globals.h"
+#include "../../Peripheral/ESC/ESC.h"
+#include "../../Service/Logger/SD_Logger.h"
+
+
+static uint8_t text[64];
+static int8_t first_error = -1;
+telemetry_t New_Telemetry;
+
+
+osThreadId_t SystemMonitor_TaskHandle;
+uint32_t SystemMonitor_TaskBuffer[ 8192 ];
+StaticTask_t SystemMonitor_TaskControlBlock;
+const osThreadAttr_t SystemMonitor_Task_attributes = {
+  .name = "SystemMonitor_Task",
+  .cb_mem = &SystemMonitor_TaskControlBlock,
+  .cb_size = sizeof(SystemMonitor_TaskControlBlock),
+  .stack_mem = &SystemMonitor_TaskBuffer[0],
+  .stack_size = sizeof(SystemMonitor_TaskBuffer),
+  .priority = (osPriority_t) osPriorityLow,
+};
+
+
+
+
+void System_Monitor_Init(void)
+{
+	SystemMonitor_TaskHandle = osThreadNew(System_Monitor_Task, NULL, &SystemMonitor_Task_attributes);
+}
+
+
+
+
+
+void System_Monitor_Task(void *argument)
+{
+	System_Monitor_Start();
+
+  for(;;)
+  {
+	  System_Monitor_Loop();
+	  osDelay(50);
+  }
+}
+
+
+
+void System_Monitor_Start(void)
+{
+
+	SD_Logger_RegisterVariable(&New_Telemetry.Temperature, LOG_TYPE_UINT32, "Temperature");
+	SD_Logger_RegisterVariable(&New_Telemetry.Voltage, LOG_TYPE_FLOAT, "Voltage");
+	SD_Logger_RegisterVariable(&New_Telemetry.RPM2, LOG_TYPE_UINT32, "RPM2");
+	SD_Logger_RegisterVariable(&New_Telemetry.RPM4, LOG_TYPE_UINT32, "RPM4");
+
+}
+
+
+
+
+void System_Monitor_Loop(void)
+{
+
+	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry
+
+	first_error = ErrorHandler_GetFirstError();
+
+	sprintf((char *)&text, "rpm2=%lu | %d                  	", New_Telemetry.RPM2, New_Telemetry.Throttle2);
+	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "rpm4=%lu | %d                  	", New_Telemetry.RPM4, New_Telemetry.Throttle4);
+	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "Volt=%.2f | LE= %d                     ", New_Telemetry.Voltage, );
+	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
+
+	sprintf((char *)&text, "Temp=%d | CSV= %d                 		", New_Telemetry.Temperature);
+	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
+
+}
+

@@ -1,0 +1,33 @@
+/*
+ * ErrorHandler.c
+ *
+ *  Created on: Jul 14, 2025
+ *      Author: marcv
+ */
+
+
+#include "ErrorHandler.h"
+
+
+uint32_t errors = 0;
+int8_t first_error = -1;
+
+
+void ErrorHandler_SetError(uint8_t Error_Code)
+{
+	errors = errors | 1<<Error_Code;
+	if (first_error == -1)
+	{
+		first_error = Error_Code;
+	}
+}
+
+
+void ErrorHandler_RemoveError(uint8_t Error_Code)
+{
+	errors = errors & 0<<Error_Code;
+}
+
+
+void Error_Handler_Log_Init();
+

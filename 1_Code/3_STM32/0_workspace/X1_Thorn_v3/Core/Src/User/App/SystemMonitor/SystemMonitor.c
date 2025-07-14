@@ -13,10 +13,14 @@
 #include "../../Lib/Globals/Globals.h"
 #include "../../Peripheral/ESC/ESC.h"
 #include "../../Service/Logger/SD_Logger.h"
+#include "../../Service/ErrorHandler/ErrorHandler.h"
+#include <stdint.h>
 
 
-static uint8_t text[50];
+static uint8_t text[64];
+static int8_t first_error = -1;
 telemetry_t New_Telemetry;
+static uint8_t CSV_number = 0;
 
 
 osThreadId_t SystemMonitor_TaskHandle;
@@ -64,6 +68,7 @@ void System_Monitor_Start(void)
 	SD_Logger_RegisterVariable(&New_Telemetry.RPM2, LOG_TYPE_UINT32, "RPM2");
 	SD_Logger_RegisterVariable(&New_Telemetry.RPM4, LOG_TYPE_UINT32, "RPM4");
 
+	CSV_number = 2;
 }
 
 
@@ -71,32 +76,21 @@ void System_Monitor_Start(void)
 
 void System_Monitor_Loop(void)
 {
-//	if (g_Status == 1)
-//	{
-//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, YELLOW);
-//	}
-//	else if (g_Status == 2)
-//	{
-//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, GREEN);
-//	}
-//	else
-//	{
-//		ST7735_LCD_Driver.FillRect(&st7735_pObj, 0, 0, ST7735Ctx.Width,ST7735Ctx.Height, RED);
-//	} // Crec que es veura com el cul
-
 
 	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry
 
-	sprintf((char *)&text, "rpm2=%lu                   	", New_Telemetry.RPM2);
+	first_error = ErrorHandler_GetFirstError();
+
+	sprintf((char *)&text, "rpm2=%lu | %u                  	", New_Telemetry.RPM2, New_Telemetry.Throttle2);
 	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "rpm4=%lu                   	", New_Telemetry.RPM4);
+	sprintf((char *)&text, "rpm4=%lu | %u                  	", New_Telemetry.RPM4, New_Telemetry.Throttle4);
 	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "Volt=%.2f                        ", New_Telemetry.Voltage);
+	sprintf((char *)&text, "Volt=%.2f | LE= %d                     ", New_Telemetry.Voltage, first_error);
 	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "Temp=%d                  		", New_Telemetry.Temperature);
+	sprintf((char *)&text, "Temp=%u | CSV= %u                 		", New_Telemetry.Temperature, CSV_number);
 	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
 
 }

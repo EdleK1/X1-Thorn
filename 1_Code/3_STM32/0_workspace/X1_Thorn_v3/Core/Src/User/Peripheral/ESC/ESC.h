@@ -18,6 +18,7 @@ typedef struct {
     float Voltage, Current, Consumption;
     uint32_t RPM2, RPM4;
     uint8_t CRC_bit;
+    uint16_t Throttle2, Throttle4;
 } telemetry_t;
 
 

@@ -18,6 +18,7 @@
 "./Core/Src/User/Peripheral/LCD/st7735.o"
 "./Core/Src/User/Peripheral/LCD/st7735_reg.o"
 "./Core/Src/User/Peripheral/Servo/Servo.o"
+"./Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
 "./Core/Src/User/Service/Logger/SD_Logger.o"
 "./Core/Src/User/Test/MotorCharacterization/MotorCharacterization.o"
 "./Core/Src/User/Test/Test.o"

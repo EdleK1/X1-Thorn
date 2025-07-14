@@ -38,6 +38,7 @@ Core/Src/User/Peripheral/ESC \
 Core/Src/User/Peripheral/ESP32 \
 Core/Src/User/Peripheral/LCD \
 Core/Src/User/Peripheral/Servo \
+Core/Src/User/Service/ErrorHandler \
 Core/Src/User/Service/Logger \
 Core/Src/User/Test/MotorCharacterization \
 Core/Src/User/Test \

@@ -1,2 +1,2 @@
-../Core/Src/User/Peripheral/Servo/Servo.c:11:5:Servo_Init	32	static
-../Core/Src/User/Peripheral/Servo/Servo.c:41:6:Servo_Set_Position	24	static
+../Core/Src/User/Peripheral/Servo/Servo.c:13:5:Servo_Init	32	static
+../Core/Src/User/Peripheral/Servo/Servo.c:43:6:Servo_Set_Position	24	static

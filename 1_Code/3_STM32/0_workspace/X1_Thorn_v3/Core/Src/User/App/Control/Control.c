@@ -37,7 +37,7 @@ FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L;
 servo_t Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
-const static float Kq_PitchRate = 0.4f;
+const static float Kq_PitchRate = 0.15f;
 const static float Kr_YawRate = 0.2f;
 const static int16_t ServoLim = 200;
 

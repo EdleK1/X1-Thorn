@@ -43,16 +43,17 @@ hold on
 
 clear
 
-Kp_PitchRate_val = -300;
-Ki_PitchRate_val = -50;
-Kd_PitchRate_val = -10;
-Kq_val = 0.4;
+Kp_PitchRate_val = -400;
+Ki_PitchRate_val = -80;
+Kd_PitchRate_val = -50;
+Kq_val = -200;
+
 Kg_val = -0.22365;
 N_PitchRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.1;
 
-
+%%
 % syms tau Ts s
 % G_theta_s = (1/tau)/(s + 1/tau) * 1/s^3;
 % partfrac(G_theta_s,s)

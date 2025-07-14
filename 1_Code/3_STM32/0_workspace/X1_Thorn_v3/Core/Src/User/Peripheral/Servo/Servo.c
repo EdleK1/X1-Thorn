@@ -7,6 +7,8 @@
 
 #include "Servo.h"
 
+static const uint16_t step_servo = 10;
+
 
 int Servo_Init(servo_t *servo, TIM_HandleTypeDef *htim, uint32_t channel, uint16_t setpoint)
 {
@@ -42,8 +44,16 @@ void Servo_Set_Position(const servo_t *servo, int32_t position)
 {
 	uint16_t period = position + servo->setpoint;
 
+
+    // Test with Quantiziting
+
+    period =  ((period + (step_servo/2)) / step_servo) * step_servo;
+
+
     if (period < 1000) period = 1000;
     if (period > 2000) period = 2000;
+
+
 
     __HAL_TIM_SET_COMPARE(servo->htim, servo->channel, period);
 }

@@ -1,0 +1,4 @@
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:17:6:ErrorHandler_SetError	16	static
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:28:6:ErrorHandler_RemoveError	16	static
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:34:8:ErrorHandler_GetFirstError	4	static
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:40:6:ErrorHandler_LogInit	4	static

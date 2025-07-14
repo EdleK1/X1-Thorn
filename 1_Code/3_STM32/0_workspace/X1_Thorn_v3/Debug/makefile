@@ -28,6 +28,7 @@ RM := rm -rf
 -include Core/Src/User/Test/MotorCharacterization/subdir.mk
 -include Core/Src/User/Test/subdir.mk
 -include Core/Src/User/Service/Logger/subdir.mk
+-include Core/Src/User/Service/ErrorHandler/subdir.mk
 -include Core/Src/User/Peripheral/Servo/subdir.mk
 -include Core/Src/User/Peripheral/LCD/subdir.mk
 -include Core/Src/User/Peripheral/ESP32/subdir.mk
