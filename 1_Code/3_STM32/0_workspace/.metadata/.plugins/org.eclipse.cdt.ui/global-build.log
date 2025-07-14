@@ -647,3 +647,30 @@ Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
+13:24:57 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
+../Core/Src/User/Lib/DShotProtocol/DShot.c: In function 'DShot_Init':
+../Core/Src/User/Lib/DShotProtocol/DShot.c:56:9: warning: implicit declaration of function 'SD_Logger_RegisterVariable' [-Wimplicit-function-declaration]
+   56 |         SD_Logger_RegisterVariable(&ErrorFrameCnt_MOT2, LOG_TYPE_UINT32, "ErrorFrameCnt_MOT2");
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/User/Lib/DShotProtocol/DShot.c:56:57: error: 'LOG_TYPE_UINT32' undeclared (first use in this function)
+   56 |         SD_Logger_RegisterVariable(&ErrorFrameCnt_MOT2, LOG_TYPE_UINT32, "ErrorFrameCnt_MOT2");
+      |                                                         ^~~~~~~~~~~~~~~
+../Core/Src/User/Lib/DShotProtocol/DShot.c:56:57: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/User/Lib/DShotProtocol/subdir.mk:19: Core/Src/User/Lib/DShotProtocol/DShot.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:25:49 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173384	    772	 125116	 299272	  49108	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 

@@ -13,7 +13,6 @@
 #include "dma.h"
 #include "stm32h7xx_hal_dma.h"
 #include <string.h>
-#include "../../Service/Logger/SD_Logger.h"
 
 
 static uint16_t dshotBuf2[17];

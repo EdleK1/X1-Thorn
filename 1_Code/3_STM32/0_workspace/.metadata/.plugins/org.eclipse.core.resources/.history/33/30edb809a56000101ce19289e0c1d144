@@ -13,7 +13,6 @@
 #include "dma.h"
 #include "stm32h7xx_hal_dma.h"
 #include <string.h>
-#include "../../Service/Logger/SD_Logger.h"
 
 
 static uint16_t dshotBuf2[17];
@@ -53,9 +52,6 @@ static osSemaphoreId_t DshotRxDoneSemaphore;
 
 uint8_t DShot_Init(void)
 {
-
-	SD_Logger_RegisterVariable(&ErrorFrameCnt_MOT2, LOG_TYPE_UINT32, "ErrorFrameCnt_MOT2");
-	SD_Logger_RegisterVariable(&ErrorFrameCnt_MOT4, LOG_TYPE_UINT32, "ErrorFrameCnt_MOT4");
 
     if (HAL_DMA_RegisterCallback(&hdma_tim15_up, HAL_DMA_XFER_CPLT_CB_ID, TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor2) != HAL_OK)
     {
