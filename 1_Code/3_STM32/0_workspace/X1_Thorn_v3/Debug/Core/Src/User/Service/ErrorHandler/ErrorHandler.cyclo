@@ -1,4 +1,5 @@
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:17:6:ErrorHandler_SetError	2
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:28:6:ErrorHandler_RemoveError	1
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:34:8:ErrorHandler_GetFirstError	1
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:40:6:ErrorHandler_LogInit	1
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:20:6:ErrorHandler_Init	1
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:28:6:ErrorHandler_SetError	2
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:43:6:ErrorHandler_RemoveError	1
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:53:8:ErrorHandler_GetFirstError	1
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:59:10:ErrorHandler_GetErrors	1

@@ -9,7 +9,7 @@
 #define SRC_USER_APP_CONTROL_YAWCONTROLLER_YAWCONTROLLER_H_
 
 void Yaw_Controller_Init(void);
-float Yaw_Controller_Update(float curr_error);
+float Yaw_Controller_Update(float yaw_ref, float r_measured);
 
 
 #endif /* SRC_USER_APP_HIGHLEVELCONTROL_CONTROL_H_ */

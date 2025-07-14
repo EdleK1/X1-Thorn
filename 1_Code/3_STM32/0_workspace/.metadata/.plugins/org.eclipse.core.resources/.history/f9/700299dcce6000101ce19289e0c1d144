@@ -1,0 +1,56 @@
+/*
+ * ErrorHandler.c
+ *
+ *  Created on: Jul 14, 2025
+ *      Author: marcv
+ */
+
+
+#include "ErrorHandler.h"
+#include "cmsis_os2.h"
+
+
+uint32_t errors = 0;
+int8_t first_error = -1;
+
+
+void ErrorHandler_Init(void)
+{
+    // Create a recursive mutex so the same thread can nest calls if needed
+    ehMutex = osMutexNew(&ehMutexAttr);
+    // You can assert or handle ehMutex == NULL here
+}
+
+
+void ErrorHandler_SetError(uint8_t Error_Code)
+{
+	osMutexAcquire(ehMutex, osWaitForever);
+
+	errors |= (1U << Error_Code);
+
+	if (first_error == -1)
+	{
+		first_error = Error_Code;
+	}
+
+	osMutexRelease(ehMutex);
+}
+
+
+void ErrorHandler_RemoveError(uint8_t Error_Code)
+{
+	errors &= ~(1U << Error_Code);
+}
+
+
+int8_t ErrorHandler_GetFirstError(void)
+{
+	return first_error;
+}
+
+
+uint32_t ErrorHandler_GetErrors(void)
+{
+	return errors;
+}
+

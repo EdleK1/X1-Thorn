@@ -44,8 +44,12 @@ void Roll_Controller_Init(void)
 
 
 
-float Roll_Controller_Update(float curr_error)
+float Roll_Controller_Update(float p_ref, float p_measured)
 {
+	// 0) Calculate error
+
+	float curr_error = p_ref - p_measured;
+
     // 1) Proportional term:
 
     float Pout = Kp * curr_error;

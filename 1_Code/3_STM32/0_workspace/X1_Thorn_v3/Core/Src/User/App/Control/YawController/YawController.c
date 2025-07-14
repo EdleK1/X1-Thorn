@@ -8,7 +8,6 @@
   ******************************************************************************
 */
 
-
 #include "YawController.h"
 #include <math.h>
 
@@ -18,6 +17,7 @@
 static const float Kp = 40e6f;
 static const float Ki = 60e6f;
 static const float Kd = 7e6f;
+static const float Kr = 0.2f;
 static const float dt  = 0.01f;
 static const float tau = 1.0f/10.0f;	// N = 10
 
@@ -44,8 +44,14 @@ void Yaw_Controller_Init(void)
 
 
 
-float Yaw_Controller_Update(float curr_error)
+float Yaw_Controller_Update(float yaw_ref, float r_measured)
 {
+	// 0) Calculate reference yaw rate
+
+	float r_ref = Kr * yaw_ref;
+
+	float curr_error = r_ref - r_measured;
+
     // 1) Proportional term:
 
     float Pout = Kp * curr_error;

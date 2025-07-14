@@ -9,7 +9,7 @@
 #define SRC_USER_APP_CONTROL_THRUSTCONTROLLER_THRUSTCONTROLLER_H_
 
 void Thrust_Controller_Init(void);
-float Thrust_Controller_Update(float curr_error);
+float Thrust_Controller_Update(float ax_ref, float ax_measured);
 
 
 #endif /* SRC_USER_APP_HIGHLEVELCONTROL_CONTROL_H_ */

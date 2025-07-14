@@ -12,22 +12,41 @@
 
 uint32_t errors = 0;
 int8_t first_error = -1;
+static osMutexId_t ehMutex;
+static const osMutexAttr_t ehMutexAttr = {
+    .name = "EH_Mutex"
+};
+
+void ErrorHandler_Init(void)
+{
+    // Create a recursive mutex so the same thread can nest calls if needed
+    ehMutex = osMutexNew(&ehMutexAttr);
+    // You can assert or handle ehMutex == NULL here
+}
 
 
 void ErrorHandler_SetError(uint8_t Error_Code)
 {
+	osMutexAcquire(ehMutex, osWaitForever);
+
 	errors |= (1U << Error_Code);
 
 	if (first_error == -1)
 	{
 		first_error = Error_Code;
 	}
+
+	osMutexRelease(ehMutex);
 }
 
 
 void ErrorHandler_RemoveError(uint8_t Error_Code)
 {
+	osMutexAcquire(ehMutex, osWaitForever);
+
 	errors &= ~(1U << Error_Code);
+
+	osMutexRelease(ehMutex);
 }
 
 
@@ -37,8 +56,8 @@ int8_t ErrorHandler_GetFirstError(void)
 }
 
 
-void ErrorHandler_LogInit(void)
+uint32_t ErrorHandler_GetErrors(void)
 {
-
+	return errors;
 }
 

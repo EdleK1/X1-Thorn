@@ -40,8 +40,12 @@ void Thrust_Controller_Init(void)
 
 
 
-float Thrust_Controller_Update(float curr_error)
+float Thrust_Controller_Update(float ax_ref, float ax_measured)
 {
+	// 0) Calculate the error:
+
+	float curr_error = ax_ref - ax_measured;
+
     // 1) Proportional term:
 
     float Pout = Kp * curr_error;

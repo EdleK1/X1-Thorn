@@ -20,6 +20,6 @@ void ErrorHandler_SetError(uint8_t Error_Code);
 void ErrorHandler_RemoveError(uint8_t Error_Code);
 int8_t ErrorHandler_GetFirstError(void);
 void ErrorHandler_LogInit(void);
-
+uint32_t ErrorHandler_GetErrors(void);
 
 #endif /* SRC_USER_SERVICE_ERRORHANDLER_ERRORHANDLER_H_ */

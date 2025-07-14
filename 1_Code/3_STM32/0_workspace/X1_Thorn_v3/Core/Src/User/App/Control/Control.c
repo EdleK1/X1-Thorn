@@ -37,8 +37,6 @@ FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L;
 servo_t Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
-const static float Kq_PitchRate = 0.15f;
-const static float Kr_YawRate = 0.2f;
 const static int16_t ServoLim = 200;
 
 
@@ -153,24 +151,16 @@ void Control_Loop(void)
 
 	get_reference(curr_attitude, &curr_reference);
 
-	// Calculate the errors, from the way q_ref and r_ref are calculated, they do not need to be substracted their actual value
-
-	float ax_error, p_error, q_error, r_error;
-
-	ax_error = curr_reference.ax_ref - curr_odometry.ax;
-	p_error = curr_reference.p_ref - curr_odometry.p;
-	q_error = curr_reference.q_ref - Kq_PitchRate * curr_odometry.q;
-	r_error = curr_reference.r_ref - Kr_YawRate * curr_odometry.r;
 
 	// Thrust Control: Calculate required rpm1 and rpm2 from ThrustController
 
-	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(ax_error);
+	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(curr_reference.ax_ref,  curr_odometry.ax);
 
 	// Attitude Control: Calculate required elevator, rudder and aileron from Roll, Pitch and Yaw controllers
 
-	newFlightControlOutputs.aileron = Roll_Controller_Update(p_error);
-	newFlightControlOutputs.elevator = Pitch_Controller_Update(q_error);
-	newFlightControlOutputs.rudder = Yaw_Controller_Update(r_error);
+	newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
+	newFlightControlOutputs.elevator = Pitch_Controller_Update(curr_reference.q_ref, curr_odometry.q);
+	newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.r_ref, curr_odometry.r);
 
 	// Convert Controller outputs to servo PWM and motor RPM
 
