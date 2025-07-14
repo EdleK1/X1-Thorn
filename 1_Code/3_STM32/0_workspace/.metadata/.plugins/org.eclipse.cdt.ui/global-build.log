@@ -938,3 +938,110 @@ Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
+22:46:45 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+In file included from ../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:9:
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:14:21: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   14 |     uint32_t errors = 0;
+      |                     ^
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_SetError':
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: error: 'errors' undeclared (first use in this function)
+   30 |         errors |= (1U << Error_Code);
+      |         ^~~~~~
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_RemoveError':
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:45:9: error: 'errors' undeclared (first use in this function)
+   45 |         errors &= ~(1U << Error_Code);
+      |         ^~~~~~
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_GetError':
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:59:17: error: 'errors' undeclared (first use in this function)
+   59 |         return &errors;
+      |                 ^~~~~~
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+   60 | }
+      | ^
+make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Src/User/App/SystemMonitor/SystemMonitor.c:16:
+../Core/Src/User/App/SystemMonitor/../../Service/ErrorHandler/ErrorHandler.h:14:21: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+   14 |     uint32_t errors = 0;
+      |                     ^
+make: *** [Core/Src/User/App/SystemMonitor/subdir.mk:19: Core/Src/User/App/SystemMonitor/SystemMonitor.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:47:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_SetError':
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: error: 'errors' undeclared (first use in this function)
+   30 |         errors |= (1U << Error_Code);
+      |         ^~~~~~
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_RemoveError':
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:45:9: error: 'errors' undeclared (first use in this function)
+   45 |         errors &= ~(1U << Error_Code);
+      |         ^~~~~~
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_GetError':
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:59:17: error: 'errors' undeclared (first use in this function)
+   59 |         return &errors;
+      |                 ^~~~~~
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+   60 | }
+      | ^
+make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+22:48:41 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173464	    772	 125116	 299352	  49158	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+23:33:08 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c: In function 'System_Monitor_Start':
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c:70:91: error: expected ';' before 'CSV_number'
+   70 |         SD_Logger_RegisterVariable(ErrorHandler_GetError(), LOG_TYPE_UINT32, "ErrorCodes")
+      |                                                                                           ^
+      |                                                                                           ;
+   71 | 
+   72 |         CSV_number = 2;
+      |         ~~~~~~~~~~                                                                         
+make: *** [Core/Src/User/App/SystemMonitor/subdir.mk:19: Core/Src/User/App/SystemMonitor/SystemMonitor.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+23:33:17 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173568	    772	 125124	 299464	  491c8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+23:35:23 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173568	    772	 125124	 299464	  491c8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 

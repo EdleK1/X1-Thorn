@@ -40,7 +40,6 @@
 #include "User/App/Control/Control.h"
 #include "User/App/SystemMonitor/SystemMonitor.h"
 #include "User/Test/MotorCharacterization/MotorCharacterization.h"
-#include "User/Service/ErrorHandler/ErrorHandler.h"
 
 
 
@@ -139,8 +138,6 @@ int main(void)
   /* Call init function for freertos objects (in cmsis_os2.c) */
 //  MX_FREERTOS_Init();
 
-
-  ErrorHandler_Init();
   Control_Init();
 //  Test_Init();
 

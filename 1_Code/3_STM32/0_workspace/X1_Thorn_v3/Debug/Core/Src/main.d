@@ -68,7 +68,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/User/Peripheral/ESP32/ESP32.h \
  ../Core/Src/User/App/Control/Control.h \
  ../Core/Src/User/App/SystemMonitor/SystemMonitor.h \
- ../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.h
+ ../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.h \
+ ../Core/Src/User/Service/ErrorHandler/ErrorHandler.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -150,3 +151,4 @@ C:/Users/marcv/Desktop/X1-Thorn/1_Code/3_STM32/0_workspace/X1_Thorn_v3/Core/Src/
 ../Core/Src/User/App/Control/Control.h:
 ../Core/Src/User/App/SystemMonitor/SystemMonitor.h:
 ../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.h:
+../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:

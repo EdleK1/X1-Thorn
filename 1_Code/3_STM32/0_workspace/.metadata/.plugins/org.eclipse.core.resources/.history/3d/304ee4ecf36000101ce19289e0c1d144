@@ -10,7 +10,6 @@
 #include "cmsis_os2.h"
 
 int8_t first_error = -1;
-uint32_t errors = 0;
 static osMutexId_t ehMutex;
 static const osMutexAttr_t ehMutexAttr = {
     .name = "EH_Mutex"
