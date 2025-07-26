@@ -50,10 +50,10 @@ void GroundCommands_Test_Loop(void)
 	sprintf((char *)&text, "p=%.3f                   	", curr_reference_test.p_ref);
 	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "q=%.3f                        ", curr_reference_test.q_ref);
+	sprintf((char *)&text, "q=%.3f                        ", curr_reference_test.pitch_ref);
 	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "r=%.3f                  		", curr_reference_test.r_ref);
+	sprintf((char *)&text, "r=%.3f                  		", curr_reference_test.yaw_ref);
 	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
 
 }

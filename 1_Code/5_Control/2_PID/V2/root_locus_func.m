@@ -14,7 +14,7 @@ G_q = K_G * (tau_act*(z-1)/(z-exp(-Ts/tau_act))   -  tau_act    +   Ts/(z-1) );
 Cz = Kp + Kd * (Nd*z - Nd)/(z + Nd*Ts - 1) + Ki * Ts/(z-1);
 
 
-T = (G_theta * Cz) / (1 + Cz*(G_theta + K_q*G_q));
+T = (K_q * G_theta * Cz) / (1 + Cz*(K_q * G_theta + G_q));
 
 T = collect(simplify(T));
 
@@ -50,8 +50,8 @@ PID = s*Kd + Kp + Ki/s;
 Gs = K_G * 1/(tau_act*s + 1);
 
 L1 = PID * Gs * 1/s;
-L2 = L1/(1+L1*K_q);
-Tfs = L2*1/s/(1+L2*1/s);
+L2 = L1/(1+L1);
+Tfs = K_q*L2*1/s/(1 + K_q*L2*1/s);
 
 Tfs = collect(simplify(Tfs));
 

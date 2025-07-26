@@ -39,7 +39,7 @@ void 		SD_Logger_Init(void);
 
 uint8_t		SD_Logger_RegisterVariable(void* var_ptr, SD_Logger_DataType_t type, const char* header_name);
 
-uint8_t 	SD_Logger_LogData(void);
+uint8_t		SD_Logger_GetLogNum(void);
 
 
 #endif /* INC_SD_LOGGER_H_ */

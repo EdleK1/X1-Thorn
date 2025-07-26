@@ -1,9 +1,9 @@
 clear
 
 Kp_RollRate_val = 15;
-Ki_RollRate_val = 9;
-Kd_RollRate_val = 7;
-Kg_val = 0.51447;
+Ki_RollRate_val = 1;
+Kd_RollRate_val = 1;
+Kg_val = 0.53887;
 tau_act_val = 0.1;
 
 %% Symbolic Analysis
@@ -45,7 +45,7 @@ clear
 Kp_RollRate_val = 15;
 Ki_RollRate_val = 1;
 Kd_RollRate_val = 1;
-Kg_val = 0.51447;
+Kg_val = 0.53887;
 N_RollRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.1;

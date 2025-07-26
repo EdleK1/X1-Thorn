@@ -13,7 +13,7 @@
 
 typedef struct {
 	float ax_ref;			  				// longitudinal acceleration
-    float p_ref, q_ref, r_ref;        		// body rates
+    float p_ref, pitch_ref, yaw_ref;        		// body rates
 } reference_t;
 
 void GroundCommands_Init(void);

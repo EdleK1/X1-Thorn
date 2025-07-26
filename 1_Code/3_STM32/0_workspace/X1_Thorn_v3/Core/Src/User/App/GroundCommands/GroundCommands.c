@@ -90,6 +90,6 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 
 	curr_reference->ax_ref = curr_esp32_commands.ax_command;
 	curr_reference->p_ref = p_delta + curr_esp32_commands.p_command;
-	curr_reference->q_ref = q_delta;
-	curr_reference->r_ref = r_delta;
+	curr_reference->pitch_ref = q_delta;
+	curr_reference->yaw_ref = r_delta;
 }

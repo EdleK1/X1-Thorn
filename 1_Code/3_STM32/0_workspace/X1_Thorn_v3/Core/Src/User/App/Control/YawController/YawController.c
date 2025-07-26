@@ -10,29 +10,31 @@
 
 #include "YawController.h"
 #include <math.h>
+#include "../../../Service/Logger/SD_Logger.h"
 
 
 // Controller Parameters
 
-static const float Kp = 40e6f;
-static const float Ki = 60e6f;
-static const float Kd = 7e6f;
-static const float Kr = 0.2f;
+static const float Kp = 80e6f;
+static const float Ki = 20e6f;
+static const float Kd = 10e6f;
+static const float Kr = 4.0f;
 static const float dt  = 0.01f;
-static const float tau = 1.0f/10.0f;	// N = 10
+static const float tau = 1.0f/20.0f;	// N = 20
 
 // Saturation Limits
 
-static const float outputMin = -1e8f;
-static const float outputMax = +1e8f;
-static const float integratorMin = -5e6f;
-static const float integratorMax = +5e6f;
+static const float outputMin = -5e8f;
+static const float outputMax = +5e8f;
+static const float integratorMin = -7e7f;
+static const float integratorMax = +7e7f;
 
 // File-local state variables
 
 static float integrator = 0.0f;
 static float prevError = 0.0f;
 static float dTermFilt = 0.0f;
+static float r_ref = 0.0f;
 
 
 void Yaw_Controller_Init(void)
@@ -40,6 +42,7 @@ void Yaw_Controller_Init(void)
     integrator = 0.0f;
     prevError  = 0.0f;
     dTermFilt  = 0.0f;
+    SD_Logger_RegisterVariable(&r_ref, LOG_TYPE_FLOAT, "r_ref");
 }
 
 
@@ -48,7 +51,7 @@ float Yaw_Controller_Update(float yaw_ref, float r_measured)
 {
 	// 0) Calculate reference yaw rate
 
-	float r_ref = Kr * yaw_ref;
+	r_ref = Kr * yaw_ref;
 
 	float curr_error = r_ref - r_measured;
 

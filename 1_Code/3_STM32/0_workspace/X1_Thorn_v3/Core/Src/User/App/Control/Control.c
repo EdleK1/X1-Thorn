@@ -37,7 +37,7 @@ FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L;
 servo_t Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
-const static int16_t ServoLim = 200;
+const static int16_t ServoLim = 220;
 
 
 
@@ -91,8 +91,8 @@ uint8_t Control_Start(void)
 	// Initialize Actuators
 
 	ESC_Init();
-	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1570);
-	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1550);
+	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1390);
+	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1490);
 
 	// Initialize System Monitor Task
 
@@ -117,8 +117,8 @@ uint8_t Control_Start(void)
 	SD_Logger_RegisterVariable(&curr_odometry.qz, LOG_TYPE_FLOAT, "curr_qz");
 	SD_Logger_RegisterVariable(&curr_reference.ax_ref, LOG_TYPE_FLOAT, "ax_ref");
 	SD_Logger_RegisterVariable(&curr_reference.p_ref, LOG_TYPE_FLOAT, "p_ref");
-	SD_Logger_RegisterVariable(&curr_reference.q_ref, LOG_TYPE_FLOAT, "q_ref");
-	SD_Logger_RegisterVariable(&curr_reference.r_ref, LOG_TYPE_FLOAT, "r_ref");
+	SD_Logger_RegisterVariable(&curr_reference.pitch_ref, LOG_TYPE_FLOAT, "pitch_ref");
+	SD_Logger_RegisterVariable(&curr_reference.yaw_ref, LOG_TYPE_FLOAT, "yaw_ref");
 	SD_Logger_RegisterVariable(&newActuators.omega_L, LOG_TYPE_UINT32, "omega_L_ref");
 	SD_Logger_RegisterVariable(&newActuators.omega_R, LOG_TYPE_UINT32, "omega_R_ref");
 	SD_Logger_RegisterVariable(&newActuators.servo_L, LOG_TYPE_INT32, "servo_L_ref");
@@ -147,20 +147,20 @@ void Control_Loop(void)
 	curr_attitude.y = curr_odometry.qy;
 	curr_attitude.z = curr_odometry.qz;
 
-	// Get reference from ground commands (p_ref, q_ref, r_ref, ax_ref)
+	// Get reference from ground commands (p_ref, pitch_ref, yaw_ref, ax_ref)
 
 	get_reference(curr_attitude, &curr_reference);
 
 
 	// Thrust Control: Calculate required rpm1 and rpm2 from ThrustController
 
-	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(curr_reference.ax_ref,  curr_odometry.ax);
+	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(curr_reference.ax_ref,  0.0f); // curr_odometry.ax We disable it for the amount of noise it has
 
 	// Attitude Control: Calculate required elevator, rudder and aileron from Roll, Pitch and Yaw controllers
 
 	newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
-	newFlightControlOutputs.elevator = Pitch_Controller_Update(curr_reference.q_ref, curr_odometry.q);
-	newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.r_ref, curr_odometry.r);
+	newFlightControlOutputs.elevator = Pitch_Controller_Update(curr_reference.pitch_ref, curr_odometry.q);
+	newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.yaw_ref, curr_odometry.r);
 
 	// Convert Controller outputs to servo PWM and motor RPM
 

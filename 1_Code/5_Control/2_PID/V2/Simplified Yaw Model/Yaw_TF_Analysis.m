@@ -1,23 +1,24 @@
 clear
 
-Kp_PitchRate_val = 20e6;
-Ki_PitchRate_val = 16e6;
-Kd_PitchRate_val = 15e6;
+Kp_YawRate_val = 20e6;
+Ki_YawRate_val = 16e6;
+Kd_YawRate_val = 15e6;
 Kr_val = 0.05;
-Kg_val = 8.7258e-7;
+
+Kg_val = 2.4611e-7;
 tau_act_val = 0.02;
 
 %% Symbolic Analysis
 
-syms Kd Ki Kp N D s Kr tau_act
+syms Kd Ki Kp s Kr tau_act
 
 
 PID = s*Kd + Kp + Ki/s;
 G = Kg_val * 1/(tau_act*s + 1);
 
 L1 = PID * G * 1/s;
-L2 = L1/(1+L1*Kr);
-Tf_Final_qdot = L2*1/s/(1+L2*1/s);
+L2 = L1/(1+L1);
+Tf_Final_qdot = Kr*L2*1/s/(1+Kr*L2*1/s);
 Tf_Final_qdot = simplify(Tf_Final_qdot);
 Tf_Final_qdot = collect(Tf_Final_qdot, s)
 
@@ -25,10 +26,10 @@ Tf_Final_qdot = collect(Tf_Final_qdot, s)
 %% Continuous time Analysis
 
 G = Kg_val * tf(1, [tau_act_val, 1]);
-PID = tf([Kd_PitchRate_val, 0],1) + tf(Kp_PitchRate_val,1) + tf(Ki_PitchRate_val,[1,0]);
+PID = tf([Kd_YawRate_val, 0],1) + tf(Kp_YawRate_val,1) + tf(Ki_YawRate_val,[1,0]);
 L1 = PID * G * tf(1,[1,0]);
-L2 = L1/(1+L1*Kr_val);
-Tf_Final_val = (L2*tf(1,[1,0]))/(1+L2*tf(1,[1,0]));
+L2 = L1/(1+L1);
+Tf_Final_val = (Kr_val*L2*tf(1,[1,0]))/(1 + Kr_val*L2*tf(1,[1,0]));
 Tf_Final_val = minreal(Tf_Final_val)
 
 poles = pole(Tf_Final_val)
@@ -43,12 +44,13 @@ hold on
 
 clear
 
-Kp_PitchRate_val = 40e6; % A priori Kr = 0.05 fa que vagi millor pero depen de la velocitat del actuador
-Ki_PitchRate_val = 60e6;
-Kd_PitchRate_val = 7e6;
-Kr_val = 0.20;
-Kg_val = 8.7258e-7;
-N_PitchRate_val = 10;
+Kp_YawRate_val = 80e6;
+Ki_YawRate_val = 20e6;
+Kd_YawRate_val = 10e6;
+Kr_val = 4;
+
+Kg_val = 2.2304e-7;
+N_PitchRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.02;
 
@@ -71,11 +73,11 @@ pretty(G_r)
 Cz = Kp + Kd * (Nd*z - Nd)/(z + Nd*Ts - 1) + Ki * Ts/(z-1);
 
 
-T = (G_psi * Cz) / (1 + Cz*(G_psi + K_r*G_r));
+T = (K_r * G_psi * Cz) / (1 + Cz*(K_r * G_psi + G_r));
 
 T = collect(simplify(T));
 
-T_val = subs(T, [Ts, K_G, K_r, Kp, Ki, Kd, Nd, tau_act], [Ts_val, Kg_val, Kr_val, Kp_PitchRate_val, Ki_PitchRate_val, Kd_PitchRate_val, N_PitchRate_val, tau_act_val]);
+T_val = subs(T, [Ts, K_G, K_r, Kp, Ki, Kd, Nd, tau_act], [Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_YawRate_val, Kd_YawRate_val, N_PitchRate_val, tau_act_val]);
 
 simplify(T_val)
 

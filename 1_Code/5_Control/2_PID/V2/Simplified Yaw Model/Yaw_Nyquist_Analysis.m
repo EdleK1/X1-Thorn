@@ -3,70 +3,179 @@ close all;
 clc;
 
 % --- Fixed parameters
-Kp_val   = 150;
-Ki_val   = -90;
-Kd_val   = -70;
-Kq_val   = 0.05;
-K_G_val  = -0.22365;
-Nd_val   = 20;
+Kp_YawRate_val = 80e6;
+Ki_YawRate_val = 30e6;
+Kd_YawRate_val = 10e6;
+Kr_val = 9;
+
+Kg_val = 2.4611e-7;
+N_YawRate_val = 20;
 Ts_val = 0.01;
+tau_act_val = 0.02;
 
 
-% [points_s, points_z] = nyquist_func(Ts_val, K_G_val, Kq_val, Kp_val, Ki_val, Kd_val, Nd_val);
+[points_z, ~] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_YawRate_val, Kd_YawRate_val, N_YawRate_val, tau_act_val);
+
+
+figure(1);
+plot(real(points_z), imag(points_z));
+hold on; grid on; axis equal;
+
+% draw real and imaginary axes
+xline(0, 'k--', 'LineWidth',1);
+yline(0, 'k--', 'LineWidth',1);
+
+% mark the -1 point
+plot(-1, 0, 'r.', 'MarkerSize',20, 'LineWidth',2);
+
+xlabel('Real Axis',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Imaginary Axis',"Interpreter","Latex", "Fontsize", 16);  
+title('Discrete Time Nyquist',"Interpreter","Latex", "Fontsize", 20); 
+
+
+%% Kp Swipe
+
+
+figure(2)
+hold on; grid on;
+
+xlabel('Kp Values',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Gain Margin',"Interpreter","Latex", "Fontsize", 16);  
+title('Gain Margin for different Kp Values',"Interpreter","Latex", "Fontsize", 20); 
+
+
+Kp_vals  = [-1,-2,-3,-4,-5,-6,-7,-8,-9,-10:-10:-100];
+GM_vec = [];
+
+for i = 1:length(Kp_vals)
+
+    [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_vals(i), Ki_YawRate_val, Kd_YawRate_val, N_YawRate_val, tau_act_val);
+    GM_vec = [GM_vec,GM];
+
+end
+
+plot(Kp_vals, GM_vec);
 
 
 
+%% Kd Swipe
 
-% PID = Kd*s + Kp + Ki/s;
-% L1 = PID * K_G * 1/s;
-% L2 = L1/(1+L1*K_q);
-% Tf_Final_s = L2 * 1/s;
 
-PID = tf([Kd_val, 0],1) + tf(Kp_val,1) + tf(Ki_val,[1,0]);
-L1 = PID * K_G_val * tf(1,[1,0]);
-L2 = L1/(1+L1*Kq_val);
-Tf_Final_s = L2 * tf(1,[1,0]);
+figure(3)
+hold on; grid on;
 
-minreal(Tf_Final_s)
+xlabel('Kd Values',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Gain Margin',"Interpreter","Latex", "Fontsize", 16);  
+title('Gain Margin for different Kd Values',"Interpreter","Latex", "Fontsize", 20); 
 
-nyquist(minreal(Tf_Final_s))
-axis equal
- 
-% figure;
-% plot(real(points_z), imag(points_z), 'b-', 'LineWidth',1.5);
-% hold on; grid on; axis equal;
-% 
-% % draw real and imaginary axes
-% xline(0, 'k--', 'LineWidth',1);
-% yline(0, 'k--', 'LineWidth',1);
-% 
-% % mark the -1 point
-% plot(-1, 0, 'ro', 'MarkerSize',8, 'LineWidth',2);
-% 
-% % optional: add an arrow showing increasing ω
-% midIdx = round(length(points_z)/2);
-% dx = real(points_z(midIdx+1)) - real(points_z(midIdx));
-% dy = imag(points_z(midIdx+1)) - imag(points_z(midIdx));
-% quiver(real(points_z(midIdx)), imag(points_z(midIdx)), dx, dy, 0, ...
-%        'MaxHeadSize',0.5, 'Color','b');
-% 
-% xlabel('Re\{L(e^{j\omega T_s})\}'); 
-% ylabel('Im\{L(e^{j\omega T_s})\}');
-% title('Discrete‑Time Nyquist (ω≥0 only)');
-% legend('L(e^{jωT_s})','Axes','-1','Location','Best');
-% 
-% %% Continuous‐time version
-% 
-% figure;
-% plot(real(points_s), imag(points_s), 'r-', 'LineWidth', 1.5);
-% hold on; grid on; axis equal;
-% plot(real(conj(points_s(2:end-1))), imag(conj(points_s(2:end-1))), 'r-', 'LineWidth', 1.5);
-% 
-% xline(0, 'k--', 'LineWidth',1);
-% yline(0, 'k--', 'LineWidth',1);
-% plot(-1, 0, 'ro', 'MarkerSize',8, 'LineWidth',2);  % usually you mark -1+0j for both
-% 
-% xlabel('Re\{L(j\omega)\}'); 
-% ylabel('Im\{L(j\omega)\}');
-% title('Continuous‑time Nyquist Plot');
-% legend('ω ≥ 0','ω < 0','Axes','-1','Location','Best');
+
+Kd_vals  = [-1,-2,-3,-4,-5,-6,-7,-8,-9,-10:-10:-100];
+GM_vec = [];
+
+for i = 1:length(Kd_vals)
+
+    [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_YawRate_val, Kd_vals(i), N_YawRate_val, tau_act_val);
+    GM_vec = [GM_vec,GM];
+
+end
+
+plot(Kd_vals, GM_vec);
+
+
+%% Ki Swipe
+
+
+figure(4)
+hold on; grid on;
+
+xlabel('Ki Values',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Gain Margin',"Interpreter","Latex", "Fontsize", 16);  
+title('Gain Margin for different Ki Values',"Interpreter","Latex", "Fontsize", 20); 
+
+
+Ki_vals  = [-1,-2,-3,-4,-5,-6,-7,-8,-9,-10:-10:-100];
+GM_vec = [];
+
+for i = 1:length(Ki_vals)
+
+    [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_vals(i), Kd_YawRate_val, N_YawRate_val, tau_act_val);
+    GM_vec = [GM_vec,GM];
+
+end
+
+plot(Ki_vals, GM_vec);
+
+
+
+%% Kq Swipe
+
+
+figure(5)
+hold on; grid on;
+
+xlabel('Kq Values',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Gain Margin',"Interpreter","Latex", "Fontsize", 16);  
+title('Gain Margin for different Kq Values',"Interpreter","Latex", "Fontsize", 20); 
+
+
+Kq_vals  = [1:20];
+GM_vec = [];
+
+for i = 1:length(Kq_vals)
+
+    [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kq_vals(i), Kp_YawRate_val, Ki_YawRate_val, Kd_YawRate_val, N_YawRate_val, tau_act_val);
+    GM_vec = [GM_vec, GM];
+
+end
+
+plot(Kq_vals, GM_vec);
+
+
+
+%% tau actuator Swipe
+
+
+figure(6)
+hold on; grid on;
+
+xlabel('$tau_{act}$ Values',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Gain Margin',"Interpreter","Latex", "Fontsize", 16);  
+title('Gain Margin for different tau_{act} Values',"Interpreter","Latex", "Fontsize", 20); 
+
+
+tau_act_vals  = [0.01:0.01:0.2];
+GM_vec = [];
+
+for i = 1:length(tau_act_vals)
+
+    [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_YawRate_val, Kd_YawRate_val, N_YawRate_val, tau_act_vals(i));
+    GM_vec = [GM_vec,GM];
+
+end
+
+plot(tau_act_vals, GM_vec);
+
+
+
+%% K_G Swipe
+
+
+figure(7)
+hold on; grid on;
+
+xlabel('K_G Values',"Interpreter","Latex", "Fontsize", 16); 
+ylabel('Gain Margin',"Interpreter","Latex", "Fontsize", 16);  
+title('Gain Margin for different $K_G$ Values',"Interpreter","Latex", "Fontsize", 20); 
+
+
+tau_act_vals  = [0.05:0.01:0.2];
+GM_vec = [];
+
+for i = 1:length(tau_act_vals)
+
+    [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_YawRate_val, Kd_YawRate_val, N_YawRate_val, tau_act_vals(i));
+    GM_vec = [GM_vec,GM];
+
+end
+
+plot(tau_act_vals, GM_vec);

@@ -8,7 +8,7 @@
 #include <stdbool.h>
 
 
-#define SD_LOGGER_MAX_VARIABLES         20                                  /*!< Máximo número de variables a registrar */
+#define SD_LOGGER_MAX_VARIABLES         30                                  /*!< Máximo número de variables a registrar */
 #define SD_LOGGER_FREQUENCY_HZ          10                                  /*!< Frecuencia de logging en Hertz */
 
 #define SD_LOGGER_STACK_SIZE			(configMINIMAL_STACK_SIZE * 16)		/*!< Stack size	*/
@@ -37,6 +37,8 @@ typedef struct{
     bool 						initalized;
 
     uint32_t					log_delay_ms;
+
+    uint8_t 					logNum;
 
 }SD_Logger_t;
 
@@ -193,6 +195,9 @@ uint8_t SD_Logger_Start(void)
     }
 
     uint8_t next_log_num = max_log_num + 1;
+
+    sd_logger.logNum = next_log_num;
+
     if (next_log_num > 64)
     {
 //        SD_Logger_ErrorPrintf("SD_Logger: Max log files reached (64). Cannot create new log.");
@@ -265,3 +270,7 @@ uint8_t SD_Logger_RegisterVariable(void* var_ptr, SD_Logger_DataType_t type, con
 }
 
 
+uint8_t SD_Logger_GetLogNum(void)
+{
+	return sd_logger.logNum;
+}

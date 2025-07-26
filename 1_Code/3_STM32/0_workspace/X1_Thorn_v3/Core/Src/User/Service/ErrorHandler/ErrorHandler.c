@@ -49,9 +49,9 @@ void ErrorHandler_RemoveError(uint8_t Error_Code)
 }
 
 
-int8_t ErrorHandler_GetFirstError(void)
+int8_t * ErrorHandler_GetFirstError(void)
 {
-	return first_error;
+	return &first_error;
 }
 
 

@@ -17,15 +17,8 @@ static int32_t servo_increment = 5;
 
 void Servo_Test_Start(void)
 {
-	Servo_Init(&servoL, &htim5, TIM_CHANNEL_2, 1570);
-	Servo_Init(&servoR, &htim5, TIM_CHANNEL_1, 1550);
-
-
-//	Servo_Set_Position(&servoL, 200);
-//	Servo_Set_Position(&servoL, -200);
-//	Servo_Set_Position(&servoL, 100);
-//	Servo_Set_Position(&servoL, -100);
-
+	Servo_Init(&servoL, &htim5, TIM_CHANNEL_2, 1390);
+	Servo_Init(&servoR, &htim5, TIM_CHANNEL_1, 1490);
 }
 
 
@@ -33,14 +26,14 @@ void Servo_Test_Loop(void)
 {
 	servo_counter = servo_counter + servo_increment;
 
-	if (servo_counter >= 180)
+	if (servo_counter >= 220)
 	{
-		servo_increment = -5;
+		servo_increment = -2;
 	}
 
-	if (servo_counter <= -180)
+	if (servo_counter <= -220)
 	{
-		servo_increment = 5;
+		servo_increment = 2;
 	}
 
 	Servo_Set_Position(&servoL, servo_counter);

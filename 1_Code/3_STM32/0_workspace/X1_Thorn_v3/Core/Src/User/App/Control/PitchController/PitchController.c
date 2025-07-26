@@ -10,29 +10,31 @@
 
 #include "PitchController.h"
 #include <math.h>
+#include "../../../Service/Logger/SD_Logger.h"
 
 
 // Controller Parameters
 
-static const float Kp = -150.0f; // -300
-static const float Ki = -90.0f; // -50
-static const float Kd = -70.0f; // -10
-static const float Kq = 0.15f; // -10
+static const float Kp = 60.0f;
+static const float Ki = 10.0f;
+static const float Kd = 5.0f;
+static const float Kq = 3.0f;
 static const float dt  = 0.01f;
 static const float tau = 1.0f/20.0f;    // N = 20
 
 // Saturation Limits
 
-static const float outputMin = -200.0f;
-static const float outputMax = +200.0f;
-static const float integratorMin = -100.0f;
-static const float integratorMax = +100.0f;
+static const float outputMin = -180.0f;
+static const float outputMax = +180.0f;
+static const float integratorMin = -40.0f;
+static const float integratorMax = +40.0f;
 
 // File-local state variables
 
 static float integrator = 0.0f;
 static float prevError = 0.0f;
 static float dTermFilt = 0.0f;
+static float q_ref = 0.0f;
 
 
 void Pitch_Controller_Init(void)
@@ -40,6 +42,7 @@ void Pitch_Controller_Init(void)
     integrator = 0.0f;
     prevError  = 0.0f;
     dTermFilt  = 0.0f;
+    SD_Logger_RegisterVariable(&q_ref, LOG_TYPE_FLOAT, "q_ref");
 }
 
 
@@ -48,7 +51,7 @@ float Pitch_Controller_Update(float pitch_ref, float q_measured)
 {
 	// 0) Calculate error
 
-	float q_ref = Kq * pitch_ref;
+	q_ref = Kq * pitch_ref;
 
 	float curr_error = q_ref - q_measured;
 

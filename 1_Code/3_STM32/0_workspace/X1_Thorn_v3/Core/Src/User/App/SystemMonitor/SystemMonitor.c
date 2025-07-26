@@ -18,7 +18,7 @@
 
 
 static uint8_t text[64];
-static int8_t first_error = -1;
+static int8_t * first_error_pointer;
 telemetry_t New_Telemetry;
 static uint8_t CSV_number = 0;
 
@@ -69,7 +69,7 @@ void System_Monitor_Start(void)
 	SD_Logger_RegisterVariable(&New_Telemetry.RPM4, LOG_TYPE_UINT32, "RPM4");
 	SD_Logger_RegisterVariable(ErrorHandler_GetError(), LOG_TYPE_UINT32, "ErrorCodes");
 
-	CSV_number = 2;
+	first_error_pointer = ErrorHandler_GetFirstError();
 }
 
 
@@ -79,8 +79,8 @@ void System_Monitor_Loop(void)
 {
 
 	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry
+	CSV_number = SD_Logger_GetLogNum(); // Poc optim, si ho poso a dalt va pocho pq no s'ha inicialitzat
 
-	first_error = ErrorHandler_GetFirstError();
 
 	sprintf((char *)&text, "rpm2=%lu | %u                  	", New_Telemetry.RPM2, New_Telemetry.Throttle2);
 	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
@@ -88,10 +88,10 @@ void System_Monitor_Loop(void)
 	sprintf((char *)&text, "rpm4=%lu | %u                  	", New_Telemetry.RPM4, New_Telemetry.Throttle4);
 	LCD_ShowString(4, 25, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "Volt=%.2f | LE= %d                     ", New_Telemetry.Voltage, first_error);
+	sprintf((char *)&text, "Volt=%.2f | E=%d                     ", New_Telemetry.Voltage, (int)*first_error_pointer);
 	LCD_ShowString(4, 40, ST7735Ctx.Width, 16, 16, text);
 
-	sprintf((char *)&text, "Temp=%u | CSV= %u                 		", New_Telemetry.Temperature, CSV_number);
+	sprintf((char *)&text, "Temp=%u | CSV=%u                 		", New_Telemetry.Temperature, CSV_number);
 	LCD_ShowString(4, 55, ST7735Ctx.Width, 16, 16, text);
 
 }

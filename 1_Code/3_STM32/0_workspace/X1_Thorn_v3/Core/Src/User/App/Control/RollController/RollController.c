@@ -15,18 +15,18 @@
 
 // Controller Parameters
 
-static const float Kp = 15.0f;
-static const float Ki = 1.0f;
-static const float Kd = 1.0f;
+static const float Kp = -15.0f;
+static const float Ki = -1.0f;
+static const float Kd = -1.0f;
 static const float dt  = 0.01f;
 static const float tau = 1.0f/20.0f;    // N = 20
 
 // Saturation Limits
 
-static const float outputMin = -180.0f;
-static const float outputMax = +180.0f;
-static const float integratorMin = -60.0f;
-static const float integratorMax = +60.0f;
+static const float outputMin = -120.0f;
+static const float outputMax = +120.0f;
+static const float integratorMin = -40.0f;
+static const float integratorMax = +40.0f;
 
 // File-local state variables
 

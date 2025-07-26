@@ -9,6 +9,8 @@
 #include "Motor_PI.h"
 #include <math.h>
 
+static float integratorMin = 0;
+static float integratorMax = 0;
 
 void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t outputMin, uint16_t outputMax)
 {
@@ -17,6 +19,8 @@ void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t ou
     pid->dt = dt;
     pid->outputMin = outputMin;
     pid->outputMax = outputMax;
+    integratorMin = (float)outputMin;
+    integratorMax = (float)outputMax;
 
     pid->integrator = 0.0f;
     pid->prevError  = 0.0f;
@@ -35,19 +39,19 @@ uint16_t Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint)
 
     /* Anti‐windup: clamp integrator */
 
-    if (pid->integrator > pid->outputMax)
+    if (pid->integrator > integratorMax)
     {
-        pid->integrator = pid->outputMax;
+        pid->integrator = integratorMax;
     }
-    else if (pid->integrator < pid->outputMin)
+    else if (pid->integrator < integratorMin)
     {
-        pid->integrator = pid->outputMin;
+        pid->integrator = integratorMin;
     }
 
     float Iout = pid->integrator;
 
     /* 4) Combine terms */
-    float output = roundf(Pout + Iout);
+    uint16_t output = (uint16_t)roundf(Pout + Iout);
 
     /* 5) Saturate PID output */
 

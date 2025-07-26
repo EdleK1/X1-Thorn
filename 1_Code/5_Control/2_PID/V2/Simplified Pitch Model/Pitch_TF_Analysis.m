@@ -3,8 +3,8 @@ clear
 Kp_PitchRate_val = -150;
 Ki_PitchRate_val = -90;
 Kd_PitchRate_val = -70;
-Kq_val = 0.15;
-Kg_val = -0.22365;
+Kq_val = 7;
+Kg_val = -0.10541;
 tau_act_val = 0.1;
 
 %% Symbolic Analysis
@@ -16,8 +16,8 @@ PID = s*Kd + Kp + Ki/s;
 G = Kg_val * 1/(tau_act*s + 1);
 
 L1 = PID * G * 1/s;
-L2 = L1/(1+L1*Kq);
-Tf_Final_qdot = L2*1/s/(1+L2*1/s);
+L2 = L1/(1+L1);
+Tf_Final_qdot = Kq*L2*1/s/(1+Kq*L2*1/s);
 Tf_Final_qdot = simplify(Tf_Final_qdot);
 Tf_Final_qdot = collect(Tf_Final_qdot, s)
 
@@ -27,8 +27,8 @@ Tf_Final_qdot = collect(Tf_Final_qdot, s)
 G = Kg_val * tf(1, [tau_act_val, 1]);
 PID = tf([Kd_PitchRate_val, 0],1) + tf(Kp_PitchRate_val,1) + tf(Ki_PitchRate_val,[1,0]);
 L1 = PID * G * tf(1,[1,0]);
-L2 = L1/(1+L1*Kq_val);
-Tf_Final_val = (L2*tf(1,[1,0]))/(1+L2*tf(1,[1,0]));
+L2 = L1/(1+L1);
+Tf_Final_val = (Kq_val*L2*tf(1,[1,0]))/(1 + Kq_val*L2*tf(1,[1,0]));
 Tf_Final_val = minreal(Tf_Final_val)
 
 poles = pole(Tf_Final_val)
@@ -43,12 +43,12 @@ hold on
 
 clear
 
-Kp_PitchRate_val = -400;
-Ki_PitchRate_val = -80;
-Kd_PitchRate_val = -50;
-Kq_val = -200;
+Kp_PitchRate_val = -60;
+Ki_PitchRate_val = -10;
+Kd_PitchRate_val = -5;
+Kq_val = 3;
 
-Kg_val = -0.22365;
+Kg_val = -0.10541;
 N_PitchRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.1;
@@ -75,7 +75,7 @@ pretty(G_q)
 Cz = Kp + Kd * (Nd*z - Nd)/(z + Nd*Ts - 1) + Ki * Ts/(z-1);
 
 
-T = (G_theta * Cz) / (1 + Cz*(G_theta + K_q*G_q));
+T = (K_q * G_theta * Cz) / (1 + Cz*(K_q * G_theta + G_q));
 
 T = collect(simplify(T));
 

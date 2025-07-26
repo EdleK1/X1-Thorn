@@ -47,7 +47,7 @@ Rz = [cos(yaw), -sin(yaw), 0;
       0,      0,      1];
 
 % Composite: first roll (Rx), then pitch (Ry) in the *world frame*
-R_ref = R0 * Rz * Ry;
+R_ref =  R0 * Rz * Ry;
 
 % Extract reference axes
 x_ref = R_ref(:,1);

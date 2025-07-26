@@ -58,7 +58,7 @@ void Test_Start(void)
 {
 
 //    LCD_LoadScreen();
-
+//
 //    Odometry_Test_Init();
 //    ESP32_Test_Init();
 //    GroundCommands_Test_Init();
@@ -66,7 +66,7 @@ void Test_Start(void)
 //    DShot_Test();
 //    Servo_Test_Start();
 
-//	ESC_Test_Start();
+	ESC_Test_Start();
 
 }
 
@@ -87,5 +87,5 @@ void Test_Loop(void)
 
 
 
-    osDelay(50);
+    osDelay(20);
 }

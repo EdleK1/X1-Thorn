@@ -1,4 +1,4 @@
-clear all
+clear
 
 syms omega rudder aileron elevator psi theta p ax s
 
@@ -17,20 +17,20 @@ setpoint_L = 1570;
 % B_My = 8e-3;
 
 
-A_Tx = 3.45e-8;
-B_Tx = 3e-3;
+A_Tx = 3.45e-8 / 2.7; % Compensar que esta en el dron
+B_Tx = 3e-3 * 0.1 / 0.09; % Compensar el nou servo
 
-A_Tz = -1.0e-8;
-B_Tz = 7e-3;
+A_Tz = -1.0e-8 / 2.7; % Compensar que esta en el dron
+B_Tz = 7e-3 * 0.1 / 0.09; % Compensar el nou servo
 
-A_My = -1.3e-12;
-B_My = 8e-3;
+A_My = -1.3e-12 / 2.7; % Compensar que esta en el dron (invent total tenint en compte una mica que el dron s'enlairava a partir de les 22000 rpms)
+B_My = 8e-3 * 0.1 / 0.09; % Compensar el nou servo
 
 
 
 % Control Variables
 
-omega_0 = 12000^2;
+omega_0 = 20000^2; %% Abans era 12000
 
 omega_R = omega - rudder + omega_0; 
 omega_L = omega + rudder + omega_0;
@@ -54,18 +54,18 @@ My_L = A_My*omega_0*(servo_L-setpoint_L)*B_My;
 % lt_x = 60e-3; % m
 % lt_y = 72.5e-3; % m
 
-x_CoG = 22.82e-3; % m
-z_CoG = 0.35e-3; % m
+x_CoG = 33.82e-3; % m
+z_CoG = 0.34e-3; % m
 lt_x = 60e-3; % m
-lt_y = 72.5e-3; % m
+lt_y = 80e-3; % m
 
 
 
-m = 1.021;       % Mass (kg)
+m = 1.172;       % Mass (kg)
 g = -9.81;      % Gravity (m/s^2)
-Ixx = 2841e-6;    % Rotational Inertia (kg*m^2)
-Iyy = 3338e-6;    % Rotational Inertia (kg*m^2)
-Izz = 5733e-6;    % Rotational Inertia (kg*m^2)
+Ixx = 3100523e-9;    % Rotational Inertia (kg*m^2)
+Iyy = 5691128e-9;    % Rotational Inertia (kg*m^2)
+Izz = 8307110e-9;    % Rotational Inertia (kg*m^2)
 
 % Control forces calculation
 
@@ -83,7 +83,7 @@ eq = [...
 Ixx * p*s == Mx_ctrl;
 Iyy * theta*s^2 == My_ctrl;
 Izz * psi*s^2 == Mz_ctrl;
-m * ax == Tx_ctrl - m*g];
+m * ax == Tx_ctrl + m*g];
 
 sols.p  = vpa(solve(eq(1), p),5);
 sols.theta = vpa(expand(solve(eq(2), theta)),5);

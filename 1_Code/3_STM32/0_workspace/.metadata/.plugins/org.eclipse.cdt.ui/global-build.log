@@ -1,4 +1,46 @@
-14:20:25 **** Build of configuration Debug for project X1_Thorn_v3 ****
+23:58:46 **** Clean-only build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 clean 
+rm -rf ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.su
+rm -rf ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.su
+rm -rf ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.d ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.su
+rm -rf ./Middlewares/Third_Party/FreeRTOS/Source/croutine.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/croutine.d ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o ./Middlewares/Third_Party/FreeRTOS/Source/croutine.su ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.d ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.su ./Middlewares/Third_Party/FreeRTOS/Source/list.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/list.d ./Middlewares/Third_Party/FreeRTOS/Source/list.o ./Middlewares/Third_Party/FreeRTOS/Source/list.su ./Middlewares/Third_Party/FreeRTOS/Source/queue.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/queue.d ./Middlewares/Third_Party/FreeRTOS/Source/queue.o ./Middlewares/Third_Party/FreeRTOS/Source/queue.su ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.su ./Middlewares/Third_Party/FreeRTOS/Source/tasks.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/tasks.d ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o ./Middlewares/Third_Party/FreeRTOS/Source/tasks.su ./Middlewares/Third_Party/FreeRTOS/Source/timers.cyclo ./Middlewares/Third_Party/FreeRTOS/Source/timers.d ./Middlewares/Third_Party/FreeRTOS/Source/timers.o ./Middlewares/Third_Party/FreeRTOS/Source/timers.su
+rm -rf ./Middlewares/Third_Party/FatFs/src/option/syscall.cyclo ./Middlewares/Third_Party/FatFs/src/option/syscall.d ./Middlewares/Third_Party/FatFs/src/option/syscall.o ./Middlewares/Third_Party/FatFs/src/option/syscall.su
+rm -rf ./Middlewares/Third_Party/FatFs/src/diskio.cyclo ./Middlewares/Third_Party/FatFs/src/diskio.d ./Middlewares/Third_Party/FatFs/src/diskio.o ./Middlewares/Third_Party/FatFs/src/diskio.su ./Middlewares/Third_Party/FatFs/src/ff.cyclo ./Middlewares/Third_Party/FatFs/src/ff.d ./Middlewares/Third_Party/FatFs/src/ff.o ./Middlewares/Third_Party/FatFs/src/ff.su ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.cyclo ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.d ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.o ./Middlewares/Third_Party/FatFs/src/ff_gen_drv.su
+rm -rf ./FATFS/Target/bsp_driver_sd.cyclo ./FATFS/Target/bsp_driver_sd.d ./FATFS/Target/bsp_driver_sd.o ./FATFS/Target/bsp_driver_sd.su ./FATFS/Target/fatfs_platform.cyclo ./FATFS/Target/fatfs_platform.d ./FATFS/Target/fatfs_platform.o ./FATFS/Target/fatfs_platform.su ./FATFS/Target/sd_diskio.cyclo ./FATFS/Target/sd_diskio.d ./FATFS/Target/sd_diskio.o ./FATFS/Target/sd_diskio.su
+rm -rf ./FATFS/App/fatfs.cyclo ./FATFS/App/fatfs.d ./FATFS/App/fatfs.o ./FATFS/App/fatfs.su
+rm -rf ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mmc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.su
+rm -rf ./Core/Startup/startup_stm32h743vitx.d ./Core/Startup/startup_stm32h743vitx.o
+rm -rf ./Core/Src/User/Test/TestServo/TestServo.cyclo ./Core/Src/User/Test/TestServo/TestServo.d ./Core/Src/User/Test/TestServo/TestServo.o ./Core/Src/User/Test/TestServo/TestServo.su
+rm -rf ./Core/Src/User/Test/TestOdometry/TestOdometry.cyclo ./Core/Src/User/Test/TestOdometry/TestOdometry.d ./Core/Src/User/Test/TestOdometry/TestOdometry.o ./Core/Src/User/Test/TestOdometry/TestOdometry.su
+rm -rf ./Core/Src/User/Test/TestGroundCommands/TestGroundCommands.cyclo ./Core/Src/User/Test/TestGroundCommands/TestGroundCommands.d ./Core/Src/User/Test/TestGroundCommands/TestGroundCommands.o ./Core/Src/User/Test/TestGroundCommands/TestGroundCommands.su
+rm -rf ./Core/Src/User/Test/TestESP32/TestESP32.cyclo ./Core/Src/User/Test/TestESP32/TestESP32.d ./Core/Src/User/Test/TestESP32/TestESP32.o ./Core/Src/User/Test/TestESP32/TestESP32.su
+rm -rf ./Core/Src/User/Test/TestESC/TestESC.cyclo ./Core/Src/User/Test/TestESC/TestESC.d ./Core/Src/User/Test/TestESC/TestESC.o ./Core/Src/User/Test/TestESC/TestESC.su
+rm -rf ./Core/Src/User/Test/TestDShot/TestDShot.cyclo ./Core/Src/User/Test/TestDShot/TestDShot.d ./Core/Src/User/Test/TestDShot/TestDShot.o ./Core/Src/User/Test/TestDShot/TestDShot.su
+rm -rf ./Core/Src/User/Test/MotorCharacterization/MotorCharacterization.cyclo ./Core/Src/User/Test/MotorCharacterization/MotorCharacterization.d ./Core/Src/User/Test/MotorCharacterization/MotorCharacterization.o ./Core/Src/User/Test/MotorCharacterization/MotorCharacterization.su
+rm -rf ./Core/Src/User/Test/Test.cyclo ./Core/Src/User/Test/Test.d ./Core/Src/User/Test/Test.o ./Core/Src/User/Test/Test.su
+rm -rf ./Core/Src/User/Service/Logger/SD_Logger.cyclo ./Core/Src/User/Service/Logger/SD_Logger.d ./Core/Src/User/Service/Logger/SD_Logger.o ./Core/Src/User/Service/Logger/SD_Logger.su
+rm -rf ./Core/Src/User/Service/ErrorHandler/ErrorHandler.cyclo ./Core/Src/User/Service/ErrorHandler/ErrorHandler.d ./Core/Src/User/Service/ErrorHandler/ErrorHandler.o ./Core/Src/User/Service/ErrorHandler/ErrorHandler.su
+rm -rf ./Core/Src/User/Peripheral/Servo/Servo.cyclo ./Core/Src/User/Peripheral/Servo/Servo.d ./Core/Src/User/Peripheral/Servo/Servo.o ./Core/Src/User/Peripheral/Servo/Servo.su
+rm -rf ./Core/Src/User/Peripheral/LCD/lcd.cyclo ./Core/Src/User/Peripheral/LCD/lcd.d ./Core/Src/User/Peripheral/LCD/lcd.o ./Core/Src/User/Peripheral/LCD/lcd.su ./Core/Src/User/Peripheral/LCD/logo_160_80.cyclo ./Core/Src/User/Peripheral/LCD/logo_160_80.d ./Core/Src/User/Peripheral/LCD/logo_160_80.o ./Core/Src/User/Peripheral/LCD/logo_160_80.su ./Core/Src/User/Peripheral/LCD/st7735.cyclo ./Core/Src/User/Peripheral/LCD/st7735.d ./Core/Src/User/Peripheral/LCD/st7735.o ./Core/Src/User/Peripheral/LCD/st7735.su ./Core/Src/User/Peripheral/LCD/st7735_reg.cyclo ./Core/Src/User/Peripheral/LCD/st7735_reg.d ./Core/Src/User/Peripheral/LCD/st7735_reg.o ./Core/Src/User/Peripheral/LCD/st7735_reg.su
+rm -rf ./Core/Src/User/Peripheral/ESP32/ESP32.cyclo ./Core/Src/User/Peripheral/ESP32/ESP32.d ./Core/Src/User/Peripheral/ESP32/ESP32.o ./Core/Src/User/Peripheral/ESP32/ESP32.su
+rm -rf ./Core/Src/User/Peripheral/ESC/ESC.cyclo ./Core/Src/User/Peripheral/ESC/ESC.d ./Core/Src/User/Peripheral/ESC/ESC.o ./Core/Src/User/Peripheral/ESC/ESC.su ./Core/Src/User/Peripheral/ESC/Motor_PI.cyclo ./Core/Src/User/Peripheral/ESC/Motor_PI.d ./Core/Src/User/Peripheral/ESC/Motor_PI.o ./Core/Src/User/Peripheral/ESC/Motor_PI.su
+rm -rf ./Core/Src/User/Peripheral/BNO055/BNO055.cyclo ./Core/Src/User/Peripheral/BNO055/BNO055.d ./Core/Src/User/Peripheral/BNO055/BNO055.o ./Core/Src/User/Peripheral/BNO055/BNO055.su
+rm -rf ./Core/Src/User/Lib/Globals/Globals.cyclo ./Core/Src/User/Lib/Globals/Globals.d ./Core/Src/User/Lib/Globals/Globals.o ./Core/Src/User/Lib/Globals/Globals.su
+rm -rf ./Core/Src/User/Lib/DShotProtocol/DShot.cyclo ./Core/Src/User/Lib/DShotProtocol/DShot.d ./Core/Src/User/Lib/DShotProtocol/DShot.o ./Core/Src/User/Lib/DShotProtocol/DShot.su
+rm -rf ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.su ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.cyclo ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.o ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.su
+rm -rf ./Core/Src/User/Lib/Algebra/Algebra.cyclo ./Core/Src/User/Lib/Algebra/Algebra.d ./Core/Src/User/Lib/Algebra/Algebra.o ./Core/Src/User/Lib/Algebra/Algebra.su
+rm -rf ./Core/Src/User/App/SystemMonitor/SystemMonitor.cyclo ./Core/Src/User/App/SystemMonitor/SystemMonitor.d ./Core/Src/User/App/SystemMonitor/SystemMonitor.o ./Core/Src/User/App/SystemMonitor/SystemMonitor.su
+rm -rf ./Core/Src/User/App/Odometry/Odometry.cyclo ./Core/Src/User/App/Odometry/Odometry.d ./Core/Src/User/App/Odometry/Odometry.o ./Core/Src/User/App/Odometry/Odometry.su
+rm -rf ./Core/Src/User/App/GroundCommands/GroundCommands.cyclo ./Core/Src/User/App/GroundCommands/GroundCommands.d ./Core/Src/User/App/GroundCommands/GroundCommands.o ./Core/Src/User/App/GroundCommands/GroundCommands.su
+rm -rf ./Core/Src/User/App/Control/YawController/YawController.cyclo ./Core/Src/User/App/Control/YawController/YawController.d ./Core/Src/User/App/Control/YawController/YawController.o ./Core/Src/User/App/Control/YawController/YawController.su
+rm -rf ./Core/Src/User/App/Control/ThrustController/ThrustController.cyclo ./Core/Src/User/App/Control/ThrustController/ThrustController.d ./Core/Src/User/App/Control/ThrustController/ThrustController.o ./Core/Src/User/App/Control/ThrustController/ThrustController.su
+rm -rf ./Core/Src/User/App/Control/RollController/RollController.cyclo ./Core/Src/User/App/Control/RollController/RollController.d ./Core/Src/User/App/Control/RollController/RollController.o ./Core/Src/User/App/Control/RollController/RollController.su
+rm -rf ./Core/Src/User/App/Control/PitchController/PitchController.cyclo ./Core/Src/User/App/Control/PitchController/PitchController.d ./Core/Src/User/App/Control/PitchController/PitchController.o ./Core/Src/User/App/Control/PitchController/PitchController.su
+rm -rf ./Core/Src/User/App/Control/Control.cyclo ./Core/Src/User/App/Control/Control.d ./Core/Src/User/App/Control/Control.o ./Core/Src/User/App/Control/Control.su
+rm -rf ./Core/Src/adc.cyclo ./Core/Src/adc.d ./Core/Src/adc.o ./Core/Src/adc.su ./Core/Src/custom_syscalls.cyclo ./Core/Src/custom_syscalls.d ./Core/Src/custom_syscalls.o ./Core/Src/custom_syscalls.su ./Core/Src/dma.cyclo ./Core/Src/dma.d ./Core/Src/dma.o ./Core/Src/dma.su ./Core/Src/freertos.cyclo ./Core/Src/freertos.d ./Core/Src/freertos.o ./Core/Src/freertos.su ./Core/Src/gpio.cyclo ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/i2c.cyclo ./Core/Src/i2c.d ./Core/Src/i2c.o ./Core/Src/i2c.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/memorymap.cyclo ./Core/Src/memorymap.d ./Core/Src/memorymap.o ./Core/Src/memorymap.su ./Core/Src/sdmmc.cyclo ./Core/Src/sdmmc.d ./Core/Src/sdmmc.o ./Core/Src/sdmmc.su ./Core/Src/spi.cyclo ./Core/Src/spi.d ./Core/Src/spi.o ./Core/Src/spi.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_hal_timebase_tim.cyclo ./Core/Src/stm32h7xx_hal_timebase_tim.d ./Core/Src/stm32h7xx_hal_timebase_tim.o ./Core/Src/stm32h7xx_hal_timebase_tim.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32h7xx.cyclo ./Core/Src/system_stm32h7xx.d ./Core/Src/system_stm32h7xx.o ./Core/Src/system_stm32h7xx.su ./Core/Src/tim.cyclo ./Core/Src/tim.d ./Core/Src/tim.o ./Core/Src/tim.su ./Core/Src/usart.cyclo ./Core/Src/usart.d ./Core/Src/usart.o ./Core/Src/usart.su
+rm -rf X1_Thorn_v3.elf X1_Thorn_v3.list X1_Thorn_v3.map default.size.stdout
+ 
+23:58:49 **** Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
 arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
 arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o"
@@ -58,6 +100,7 @@ arm-none-eabi-gcc "../Core/Src/User/Test/TestDShot/TestDShot.c" -mcpu=cortex-m7 
 arm-none-eabi-gcc "../Core/Src/User/Test/MotorCharacterization/MotorCharacterization.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/MotorCharacterization/MotorCharacterization.d" -MT"Core/Src/User/Test/MotorCharacterization/MotorCharacterization.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/MotorCharacterization/MotorCharacterization.o"
 arm-none-eabi-gcc "../Core/Src/User/Test/Test.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/Test.d" -MT"Core/Src/User/Test/Test.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/Test.o"
 arm-none-eabi-gcc "../Core/Src/User/Service/Logger/SD_Logger.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/Logger/SD_Logger.d" -MT"Core/Src/User/Service/Logger/SD_Logger.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/Logger/SD_Logger.o"
+arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
 arm-none-eabi-gcc "../Core/Src/User/Peripheral/Servo/Servo.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/Servo/Servo.d" -MT"Core/Src/User/Peripheral/Servo/Servo.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/Servo/Servo.o"
 arm-none-eabi-gcc "../Core/Src/User/Peripheral/LCD/lcd.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/LCD/lcd.d" -MT"Core/Src/User/Peripheral/LCD/lcd.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/LCD/lcd.o"
 arm-none-eabi-gcc "../Core/Src/User/Peripheral/LCD/logo_160_80.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/LCD/logo_160_80.d" -MT"Core/Src/User/Peripheral/LCD/logo_160_80.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/LCD/logo_160_80.o"
@@ -102,799 +145,285 @@ Finished building target: X1_Thorn_v3.elf
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 157400	    776	 124792	 282968	  45158	X1_Thorn_v3.elf
+ 157584	    776	 124824	 283184	  45230	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-16:20:28 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+23:59:12 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 157584	    776	 124824	 283184	  45230	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+23:59:22 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 157584	    776	 124824	 283184	  45230	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+00:01:36 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173584	    768	 125136	 299488	  491e0	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+00:02:24 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173584	    768	 125136	 299488	  491e0	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+00:02:30 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173584	    768	 125136	 299488	  491e0	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+00:10:51 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
+arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173584	    768	 125136	 299488	  491e0	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+00:12:24 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
+arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+00:12:36 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+00:13:24 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+00:25:41 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+16:16:29 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:02:08 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
 arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+17:02:24 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:04:18 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:04:36 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:05:13 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:05:58 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:09:23 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:10:43 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:46:23 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
 arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: X1_Thorn_v3.elf
  
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173192	    768	 125096	 299056	  49030	X1_Thorn_v3.elf
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-16:27:33 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+17:49:35 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Lib/Globals/Globals.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/Globals/Globals.d" -MT"Core/Src/User/Lib/Globals/Globals.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/Globals/Globals.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+17:50:17 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:00:06 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
+arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
 arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: X1_Thorn_v3.elf
  
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 157400	    772	 124796	 282968	  45158	X1_Thorn_v3.elf
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-16:28:47 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 157400	    772	 124796	 282968	  45158	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-16:29:26 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 157400	    772	 124796	 282968	  45158	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-16:30:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 157400	    772	 124796	 282968	  45158	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-16:31:55 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 157416	    772	 124796	 282984	  45168	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:33:21 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Lib/Globals/Globals.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/Globals/Globals.d" -MT"Core/Src/User/Lib/Globals/Globals.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/Globals/Globals.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 157416	    776	 124792	 282984	  45168	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:35:25 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 157352	    776	 124792	 282920	  45128	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:38:17 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Lib/Globals/Globals.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/Globals/Globals.d" -MT"Core/Src/User/Lib/Globals/Globals.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/Globals/Globals.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 157352	    776	 124792	 282920	  45128	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:38:47 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 157352	    776	 124792	 282920	  45128	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-16:39:19 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 157352	    776	 124792	 282920	  45128	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:40:42 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Test/TestESC/TestESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/TestESC/TestESC.d" -MT"Core/Src/User/Test/TestESC/TestESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/TestESC/TestESC.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 157352	    776	 124792	 282920	  45128	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:48:40 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Test/Test.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/Test.d" -MT"Core/Src/User/Test/Test.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/Test.o"
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-17:17:47 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:03:56 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/User/App/Control/ThrustController/ThrustController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/ThrustController/ThrustController.d" -MT"Core/Src/User/App/Control/ThrustController/ThrustController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/ThrustController/ThrustController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
 arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: X1_Thorn_v3.elf
  
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-17:18:57 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:05:31 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
 arm-none-eabi-size  X1_Thorn_v3.elf 
    text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
-17:37:27 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:11:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:00:17 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-18:14:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:19:57 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:23:49 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:45:53 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-19:00:19 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-19:01:22 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 173144	    768	 125096	 299008	  49000	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-19:11:04 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173160	    768	 125096	 299024	  49010	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-15:53:00 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173160	    768	 125096	 299024	  49010	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-16:06:44 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/Servo/Servo.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/Servo/Servo.d" -MT"Core/Src/User/Peripheral/Servo/Servo.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/Servo/Servo.o"
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173192	    768	 125096	 299056	  49030	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-17:27:33 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173192	    768	 125096	 299056	  49030	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-17:27:45 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 173192	    768	 125096	 299056	  49030	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-17:51:18 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-   text	   data	    bss	    dec	    hex	filename
- 173192	    768	 125096	 299056	  49030	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-18:05:59 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Test/TestESC/TestESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Test/TestESC/TestESC.d" -MT"Core/Src/User/Test/TestESC/TestESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Test/TestESC/TestESC.o"
-arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/ESC.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/ESC.d" -MT"Core/Src/User/Peripheral/ESC/ESC.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/ESC.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c: In function 'System_Monitor_Loop':
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:90:46: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'int' [-Wformat=]
-   90 |         sprintf((char *)&text, "rpm2=%lu | %lu                          ", New_Telemetry.RPM2, New_Telemetry.Throttle2);
-      |                                            ~~^                                                 ~~~~~~~~~~~~~~~~~~~~~~~
-      |                                              |                                                              |
-      |                                              long unsigned int                                              int
-      |                                            %u
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:93:46: warning: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'int' [-Wformat=]
-   93 |         sprintf((char *)&text, "rpm4=%lu | %lu                          ", New_Telemetry.RPM4, New_Telemetry.Throttle4);
-      |                                            ~~^                                                 ~~~~~~~~~~~~~~~~~~~~~~~
-      |                                              |                                                              |
-      |                                              long unsigned int                                              int
-      |                                            %u
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173232	    768	 125096	 299096	  49058	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:06:25 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173232	    768	 125096	 299096	  49058	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:07:04 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173232	    768	 125112	 299112	  49068	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-13:05:41 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c: In function 'System_Monitor_Loop':
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:80:23: warning: implicit declaration of function 'ErrorHandler_GetFirstError' [-Wimplicit-function-declaration]
-   80 |         first_error = ErrorHandler_GetFirstError();
-      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173312	    772	 125116	 299200	  490c0	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-13:06:03 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c: In function 'System_Monitor_Loop':
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:81:23: warning: implicit declaration of function 'ErrorHandler_GetFirstError' [-Wimplicit-function-declaration]
-   81 |         first_error = ErrorHandler_GetFirstError();
-      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173312	    772	 125116	 299200	  490c0	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-13:06:58 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-In file included from ../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:9:
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:18:28: error: unknown type name 'uint8_t'
-   18 | void ErrorHandler_SetError(uint8_t Error_Code);
-      |                            ^~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-  +++ |+#include <stdint.h>
-    1 | /*
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:19:31: error: unknown type name 'uint8_t'
-   19 | void ErrorHandler_RemoveError(uint8_t Error_Code);
-      |                               ^~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:19:31: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:20:1: error: unknown type name 'int8_t'
-   20 | int8_t ErrorHandler_GetFirstError(void);
-      | ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:20:1: note: 'int8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:34:8: error: conflicting types for 'ErrorHandler_GetFirstError'; have 'int8_t(void)' {aka 'signed char(void)'}
-   34 | int8_t ErrorHandler_GetFirstError(void)
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:20:8: note: previous declaration of 'ErrorHandler_GetFirstError' with type 'int(void)'
-   20 | int8_t ErrorHandler_GetFirstError(void);
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-13:07:30 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-In file included from ../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:9:
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:18:28: error: unknown type name 'uint8_t'
-   18 | void ErrorHandler_SetError(uint8_t Error_Code);
-      |                            ^~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:1:1: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-  +++ |+#include <stdint.h>
-    1 | /*
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:19:31: error: unknown type name 'uint8_t'
-   19 | void ErrorHandler_RemoveError(uint8_t Error_Code);
-      |                               ^~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:19:31: note: 'uint8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:20:1: error: unknown type name 'int8_t'
-   20 | int8_t ErrorHandler_GetFirstError(void);
-      | ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:20:1: note: 'int8_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:35:8: error: conflicting types for 'ErrorHandler_GetFirstError'; have 'int8_t(void)' {aka 'signed char(void)'}
-   35 | int8_t ErrorHandler_GetFirstError(void)
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:20:8: note: previous declaration of 'ErrorHandler_GetFirstError' with type 'int(void)'
-   20 | int8_t ErrorHandler_GetFirstError(void);
-      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-13:08:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173312	    772	 125116	 299200	  490c0	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-13:08:11 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173312	    772	 125116	 299200	  490c0	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-13:24:57 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
-../Core/Src/User/Lib/DShotProtocol/DShot.c: In function 'DShot_Init':
-../Core/Src/User/Lib/DShotProtocol/DShot.c:56:9: warning: implicit declaration of function 'SD_Logger_RegisterVariable' [-Wimplicit-function-declaration]
-   56 |         SD_Logger_RegisterVariable(&ErrorFrameCnt_MOT2, LOG_TYPE_UINT32, "ErrorFrameCnt_MOT2");
-      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/DShot.c:56:57: error: 'LOG_TYPE_UINT32' undeclared (first use in this function)
-   56 |         SD_Logger_RegisterVariable(&ErrorFrameCnt_MOT2, LOG_TYPE_UINT32, "ErrorFrameCnt_MOT2");
-      |                                                         ^~~~~~~~~~~~~~~
-../Core/Src/User/Lib/DShotProtocol/DShot.c:56:57: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/User/Lib/DShotProtocol/subdir.mk:19: Core/Src/User/Lib/DShotProtocol/DShot.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-13:25:49 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Lib/DShotProtocol/DShot.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Lib/DShotProtocol/DShot.d" -MT"Core/Src/User/Lib/DShotProtocol/DShot.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Lib/DShotProtocol/DShot.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
-arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
-   text	   data	    bss	    dec	    hex	filename
- 173384	    772	 125116	 299272	  49108	X1_Thorn_v3.elf
-Finished building: default.size.stdout
- 
-Finished building: X1_Thorn_v3.list
- 
-18:24:13 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
 arm-none-eabi-gcc "../Core/Src/User/App/Control/ThrustController/ThrustController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/ThrustController/ThrustController.d" -MT"Core/Src/User/App/Control/ThrustController/ThrustController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/ThrustController/ThrustController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_Init':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:20:5: error: 'ehMutex' undeclared (first use in this function)
-   20 |     ehMutex = osMutexNew(&ehMutexAttr);
-      |     ^~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:20:5: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:20:27: error: 'ehMutexAttr' undeclared (first use in this function); did you mean 'osMutexAttr_t'?
-   20 |     ehMutex = osMutexNew(&ehMutexAttr);
-      |                           ^~~~~~~~~~~
-      |                           osMutexAttr_t
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_SetError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:27:24: error: 'ehMutex' undeclared (first use in this function)
-   27 |         osMutexAcquire(ehMutex, osWaitForever);
-      |                        ^~~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_RemoveError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:42:24: error: 'ehMutex' undeclared (first use in this function)
-   42 |         osMutexAcquire(ehMutex, osWaitForever);
-      |                        ^~~~~~~
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-../Core/Src/User/App/Control/RollController/RollController.c:47:7: error: conflicting types for 'Roll_Controller_Update'; have 'float(float,  float)'
-   47 | float Roll_Controller_Update(float p_ref, float p_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/App/Control/YawController/YawController.c:47:7: error: conflicting types for 'Yaw_Controller_Update'; have 'float(float,  float)'
-   47 | float Yaw_Controller_Update(float r_ref, float r_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/YawController/YawController.c:11:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: previous declaration of 'Yaw_Controller_Update' with type 'float(float)'
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/RollController/RollController.c:12:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: previous declaration of 'Roll_Controller_Update' with type 'float(float)'
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/YawController/subdir.mk:19: Core/Src/User/App/Control/YawController/YawController.o] Error 1
-make: *** [Core/Src/User/App/Control/RollController/subdir.mk:19: Core/Src/User/App/Control/RollController/RollController.o] Error 1
-../Core/Src/User/App/Control/Control.c: In function 'Control_Loop':
-../Core/Src/User/App/Control/Control.c:161:43: error: too many arguments to function 'Roll_Controller_Update'
-  161 |         newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
-      |                                           ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:22:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: declared here
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/App/Control/Control.c:163:42: error: too many arguments to function 'Yaw_Controller_Update'
-  163 |         newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.r_ref, curr_odometry.r);
-      |                                          ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:24:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: declared here
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/subdir.mk:19: Core/Src/User/App/Control/Control.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-18:24:51 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+18:11:18 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_Init':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:21:27: error: 'ehMutexAttr' undeclared (first use in this function); did you mean 'ehMutex'?
-   21 |     ehMutex = osMutexNew(&ehMutexAttr);
-      |                           ^~~~~~~~~~~
-      |                           ehMutex
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:21:27: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-../Core/Src/User/App/Control/YawController/YawController.c:47:7: error: conflicting types for 'Yaw_Controller_Update'; have 'float(float,  float)'
-   47 | float Yaw_Controller_Update(float r_ref, float r_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/YawController/YawController.c:11:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: previous declaration of 'Yaw_Controller_Update' with type 'float(float)'
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/YawController/subdir.mk:19: Core/Src/User/App/Control/YawController/YawController.o] Error 1
-../Core/Src/User/App/Control/RollController/RollController.c:47:7: error: conflicting types for 'Roll_Controller_Update'; have 'float(float,  float)'
-   47 | float Roll_Controller_Update(float p_ref, float p_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/RollController/RollController.c:12:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: previous declaration of 'Roll_Controller_Update' with type 'float(float)'
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/RollController/subdir.mk:19: Core/Src/User/App/Control/RollController/RollController.o] Error 1
-../Core/Src/User/App/Control/Control.c: In function 'Control_Loop':
-../Core/Src/User/App/Control/Control.c:161:43: error: too many arguments to function 'Roll_Controller_Update'
-  161 |         newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
-      |                                           ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:22:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: declared here
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/App/Control/Control.c:163:42: error: too many arguments to function 'Yaw_Controller_Update'
-  163 |         newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.r_ref, curr_odometry.r);
-      |                                          ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:24:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: declared here
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/subdir.mk:19: Core/Src/User/App/Control/Control.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-18:25:22 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:12:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_Init':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:21:27: error: 'ehMutexAttr' undeclared (first use in this function); did you mean 'ehMutex'?
-   21 |     ehMutex = osMutexNew(&ehMutexAttr);
-      |                           ^~~~~~~~~~~
-      |                           ehMutex
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:21:27: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-../Core/Src/User/App/Control/YawController/YawController.c:47:7: error: conflicting types for 'Yaw_Controller_Update'; have 'float(float,  float)'
-   47 | float Yaw_Controller_Update(float r_ref, float r_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/YawController/YawController.c:11:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: previous declaration of 'Yaw_Controller_Update' with type 'float(float)'
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/YawController/subdir.mk:19: Core/Src/User/App/Control/YawController/YawController.o] Error 1
-../Core/Src/User/App/Control/RollController/RollController.c:47:7: error: conflicting types for 'Roll_Controller_Update'; have 'float(float,  float)'
-   47 | float Roll_Controller_Update(float p_ref, float p_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/RollController/RollController.c:12:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: previous declaration of 'Roll_Controller_Update' with type 'float(float)'
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/RollController/subdir.mk:19: Core/Src/User/App/Control/RollController/RollController.o] Error 1
-../Core/Src/User/App/Control/Control.c: In function 'Control_Loop':
-../Core/Src/User/App/Control/Control.c:161:43: error: too many arguments to function 'Roll_Controller_Update'
-  161 |         newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
-      |                                           ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:22:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: declared here
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/App/Control/Control.c:163:42: error: too many arguments to function 'Yaw_Controller_Update'
-  163 |         newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.r_ref, curr_odometry.r);
-      |                                          ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:24:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: declared here
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/subdir.mk:19: Core/Src/User/App/Control/Control.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-18:25:36 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173576	    768	 125136	 299480	  491d8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:23:08 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-../Core/Src/User/App/Control/YawController/YawController.c:47:7: error: conflicting types for 'Yaw_Controller_Update'; have 'float(float,  float)'
-   47 | float Yaw_Controller_Update(float r_ref, float r_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/YawController/YawController.c:11:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: previous declaration of 'Yaw_Controller_Update' with type 'float(float)'
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/YawController/subdir.mk:19: Core/Src/User/App/Control/YawController/YawController.o] Error 1
-make: *** Waiting for unfinished jobs....
-../Core/Src/User/App/Control/RollController/RollController.c:47:7: error: conflicting types for 'Roll_Controller_Update'; have 'float(float,  float)'
-   47 | float Roll_Controller_Update(float p_ref, float p_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/RollController/RollController.c:12:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: previous declaration of 'Roll_Controller_Update' with type 'float(float)'
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/RollController/subdir.mk:19: Core/Src/User/App/Control/RollController/RollController.o] Error 1
-../Core/Src/User/App/Control/Control.c: In function 'Control_Loop':
-../Core/Src/User/App/Control/Control.c:161:43: error: too many arguments to function 'Roll_Controller_Update'
-  161 |         newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
-      |                                           ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:22:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: declared here
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/User/App/Control/Control.c:163:42: error: too many arguments to function 'Yaw_Controller_Update'
-  163 |         newFlightControlOutputs.rudder = Yaw_Controller_Update(curr_reference.r_ref, curr_odometry.r);
-      |                                          ^~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:24:
-../Core/Src/User/App/Control/YawController/YawController.h:12:7: note: declared here
-   12 | float Yaw_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/subdir.mk:19: Core/Src/User/App/Control/Control.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-18:25:59 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-../Core/Src/User/App/Control/RollController/RollController.c:47:7: error: conflicting types for 'Roll_Controller_Update'; have 'float(float,  float)'
-   47 | float Roll_Controller_Update(float p_ref, float p_measured)
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/RollController/RollController.c:12:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: previous declaration of 'Roll_Controller_Update' with type 'float(float)'
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/RollController/subdir.mk:19: Core/Src/User/App/Control/RollController/RollController.o] Error 1
-make: *** Waiting for unfinished jobs....
-../Core/Src/User/App/Control/Control.c: In function 'Control_Loop':
-../Core/Src/User/App/Control/Control.c:161:43: error: too many arguments to function 'Roll_Controller_Update'
-  161 |         newFlightControlOutputs.aileron = Roll_Controller_Update(curr_reference.p_ref, curr_odometry.p);
-      |                                           ^~~~~~~~~~~~~~~~~~~~~~
-In file included from ../Core/Src/User/App/Control/Control.c:22:
-../Core/Src/User/App/Control/RollController/RollController.h:12:7: note: declared here
-   12 | float Roll_Controller_Update(float curr_error);
-      |       ^~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/User/App/Control/subdir.mk:19: Core/Src/User/App/Control/Control.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-18:26:12 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/RollController/RollController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/RollController/RollController.d" -MT"Core/Src/User/App/Control/RollController/RollController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/RollController/RollController.o"
+arm-none-eabi-gcc "../Core/Src/User/Service/Logger/SD_Logger.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/Logger/SD_Logger.d" -MT"Core/Src/User/Service/Logger/SD_Logger.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/Logger/SD_Logger.o"
 arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
 arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: X1_Thorn_v3.elf
@@ -902,30 +431,70 @@ Finished building target: X1_Thorn_v3.elf
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173448	    772	 125116	 299336	  49148	X1_Thorn_v3.elf
+ 173576	    768	 125208	 299552	  49220	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-19:06:18 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:23:48 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
+arm-none-eabi-gcc "../Core/Src/User/Service/Logger/SD_Logger.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/Logger/SD_Logger.d" -MT"Core/Src/User/Service/Logger/SD_Logger.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/Logger/SD_Logger.o"
 arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: X1_Thorn_v3.elf
  
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173448	    772	 125116	 299336	  49148	X1_Thorn_v3.elf
+ 173576	    768	 125256	 299600	  49250	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-19:10:37 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:36:50 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/Control/YawController/YawController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/YawController/YawController.d" -MT"Core/Src/User/App/Control/YawController/YawController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/YawController/YawController.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/PitchController/PitchController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/PitchController/PitchController.d" -MT"Core/Src/User/App/Control/PitchController/PitchController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/PitchController/PitchController.o"
+arm-none-eabi-gcc "../Core/Src/User/Peripheral/ESC/Motor_PI.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Peripheral/ESC/Motor_PI.d" -MT"Core/Src/User/Peripheral/ESC/Motor_PI.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Peripheral/ESC/Motor_PI.o"
+arm-none-eabi-gcc "../Core/Src/User/App/Control/ThrustController/ThrustController.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/ThrustController/ThrustController.d" -MT"Core/Src/User/App/Control/ThrustController/ThrustController.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/ThrustController/ThrustController.o"
+arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: X1_Thorn_v3.elf
+ 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
+   text	   data	    bss	    dec	    hex	filename
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+Finished building: X1_Thorn_v3.list
+ 
+18:36:58 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:38:03 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:40:05 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:40:07 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:57:41 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
 arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
 arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: X1_Thorn_v3.elf
@@ -933,115 +502,36 @@ Finished building target: X1_Thorn_v3.elf
 arm-none-eabi-size  X1_Thorn_v3.elf 
 arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173464	    772	 125116	 299352	  49158	X1_Thorn_v3.elf
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 Finished building: X1_Thorn_v3.list
  
-22:46:45 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:58:03 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-In file included from ../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:9:
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.h:14:21: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
-   14 |     uint32_t errors = 0;
-      |                     ^
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_SetError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: error: 'errors' undeclared (first use in this function)
-   30 |         errors |= (1U << Error_Code);
-      |         ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_RemoveError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:45:9: error: 'errors' undeclared (first use in this function)
-   45 |         errors &= ~(1U << Error_Code);
-      |         ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_GetError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:59:17: error: 'errors' undeclared (first use in this function)
-   59 |         return &errors;
-      |                 ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
-   60 | }
-      | ^
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-In file included from ../Core/Src/User/App/SystemMonitor/SystemMonitor.c:16:
-../Core/Src/User/App/SystemMonitor/../../Service/ErrorHandler/ErrorHandler.h:14:21: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
-   14 |     uint32_t errors = 0;
-      |                     ^
-make: *** [Core/Src/User/App/SystemMonitor/subdir.mk:19: Core/Src/User/App/SystemMonitor/SystemMonitor.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-22:47:01 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_SetError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: error: 'errors' undeclared (first use in this function)
-   30 |         errors |= (1U << Error_Code);
-      |         ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:30:9: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_RemoveError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:45:9: error: 'errors' undeclared (first use in this function)
-   45 |         errors &= ~(1U << Error_Code);
-      |         ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c: In function 'ErrorHandler_GetError':
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:59:17: error: 'errors' undeclared (first use in this function)
-   59 |         return &errors;
-      |                 ^~~~~~
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
-   60 | }
-      | ^
-make: *** [Core/Src/User/Service/ErrorHandler/subdir.mk:19: Core/Src/User/Service/ErrorHandler/ErrorHandler.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-22:48:41 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/Service/ErrorHandler/ErrorHandler.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/Service/ErrorHandler/ErrorHandler.d" -MT"Core/Src/User/Service/ErrorHandler/ErrorHandler.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/Service/ErrorHandler/ErrorHandler.o"
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
 arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173464	    772	 125116	 299352	  49158	X1_Thorn_v3.elf
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
-Finished building: X1_Thorn_v3.list
- 
-23:33:08 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:58:59 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc "../Core/Src/User/App/Control/Control.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/Control/Control.d" -MT"Core/Src/User/App/Control/Control.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/Control/Control.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c: In function 'System_Monitor_Start':
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:70:91: error: expected ';' before 'CSV_number'
-   70 |         SD_Logger_RegisterVariable(ErrorHandler_GetError(), LOG_TYPE_UINT32, "ErrorCodes")
-      |                                                                                           ^
-      |                                                                                           ;
-   71 | 
-   72 |         CSV_number = 2;
-      |         ~~~~~~~~~~                                                                         
-make: *** [Core/Src/User/App/SystemMonitor/subdir.mk:19: Core/Src/User/App/SystemMonitor/SystemMonitor.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-23:33:17 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/User/App/SystemMonitor/SystemMonitor.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_PWR_LDO_SUPPLY -DUSE_HAL_DRIVER -DSTM32H743xx -c -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/User/App/SystemMonitor/SystemMonitor.d" -MT"Core/Src/User/App/SystemMonitor/SystemMonitor.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/User/App/SystemMonitor/SystemMonitor.o"
-arm-none-eabi-gcc -o "X1_Thorn_v3.elf" @"objects.list"   -mcpu=cortex-m7 -T"C:\Users\marcv\Desktop\X1-Thorn\1_Code\3_STM32\0_workspace\X1_Thorn_v3\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="X1_Thorn_v3.map" -Wl,--gc-sections -static -u_printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: X1_Thorn_v3.elf
- 
 arm-none-eabi-size  X1_Thorn_v3.elf 
-arm-none-eabi-objdump -h -S X1_Thorn_v3.elf  > "X1_Thorn_v3.list"
    text	   data	    bss	    dec	    hex	filename
- 173568	    772	 125124	 299464	  491c8	X1_Thorn_v3.elf
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
-Finished building: X1_Thorn_v3.list
- 
-23:35:23 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+18:59:19 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
 arm-none-eabi-size  X1_Thorn_v3.elf 
    text	   data	    bss	    dec	    hex	filename
- 173568	    772	 125124	 299464	  491c8	X1_Thorn_v3.elf
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
+Finished building: default.size.stdout
+ 
+18:59:22 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+make -j12 all 
+arm-none-eabi-size  X1_Thorn_v3.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 173656	    768	 125264	 299688	  492a8	X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
