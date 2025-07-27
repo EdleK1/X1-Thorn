@@ -114,8 +114,6 @@ void ESC_Loop(void)
 	if (g_Status == 1 || g_Status == 2) // Aircraft either activated or in landing mode
 	{
 
-		// We only change throttle in case there is valid RPMs
-
 		if (mRPM_validity == 0) // 0 means no error
 		{
 			New_Throttle_2 = Motor_PID_Update(&Motor_PID_handle_2, Curr_mRPM_2, Target_mRPM_2);

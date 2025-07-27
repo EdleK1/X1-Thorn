@@ -18,11 +18,11 @@ BNO055_Sensors_t BNO055;
 uint8_t OffsetDatas[22];
 odometry_t Curr_Read;
 
-static const float dt = 0.01f;
-static const float tau = 0.1f;
+static const float dt = 0.01;
+static const float tau = 0.1;
 static const float alpha = dt / (tau + dt);               // τ = filter time‑constant in seconds
-static float ax_filt = 0.0f;
-static float ax_prev = 0.0f;
+
+
 
 void Odometry_Init(void)
 {
@@ -79,12 +79,11 @@ void Odometry_Read(odometry_t *Curr_Read)
 
 	// Filter ax
 
-	float ax_raw = BNO055.LineerAcc.X;
-	ax_filt = ax_prev + alpha * (ax_raw - ax_prev);
-	ax_prev = ax_filt;
 
+	x_filt = x_prev + alpha * (x_raw - x_prev);
+	x_prev = x_filt;
 
-	Curr_Read->ax = ax_filt;
+	Curr_Read->ax = BNO055.LineerAcc.X;
 	Curr_Read->p = BNO055.Gyro.X * (float)M_PI / 180.0f;
 	Curr_Read->q = BNO055.Gyro.Y * (float)M_PI / 180.0f;
 	Curr_Read->r = BNO055.Gyro.Z * (float)M_PI / 180.0f;

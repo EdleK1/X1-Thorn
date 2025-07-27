@@ -30,7 +30,6 @@ static uint32_t Target_mRPM_4 = 0;
 osSemaphoreId_t  ESC_Loop_Semaphore;
 uint8_t raw_telem[10];
 static uint8_t telemetry_ARR = 0;
-static uint8_t mRPM_validity = 0;
 
 // Definitions for ESC_Task
 
@@ -113,8 +112,6 @@ void ESC_Loop(void)
 
 	if (g_Status == 1 || g_Status == 2) // Aircraft either activated or in landing mode
 	{
-
-		// We only change throttle in case there is valid RPMs
 
 		if (mRPM_validity == 0) // 0 means no error
 		{

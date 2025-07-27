@@ -154,7 +154,7 @@ void Control_Loop(void)
 
 	// Thrust Control: Calculate required rpm1 and rpm2 from ThrustController
 
-	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(curr_reference.ax_ref, curr_odometry.ax); //0.0f We disable it for the amount of noise it has
+	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(curr_reference.ax_ref,  curr_odometry.ax); //0.0f We disable it for the amount of noise it has
 
 	// Attitude Control: Calculate required elevator, rudder and aileron from Roll, Pitch and Yaw controllers
 

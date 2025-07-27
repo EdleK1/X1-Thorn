@@ -83,7 +83,6 @@ void Odometry_Read(odometry_t *Curr_Read)
 	ax_filt = ax_prev + alpha * (ax_raw - ax_prev);
 	ax_prev = ax_filt;
 
-
 	Curr_Read->ax = ax_filt;
 	Curr_Read->p = BNO055.Gyro.X * (float)M_PI / 180.0f;
 	Curr_Read->q = BNO055.Gyro.Y * (float)M_PI / 180.0f;

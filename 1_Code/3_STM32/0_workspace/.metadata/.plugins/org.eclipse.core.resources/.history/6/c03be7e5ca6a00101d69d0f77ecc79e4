@@ -30,7 +30,6 @@ static uint32_t Target_mRPM_4 = 0;
 osSemaphoreId_t  ESC_Loop_Semaphore;
 uint8_t raw_telem[10];
 static uint8_t telemetry_ARR = 0;
-static uint8_t mRPM_validity = 0;
 
 // Definitions for ESC_Task
 
@@ -113,27 +112,20 @@ void ESC_Loop(void)
 
 	if (g_Status == 1 || g_Status == 2) // Aircraft either activated or in landing mode
 	{
-
-		// We only change throttle in case there is valid RPMs
-
-		if (mRPM_validity == 0) // 0 means no error
-		{
-			New_Throttle_2 = Motor_PID_Update(&Motor_PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
-			New_Throttle_4 = Motor_PID_Update(&Motor_PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
-		}
-
+		New_Throttle_2 = Motor_PID_Update(&Motor_PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
+		New_Throttle_4 = Motor_PID_Update(&Motor_PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
 
 		if (++telemetry_ARR <= 40)
 		{
 			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
-			mRPM_validity = DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0); // change the 0 0
+			DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0); // change the 0 0
 		}
 
 		else
 		{
 			telemetry_ARR = 0;
 			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
-			mRPM_validity = DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1, 1);  // change the 0 0
+			DShot_SendFrame(New_Throttle_2, New_Throttle_4, &Curr_mRPM_2, &Curr_mRPM_4, 1, 1);  // change the 0 0
 		}
 
 
@@ -149,14 +141,14 @@ void ESC_Loop(void)
 		if (++telemetry_ARR <= 40)
 		{
 			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
-			mRPM_validity = DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0);
+			DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 0);
 		}
 
 		else
 		{
 			telemetry_ARR = 0;
 			osSemaphoreAcquire(ESC_Loop_Semaphore, 10);
-			mRPM_validity = DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 1);
+			DShot_SendFrame(0, 0, &Curr_mRPM_2, &Curr_mRPM_4, 1, 1);
 		}
 	}
 }

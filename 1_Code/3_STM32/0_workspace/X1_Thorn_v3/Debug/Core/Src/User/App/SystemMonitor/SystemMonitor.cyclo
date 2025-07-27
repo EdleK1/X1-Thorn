@@ -1,4 +1,4 @@
 ../Core/Src/User/App/SystemMonitor/SystemMonitor.c:41:6:System_Monitor_Init	1
 ../Core/Src/User/App/SystemMonitor/SystemMonitor.c:50:6:System_Monitor_Task	1
 ../Core/Src/User/App/SystemMonitor/SystemMonitor.c:63:6:System_Monitor_Start	1
-../Core/Src/User/App/SystemMonitor/SystemMonitor.c:78:6:System_Monitor_Loop	1
+../Core/Src/User/App/SystemMonitor/SystemMonitor.c:80:6:System_Monitor_Loop	1
