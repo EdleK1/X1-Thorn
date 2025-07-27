@@ -1,6 +1,6 @@
 ../Core/Src/User/App/Control/Control.c:59:6:Control_Init	8	static
 ../Core/Src/User/App/Control/Control.c:66:6:Control_Task	16	static
 ../Core/Src/User/App/Control/Control.c:77:9:Control_Start	8	static
-../Core/Src/User/App/Control/Control.c:139:6:Control_Loop	32	static
-../Core/Src/User/App/Control/Control.c:178:13:Control_To_Actuators	56	static
-../Core/Src/User/App/Control/Control.c:235:6:TIM_PeriodElapsedCallback_Control_Timer	8	static
+../Core/Src/User/App/Control/Control.c:142:6:Control_Loop	32	static
+../Core/Src/User/App/Control/Control.c:181:13:Control_To_Actuators	56	static
+../Core/Src/User/App/Control/Control.c:238:6:TIM_PeriodElapsedCallback_Control_Timer	8	static

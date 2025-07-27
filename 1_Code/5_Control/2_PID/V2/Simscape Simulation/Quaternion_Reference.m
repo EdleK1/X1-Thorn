@@ -1,10 +1,10 @@
 % clear 
 close all
 
-q0 = cos(-pi/4);
-q1 = 0;
-q2 = sin(-pi/4);
-q3 = 0;
+q0 = 0.192;
+q1 = 0.657;
+q2 = 0.712;
+q3 = 0.143;
 
 % q0 = q_ref(1); 
 % q1 = q_ref(2); 
@@ -14,9 +14,7 @@ q3 = 0;
 q_curr = [q0;q1;q2;q3];
 
 pitch = 0;
-yaw = -0.2;
-p = 0;
-
+yaw = 0;
 
 vec_x_Aircraft = [1-2*(q2^2+q3^2); 2*(q1*q2 + q0*q3); 2*(q1*q3 - q0*q2)];
 vec_y_Aircraft = [2*(q1*q2 - q0*q3); 1 - 2*(q1^2 + q3^2); 2*(q2*q3 + q0*q1)];

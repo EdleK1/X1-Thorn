@@ -1,5 +1,5 @@
 clear
-close all
+% close all
 
 X1_Thorn_SIMSCAPE_DataFile
 
@@ -8,11 +8,11 @@ Ts_val = 0.01;
 
 %% Pitch Controller
 
-Kp_PitchRate_val = -60;         % OK % -80
-Ki_PitchRate_val = -10;         % OK % -40
-Kd_PitchRate_val = -5;         % OK % -12
-Kq_PitchRate_val = 3;           % OK % 6
-N_PitchRate_val = 20;           % OK
+Kp_PitchRate_val = -60;         % OK % -60
+Ki_PitchRate_val = -10;         % OK % -10
+Kd_PitchRate_val = -5;         % OK % -5
+Kq_PitchRate_val = 3;           % OK % 3
+N_PitchRate_val = 20;           % OK % 20
 
 %% Yaw Controller
 

@@ -11,6 +11,7 @@
 
 #include "Odometry.h"
 #include "../../Peripheral/BNO055/BNO055.h"
+#include <math.h>
 
 
 BNO055_Sensors_t BNO055;

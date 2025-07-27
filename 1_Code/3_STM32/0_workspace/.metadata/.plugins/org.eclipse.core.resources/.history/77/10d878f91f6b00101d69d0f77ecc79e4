@@ -120,6 +120,8 @@ uint8_t Control_Start(void)
 	SD_Logger_RegisterVariable(&curr_odometry.qz, LOG_TYPE_FLOAT, "curr_qz");
 	SD_Logger_RegisterVariable(&curr_reference.ax_ref, LOG_TYPE_FLOAT, "ax_ref");
 	SD_Logger_RegisterVariable(&curr_reference.p_ref, LOG_TYPE_FLOAT, "p_ref");
+	SD_Logger_RegisterVariable(&curr_reference.pitch_ref, LOG_TYPE_FLOAT, "pitch_ref");
+	SD_Logger_RegisterVariable(&curr_reference.yaw_ref, LOG_TYPE_FLOAT, "yaw_ref");
 	SD_Logger_RegisterVariable(&newActuators.omega_L, LOG_TYPE_UINT32, "omega_L_ref");
 	SD_Logger_RegisterVariable(&newActuators.omega_R, LOG_TYPE_UINT32, "omega_R_ref");
 	SD_Logger_RegisterVariable(&newActuators.servo_L, LOG_TYPE_INT32, "servo_L_ref");
