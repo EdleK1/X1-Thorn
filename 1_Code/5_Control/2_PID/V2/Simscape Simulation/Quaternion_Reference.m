@@ -1,10 +1,10 @@
 % clear 
 close all
 
-q0 = 0.192;
-q1 = 0.657;
-q2 = 0.712;
-q3 = 0.143;
+q0 = cos(-pi/4);
+q1 = 0;
+q2 = sin(-pi/4);
+q3 = 0;
 
 % q0 = q_ref(1); 
 % q1 = q_ref(2); 
@@ -13,7 +13,7 @@ q3 = 0.143;
 
 q_curr = [q0;q1;q2;q3];
 
-pitch = 0;
+pitch = 0.4;
 yaw = 0;
 
 vec_x_Aircraft = [1-2*(q2^2+q3^2); 2*(q1*q2 + q0*q3); 2*(q1*q3 - q0*q2)];
@@ -53,7 +53,7 @@ y_ref = R_ref(:,2);
 z_ref = R_ref(:,3);
 
 %% 5) Convert R_ref into quaternion [q0_ref q1_ref q2_ref q3_ref]
-q_ref = rotm2quat(R_ref)';  % returns [w x y z]
+q_ref = rotm2quat(R_ref)'  % returns [w x y z]
 
 % q0, q1 are 4×1 [q0; qv] quaternions (scalar-first)
 dq = (q_ref - q_curr);

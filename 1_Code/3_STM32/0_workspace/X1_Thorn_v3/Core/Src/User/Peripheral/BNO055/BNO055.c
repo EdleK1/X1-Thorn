@@ -285,8 +285,8 @@ void Clock_Source(uint8_t source) {
  */
 void BNO055_Axis(uint8_t remap, uint8_t sign){
 
-	HAL_I2C_Mem_Write(&bno_i2c,P_BNO055, AXIS_MAP_CONFIG_ADDR, 1, &remap, 1, 100);
-	HAL_Delay(20);
+	HAL_I2C_Mem_Write(&bno_i2c, P_BNO055, AXIS_MAP_CONFIG_ADDR, 1, &remap, 1, 100);
+	HAL_Delay(100); // 20
 	HAL_I2C_Mem_Write(&bno_i2c, P_BNO055, AXIS_MAP_SIGN_ADDR, 1, &sign, 1, 100);
 	HAL_Delay(100);
 }

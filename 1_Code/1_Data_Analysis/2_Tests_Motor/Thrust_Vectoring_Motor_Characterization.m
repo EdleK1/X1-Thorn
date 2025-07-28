@@ -54,9 +54,9 @@ setpoint = 1570;
 dist_1 = 31.76e-3; % m
 dist_3 = 144.76e-3; % m
 
-M_y = - (load_3 * dist_3 + load_1*dist_1) * 0.00981;
-T_z = (load_1 - load_3) * 0.00981;
-T_x = load_2 * 0.00981;
+M_y = - (load_3 * dist_3 + load_1*dist_1) * 0.00981;   % Nm
+T_z = (load_1 - load_3) * 0.00981;                     % N
+T_x = load_2 * 0.00981;                                % N
 
 
 %% --------------------Time Plots-----------------------%%
@@ -104,7 +104,7 @@ grid on
 figure("Name","Moment vs time")
 plot(time,M_y,".-")
 xlabel("time(s)","Interpreter","Latex")
-ylabel("Moment (N*mm)","Interpreter","Latex")
+ylabel("Moment (N*m)","Interpreter","Latex")
 title("Moment vs time","Interpreter","Latex")
 grid on
 

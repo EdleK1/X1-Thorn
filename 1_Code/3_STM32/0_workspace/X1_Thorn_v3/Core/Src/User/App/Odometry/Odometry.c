@@ -37,7 +37,7 @@ void Odometry_Init(void)
 
 	BNO055_InitStruct.ACC_Range = Range_4G;			//Range_X
 	BNO055_InitStruct.Axis = DEFAULT_AXIS_REMAP;			//value will be entered by looking at the data sheet
-	BNO055_InitStruct.Axis_sign = 0x3;						//value will be entered by looking at the data sheet - Y and Z must have switched signs
+	BNO055_InitStruct.Axis_sign = 0x03;						//value will be entered by looking at the data sheet - Y and Z must have switched signs
 	BNO055_InitStruct.Clock_Source = CLOCK_EXTERNAL;		//CLOCK_EXTERNAL or CLOCK_INTERNAL
 	BNO055_InitStruct.Mode = BNO055_NORMAL_MODE;			//BNO055_X_MODE   X:NORMAL, LOWPOWER, SUSPEND
 	BNO055_InitStruct.OP_Modes = NDOF;

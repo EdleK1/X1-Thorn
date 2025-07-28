@@ -105,7 +105,7 @@ void processGamepad(ControllerPtr ctl)
 
   if (ctl->axisRX() < -25 || ctl->axisRX() > 25) {
 
-    Ground_Commands[1] = ctl->axisRX() / 508.0 * p_max;
+    Ground_Commands[1] = -ctl->axisRX() / 508.0 * p_max;
   }
   else 
   {

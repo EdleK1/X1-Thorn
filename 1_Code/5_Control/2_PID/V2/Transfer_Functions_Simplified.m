@@ -17,13 +17,13 @@ setpoint_L = 1570;
 % B_My = 8e-3;
 
 
-A_Tx = 3.45e-8 / 2.7; % Compensar que esta en el dron
+A_Tx = 3.45e-8 / 2.7; % Compensar que esta en el dron  (invent total tenint en compte una mica que el dron s'enlairava a partir de les 22000 rpms)
 B_Tx = 3e-3 * 0.1 / 0.09; % Compensar el nou servo
 
 A_Tz = -1.0e-8 / 2.7; % Compensar que esta en el dron
 B_Tz = 7e-3 * 0.1 / 0.09; % Compensar el nou servo
 
-A_My = -1.3e-12 / 2.7; % Compensar que esta en el dron (invent total tenint en compte una mica que el dron s'enlairava a partir de les 22000 rpms)
+A_My = -1.3e-9 / 2.7; % Compensar que esta en el dron
 B_My = 8e-3 * 0.1 / 0.09; % Compensar el nou servo
 
 

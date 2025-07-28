@@ -1,10 +1,10 @@
 clear
 
-Kp_PitchRate_val = -150;
-Ki_PitchRate_val = -90;
-Kd_PitchRate_val = -70;
+Kp_PitchRate_val = 150;
+Ki_PitchRate_val = 90;
+Kd_PitchRate_val = 70;
 Kq_val = 7;
-Kg_val = -0.10541;
+Kg_val = 0.4956;
 tau_act_val = 0.1;
 
 %% Symbolic Analysis
@@ -43,12 +43,12 @@ hold on
 
 clear
 
-Kp_PitchRate_val = -60;
-Ki_PitchRate_val = -10;
-Kd_PitchRate_val = -5;
-Kq_val = 3;
+Kp_PitchRate_val = 15;
+Ki_PitchRate_val = 1;
+Kd_PitchRate_val = 1;
+Kq_val = 2;
 
-Kg_val = -0.10541;
+Kg_val = 0.4956;
 N_PitchRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.1;

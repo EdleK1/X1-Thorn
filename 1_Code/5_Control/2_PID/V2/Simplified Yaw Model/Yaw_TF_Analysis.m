@@ -46,10 +46,10 @@ clear
 
 Kp_YawRate_val = 80e6;
 Ki_YawRate_val = 20e6;
-Kd_YawRate_val = 10e6;
+Kd_YawRate_val = 0e6;
 Kr_val = 4;
 
-Kg_val = 2.2304e-7;
+Kg_val = 2.4611e-7;
 N_PitchRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.02;

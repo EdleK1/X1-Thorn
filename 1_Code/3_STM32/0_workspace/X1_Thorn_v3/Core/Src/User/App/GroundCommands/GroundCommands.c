@@ -63,7 +63,7 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	rot_z_mat(Rz, curr_esp32_commands.yaw_command);
 	rot_y_mat(Ry, curr_esp32_commands.pitch_command);
 
-	// R_ref = Ry * Rx * R0;
+	// R_ref = R0 * Ry * Rz;
 
 	Mat3 temp_mat, R_ref;
 
@@ -74,6 +74,7 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	quaternion_correction(&curr_attitude, &q_ref);
 
 	quaternion_t dq; // dq = q_ref - q_curr
+
 	dq.w = q_ref.w - curr_attitude.w;
 	dq.x = q_ref.x - curr_attitude.x;
 	dq.y = q_ref.y - curr_attitude.y;
