@@ -1,2 +1,2 @@
-../Core/Src/User/App/Control/RollController/RollController.c:38:6:Roll_Controller_Init	1
-../Core/Src/User/App/Control/RollController/RollController.c:47:7:Roll_Controller_Update	5
+../Core/Src/User/App/Control/RollController/RollController.c:26:6:Roll_Controller_Init	1
+../Core/Src/User/App/Control/RollController/RollController.c:35:7:Roll_Controller_Update	5

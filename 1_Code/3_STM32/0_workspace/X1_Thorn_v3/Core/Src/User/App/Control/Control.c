@@ -37,7 +37,8 @@ FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L;
 servo_t Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
-const static int16_t ServoLim = 220;
+
+#define SERVO_LIMIT		 220
 
 
 
@@ -205,25 +206,25 @@ Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs)
 	actuators_output.servo_L = (int32_t) roundf(-FlightControlOutputs.aileron + FlightControlOutputs.elevator);
 
 
-	if (actuators_output.servo_R < -ServoLim)
+	if (actuators_output.servo_R < -SERVO_LIMIT)
 	{
-		actuators_output.servo_R = -ServoLim;
+		actuators_output.servo_R = -SERVO_LIMIT;
 	}
 
-	else if (actuators_output.servo_R > ServoLim)
+	else if (actuators_output.servo_R > SERVO_LIMIT)
 	{
-		actuators_output.servo_R = ServoLim;
+		actuators_output.servo_R = SERVO_LIMIT;
 	}
 
 
-	if (actuators_output.servo_L < -ServoLim)
+	if (actuators_output.servo_L < -SERVO_LIMIT)
 	{
-		actuators_output.servo_L = -ServoLim;
+		actuators_output.servo_L = -SERVO_LIMIT;
 	}
 
-	else if (actuators_output.servo_L > ServoLim)
+	else if (actuators_output.servo_L > SERVO_LIMIT)
 	{
-		actuators_output.servo_L = ServoLim;
+		actuators_output.servo_L = SERVO_LIMIT;
 	}
 
 

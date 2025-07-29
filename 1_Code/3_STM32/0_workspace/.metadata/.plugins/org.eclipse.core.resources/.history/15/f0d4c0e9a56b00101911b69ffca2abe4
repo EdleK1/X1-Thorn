@@ -1,0 +1,91 @@
+/**
+  ******************************************************************************
+  * @file           : PitchController.c
+  * @brief          : PID controller for the Pitch movement
+  *
+  *
+  * q_error -> elevator
+  ******************************************************************************
+*/
+
+#include "PitchController.h"
+#include <math.h>
+#include "../../../Service/Logger/SD_Logger.h"
+#include "../PID_Settings.h"
+
+
+
+// File-local state variables
+
+static float integrator = 0.0f;
+static float prevError = 0.0f;
+static float dTermFilt = 0.0f;
+static float q_ref = 0.0f;
+
+
+void Pitch_Controller_Init(void)
+{
+    integrator = 0.0f;
+    prevError  = 0.0f;
+    dTermFilt  = 0.0f;
+    SD_Logger_RegisterVariable(&q_ref, LOG_TYPE_FLOAT, "q_ref");
+}
+
+
+
+float Pitch_Controller_Update(float pitch_ref, float q_measured)
+{
+	// 0) Calculate error
+
+	q_ref = KQ_PITCH_RATE * pitch_ref;
+
+	float curr_error = q_ref - q_measured;
+
+    // 1) Proportional term:
+
+    float Pout = KP_PITCH_RATE * curr_error;
+
+    // 2) Integral term with conditional‐integration anti-windup:
+
+    integrator += 0.5f * KI_PITCH_RATE * TS_PID * (curr_error + prevError);
+
+    if (integrator > OUTPUT_MAX_PITCH_INTEGRATOR)
+    {
+        integrator = OUTPUT_MAX_PITCH_INTEGRATOR;
+    }
+    else if (integrator < OUTPUT_MIN_PITCH_INTEGRATOR)
+    {
+        integrator = OUTPUT_MIN_PITCH_INTEGRATOR;
+    }
+
+    float Iout = integrator;
+
+    // 3) Derivative term:
+
+    float derivativeRaw = (curr_error - prevError) / TS_PID;
+
+	float alpha = TS_PID / (tau + TS_PID);
+	dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
+    float  Dout = KD_PITCH_RATE * dTermFilt;
+
+    // 4) Combine P, I, D:
+
+    float output = Pout + Iout + Dout;
+
+    // 5) Saturate final output to [outputMin, outputMax]:
+
+    if (output > OUTPUT_MAX_PITCH)
+    {
+        output = OUTPUT_MAX_PITCH;
+    }
+    else if (output < OUTPUT_MIN_PITCH)
+    {
+        output = OUTPUT_MIN_PITCH;
+    }
+
+    // 6) Save current error for next cycle:
+
+    prevError = curr_error;
+
+    return output;
+}

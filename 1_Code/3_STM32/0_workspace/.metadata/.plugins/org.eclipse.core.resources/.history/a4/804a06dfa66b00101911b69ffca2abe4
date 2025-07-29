@@ -1,0 +1,88 @@
+/**
+  ******************************************************************************
+  * @file           : RollController.c
+  * @brief          : PID controller for the Roll movement
+  *
+  *
+  * p_error -> aileron
+  ******************************************************************************
+*/
+
+
+#include "RollController.h"
+#include <math.h>
+#include "../PID_Settings.h"
+
+
+
+// File-local state variables
+
+static float integrator = 0.0f;
+static float prevError = 0.0f;
+static float dTermFilt = 0.0f;
+
+
+
+void Roll_Controller_Init(void)
+{
+    integrator = 0.0f;
+    prevError  = 0.0f;
+    dTermFilt  = 0.0f;
+}
+
+
+
+float Roll_Controller_Update(float p_ref, float p_measured)
+{
+	// 0) Calculate error
+
+	float curr_error = p_ref - p_measured;
+
+    // 1) Proportional term:
+
+    float Pout = KP_ROLL_RATE * curr_error;
+
+    // 2) Integral term with conditional‐integration anti-windup:
+
+    integrator += 0.5f * KI_ROLL_RATE * dt * (curr_error + prevError);
+
+    if (integrator > integratorMax)
+    {
+        integrator = integratorMax;
+    }
+    else if (integrator < integratorMin)
+    {
+        integrator = integratorMin;
+    }
+
+    float Iout = integrator;
+
+    // 3) Derivative term:
+
+    float derivativeRaw = (curr_error - prevError) / dt;
+
+	float alpha = dt / (tau + dt);
+	dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
+    float  Dout = Kd * dTermFilt;
+
+    // 4) Combine P, I, D:
+
+    float output = Pout + Iout + Dout;
+
+    // 5) Saturate final output to [outputMin, outputMax]:
+
+    if (output > outputMax)
+    {
+        output = outputMax;
+    }
+    else if (output < outputMin)
+    {
+        output = outputMin;
+    }
+
+    // 6) Save current error for next cycle:
+
+    prevError = curr_error;
+
+    return output;
+}

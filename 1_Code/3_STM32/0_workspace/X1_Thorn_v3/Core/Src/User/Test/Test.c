@@ -57,16 +57,16 @@ void Test_Task(void *argument)
 void Test_Start(void)
 {
 
-//    LCD_LoadScreen();
+    LCD_LoadScreen();
 //
-//    Odometry_Test_Init();
+    Odometry_Test_Init();
 //    ESP32_Test_Init();
 //    GroundCommands_Test_Init();
 //    AttitudeMPC_Test_Init(void)
 //    DShot_Test();
 //    Servo_Test_Start();
 
-	ESC_Test_Start();
+//	ESC_Test_Start();
 
 }
 
@@ -80,7 +80,7 @@ void Test_Loop(void)
 
 //	GroundCommands_Test_Loop();
 
-//	Odometry_Test_Loop();
+	Odometry_Test_Loop();
 //	ESP32_Test_Loop();
 
 //    Servo_Test_Loop();

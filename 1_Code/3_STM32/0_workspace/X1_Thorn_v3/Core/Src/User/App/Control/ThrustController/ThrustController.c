@@ -11,18 +11,9 @@
 
 #include "ThrustController.h"
 #include <math.h>
+#include "../PID_Settings.h"
 
 
-// Controller Parameters
-
-static const float Kp = 2e6f;
-static const float Ki = 200e6f;
-static const float dt  = 0.01f;
-
-// Saturation Limits
-
-static const float outputMin = 0.0f;
-static const float outputMax = +30e8f; // Limitat a unes 31600 RPMs (sqrt(20e8/2))
 
 // File-local state variables
 
@@ -48,19 +39,19 @@ float Thrust_Controller_Update(float ax_ref, float ax_measured)
 
     // 1) Proportional term:
 
-    float Pout = Kp * curr_error;
+    float Pout = KP_THRUST * curr_error;
 
     // 2) Integral term with conditional‐integration anti-windup: (since both here and in the ESC PID the integrator will do the most amount of work integratormax = outputnmax. Possible issue is that the integrator cannot be negative, but since the nominal value for the itegrator is quite high when the drone is flying that is not a problem)
 
-    integrator += 0.5f * Ki * dt * (curr_error + prevError);
+    integrator += 0.5f * KI_THRUST * TS_PID * (curr_error + prevError);
 
-    if (integrator > outputMax)
+    if (integrator > OUTPUT_MAX_THRUST)
     {
-        integrator = outputMax;
+        integrator = OUTPUT_MAX_THRUST;
     }
-    else if (integrator < outputMin)
+    else if (integrator < OUTPUT_MIN_THRUST)
     {
-        integrator = outputMin;
+        integrator = OUTPUT_MIN_THRUST;
     }
 
     float Iout = integrator;
@@ -71,13 +62,13 @@ float Thrust_Controller_Update(float ax_ref, float ax_measured)
 
     // 4) Saturate final output to [outputMin, outputMax]:
 
-    if (output > outputMax)
+    if (output > OUTPUT_MAX_THRUST)
     {
-        output = outputMax;
+        output = OUTPUT_MAX_THRUST;
     }
-    else if (output < outputMin)
+    else if (output < OUTPUT_MIN_THRUST)
     {
-        output = outputMin;
+        output = OUTPUT_MIN_THRUST;
     }
 
     // 5) Save current error for next cycle:

@@ -1,0 +1,35 @@
+/*
+ * PID_Settings.h
+ *
+ *  Created on: Jul 28, 2025
+ *      Author: marcv
+ */
+
+#ifndef SRC_USER_APP_CONTROL_PID_SETTINGS_H_
+#define SRC_USER_APP_CONTROL_PID_SETTINGS_H_
+
+
+#define Ts 0;
+
+
+// Controller Parameters
+
+#define KP_YAW_RATE 	80e6f;
+#define KI_YAW_RATE 	20e6f;
+#define KD_YAW_RATE 	0.0f;    		// 10e6
+#define KR_YAW_RATE 	4.0f;
+#define TAU_YAW_RATE    1.0f/20.0f;		// N = 20
+
+// Saturation Limits
+
+#define OUTPUT_MIN_YAW 				-5e8f;
+#define OUTPUT_MAX_YAW 				+5e8f;
+#define OUTPUT_MIN_YAW_INTEGRATOR 	-7e7f;
+#define OUTPUT_MAX_YAW_INTEGRATOR 	+7e7f;
+
+
+
+
+
+
+#endif /* SRC_USER_APP_CONTROL_PID_SETTINGS_H_ */

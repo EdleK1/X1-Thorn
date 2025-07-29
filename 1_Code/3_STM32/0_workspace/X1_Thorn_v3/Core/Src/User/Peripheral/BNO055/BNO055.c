@@ -7,6 +7,7 @@
 #include "BNO055.h"
 #include <string.h>
 #include "../LCD/lcd.h"
+#include "../../Service/ErrorHandler/ErrorHandler.h"
 
 /*!
  *   @brief  Gets the latest system status info
@@ -321,18 +322,18 @@ void BNO055_Init(BNO055_Init_t Init){
 
 	//Set operation mode to config_mode for initialize all register
 	Set_Operation_Mode(CONFIG_MODE);
-	HAL_Delay(50);
+	HAL_Delay(500);
 	/*
 	 * Set register page number to 1
 	 * Configure Accelerometer range
 	 */
 	SelectPage(PAGE_1);
 	SET_Accel_Range(Init.ACC_Range);
-	HAL_Delay(50);
+	HAL_Delay(500);
 
 	//Set register page number to 0
 	SelectPage(PAGE_0);
-	HAL_Delay(50);
+	HAL_Delay(500);
 
 	//Read clock status. If status=0 then it is free to configure the clock source
 	uint8_t status;
@@ -343,7 +344,7 @@ void BNO055_Init(BNO055_Init_t Init){
 	{
 		//Changing clock source
 		Clock_Source(Init.Clock_Source);
-		HAL_Delay(100);
+		HAL_Delay(500);
 	}
 
 	//Configure axis remapping and signing
@@ -361,6 +362,25 @@ void BNO055_Init(BNO055_Init_t Init){
 	//Set operation mode
 	Set_Operation_Mode(Init.OP_Modes);
 	HAL_Delay(100);
+
+
+	// Check the values were properly initialized
+
+	uint8_t OP_Mode_check = 0;
+	HAL_I2C_Mem_Read(&bno_i2c, P_BNO055, OPR_MODE_ADDR, 1, &OP_Mode_check, 1, 100);
+
+	uint8_t sign_check = 0;
+	HAL_I2C_Mem_Read(&bno_i2c, P_BNO055, AXIS_MAP_SIGN_ADDR, 1, &sign_check, 1, 100);
+
+	uint8_t Unit_check = 0;
+	HAL_I2C_Mem_Read(&bno_i2c, P_BNO055, UNIT_SEL_ADDR, 1, &Unit_check, 1, 100);
+
+
+	if (OP_Mode_check != Init.OP_Modes || sign_check != Init.Axis_sign || Unit_check != Init.Unit_Sel)
+	{
+		ErrorHandler_SetError(ERROR_HANDLER_BNO055_WRONG_UNITS);
+	}
+
 
 	printf("BNO055 Initialization process is done!\n");
 }

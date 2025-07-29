@@ -11,23 +11,9 @@
 #include "PitchController.h"
 #include <math.h>
 #include "../../../Service/Logger/SD_Logger.h"
+#include "../PID_Settings.h"
 
 
-// Controller Parameters
-
-static const float Kp = 15.0f;
-static const float Ki = 2.0f;
-static const float Kd = 1.0f;
-static const float Kq = 2.0f;
-static const float dt  = 0.01f;
-static const float tau = 1.0f/20.0f;    // N = 20
-
-// Saturation Limits
-
-static const float outputMin = -180.0f;
-static const float outputMax = +180.0f;
-static const float integratorMin = -40.0f;
-static const float integratorMax = +40.0f;
 
 // File-local state variables
 
@@ -51,36 +37,36 @@ float Pitch_Controller_Update(float pitch_ref, float q_measured)
 {
 	// 0) Calculate error
 
-	q_ref = Kq * pitch_ref;
+	q_ref = KQ_PITCH_RATE * pitch_ref;
 
 	float curr_error = q_ref - q_measured;
 
     // 1) Proportional term:
 
-    float Pout = Kp * curr_error;
+    float Pout = KP_PITCH_RATE * curr_error;
 
     // 2) Integral term with conditional‐integration anti-windup:
 
-    integrator += 0.5f * Ki * dt * (curr_error + prevError);
+    integrator += 0.5f * KI_PITCH_RATE * TS_PID * (curr_error + prevError);
 
-    if (integrator > integratorMax)
+    if (integrator > OUTPUT_MAX_PITCH_INTEGRATOR)
     {
-        integrator = integratorMax;
+        integrator = OUTPUT_MAX_PITCH_INTEGRATOR;
     }
-    else if (integrator < integratorMin)
+    else if (integrator < OUTPUT_MIN_PITCH_INTEGRATOR)
     {
-        integrator = integratorMin;
+        integrator = OUTPUT_MIN_PITCH_INTEGRATOR;
     }
 
     float Iout = integrator;
 
     // 3) Derivative term:
 
-    float derivativeRaw = (curr_error - prevError) / dt;
+    float derivativeRaw = (curr_error - prevError) / TS_PID;
 
-	float alpha = dt / (tau + dt);
+	float alpha = TS_PID / (TAU_PITCH_RATE + TS_PID);
 	dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
-    float  Dout = Kd * dTermFilt;
+    float  Dout = KD_PITCH_RATE * dTermFilt;
 
     // 4) Combine P, I, D:
 
@@ -88,13 +74,13 @@ float Pitch_Controller_Update(float pitch_ref, float q_measured)
 
     // 5) Saturate final output to [outputMin, outputMax]:
 
-    if (output > outputMax)
+    if (output > OUTPUT_MAX_PITCH)
     {
-        output = outputMax;
+        output = OUTPUT_MAX_PITCH;
     }
-    else if (output < outputMin)
+    else if (output < OUTPUT_MIN_PITCH)
     {
-        output = outputMin;
+        output = OUTPUT_MIN_PITCH;
     }
 
     // 6) Save current error for next cycle:

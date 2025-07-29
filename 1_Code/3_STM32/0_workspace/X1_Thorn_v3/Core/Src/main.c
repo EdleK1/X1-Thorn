@@ -141,8 +141,9 @@ int main(void)
 
 
   ErrorHandler_Init();
-  Control_Init();
-//  Test_Init();
+
+//  Control_Init();
+  Test_Init();
 
   /* Start scheduler */
   osKernelStart();

@@ -11,23 +11,9 @@
 #include "YawController.h"
 #include <math.h>
 #include "../../../Service/Logger/SD_Logger.h"
+#include "../PID_Settings.h"
 
 
-// Controller Parameters
-
-static const float Kp = 80e6f;
-static const float Ki = 20e6f;
-static const float Kd = 0.0f;    // 10e6
-static const float Kr = 4.0f;
-static const float dt  = 0.01f;
-static const float tau = 1.0f/20.0f;	// N = 20
-
-// Saturation Limits
-
-static const float outputMin = -5e8f;
-static const float outputMax = +5e8f;
-static const float integratorMin = -7e7f;
-static const float integratorMax = +7e7f;
 
 // File-local state variables
 
@@ -51,36 +37,36 @@ float Yaw_Controller_Update(float yaw_ref, float r_measured)
 {
 	// 0) Calculate reference yaw rate
 
-	r_ref = Kr * yaw_ref;
+	r_ref = KR_YAW_RATE * yaw_ref;
 
 	float curr_error = r_ref - r_measured;
 
     // 1) Proportional term:
 
-    float Pout = Kp * curr_error;
+    float Pout = KP_YAW_RATE * curr_error;
 
     // 2) Integral term with conditional‐integration anti-windup:
 
-    integrator += 0.5f * Ki * dt * (curr_error + prevError);
+    integrator += 0.5f * KI_YAW_RATE * TS_PID * (curr_error + prevError);
 
-    if (integrator > integratorMax)
+    if (integrator > OUTPUT_MAX_YAW_INTEGRATOR)
     {
-        integrator = integratorMax;
+        integrator = OUTPUT_MAX_YAW_INTEGRATOR;
     }
-    else if (integrator < integratorMin)
+    else if (integrator < OUTPUT_MIN_YAW_INTEGRATOR)
     {
-        integrator = integratorMin;
+        integrator = OUTPUT_MIN_YAW_INTEGRATOR;
     }
 
     float Iout = integrator;
 
     // 3) Derivative term:
 
-    float derivativeRaw = (curr_error - prevError) / dt;
+    float derivativeRaw = (curr_error - prevError) / TS_PID;
 
-	float alpha = dt / (tau + dt);
+	float alpha = TS_PID / (TAU_YAW_RATE + TS_PID);
 	dTermFilt = alpha * derivativeRaw + (1.0f - alpha) * dTermFilt;
-    float  Dout = Kd * dTermFilt;
+    float  Dout = KD_YAW_RATE * dTermFilt;
 
     // 4) Combine P, I, D:
 
@@ -88,13 +74,13 @@ float Yaw_Controller_Update(float yaw_ref, float r_measured)
 
     // 5) Saturate final output to [outputMin, outputMax]:
 
-    if (output > outputMax)
+    if (output > OUTPUT_MAX_YAW)
     {
-        output = outputMax;
+        output = OUTPUT_MAX_YAW;
     }
-    else if (output < outputMin)
+    else if (output < OUTPUT_MIN_YAW)
     {
-        output = outputMin;
+        output = OUTPUT_MIN_YAW;
     }
 
     // 6) Save current error for next cycle:

@@ -59,7 +59,8 @@ Core/Src/User/App/Control/PitchController/PitchController.o: \
  ../FATFS/Target/bsp_driver_sd.h ../FATFS/Target/fatfs_platform.h \
  ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  ../Middlewares/Third_Party/FatFs/src/diskio.h \
- ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h
+ ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h \
+ ../Core/Src/User/App/Control/PitchController/../PID_Settings.h
 ../Core/Src/User/App/Control/PitchController/PitchController.h:
 ../Core/Src/User/App/Control/PitchController/../../../Service/Logger/SD_Logger.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -125,3 +126,4 @@ Core/Src/User/App/Control/PitchController/PitchController.o: \
 ../Middlewares/Third_Party/FatFs/src/diskio.h:
 ../Middlewares/Third_Party/FatFs/src/ff.h:
 ../FATFS/Target/sd_diskio.h:
+../Core/Src/User/App/Control/PitchController/../PID_Settings.h:

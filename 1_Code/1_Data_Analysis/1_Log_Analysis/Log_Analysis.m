@@ -7,7 +7,7 @@
 clear; close all; clc;
 
 %% 1) Load data
-T = readtable('LOG20.csv');
+T = readtable('LOG1.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
 ax         = T.curr_ax;           ax_ref     = T.ax_ref;
 p_rate     = T.curr_roll_rate;    q_rate     = T.curr_pitch_rate;
@@ -184,48 +184,48 @@ title('Right Motor','Interpreter','latex',"FontSize",20)
 grid on
 
 
-% %% Quaternion Animation Integration for Log Analysis (Manual Drawing)
-% % This version draws body axes manually, captures frames off-screen, and
-% % uses implay with a larger window size.
-% 
-% %--- Build MATLAB quaternion array ---
-% Q = quaternion(qw, qx, qy, qz);  % requires Aerospace Toolbox
-% 
-% %--- Set up figure ---
-% figA = figure('Name','Orientation Animation','NumberTitle','off');
-% axA  = axes(figA);
-% set(axA, 'XLim',[-1 1],'YLim',[-1 1],'ZLim',[-1 1]);
-% view(3); grid on; daspect(axA,[1 1 1]);
-% xlabel('X','Interpreter','latex'); ylabel('Y','Interpreter','latex'); zlabel('Z','Interpreter','latex');
-% title('Vehicle Orientation over Time','Interpreter','latex');
-% hold on;
-% 
-% %--- Body frame scale & initial axes ---
-% L  = 1.0;
-% R0 = rotmat(Q(1),'point');
-% ex0 = (R0*[L;0;0])';  ey0 = (R0*[0;L;0])';  ez0 = (R0*[0;0;L])';
-% hX = line([0 ex0(1)],[0 ex0(2)],[0 ex0(3)],'Color','r','LineWidth',2);
-% hY = line([0 ey0(1)],[0 ey0(2)],[0 ey0(3)],'Color','g','LineWidth',2);
-% hZ = line([0 ez0(1)],[0 ez0(2)],[0 ez0(3)],'Color','b','LineWidth',2);
-% 
-% %--- Set figure size for capture & record frames ---
-% set(figA,'Units','pixels','Position',[100 100 1200 900],'Visible','off');
-% skip = 1; cnt = 0;
-% for k = 1:skip:length(time)
-%     Rk = rotmat(Q(k),'point');
-%     ex = (Rk*[L;0;0])';  ey = (Rk*[0;L;0])';  ez = (Rk*[0;0;L])';
-%     set(hX,'XData',[0 ex(1)],'YData',[0 ex(2)],'ZData',[0 ex(3)]);
-%     set(hY,'XData',[0 ey(1)],'YData',[0 ey(2)],'ZData',[0 ey(3)]);
-%     set(hZ,'XData',[0 ez(1)],'YData',[0 ez(2)],'ZData',[0 ez(3)]);
-%     drawnow;
-%     cnt = cnt + 1;
-%     M(cnt) = getframe(figA);
-% end
-% 
-% %--- Launch interactive player ---
-% hPlayer = implay(M,10);  % launch interactive player
-% pause(0.1);  
-% vpFig = findall(0,'Type','figure','Name','Video Player');
-% if ~isempty(vpFig)
-%     set(vpFig,'Position',[100 100 800 600]);
-% end
+%% Quaternion Animation Integration for Log Analysis (Manual Drawing)
+% This version draws body axes manually, captures frames off-screen, and
+% uses implay with a larger window size.
+
+%--- Build MATLAB quaternion array ---
+Q = quaternion(qw, qx, qy, qz);  % requires Aerospace Toolbox
+
+%--- Set up figure ---
+figA = figure('Name','Orientation Animation','NumberTitle','off');
+axA  = axes(figA);
+set(axA, 'XLim',[-1 1],'YLim',[-1 1],'ZLim',[-1 1]);
+view(3); grid on; daspect(axA,[1 1 1]);
+xlabel('X','Interpreter','latex'); ylabel('Y','Interpreter','latex'); zlabel('Z','Interpreter','latex');
+title('Vehicle Orientation over Time','Interpreter','latex');
+hold on;
+
+%--- Body frame scale & initial axes ---
+L  = 1.0;
+R0 = rotmat(Q(1),'point');
+ex0 = (R0*[L;0;0])';  ey0 = (R0*[0;L;0])';  ez0 = (R0*[0;0;L])';
+hX = line([0 ex0(1)],[0 ex0(2)],[0 ex0(3)],'Color','r','LineWidth',2);
+hY = line([0 ey0(1)],[0 ey0(2)],[0 ey0(3)],'Color','g','LineWidth',2);
+hZ = line([0 ez0(1)],[0 ez0(2)],[0 ez0(3)],'Color','b','LineWidth',2);
+
+%--- Set figure size for capture & record frames ---
+set(figA,'Units','pixels','Position',[100 100 1200 900],'Visible','off');
+skip = 1; cnt = 0;
+for k = 1:skip:length(time)
+    Rk = rotmat(Q(k),'point');
+    ex = (Rk*[L;0;0])';  ey = (Rk*[0;L;0])';  ez = (Rk*[0;0;L])';
+    set(hX,'XData',[0 ex(1)],'YData',[0 ex(2)],'ZData',[0 ex(3)]);
+    set(hY,'XData',[0 ey(1)],'YData',[0 ey(2)],'ZData',[0 ey(3)]);
+    set(hZ,'XData',[0 ez(1)],'YData',[0 ez(2)],'ZData',[0 ez(3)]);
+    drawnow;
+    cnt = cnt + 1;
+    M(cnt) = getframe(figA);
+end
+
+%--- Launch interactive player ---
+hPlayer = implay(M,10);  % launch interactive player
+pause(0.1);  
+vpFig = findall(0,'Type','figure','Name','Video Player');
+if ~isempty(vpFig)
+    set(vpFig,'Position',[100 100 800 600]);
+end

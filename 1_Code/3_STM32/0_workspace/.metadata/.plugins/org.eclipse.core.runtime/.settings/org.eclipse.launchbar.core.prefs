@@ -13,5 +13,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_V1\ Debug/activeLaunch
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_V1\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_v2\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_v2\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_v3/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_v3/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:X1_Thorn_v3/activeLaunchTarget=null\:---

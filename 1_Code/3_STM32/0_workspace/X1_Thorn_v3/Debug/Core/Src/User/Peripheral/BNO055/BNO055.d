@@ -44,7 +44,8 @@ Core/Src/User/Peripheral/BNO055/BNO055.o: \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Core/Src/User/Peripheral/BNO055/../LCD/lcd.h ../Core/Inc/main.h \
  ../Core/Src/User/Peripheral/BNO055/../LCD/st7735.h \
- ../Core/Src/User/Peripheral/BNO055/../LCD/st7735_reg.h
+ ../Core/Src/User/Peripheral/BNO055/../LCD/st7735_reg.h \
+ ../Core/Src/User/Peripheral/BNO055/../../Service/ErrorHandler/ErrorHandler.h
 ../Core/Src/User/Peripheral/BNO055/BNO055.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -91,3 +92,4 @@ Core/Src/User/Peripheral/BNO055/BNO055.o: \
 ../Core/Inc/main.h:
 ../Core/Src/User/Peripheral/BNO055/../LCD/st7735.h:
 ../Core/Src/User/Peripheral/BNO055/../LCD/st7735_reg.h:
+../Core/Src/User/Peripheral/BNO055/../../Service/ErrorHandler/ErrorHandler.h:
