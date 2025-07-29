@@ -202,8 +202,8 @@ Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs)
 
 	// Limit Servo range and make it round instead of truncating
 
-	actuators_output.servo_R = (int32_t) roundf(+FlightControlOutputs.aileron + FlightControlOutputs.elevator);    // Crec que s'ha de cambiar el signe perque el servo nou va del reves
-	actuators_output.servo_L = (int32_t) roundf(+FlightControlOutputs.aileron - FlightControlOutputs.elevator);
+	actuators_output.servo_R = (int32_t) roundf(-FlightControlOutputs.aileron - FlightControlOutputs.elevator);
+	actuators_output.servo_L = (int32_t) roundf(-FlightControlOutputs.aileron + FlightControlOutputs.elevator);
 
 
 	if (actuators_output.servo_R < -SERVO_LIMIT)

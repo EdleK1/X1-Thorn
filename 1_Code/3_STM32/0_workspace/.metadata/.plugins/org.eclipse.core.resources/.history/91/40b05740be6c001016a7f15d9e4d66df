@@ -15,7 +15,7 @@
 // Pitch Controller Parameters
 
 #define KP_PITCH_RATE 					15.0f
-#define KI_PITCH_RATE 					5.0f
+#define KI_PITCH_RATE 					2.0f
 #define KD_PITCH_RATE 					1.0f
 #define KQ_PITCH_RATE 					2.0f
 #define TAU_PITCH_RATE  				1.0f/20.0f		// N = 20
@@ -30,7 +30,7 @@
 
 
 #define KP_YAW_RATE 					80e6f
-#define KI_YAW_RATE 					40e6f
+#define KI_YAW_RATE 					20e6f
 #define KD_YAW_RATE 					0.0f    		// 10e6
 #define KR_YAW_RATE 					4.0f
 #define TAU_YAW_RATE    				1.0f/20.0f		// N = 20

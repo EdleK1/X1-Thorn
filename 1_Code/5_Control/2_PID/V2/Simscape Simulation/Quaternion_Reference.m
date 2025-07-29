@@ -13,8 +13,8 @@ q3 = 0;
 
 q_curr = [q0;q1;q2;q3];
 
-pitch = 0.4;
-yaw = 0;
+pitch = 0;
+yaw = -0.4;
 
 vec_x_Aircraft = [1-2*(q2^2+q3^2); 2*(q1*q2 + q0*q3); 2*(q1*q3 - q0*q2)];
 vec_y_Aircraft = [2*(q1*q2 - q0*q3); 1 - 2*(q1^2 + q3^2); 2*(q2*q3 + q0*q1)];

@@ -181,29 +181,29 @@ Actuators_t Control_To_Actuators(FlightControlOutputs_t FlightControlOutputs)
 {
 	Actuators_t actuators_output;
 
-	if (FlightControlOutputs.omegaThrustController/2 - FlightControlOutputs.rudder < 0)
+	if (FlightControlOutputs.omegaThrustController/2 + FlightControlOutputs.rudder < 0)
 	{
 		actuators_output.omega_R = 0;
 	}
 	else
 	{
-		actuators_output.omega_R = (uint32_t) roundf(sqrt(FlightControlOutputs.omegaThrustController/2 - FlightControlOutputs.rudder));
+		actuators_output.omega_R = (uint32_t) roundf(sqrt(FlightControlOutputs.omegaThrustController/2 + FlightControlOutputs.rudder));
 	}
 
 
-	if (FlightControlOutputs.omegaThrustController/2 + FlightControlOutputs.rudder < 0)
+	if (FlightControlOutputs.omegaThrustController/2 - FlightControlOutputs.rudder < 0)
 	{
 		actuators_output.omega_L = 0;
 	}
 	else
 	{
-		actuators_output.omega_L = (uint32_t) roundf(sqrt(FlightControlOutputs.omegaThrustController/2 + FlightControlOutputs.rudder));
+		actuators_output.omega_L = (uint32_t) roundf(sqrt(FlightControlOutputs.omegaThrustController/2 - FlightControlOutputs.rudder));
 	}
 
 	// Limit Servo range and make it round instead of truncating
 
-	actuators_output.servo_R = (int32_t) roundf(+FlightControlOutputs.aileron + FlightControlOutputs.elevator);    // Crec que s'ha de cambiar el signe perque el servo nou va del reves
-	actuators_output.servo_L = (int32_t) roundf(+FlightControlOutputs.aileron - FlightControlOutputs.elevator);
+	actuators_output.servo_R = (int32_t) roundf(-FlightControlOutputs.aileron - FlightControlOutputs.elevator);
+	actuators_output.servo_L = (int32_t) roundf(-FlightControlOutputs.aileron + FlightControlOutputs.elevator);
 
 
 	if (actuators_output.servo_R < -SERVO_LIMIT)
