@@ -8,9 +8,9 @@ Ts_val = 0.01;
 
 %% Pitch Controller
 
-Kp_PitchRate_val = 15;         % OK
-Ki_PitchRate_val = 5;         % OK 
-Kd_PitchRate_val = 1;         % OK
+Kp_PitchRate_val = 15;          % OK
+Ki_PitchRate_val = 7;           % OK 
+Kd_PitchRate_val = 1;           % OK
 Kq_PitchRate_val = 2;           % OK
 N_PitchRate_val = 20;           % OK
 
@@ -27,7 +27,7 @@ N_YawRate_val = 20;             % OK
 
 
 Kp_RollRate_val = 15;           % OK
-Ki_RollRate_val = 1;            % OK
+Ki_RollRate_val = 5;            % OK
 Kd_RollRate_val = 1;            % OK
 N_RollRate_val = 20;            % OK
 

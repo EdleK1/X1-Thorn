@@ -8,3 +8,4 @@ newActuators
 curr_odometry
 curr_reference
 newFlightControlOutputs
+result
