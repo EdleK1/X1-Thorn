@@ -76,6 +76,7 @@ uint8_t ESC_Start(void)
 		ErrorHandler_SetError(ERROR_HANDLER_DSHOT_NOT_INITIALIZED);
 	}
 
+
 	// Init PIDs
 
 	float Kp = 0.25;

@@ -3,6 +3,7 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="searchhistory">
+		<item value="logger"/>
 		<item value="Logger"/>
 		<item value="ax_error"/>
 		<item value="mutex"/>
@@ -17,7 +18,6 @@
 		<item value="ErrorFrameCnt"/>
 		<item value="teleme"/>
 		<item value="s_expect_telemetry"/>
-		<item value="__HAL_LINKDMA"/>
 	</list>
 	<list key="replacehistory">
 		<item value="LOG_TYPE_FLOAT"/>

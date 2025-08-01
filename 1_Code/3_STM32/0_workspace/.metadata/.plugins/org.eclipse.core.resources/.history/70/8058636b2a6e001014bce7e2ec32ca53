@@ -12,7 +12,9 @@
 #include "tim.h"
 #include "../../Lib/DshotProtocol/DShot.h"
 #include "Motor_PI.h"
-#include "../../Service/ErrorHandler/ErrorHandler.h"
+
+
+#include "../../Service/Logger/SD_Logger.h"
 
 
 uint8_t ESC_Active = 0;
@@ -73,8 +75,9 @@ uint8_t ESC_Start(void)
 
 	if (DShot_Init() == 1)
 	{
-		ErrorHandler_SetError(ERROR_HANDLER_DSHOT_NOT_INITIALIZED);
+		ErrorHandler_SetError()
 	}
+
 
 	// Init PIDs
 

@@ -80,7 +80,7 @@ uint8_t Control_Start(void)
 	// Initialize Servos
 
 	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1400); // 1390
-	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1480); // 1490
+	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1490);
 
 	// Initialize LCD (we need it to calibrate the BNO055 sensor
 

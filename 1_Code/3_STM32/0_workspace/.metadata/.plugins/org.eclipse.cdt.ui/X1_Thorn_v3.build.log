@@ -1,4 +1,4 @@
-18:23:12 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
+15:43:53 **** Incremental Build of configuration Debug for project X1_Thorn_v3 ****
 make -j12 all 
 arm-none-eabi-size  X1_Thorn_v3.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  X1_Thorn_v3.elf
 Finished building: default.size.stdout
  
 
-18:23:13 Build Finished. 0 errors, 0 warnings. (took 863ms)
+15:43:54 Build Finished. 0 errors, 0 warnings. (took 905ms)
 

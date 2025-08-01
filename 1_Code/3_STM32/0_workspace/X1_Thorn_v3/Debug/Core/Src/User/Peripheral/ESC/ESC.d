@@ -54,18 +54,7 @@ Core/Src/User/Peripheral/ESC/ESC.o: ../Core/Src/User/Peripheral/ESC/ESC.c \
  ../Core/Inc/tim.h \
  ../Core/Src/User/Peripheral/ESC/../../Lib/DshotProtocol/DShot.h \
  ../Core/Inc/dma.h ../Core/Src/User/Peripheral/ESC/Motor_PI.h \
- ../Core/Src/User/Peripheral/ESC/../../Service/Logger/SD_Logger.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../FATFS/App/fatfs.h ../Middlewares/Third_Party/FatFs/src/ff.h \
- ../Middlewares/Third_Party/FatFs/src/integer.h ../FATFS/Target/ffconf.h \
- ../Core/Inc/main.h ../FATFS/Target/bsp_driver_sd.h \
- ../FATFS/Target/fatfs_platform.h \
- ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
- ../Middlewares/Third_Party/FatFs/src/diskio.h \
- ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/sd_diskio.h
+ ../Core/Src/User/Peripheral/ESC/../../Service/ErrorHandler/ErrorHandler.h
 ../Core/Src/User/Peripheral/ESC/ESC.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Core/Inc/usart.h:
@@ -123,19 +112,4 @@ Core/Src/User/Peripheral/ESC/ESC.o: ../Core/Src/User/Peripheral/ESC/ESC.c \
 ../Core/Src/User/Peripheral/ESC/../../Lib/DshotProtocol/DShot.h:
 ../Core/Inc/dma.h:
 ../Core/Src/User/Peripheral/ESC/Motor_PI.h:
-../Core/Src/User/Peripheral/ESC/../../Service/Logger/SD_Logger.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-../FATFS/App/fatfs.h:
-../Middlewares/Third_Party/FatFs/src/ff.h:
-../Middlewares/Third_Party/FatFs/src/integer.h:
-../FATFS/Target/ffconf.h:
-../Core/Inc/main.h:
-../FATFS/Target/bsp_driver_sd.h:
-../FATFS/Target/fatfs_platform.h:
-../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
-../Middlewares/Third_Party/FatFs/src/diskio.h:
-../Middlewares/Third_Party/FatFs/src/ff.h:
-../FATFS/Target/sd_diskio.h:
+../Core/Src/User/Peripheral/ESC/../../Service/ErrorHandler/ErrorHandler.h:
