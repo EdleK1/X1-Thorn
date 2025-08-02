@@ -2,3 +2,78 @@
 /3_CFD/
 /4_FEA/
 /5_Documentation/
+
+
+# ==== Build outputs ====
+# GCC/Make/CubeIDE Debug & Release folders
+Debug/
+Release/
+
+# ARM-GCC object files, binaries, maps, etc.
+*.o
+*.el(f|h|m)
+*.axf
+*.bin
+*.hex
+*.map
+*.lst
+*.d
+
+# Make/CMake caches & logs
+CMakeFiles/
+CMakeCache.txt
+cmake_install.*
+Makefile
+build-*/
+
+# ==== IDE / Editor ====
+# STM32CubeIDE
+.settings/
+*.launch
+*.mxproject
+.project
+.cproject
+.metadata/
+
+# Keil uVision
+*.uvproj*
+*.uvopt*
+*.bak
+*.htm
+*.htp
+*.log
+*.plg
+___serial*
+
+# IAR Embedded Workbench
+*.eww
+*.ewp
+*.ewt
+*.log
+
+# VSCode
+.vscode/
+
+# CLion
+.idea/
+
+# ==== Dependency / Package managers ====
+# Conan
+conanbuildinfo.*
+conaninfo.txt
+conan.lock
+
+# vcpkg
+vcpkg_installed/
+vcpkg.json
+
+# ==== Temporary / OS ====
+# swap, temp files
+*~
+*.swp
+*.tmp
+*.bak
+*.backup
+*.cache
+Thumbs.db
+.DS_Store

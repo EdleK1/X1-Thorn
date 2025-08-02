@@ -3,12 +3,12 @@ close all;
 clc;
 
 % --- Fixed parameters
-Kp_PitchRate_val = -80;
-Ki_PitchRate_val = -10;
-Kd_PitchRate_val = -12;
-Kq_val = 6;
+Kp_PitchRate_val = 15;
+Ki_PitchRate_val = 7;
+Kd_PitchRate_val = 1;
+Kq_val = 2;
 
-Kg_val = -0.10541;
+Kg_val = 0.4956;
 N_PitchRate_val = 20;
 Ts_val = 0.01;
 tau_act_val = 0.1;
