@@ -2,7 +2,9 @@
 /3_CFD/
 /4_FEA/
 /5_Documentation/
-
+**/.metadata/
+**/Debug/
+**/Test/
 
 # ==== Build outputs ====
 # GCC/Make/CubeIDE Debug & Release folders
