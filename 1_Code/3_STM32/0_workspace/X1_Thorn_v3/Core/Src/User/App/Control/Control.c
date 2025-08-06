@@ -119,7 +119,7 @@ uint8_t Control_Start(void)
 	SD_Logger_RegisterVariable(&curr_odometry.qx, LOG_TYPE_FLOAT, "curr_qx");
 	SD_Logger_RegisterVariable(&curr_odometry.qy, LOG_TYPE_FLOAT, "curr_qy");
 	SD_Logger_RegisterVariable(&curr_odometry.qz, LOG_TYPE_FLOAT, "curr_qz");
-	SD_Logger_RegisterVariable(&curr_reference.ax_ref, LOG_TYPE_FLOAT, "ax_ref");
+	SD_Logger_RegisterVariable(&curr_reference.thrust_ref, LOG_TYPE_FLOAT, "thrust_ref");
 	SD_Logger_RegisterVariable(&curr_reference.p_ref, LOG_TYPE_FLOAT, "p_ref");
 	SD_Logger_RegisterVariable(&newActuators.omega_L, LOG_TYPE_UINT32, "omega_L_ref");
 	SD_Logger_RegisterVariable(&newActuators.omega_R, LOG_TYPE_UINT32, "omega_R_ref");
@@ -154,9 +154,9 @@ void Control_Loop(void)
 	get_reference(curr_attitude, &curr_reference);
 
 
-	// Thrust Control: Calculate required rpm1 and rpm2 from ThrustController
+	// Thrust Control: Get required Omega from curr_reference
 
-	newFlightControlOutputs.omegaThrustController = Thrust_Controller_Update(curr_reference.ax_ref, 0.0f); //curr_odometry.ax We disable it for the amount of noise it has
+	newFlightControlOutputs.omegaThrustController = curr_reference.thrust_ref;
 
 	// Attitude Control: Calculate required elevator, rudder and aileron from Roll, Pitch and Yaw controllers
 

@@ -44,7 +44,7 @@ void GroundCommands_Test_Loop(void)
 	get_reference(curr_attitude_test, &curr_reference_test);
 
 
-	sprintf((char *)&text, "ax=%.3f                   	", curr_reference_test.ax_ref);
+	sprintf((char *)&text, "ax=%.3f                   	", curr_reference_test.thrust_ref);
 	LCD_ShowString(4, 10, ST7735Ctx.Width, 16, 16, text);
 
 	sprintf((char *)&text, "p=%.3f                   	", curr_reference_test.p_ref);

@@ -12,7 +12,7 @@
 
 
 typedef struct {
-	float ax_command;			  				// longitudinal acceleration
+	float thrust_command;			  				// longitudinal acceleration
     float p_command;        					// roll rate
     float pitch_command, yaw_command; 			// pitch and roll angles
 } esp32_commands_t;

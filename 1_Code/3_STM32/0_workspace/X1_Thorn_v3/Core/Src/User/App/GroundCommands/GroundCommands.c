@@ -54,10 +54,19 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 
 	if (g_Status != 2) // Landing / Off mode
 	{
-		curr_esp32_commands.ax_command = -0.2;
+		curr_reference->thrust_ref = curr_reference->thrust_ref - 9e5;		// new thrust controller architecture, it should take aprox 10 seconds to go from 22000 RPMS to 0
 		curr_esp32_commands.p_command = 0;
 		curr_esp32_commands.pitch_command = 0;
 		curr_esp32_commands.yaw_command = 0;
+	}
+	else
+	{
+		curr_reference->thrust_ref = curr_esp32_commands.thrust_command;
+	}
+
+	if (curr_reference->thrust_ref < 0)
+	{
+		curr_reference->thrust_ref = 0;
 	}
 
 	rot_z_mat(Rz, curr_esp32_commands.yaw_command);
@@ -89,7 +98,6 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	q_delta = 2 * (-curr_attitude.y * dq.w - curr_attitude.z * dq.x + curr_attitude.w * dq.y + curr_attitude.x * dq.z);
 	r_delta = 2 * (-curr_attitude.z * dq.w + curr_attitude.y * dq.x - curr_attitude.x * dq.y + curr_attitude.w * dq.z);
 
-	curr_reference->ax_ref = curr_esp32_commands.ax_command;
 	curr_reference->p_ref = p_delta + curr_esp32_commands.p_command;
 	curr_reference->pitch_ref = q_delta;
 	curr_reference->yaw_ref = r_delta;

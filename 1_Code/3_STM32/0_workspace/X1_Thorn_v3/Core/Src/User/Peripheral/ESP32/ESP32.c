@@ -47,7 +47,7 @@ void ESP32_Get_Commands(esp32_commands_t *esp32_commands)
 	{
 		uart_data_ready = false;
 		inactivity = 0;
-		esp32_commands->ax_command = received_floats[0];
+		esp32_commands->thrust_command = received_floats[0];
 		esp32_commands->p_command = received_floats[1];
 		esp32_commands->pitch_command = received_floats[2];
 		esp32_commands->yaw_command = received_floats[3];

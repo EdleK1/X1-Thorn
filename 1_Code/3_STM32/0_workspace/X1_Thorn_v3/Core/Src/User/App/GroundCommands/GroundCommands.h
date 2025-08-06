@@ -12,7 +12,7 @@
 #include <stdint.h>
 
 typedef struct {
-	float ax_ref;			  				// longitudinal acceleration
+	float thrust_ref;			  				// longitudinal acceleration
     float p_ref, pitch_ref, yaw_ref;        		// body rates
 } reference_t;
 
