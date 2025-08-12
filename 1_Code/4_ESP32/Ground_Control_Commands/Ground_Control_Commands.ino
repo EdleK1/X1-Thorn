@@ -2,12 +2,21 @@
 #include <Wire.h>
 
 int last_buttons = 0x0000;
-float ax_max = 1;
-float p_max = 1;
-float roll_max = 0.2;
-float pitch_max = 0.2;
+
+
+#define ax_max      1.0
+#define p_max       2.0
+#define roll_max    0.2
+#define pitch_max   0.2
+#define thrust_Ki   3e6
+#define thrust_Kp   2e8
+#define thrust_max  30e8
+#define thrust_min  0.0
+
 float Ground_Commands[5];
 float inactivity_counter = 0;
+float thrust_integrator = 0;
+float thrust_command = 0;
 uint8_t active = 0;
 uint8_t token_Init = 0;
 uint8_t ESC_Status = 0;
@@ -79,8 +88,35 @@ void dumpGamepad(ControllerPtr ctl) {
 
 void processGamepad(ControllerPtr ctl) 
 {
+  thrust_integrator = thrust_integrator + ((ctl->dpad()&1) - ((ctl->dpad()>>1)&1)) * thrust_Ki;
 
-  Ground_Commands[0] = (ctl->throttle() - ctl->brake()) / 1020.0 * ax_max;
+  if (thrust_integrator > thrust_max)
+  {
+    thrust_integrator = thrust_max;
+  }
+  else if (thrust_integrator < thrust_min)
+  {
+    thrust_integrator = thrust_min;
+  }
+
+  thrust_command = thrust_integrator + (ctl->throttle() - ctl->brake()) / 1020.0 * thrust_Kp;
+
+  if (thrust_command > thrust_max)
+  {
+    thrust_command = thrust_max;
+  }
+  else if (thrust_command < thrust_min)
+  {
+    thrust_command = thrust_min;
+  }
+
+
+  Ground_Commands[0] = thrust_command;
+
+
+
+  Ground_Commands[1] = (((ctl->buttons() >> 4) & 1) - ((ctl->buttons() >> 5) & 1)) * p_max;
+
 
 
   if (ctl->axisY() < -25 || ctl->axisY() > 25) 
@@ -103,17 +139,7 @@ void processGamepad(ControllerPtr ctl)
   }
 
 
-  if (ctl->axisRX() < -25 || ctl->axisRX() > 25) {
-
-    Ground_Commands[1] = -ctl->axisRX() / 508.0 * p_max;
-  }
-  else 
-  {
-    Ground_Commands[1] = 0.0;
-  }
-
-
-  if (last_buttons == 0x0000 && ctl->buttons() == 0x0008) 
+  if (((last_buttons>>3)&1) == 0 && ((ctl->buttons()>>3)&1) == 1) 
   {
     if (active == 1)
     {
@@ -125,7 +151,7 @@ void processGamepad(ControllerPtr ctl)
     }
   }
 
-  if (last_buttons == 0x0000 && ctl->buttons() == 0x0002) 
+  if (((last_buttons>>1)&1) == 0 && ((ctl->buttons()>>1)&1) == 1) 
   {
     if (active == 0) 
     {
@@ -141,7 +167,7 @@ void processGamepad(ControllerPtr ctl)
   last_buttons = ctl->buttons();
 
 
-  // Serial.printf("ax = %4f, p = %4f, pitch = %4f, yaw = %4f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
+  Serial.printf("Thrust = %.2f, p = %.2f, pitch = %.2f, yaw = %.2f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
 
   // dumpGamepad(ctl);
 

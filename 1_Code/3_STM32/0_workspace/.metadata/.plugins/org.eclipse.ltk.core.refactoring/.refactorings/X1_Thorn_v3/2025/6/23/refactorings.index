@@ -1,8 +1,0 @@
-1748788860157	Rename resource 'AttitudePID'
-1748788880481	Rename resource 'MotorPID'
-1748788896824	Rename resource 'ThrustPID'
-1748800337540	Move 'AttitudeControl' to 'Control'
-1748800392879	Rename resource 'Control'
-1748800431622	Move 'MotorControl' to 'LowLevelControl'
-1748800464164	Move 'ThrustControl' to 'HighLevelControl'
-1748898391363	Rename resource 'HighLevelControl'
