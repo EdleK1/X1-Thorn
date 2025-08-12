@@ -1,5 +1,0 @@
-../Core/Src/User/Service/Logger/SD_Logger.c:55:6:SD_Logger_Init	8	static
-../Core/Src/User/Service/Logger/SD_Logger.c:75:6:SD_Logger_Task	24	static
-../Core/Src/User/Service/Logger/SD_Logger.c:124:9:SD_Logger_Start	128	static
-../Core/Src/User/Service/Logger/SD_Logger.c:241:9:SD_Logger_RegisterVariable	24	static
-../Core/Src/User/Service/Logger/SD_Logger.c:273:9:SD_Logger_GetLogNum	4	static

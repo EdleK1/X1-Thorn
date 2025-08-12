@@ -1,5 +1,0 @@
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:19:6:ErrorHandler_Init	1
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:27:6:ErrorHandler_SetError	2
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:42:6:ErrorHandler_RemoveError	1
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:52:10:ErrorHandler_GetFirstError	1
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:58:12:ErrorHandler_GetError	1

@@ -1,2 +1,0 @@
-../Core/Src/User/Test/TestGroundCommands/TestGroundCommands.c:24:6:GroundCommands_Test_Init	24	static
-../Core/Src/User/Test/TestGroundCommands/TestGroundCommands.c:35:6:GroundCommands_Test_Loop	16	static

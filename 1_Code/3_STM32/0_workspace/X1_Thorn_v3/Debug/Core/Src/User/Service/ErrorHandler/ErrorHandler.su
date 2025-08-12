@@ -1,5 +1,0 @@
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:19:6:ErrorHandler_Init	8	static
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:27:6:ErrorHandler_SetError	16	static
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:42:6:ErrorHandler_RemoveError	16	static
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:52:10:ErrorHandler_GetFirstError	4	static
-../Core/Src/User/Service/ErrorHandler/ErrorHandler.c:58:12:ErrorHandler_GetError	4	static

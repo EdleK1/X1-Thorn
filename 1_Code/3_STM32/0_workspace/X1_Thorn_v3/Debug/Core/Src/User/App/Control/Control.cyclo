@@ -1,6 +1,0 @@
-../Core/Src/User/App/Control/Control.c:60:6:Control_Init	1
-../Core/Src/User/App/Control/Control.c:67:6:Control_Task	1
-../Core/Src/User/App/Control/Control.c:78:9:Control_Start	1
-../Core/Src/User/App/Control/Control.c:141:6:Control_Loop	1
-../Core/Src/User/App/Control/Control.c:180:13:Control_To_Actuators	7
-../Core/Src/User/App/Control/Control.c:237:6:TIM_PeriodElapsedCallback_Control_Timer	1

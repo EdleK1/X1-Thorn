@@ -1,2 +1,0 @@
-../Core/Src/User/App/Odometry/Odometry.c:26:6:Odometry_Init	24	static
-../Core/Src/User/App/Odometry/Odometry.c:72:6:Odometry_Read	24	static

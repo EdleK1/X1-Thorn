@@ -1,5 +1,0 @@
-../Core/Src/User/Peripheral/ESP32/ESP32.c:37:6:ESP32_Init	1
-../Core/Src/User/Peripheral/ESP32/ESP32.c:44:6:ESP32_Get_Commands	3
-../Core/Src/User/Peripheral/ESP32/ESP32.c:72:6:ESP32_Send_ESC_Status	1
-../Core/Src/User/Peripheral/ESP32/ESP32.c:84:6:UART_ESP32_RxCpltCallback	8
-../Core/Src/User/Peripheral/ESP32/ESP32.c:128:6:UART_ESP32_ErrorCallback	1

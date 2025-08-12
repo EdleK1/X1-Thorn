@@ -1,2 +1,0 @@
-../Core/Src/User/Peripheral/ESC/Motor_PI.c:15:6:Motor_PID_Init	32	static
-../Core/Src/User/Peripheral/ESC/Motor_PI.c:29:10:Motor_PID_Update	40	static
