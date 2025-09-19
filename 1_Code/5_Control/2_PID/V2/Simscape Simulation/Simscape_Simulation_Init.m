@@ -8,18 +8,18 @@ Ts_val = 0.01;
 
 %% Pitch Controller
 
-Kp_PitchRate_val = 15;          % OK
-Ki_PitchRate_val = 7;           % OK 
-Kd_PitchRate_val = 1;           % OK
-Kq_PitchRate_val = 2;           % OK
-N_PitchRate_val = 20;           % OK
+Kp_PitchRate_val = 20;          % 15
+Ki_PitchRate_val = 7;           % 7 
+Kd_PitchRate_val = 2;           % 1
+Kq_PitchRate_val = 4;           % 2
+N_PitchRate_val = 20;           % 20
 
 %% Yaw Controller
 
-Kp_YawRate_val = 80e6;          % OK  80
-Ki_YawRate_val = 40e6;          % OK  30
-Kd_YawRate_val = 0e6;           % OK  10
-Kr_YawRate_val = 4;             % OK  9
+Kp_YawRate_val = 110e6;         % OK  80
+Ki_YawRate_val = 100e6;         % OK  40
+Kd_YawRate_val = 0e6;           % OK  0
+Kr_YawRate_val = 7;             % OK  4
 N_YawRate_val = 20;             % OK
 
 

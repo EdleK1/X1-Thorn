@@ -42,9 +42,9 @@ hold on
 
 clear
 
-Kp_RollRate_val = 15;
-Ki_RollRate_val = 1;
-Kd_RollRate_val = 1;
+Kp_RollRate_val = 25;
+Ki_RollRate_val = 7;
+Kd_RollRate_val = 3;
 Kg_val = 0.53887;
 N_RollRate_val = 20;
 Ts_val = 0.01;
@@ -93,6 +93,15 @@ figure(11)
 step(Tf_auto)
 grid on
 hold on
+
+S = stepinfo(Tf_auto, 'RiseTimeLimits', [0 0.95], 'SettlingTimeThreshold', 0.02);
+rise_time  = S.RiseTime;        % time to reach 95% (because we set RiseTimeLimits [0 0.95])
+settle_time = S.SettlingTime;   % settling time (2% band)
+overshoot_percent = S.Overshoot; % overshoot in percent
+
+fprintf('Rise time (to 95%%): %.4g s\n', rise_time);
+fprintf('Settling time (2%%): %.4g s\n', settle_time);
+fprintf('Overshoot: %.2f %%\n', overshoot_percent);
 
 
 

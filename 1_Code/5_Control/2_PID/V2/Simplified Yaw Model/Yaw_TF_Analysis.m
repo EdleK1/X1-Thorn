@@ -1,9 +1,9 @@
 clear
 
-Kp_YawRate_val = 20e6;
-Ki_YawRate_val = 16e6;
-Kd_YawRate_val = 15e6;
-Kr_val = 0.05;
+Kp_YawRate_val = 80e6;
+Ki_YawRate_val = 20e6;
+Kd_YawRate_val = 0e6;
+Kr_val = 4;
 
 Kg_val = 2.4611e-7;
 tau_act_val = 0.02;
@@ -44,10 +44,10 @@ hold on
 
 clear
 
-Kp_YawRate_val = 80e6;
-Ki_YawRate_val = 20e6;
-Kd_YawRate_val = 0e6;
-Kr_val = 4;
+Kp_YawRate_val = 110e6;
+Ki_YawRate_val = 100e6;
+Kd_YawRate_val = 00e6;
+Kr_val = 7;
 
 Kg_val = 2.4611e-7;
 N_PitchRate_val = 20;
@@ -55,12 +55,7 @@ Ts_val = 0.01;
 tau_act_val = 0.02;
 
 
-
-
-
-
 syms Ts K_G K_r Kp Ki Kd Nd z tau_act
-
 
 
 G_psi = K_G * (tau_act^2  +  Ts^2/2*(z+1)/((z-1)^2)  -  Ts*tau_act/(z-1)  -  tau_act^2*(z-1)/(z-exp(-Ts/tau_act)) );
@@ -104,6 +99,15 @@ figure(11)
 step(Tf_auto)
 grid on
 hold on
+
+S = stepinfo(Tf_auto, 'RiseTimeLimits', [0 0.95], 'SettlingTimeThreshold', 0.02);
+rise_time  = S.RiseTime;        % time to reach 95% (because we set RiseTimeLimits [0 0.95])
+settle_time = S.SettlingTime;   % settling time (2% band)
+overshoot_percent = S.Overshoot; % overshoot in percent
+
+fprintf('Rise time (to 95%%): %.4g s\n', rise_time);
+fprintf('Settling time (2%%): %.4g s\n', settle_time);
+fprintf('Overshoot: %.2f %%\n', overshoot_percent);
 
 
 

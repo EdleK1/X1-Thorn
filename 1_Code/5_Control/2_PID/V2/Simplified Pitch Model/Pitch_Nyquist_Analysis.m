@@ -1,5 +1,5 @@
 clear;
-close all;
+% close all;
 clc;
 
 % --- Fixed parameters
@@ -14,7 +14,8 @@ Ts_val = 0.01;
 tau_act_val = 0.1;
 
 
-[points_z, ~] = nyquist_func(Ts_val, Kg_val, Kq_val, Kp_PitchRate_val, Ki_PitchRate_val, Kd_PitchRate_val, N_PitchRate_val, tau_act_val);
+[points_z, GM] = nyquist_func(Ts_val, Kg_val, Kq_val, Kp_PitchRate_val, Ki_PitchRate_val, Kd_PitchRate_val, N_PitchRate_val, tau_act_val);
+GainMargin = GM
 
 
 figure(1);

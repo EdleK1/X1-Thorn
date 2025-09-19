@@ -1,9 +1,9 @@
 clear
 
-Kp_PitchRate_val = 150;
-Ki_PitchRate_val = 90;
-Kd_PitchRate_val = 70;
-Kq_val = 7;
+Kp_PitchRate_val = 15;
+Ki_PitchRate_val = 7;
+Kd_PitchRate_val = 1;
+Kq_val = 2;
 Kg_val = 0.4956;
 tau_act_val = 0.1;
 
@@ -43,10 +43,10 @@ hold on
 
 clear
 
-Kp_PitchRate_val = 15;
-Ki_PitchRate_val = 5;
-Kd_PitchRate_val = 1;
-Kq_val = 2;
+Kp_PitchRate_val = 15;  % 20
+Ki_PitchRate_val = 7;   % 7
+Kd_PitchRate_val = 1;   % 2
+Kq_val = 2;             % 4
 
 Kg_val = 0.4956;
 N_PitchRate_val = 20;
@@ -106,5 +106,13 @@ step(Tf_auto)
 grid on
 hold on
 
+S = stepinfo(Tf_auto, 'RiseTimeLimits', [0 0.95], 'SettlingTimeThreshold', 0.02);
+rise_time  = S.RiseTime;        % time to reach 95% (because we set RiseTimeLimits [0 0.95])
+settle_time = S.SettlingTime;   % settling time (2% band)
+overshoot_percent = S.Overshoot; % overshoot in percent
+
+fprintf('Rise time (to 95%%): %.4g s\n', rise_time);
+fprintf('Settling time (2%%): %.4g s\n', settle_time);
+fprintf('Overshoot: %.2f %%\n', overshoot_percent);
 
 
