@@ -6,9 +6,9 @@ int last_buttons = 0x0000;
 
 #define ax_max      1.0
 #define p_max       2.0
-#define roll_max    0.2
-#define pitch_max   0.2
-#define thrust_Ki   3e6
+#define roll_max    0.25
+#define pitch_max   0.25
+#define thrust_Ki   5e6
 #define thrust_Kp   2e8
 #define thrust_max  30e8
 #define thrust_min  0.0
@@ -167,7 +167,7 @@ void processGamepad(ControllerPtr ctl)
   last_buttons = ctl->buttons();
 
 
-  Serial.printf("Thrust = %.2f, p = %.2f, pitch = %.2f, yaw = %.2f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
+  // Serial.printf("Thrust = %.2f, p = %.2f, pitch = %.2f, yaw = %.2f, Activated = %1f\n", Ground_Commands[0],Ground_Commands[1],Ground_Commands[2],Ground_Commands[3],Ground_Commands[4]);
 
   // dumpGamepad(ctl);
 

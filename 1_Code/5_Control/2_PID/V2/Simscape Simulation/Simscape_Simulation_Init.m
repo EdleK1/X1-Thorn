@@ -26,10 +26,10 @@ N_YawRate_val = 20;             % OK
 %% Roll Controller
 
 
-Kp_RollRate_val = 15;           % OK
-Ki_RollRate_val = 5;            % OK
-Kd_RollRate_val = 1;            % OK
-N_RollRate_val = 20;            % OK
+Kp_RollRate_val = 25;           % OK 15
+Ki_RollRate_val = 7;            % OK 5
+Kd_RollRate_val = 3;            % OK 1
+N_RollRate_val = 20;            % OK 
 
 
 %% Thrust Controller

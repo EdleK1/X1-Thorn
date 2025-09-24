@@ -16,8 +16,8 @@
 
 #define KP_PITCH_RATE 					20.0f
 #define KI_PITCH_RATE 					7.0f
-#define KD_PITCH_RATE 					2.0f
-#define KQ_PITCH_RATE 					4.0f
+#define KD_PITCH_RATE 					1.0f
+#define KQ_PITCH_RATE 					3.0f
 #define TAU_PITCH_RATE  				1.0f/20.0f		// N = 20
 
 #define OUTPUT_MIN_PITCH				-180.0f
@@ -44,9 +44,9 @@
 // Roll Controller Parameters
 
 
-#define KP_ROLL_RATE 					25.0f
+#define KP_ROLL_RATE 					20.0f
 #define KI_ROLL_RATE 					7.0f
-#define KD_ROLL_RATE 					3.0f
+#define KD_ROLL_RATE 					1.0f
 #define TAU_ROLL_RATE    				1.0f/20.0f		// N = 20
 
 #define OUTPUT_MIN_ROLL 				-120.0f
