@@ -43,8 +43,8 @@ hold on
 clear
 
 Kp_RollRate_val = 20;
-Ki_RollRate_val = 7;
-Kd_RollRate_val = 1;
+Ki_RollRate_val = 5;
+Kd_RollRate_val = 1.2;
 Kg_val = 0.53887;
 N_RollRate_val = 20;
 Ts_val = 0.01;

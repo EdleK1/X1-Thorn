@@ -7,9 +7,9 @@
 clear; close all; clc;
 
 %% 1) Load data
-T = readtable('LOG5.csv');
+T = readtable('LOG13.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
-ax         = T.curr_ax;           ax_ref     = T.ax_ref;
+ax         = T.curr_ax;           thrust_ref = T.thrust_ref;
 p_rate     = T.curr_roll_rate;    q_rate     = T.curr_pitch_rate;
 r_rate     = T.curr_yaw_rate;
 qw         = T.curr_qw;           qx         = T.curr_qx;
@@ -27,12 +27,10 @@ throttle2  = T.Throttle2;         throttle4  = T.Throttle4;
 % Figure 1: Accel & Body Rates
 figure('Name','Accel & Body Rates','NumberTitle','off');
 subplot(2,2,1)
-plot(time, ax, '-', 'LineWidth',1); hold on
-plot(time, ax_ref, '--','LineWidth',1); hold off
+plot(time, ax, '-', 'LineWidth',1);
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
 ylabel('$a_x$','Interpreter','latex',"FontSize",16)
 title('Longitudinal Acceleration','Interpreter','latex',"FontSize",20)
-legend({'curr','ref'},'Interpreter','latex',"FontSize",14)
 grid on
 
 subplot(2,2,2)
@@ -181,6 +179,15 @@ plot(time, throttle4);
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
 ylabel('Throttle 4','Interpreter','latex',"FontSize",16)
 title('Right Motor','Interpreter','latex',"FontSize",20)
+grid on
+
+
+% Figure 5: Servo Commands
+figure('Name','Thrust Reference','NumberTitle','off');
+plot(time, thrust_ref,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('Thrust','Interpreter','latex',"FontSize",16)
+title('Thrust Command','Interpreter','latex',"FontSize",20)
 grid on
 
 

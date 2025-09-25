@@ -44,10 +44,10 @@ hold on
 
 clear
 
-Kp_YawRate_val = 110e6;
-Ki_YawRate_val = 100e6;
-Kd_YawRate_val = 00e6;
-Kr_val = 7;
+Kp_YawRate_val = 40e6;
+Ki_YawRate_val = 35e6;
+Kd_YawRate_val = 2.5e6;
+Kr_val = 4;
 
 Kg_val = 2.4611e-7;
 N_PitchRate_val = 20;

@@ -65,6 +65,7 @@ void System_Monitor_Start(void)
 
 	SD_Logger_RegisterVariable(&New_Telemetry.Temperature, LOG_TYPE_UINT32, "Temperature");
 	SD_Logger_RegisterVariable(&New_Telemetry.Voltage, LOG_TYPE_FLOAT, "Voltage");
+	SD_Logger_RegisterVariable(&New_Telemetry.Current, LOG_TYPE_FLOAT, "Current");
 	SD_Logger_RegisterVariable(&New_Telemetry.RPM2, LOG_TYPE_UINT32, "RPM2");
 	SD_Logger_RegisterVariable(&New_Telemetry.RPM4, LOG_TYPE_UINT32, "RPM4");
 	SD_Logger_RegisterVariable(&New_Telemetry.Throttle2, LOG_TYPE_UINT32, "Throttle2");

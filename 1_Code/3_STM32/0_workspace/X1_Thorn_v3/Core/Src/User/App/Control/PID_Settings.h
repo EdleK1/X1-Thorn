@@ -29,10 +29,10 @@
 // Yaw Controller Parameters
 
 
-#define KP_YAW_RATE 					110e6f
-#define KI_YAW_RATE 					100e6f
-#define KD_YAW_RATE 					0.0f    		// 10e6
-#define KR_YAW_RATE 					7.0f
+#define KP_YAW_RATE 					40e6f
+#define KI_YAW_RATE 					35e6f
+#define KD_YAW_RATE 					2.5e6f
+#define KR_YAW_RATE 					4.0f
 #define TAU_YAW_RATE    				1.0f/20.0f		// N = 20
 
 #define OUTPUT_MIN_YAW 					-1.5e8f
@@ -45,8 +45,8 @@
 
 
 #define KP_ROLL_RATE 					20.0f
-#define KI_ROLL_RATE 					7.0f
-#define KD_ROLL_RATE 					1.0f
+#define KI_ROLL_RATE 					5.0f
+#define KD_ROLL_RATE 					1.2f
 #define TAU_ROLL_RATE    				1.0f/20.0f		// N = 20
 
 #define OUTPUT_MIN_ROLL 				-120.0f

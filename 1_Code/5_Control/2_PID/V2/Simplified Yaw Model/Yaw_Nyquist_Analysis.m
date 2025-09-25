@@ -11,7 +11,7 @@ Kr_val = 7;
 Kg_val = 2.4611e-7;
 N_YawRate_val = 20;
 Ts_val = 0.01;
-tau_act_val = 0.02;
+tau_act_val = 0.05;
 
 
 [points_z, GM] = nyquist_func(Ts_val, Kg_val, Kr_val, Kp_YawRate_val, Ki_YawRate_val, Kd_YawRate_val, N_YawRate_val, tau_act_val);

@@ -3,10 +3,10 @@ clear;
 clc;
 
 % --- Fixed parameters
-Kp_PitchRate_val = 15;
+Kp_PitchRate_val = 20;
 Ki_PitchRate_val = 7;
 Kd_PitchRate_val = 1;
-Kq_val = 2;
+Kq_val = 3;
 
 Kg_val = 0.4956;
 N_PitchRate_val = 20;

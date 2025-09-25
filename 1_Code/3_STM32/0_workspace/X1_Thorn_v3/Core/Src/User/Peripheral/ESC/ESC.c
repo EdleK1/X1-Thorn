@@ -175,7 +175,7 @@ void Read_ESC_Telemetry(telemetry_t *New_Telemetry)
 {
 	New_Telemetry->Temperature = raw_telem[0];
 	New_Telemetry->Voltage = (raw_telem[1]<<8 | raw_telem[2])/100.0;
-	New_Telemetry->Current = (raw_telem[3]<<8 | raw_telem[4])/100;
+	New_Telemetry->Current = (raw_telem[3]<<8 | raw_telem[4])/100.0;
 	New_Telemetry->Consumption = (raw_telem[5]<<8 | raw_telem[6]);
 	New_Telemetry->RPM2 = Curr_mRPM_2;
 	New_Telemetry->RPM4 = Curr_mRPM_4;
