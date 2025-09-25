@@ -7,7 +7,7 @@
 clear; close all; clc;
 
 %% 1) Load data
-T = readtable('LOG13.csv');
+T = readtable('LOG14.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
 ax         = T.curr_ax;           thrust_ref = T.thrust_ref;
 p_rate     = T.curr_roll_rate;    q_rate     = T.curr_pitch_rate;

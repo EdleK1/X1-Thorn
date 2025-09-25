@@ -15,6 +15,8 @@
 #include "usart.h"
 #include <stdbool.h>
 #include "../../Lib/Globals/Globals.h"
+#include "../../Service/ErrorHandler/ErrorHandler.h"
+
 
 typedef enum {
     SYNC_WAIT_1,
@@ -71,12 +73,17 @@ void ESP32_Get_Commands(esp32_commands_t *esp32_commands)
 
 void ESP32_Send_ESC_Status(void)
 {
+
+	uint32_t CurrErrors = (int)*ErrorHandler_GetErrors();
+
 	uint8_t status = (uint8_t)g_ESC_Active;
-	HAL_UART_Transmit(&huart5, &status, 1, 10); // Status == 1 means its active
 
+	if (CurrErrors != 0)
+	{
+		status =+ (1U << 1);
+	}
 
-//    HAL_StatusTypeDef hret = HAL_UART_Transmit(&huart5, &ESC_Status, 1, 10); // Status == 1 means its active
-//    return (hret == HAL_OK) ? 1 : 0;
+	HAL_UART_Transmit(&huart5, &status, 1, 10); // first bit in Status declares the activity of the ESC, second bit declares if there is an error
 
 }
 

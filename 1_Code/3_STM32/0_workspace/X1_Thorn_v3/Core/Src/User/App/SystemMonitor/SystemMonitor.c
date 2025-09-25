@@ -53,6 +53,7 @@ void System_Monitor_Task(void *argument)
 
   for(;;)
   {
+	  CSV_number = SD_Logger_GetLogNum(); // Abans estava a monitor Loop
 	  System_Monitor_Loop();
 	  osDelay(50);
   }
@@ -70,7 +71,7 @@ void System_Monitor_Start(void)
 	SD_Logger_RegisterVariable(&New_Telemetry.RPM4, LOG_TYPE_UINT32, "RPM4");
 	SD_Logger_RegisterVariable(&New_Telemetry.Throttle2, LOG_TYPE_UINT32, "Throttle2");
 	SD_Logger_RegisterVariable(&New_Telemetry.Throttle4, LOG_TYPE_UINT32, "Throttle4");
-	SD_Logger_RegisterVariable(ErrorHandler_GetError(), LOG_TYPE_UINT32, "ErrorCodes");
+	SD_Logger_RegisterVariable(ErrorHandler_GetErrors(), LOG_TYPE_UINT32, "ErrorCodes");
 
 	first_error_pointer = ErrorHandler_GetFirstError();
 }
@@ -82,7 +83,27 @@ void System_Monitor_Loop(void)
 {
 
 	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry
-	CSV_number = SD_Logger_GetLogNum(); // Poc optim, si ho poso a dalt va pocho pq no s'ha inicialitzat
+
+
+	if (New_Telemetry.Voltage < 12.5f && ErrorHandler_CheckError(ERROR_HANDLER_UNDERVOLTAGE) == 0)
+	{
+		ErrorHandler_SetError(ERROR_HANDLER_UNDERVOLTAGE);
+	}
+	else if (New_Telemetry.Voltage > 12.5f && ErrorHandler_CheckError(ERROR_HANDLER_UNDERVOLTAGE) == 1)
+	{
+		ErrorHandler_RemoveError(ERROR_HANDLER_UNDERVOLTAGE);
+	}
+
+
+	if (New_Telemetry.Temperature > 70U && ErrorHandler_CheckError(ERROR_HANDLER_OVERTEMPERATURE) == 0)
+	{
+		ErrorHandler_SetError(ERROR_HANDLER_OVERTEMPERATURE);
+	}
+	else if (New_Telemetry.Temperature < 70U && ErrorHandler_CheckError(ERROR_HANDLER_OVERTEMPERATURE) == 1)
+	{
+		ErrorHandler_RemoveError(ERROR_HANDLER_UNDERVOLTAGE);
+	}
+
 
 
 	sprintf((char *)&text, "rpm2=%lu | %lu                  	", New_Telemetry.RPM2, New_Telemetry.Throttle2);

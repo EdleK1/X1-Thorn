@@ -55,8 +55,19 @@ int8_t * ErrorHandler_GetFirstError(void)
 }
 
 
-uint32_t * ErrorHandler_GetError(void)
+uint32_t * ErrorHandler_GetErrors(void)
 {
 	return &errors;
 }
 
+
+uint8_t ErrorHandler_CheckError(uint8_t Error_Code)
+{
+
+	osMutexAcquire(ehMutex, osWaitForever);
+
+	return ((errors >> Error_Code) & 1U);
+
+	osMutexRelease(ehMutex);
+
+}

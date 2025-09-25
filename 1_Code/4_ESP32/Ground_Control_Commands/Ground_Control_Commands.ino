@@ -20,6 +20,7 @@ float thrust_command = 0;
 uint8_t active = 0;
 uint8_t token_Init = 0;
 uint8_t ESC_Status = 0;
+uint8_t Error_Status = 0;
 
 ControllerPtr myControllers[BP32_MAX_GAMEPADS];
 
@@ -247,6 +248,9 @@ void loop() {
       if      (active == 2) ctl->setColorLED(0, 255, 0);
       else if (active == 1) ctl->setColorLED(255, 222, 33);
       else                  ctl->setColorLED(255,   0,  0);
+
+
+      if (Error_Status == 1) ctl->playDualRumble(0, 250,  0x80, 0x80);
     }
 
   }
@@ -293,14 +297,17 @@ void loop() {
   memcpy(out + 2, Ground_Commands, sizeof(Ground_Commands));
   Serial1.write(out, sizeof(out));  // sends 22 bytes every loop
   
-  // Receive ESC Status to check if motors have been turned off
+  // Receive ESC Status to check if motors have been turned off and reads error codes the first LSB is the ESC status and the second is the error status
 
-  uint8_t STM32Read = Serial1.read();
+  int8_t STM32Read = Serial1.read();
 
   if (STM32Read != -1)
   {
-    ESC_Status = STM32Read;
+    ESC_Status = (STM32Read&1U);
+    Error_Status = ((STM32Read>>1) & 1U);
   }
+
+
 
 
   delay(20);
