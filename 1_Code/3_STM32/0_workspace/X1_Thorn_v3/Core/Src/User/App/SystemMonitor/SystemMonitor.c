@@ -85,7 +85,7 @@ void System_Monitor_Loop(void)
 	Read_ESC_Telemetry(&New_Telemetry); // get rpms, voltage and temeperature from ESC telemetry
 
 
-	if (New_Telemetry.Voltage < 12.5f && ErrorHandler_CheckError(ERROR_HANDLER_UNDERVOLTAGE) == 0)
+	if (New_Telemetry.Voltage > 1.0f && New_Telemetry.Voltage < 12.5f && ErrorHandler_CheckError(ERROR_HANDLER_UNDERVOLTAGE) == 0)
 	{
 		ErrorHandler_SetError(ERROR_HANDLER_UNDERVOLTAGE);
 	}
@@ -101,7 +101,7 @@ void System_Monitor_Loop(void)
 	}
 	else if (New_Telemetry.Temperature < 70U && ErrorHandler_CheckError(ERROR_HANDLER_OVERTEMPERATURE) == 1)
 	{
-		ErrorHandler_RemoveError(ERROR_HANDLER_UNDERVOLTAGE);
+		ErrorHandler_RemoveError(ERROR_HANDLER_OVERTEMPERATURE);
 	}
 
 

@@ -64,10 +64,14 @@ uint32_t * ErrorHandler_GetErrors(void)
 uint8_t ErrorHandler_CheckError(uint8_t Error_Code)
 {
 
+	uint8_t result = 0;
+
 	osMutexAcquire(ehMutex, osWaitForever);
 
-	return ((errors >> Error_Code) & 1U);
+	result = (uint8_t)((errors >> Error_Code) & 1U);
 
 	osMutexRelease(ehMutex);
+
+	return result;
 
 }
