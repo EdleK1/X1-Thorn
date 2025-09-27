@@ -196,17 +196,17 @@ grid on
 figure('Name','Current','NumberTitle','off');
 plot(time, current,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('Current','Interpreter','latex',"FontSize",16)
-title('Current','Interpreter','latex',"FontSize",20)
+ylabel('Thrust','Interpreter','latex',"FontSize",16)
+title('Thrust Command','Interpreter','latex',"FontSize",20)
 grid on
 
 
 % Figure 10: Error Codes
-figure('Name','Error Codes','NumberTitle','off');
-plot(time, errors,'LineWidth',1)
+figure('Name','Current','NumberTitle','off');
+plot(time, Err,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('Errors','Interpreter','latex',"FontSize",16)
-title('Error Codes','Interpreter','latex',"FontSize",20)
+ylabel('Thrust','Interpreter','latex',"FontSize",16)
+title('Thrust Command','Interpreter','latex',"FontSize",20)
 grid on
 
 

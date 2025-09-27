@@ -78,10 +78,10 @@ uint8_t ESC_Start(void)
 
 	// Init PIDs
 
-	float Kp = 0.25;
-	float Ki = 3;
-	float Ts = 1/2000.0;
-	uint16_t output_min = 60; // 47
+	float Kp = 0.25f;
+	float Ki = 3.0f;
+	float Ts = 1/2000.0f;
+	uint16_t output_min = 60;
 	uint16_t output_max = 2047;
 
 	Motor_PID_Init(&Motor_PID_handle_2, Kp, Ki, Ts, output_min, output_max);
