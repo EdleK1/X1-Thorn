@@ -10,7 +10,7 @@
 #include <math.h>
 
 
-void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t outputMin, uint16_t outputMax)
+void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, float outputMin, float outputMax)
 {
     pid->Kp = Kp;
     pid->Ki = Ki;
@@ -22,7 +22,7 @@ void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, uint16_t ou
     pid->prevError  = 0.0f;
 }
 
-uint16_t Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint)
+float Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint)
 {
     /* 1) Compute error */
     float error = setpoint - measurement;
@@ -48,24 +48,21 @@ uint16_t Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint)
 
     /* 4) Combine terms */
 
-    float outFloat = Pout + Iout;
+    float output = Pout + Iout;
 
     /* 5) Saturate PID output */
 
-    if (outFloat > pid->outputMax)
+    if (output > pid->outputMax)
     {
-    	outFloat = pid->outputMax;
+    	output = pid->outputMax;
     }
-    else if (outFloat < pid->outputMin)
+    else if (output < pid->outputMin)
     {
-    	outFloat = pid->outputMin;
+    	output = pid->outputMin;
     }
 
-    /* 6) Round FloatOutput */
+    /* 6) Store current error for next iteration */
 
-    uint16_t output = (uint16_t)roundf(outFloat);
-
-    /* 7) Store current error for next iteration */
     pid->prevError = error;
 
     return output;

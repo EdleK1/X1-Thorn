@@ -1,13 +1,12 @@
-% analyzeTelemetryWithAnimation.m
 %--------------------------------------------------------------------
-% Reads 'LOG16.csv', plots grouped signals with LaTeX labels,
+% Reads 'LOGX.csv', plots grouped signals with LaTeX labels,
 % and animates vehicle orientation using quaternion data.
 %--------------------------------------------------------------------
 
 clear; close all; clc;
 
-%% 1) Load data
-T = readtable('LOG3.csv');
+% 1) Load data
+T = readtable('LOG1.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
 ax         = T.curr_ax;           thrust_ref = T.thrust_ref;
 p_rate     = T.curr_roll_rate;    q_rate     = T.curr_pitch_rate;
@@ -23,7 +22,7 @@ temp       = T.Temperature;       volt       = T.Voltage;
 throttle2  = T.Throttle2;         throttle4  = T.Throttle4;
 current    = T.Current;           errors     = T.ErrorCodes;
 
-%% 2) Plot grouped signals
+% 2) Plot grouped signals
 
 % Figure 1: Accel & Body Rates
 figure('Name','Accel & Body Rates','NumberTitle','off');
@@ -208,7 +207,6 @@ xlabel('Time (s)','Interpreter','latex',"FontSize",16)
 ylabel('Errors','Interpreter','latex',"FontSize",16)
 title('Error Codes','Interpreter','latex',"FontSize",20)
 grid on
-
 
 %% Quaternion Animation Integration for Log Analysis (Manual Drawing)
 % This version draws body axes manually, captures frames off-screen, and

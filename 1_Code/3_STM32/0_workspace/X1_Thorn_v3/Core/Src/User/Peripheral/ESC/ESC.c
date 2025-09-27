@@ -15,20 +15,29 @@
 #include "../../Service/ErrorHandler/ErrorHandler.h"
 
 
-uint8_t ESC_Active = 0;
+
+
 uint16_t New_Throttle_2 = 0;
 uint16_t New_Throttle_4 = 0;
+static uint32_t Target_mRPM_2 = 0;
+static uint32_t Target_mRPM_4 = 0;
 uint32_t Curr_mRPM_2 = 0;
 uint32_t Curr_mRPM_4 = 0;
 pid_handle_t Motor_PID_handle_2;
 pid_handle_t Motor_PID_handle_4;
+
+static float FFW_Gain = FFW_DATA_CONSTANT*16.0f;
+static float PID_Throttle_2 = 0.0f;
+static float PID_Throttle_4 = 0.0f;
+
+uint8_t ESC_Active = 0;
 uint8_t ESC_Ready_Flag = 0;
-static uint32_t Target_mRPM_2 = 0;
-static uint32_t Target_mRPM_4 = 0;
-osSemaphoreId_t  ESC_Loop_Semaphore;
 uint8_t raw_telem[10];
 static uint8_t telemetry_ARR = 0;
 static uint8_t mRPM_validity = 0;
+
+osSemaphoreId_t  ESC_Loop_Semaphore;
+
 
 // Definitions for ESC_Task
 
@@ -76,16 +85,10 @@ uint8_t ESC_Start(void)
 		ErrorHandler_SetError(ERROR_HANDLER_DSHOT_NOT_INITIALIZED);
 	}
 
-	// Init PIDs
+	// Init PIDs (Fer en un define porfa)
 
-	float Kp = 0.25f;
-	float Ki = 3.0f;
-	float Ts = 1/2000.0f;
-	uint16_t output_min = 60;
-	uint16_t output_max = 2047;
-
-	Motor_PID_Init(&Motor_PID_handle_2, Kp, Ki, Ts, output_min, output_max);
-	Motor_PID_Init(&Motor_PID_handle_4, Kp, Ki, Ts, output_min, output_max);
+	Motor_PID_Init(&Motor_PID_handle_2, KP_MOTOR_PI, KI_MOTOR_PI, TS_MOTOR_PI, MOTOR_PI_OUTPUT_MIN, MOTOR_PI_OUTPUT_MAX);
+	Motor_PID_Init(&Motor_PID_handle_4, KP_MOTOR_PI, KI_MOTOR_PI, TS_MOTOR_PI, MOTOR_PI_OUTPUT_MIN, MOTOR_PI_OUTPUT_MAX);
 
 	// Initialize UART
 
@@ -104,25 +107,68 @@ uint8_t ESC_Start(void)
 	}
 
 
-
 	return 0;
 }
 
 
 void ESC_Loop(void)
 {
-//	uint8_t result = DShot_SendFrame(Last_Throttle_2, Last_Throttle_4, *Curr_mRPM_2, *Curr_mRPM_4, 1);
 
 	if (g_Status == 1 || g_Status == 2) // Aircraft either activated or in landing mode
 	{
 
-		// We only change throttle in case there is valid RPMs
+		// Calculate FFW Gain from Voltage and past Data
 
-		if (mRPM_validity == 0) // 0 means no error
+		float curr_Voltage = (raw_telem[1]<<8 | raw_telem[2])/100.0;
+
+		if (curr_Voltage > 5.0f && curr_Voltage < 18.0f)	// Only update the value if we have a valid voltage reading
 		{
-			New_Throttle_2 = Motor_PID_Update(&Motor_PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
-			New_Throttle_4 = Motor_PID_Update(&Motor_PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
+			FFW_Gain = FFW_DATA_CONSTANT * curr_Voltage;
 		}
+
+		// Calculate FFW Throttle
+
+		float FFW_Throttle_2 = Target_mRPM_2 / FFW_Gain;
+		float FFW_Throttle_4 = Target_mRPM_4 / FFW_Gain;
+
+		// Calculate new PID_Throttles if there are valid rpms and RPMs > 2000 (to avoid saturating the integrator when idling)
+
+		if (mRPM_validity == 0 && Curr_mRPM_2 > 2000.0f && Curr_mRPM_4 > 2000.0f) // mRPM_validity == 0 means no error
+		{
+			PID_Throttle_2 = Motor_PID_Update(&Motor_PID_handle_2, Curr_mRPM_2, Target_mRPM_2);
+			PID_Throttle_4 = Motor_PID_Update(&Motor_PID_handle_4, Curr_mRPM_4, Target_mRPM_4);
+		}
+
+		// Add the two contributions
+
+		float New_Throttle_2_float = FFW_Throttle_2 + PID_Throttle_2;
+		float New_Throttle_4_float = FFW_Throttle_4 + PID_Throttle_4;
+
+		// Clamp the throttle
+
+		if (New_Throttle_2_float < THROTTLE_MIN)
+		{
+			New_Throttle_2_float = THROTTLE_MIN;
+		}
+		else if (New_Throttle_2_float > THROTTLE_MAX)
+		{
+			New_Throttle_2_float = THROTTLE_MAX;
+		}
+
+
+		if (New_Throttle_4_float < THROTTLE_MIN)
+		{
+			New_Throttle_4_float = THROTTLE_MIN;
+		}
+		else if (New_Throttle_4_float > THROTTLE_MAX)
+		{
+			New_Throttle_4_float = THROTTLE_MAX;
+		}
+
+		// Cast into uint16
+
+		uint16_t New_Throttle_2 = (uint16_t)roundf(New_Throttle_2_float);
+		uint16_t New_Throttle_4 = (uint16_t)roundf(New_Throttle_4_float);
 
 
 		if (++telemetry_ARR <= 40)

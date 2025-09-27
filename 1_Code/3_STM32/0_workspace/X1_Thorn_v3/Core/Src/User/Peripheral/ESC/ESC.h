@@ -12,6 +12,15 @@
 #include "cmsis_os2.h"
 #include "usart.h"
 
+#define FFW_DATA_CONSTANT 1.3585f
+#define KP_MOTOR_PI 0.25f
+#define KI_MOTOR_PI 3.0f
+#define TS_MOTOR_PI 1/2000.0f
+#define MOTOR_PI_OUTPUT_MIN -300.0f
+#define MOTOR_PI_OUTPUT_MAX 300.0f
+#define THROTTLE_MIN 60.0f
+#define THROTTLE_MAX 2047.0f
+
 
 typedef struct {
 	uint8_t Temperature;
