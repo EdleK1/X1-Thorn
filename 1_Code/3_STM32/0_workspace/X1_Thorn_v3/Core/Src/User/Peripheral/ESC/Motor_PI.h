@@ -40,6 +40,6 @@ void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, float outpu
  * @param  measurement Current measured value
  * @retval control output (clamped between outputMin, outputMax)
  */
-float Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint);
+float Motor_PID_Update(pid_handle_t *pid, uint32_t measurement, uint32_t setpoint);
 
 #endif /* SRC_USER_PERIPHERAL_ESC_MOTOR_PI_H_ */

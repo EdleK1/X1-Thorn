@@ -22,10 +22,10 @@ void Motor_PID_Init(pid_handle_t *pid, float Kp, float Ki, float dt, float outpu
     pid->prevError  = 0.0f;
 }
 
-float Motor_PID_Update(pid_handle_t *pid, float measurement, float setpoint)
+float Motor_PID_Update(pid_handle_t *pid, uint32_t measurement, uint32_t setpoint)
 {
     /* 1) Compute error */
-    float error = setpoint - measurement;
+    float error = (float)setpoint - (float)measurement;
 
     /* 2) Proportional term */
     float Pout = pid->Kp * error;

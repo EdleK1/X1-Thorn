@@ -17,21 +17,15 @@
 
 
 
-uint16_t New_Throttle_2 = 0;
-uint16_t New_Throttle_4 = 0;
-static uint32_t Target_mRPM_2 = 0;
-static uint32_t Target_mRPM_4 = 0;
-uint32_t Curr_mRPM_2 = 0;
-uint32_t Curr_mRPM_4 = 0;
-pid_handle_t Motor_PID_handle_2;
-pid_handle_t Motor_PID_handle_4;
+uint16_t New_Throttle_2, New_Throttle_4;
+uint32_t Curr_mRPM_2, Curr_mRPM_4;
+static uint32_t Target_mRPM_2, Target_mRPM_4;
+pid_handle_t Motor_PID_handle_2, Motor_PID_handle_4;
 
 static float FFW_Gain = FFW_DATA_CONSTANT*16.0f;
-static float PID_Throttle_2 = 0.0f;
-static float PID_Throttle_4 = 0.0f;
+static float PID_Throttle_2, PID_Throttle_4;
 
-uint8_t ESC_Active = 0;
-uint8_t ESC_Ready_Flag = 0;
+uint8_t ESC_Active, ESC_Ready_Flag;
 uint8_t raw_telem[10];
 static uint8_t telemetry_ARR = 0;
 static uint8_t mRPM_validity = 0;
@@ -121,7 +115,7 @@ void ESC_Loop(void)
 
 		float curr_Voltage = (raw_telem[1]<<8 | raw_telem[2])/100.0;
 
-		if (curr_Voltage > 5.0f && curr_Voltage < 18.0f)	// Only update the value if we have a valid voltage reading
+		if (curr_Voltage > 9.0f && curr_Voltage < 18.0f)	// Only update the value if we have a valid voltage reading
 		{
 			FFW_Gain = FFW_DATA_CONSTANT * curr_Voltage;
 		}
@@ -167,8 +161,8 @@ void ESC_Loop(void)
 
 		// Cast into uint16
 
-		uint16_t New_Throttle_2 = (uint16_t)roundf(New_Throttle_2_float);
-		uint16_t New_Throttle_4 = (uint16_t)roundf(New_Throttle_4_float);
+		New_Throttle_2 = (uint16_t)roundf(New_Throttle_2_float);
+		New_Throttle_4 = (uint16_t)roundf(New_Throttle_4_float);
 
 
 		if (++telemetry_ARR <= 40)

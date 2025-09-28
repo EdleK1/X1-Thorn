@@ -34,8 +34,7 @@ reference_t curr_reference;
 quaternion_t curr_attitude;
 Actuators_t newActuators;
 FlightControlOutputs_t newFlightControlOutputs;
-servo_t Servo_L;
-servo_t Servo_R;
+servo_t Servo_L, Servo_R;
 osSemaphoreId_t  Control_Loop_Semaphore;
 
 #define SERVO_LIMIT		 220

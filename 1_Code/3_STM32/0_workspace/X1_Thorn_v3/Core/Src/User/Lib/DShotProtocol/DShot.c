@@ -288,5 +288,5 @@ void TIM_PeriodElapsedCallback_Xfer_Cplt_DMA_Motor4()
 {
 	HAL_TIM_Base_Stop(&htim16); // Stop the timer so no more DMA triggers occur
 	__HAL_TIM_DISABLE_DMA(&htim16, TIM_DMA_UPDATE);
-	osSemaphoreRelease(DshotRxDoneSemaphore); // Release the task so it can decode the buffer. Since motor4 always is fired after motor2, we ensure motor4 will ahve finished
+	osSemaphoreRelease(DshotRxDoneSemaphore); // Release the task so it can decode the buffer. Since motor4 always is fired after motor2, we ensure motor4 will have finished
 }

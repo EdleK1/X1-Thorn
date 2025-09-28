@@ -52,7 +52,7 @@ Kr_val = 4;
 Kg_val = 2.4611e-7;
 N_PitchRate_val = 20;
 Ts_val = 0.01;
-tau_act_val = 0.02;
+tau_act_val = 0.2;
 
 
 syms Ts K_G K_r Kp Ki Kd Nd z tau_act
