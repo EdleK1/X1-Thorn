@@ -21,6 +21,9 @@ uint8_t active = 0;
 uint8_t token_Init = 0;
 uint8_t ESC_Status = 0;
 uint8_t Error_Status = 0;
+float L1_Integrator = 0.0f;
+float R1_Integrator = 0.0f;
+
 
 ControllerPtr myControllers[BP32_MAX_GAMEPADS];
 
@@ -111,13 +114,36 @@ void processGamepad(ControllerPtr ctl)
     thrust_command = thrust_min;
   }
 
-
   Ground_Commands[0] = thrust_command;
 
 
+  if ( ((ctl->buttons() >> 4) & 1) == 1 && L1_Integrator < p_max)
+  {
+    L1_Integrator += 0.1f;
+  }
 
-  Ground_Commands[1] = (((ctl->buttons() >> 4) & 1) - ((ctl->buttons() >> 5) & 1)) * p_max;
+  else if ( ((ctl->buttons() >> 4) & 1) == 0 && L1_Integrator > 0.001f)
+  {
+    L1_Integrator += -0.1f;
+  }
 
+
+  if ( ((ctl->buttons() >> 5) & 1) == 1 && R1_Integrator < p_max)
+  {
+    R1_Integrator += 0.1f;
+  }
+
+  else if ( ((ctl->buttons() >> 5) & 1) == 0 && R1_Integrator > 0.001f)
+  {
+    R1_Integrator += -0.1f;
+  }
+
+
+  if (L1_Integrator > -0.0001f && L1_Integrator < 0.0001f) L1_Integrator = 0.0f;
+  if (R1_Integrator > -0.0001f && R1_Integrator < 0.0001f) R1_Integrator = 0.0f;
+
+
+  Ground_Commands[1] = L1_Integrator - R1_Integrator;
 
 
   if (ctl->axisY() < -25 || ctl->axisY() > 25) 
