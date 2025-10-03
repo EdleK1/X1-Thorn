@@ -5,7 +5,7 @@ int last_buttons = 0x0000;
 
 
 #define ax_max      1.0
-#define p_max       2.0
+#define p_max       1.8
 #define roll_max    0.25
 #define pitch_max   0.25
 #define thrust_Ki   5e6
@@ -119,23 +119,37 @@ void processGamepad(ControllerPtr ctl)
 
   if ( ((ctl->buttons() >> 4) & 1) == 1 && L1_Integrator < p_max)
   {
-    L1_Integrator += 0.1f;
+    L1_Integrator += 0.2f;
   }
 
-  else if ( ((ctl->buttons() >> 4) & 1) == 0 && L1_Integrator > 0.001f)
+  else if ( ((ctl->buttons() >> 4) & 1) == 0)
   {
-    L1_Integrator += -0.1f;
+    if (L1_Integrator >= 0.3f)
+    {
+      L1_Integrator += -0.3f;
+    }
+    else
+    {
+      L1_Integrator = 0.0f;
+    }
   }
 
 
   if ( ((ctl->buttons() >> 5) & 1) == 1 && R1_Integrator < p_max)
   {
-    R1_Integrator += 0.1f;
+    R1_Integrator += 0.2f;
   }
 
-  else if ( ((ctl->buttons() >> 5) & 1) == 0 && R1_Integrator > 0.001f)
+  else if ( ((ctl->buttons() >> 5) & 1) == 0)
   {
-    R1_Integrator += -0.1f;
+    if (R1_Integrator >= 0.3f)
+    {
+      R1_Integrator += -0.3f;
+    }
+    else
+    {
+      R1_Integrator = 0.0f;
+    }
   }
 
 
