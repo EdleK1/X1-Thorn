@@ -10,25 +10,25 @@ Ts_val = 0.01;
 
 Kp_PitchRate_val = 20;          % 15
 Ki_PitchRate_val = 7;           % 7 
-Kd_PitchRate_val = 2;           % 1
-Kq_PitchRate_val = 4;           % 2
+Kd_PitchRate_val = 1;           % 1
+Kq_PitchRate_val = 3;           % 2
 N_PitchRate_val = 20;           % 20
 
 %% Yaw Controller
 
-Kp_YawRate_val = 110e6;         % OK  80
-Ki_YawRate_val = 100e6;         % OK  40
-Kd_YawRate_val = 0e6;           % OK  0
-Kr_YawRate_val = 7;             % OK  4
+Kp_YawRate_val = 40e6;         % OK  80
+Ki_YawRate_val = 35e6;         % OK  40
+Kd_YawRate_val = 2.5e6;           % OK  0
+Kr_YawRate_val = 4;             % OK  4
 N_YawRate_val = 20;             % OK
 
 
 %% Roll Controller
 
 
-Kp_RollRate_val = 25;           % OK 15
-Ki_RollRate_val = 7;            % OK 5
-Kd_RollRate_val = 3;            % OK 1
+Kp_RollRate_val = 20;           % OK 15
+Ki_RollRate_val = 5;            % OK 5
+Kd_RollRate_val = 1.2;            % OK 1
 N_RollRate_val = 20;            % OK 
 
 

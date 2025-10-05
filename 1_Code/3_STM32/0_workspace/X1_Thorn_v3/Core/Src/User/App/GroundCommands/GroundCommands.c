@@ -24,17 +24,17 @@ void GroundCommands_Init(void)
 
 void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 {
-	Vec3 vec_y_world, vec_z_world, vec_y_aircraft;
+	Vec3 vec_y_world, vec_z_world, vec_z_aircraft;
 
 	quaternion_t q_ref;
 	Mat3 Rz, Ry, R0;
 
-	vec_y_aircraft[0] = 2.0f*(curr_attitude.x*curr_attitude.y - curr_attitude.w*curr_attitude.z);
-	vec_y_aircraft[1] = 1.0f - 2.0f*(curr_attitude.x*curr_attitude.x + curr_attitude.z*curr_attitude.z);
-	vec_y_aircraft[2] = 2.0f*(curr_attitude.y*curr_attitude.z + curr_attitude.w*curr_attitude.x);
+	vec_z_aircraft[0] = 2.0f*(curr_attitude.x*curr_attitude.z + curr_attitude.w*curr_attitude.y);
+	vec_z_aircraft[1] = 2.0f*(curr_attitude.y*curr_attitude.z - curr_attitude.w*curr_attitude.x);
+	vec_z_aircraft[2] = 1.0f - 2.0f*(curr_attitude.x*curr_attitude.x + curr_attitude.y*curr_attitude.y);
 
-	vector_cross(VEC_X_WORLD, vec_y_aircraft, vec_z_world);
-	vector_cross(vec_z_world, VEC_X_WORLD, vec_y_world);
+	vector_cross(vec_z_aircraft, VEC_X_WORLD, vec_y_world);
+	vector_cross(VEC_X_WORLD, vec_y_world, vec_z_world);
 
 	R0[0][0] = VEC_X_WORLD[0];
 	R0[1][0] = VEC_X_WORLD[1];

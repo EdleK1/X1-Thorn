@@ -111,6 +111,12 @@ uint8_t Control_Start(void)
 	// Initialize the logger
 
 	SD_Logger_RegisterVariable(&curr_odometry.ax, LOG_TYPE_FLOAT, "curr_ax");
+	SD_Logger_RegisterVariable(&curr_odometry.ay, LOG_TYPE_FLOAT, "curr_ay");
+	SD_Logger_RegisterVariable(&curr_odometry.az, LOG_TYPE_FLOAT, "curr_az");
+	SD_Logger_RegisterVariable(&curr_odometry.mx, LOG_TYPE_FLOAT, "curr_mx");
+	SD_Logger_RegisterVariable(&curr_odometry.my, LOG_TYPE_FLOAT, "curr_my");
+	SD_Logger_RegisterVariable(&curr_odometry.mz, LOG_TYPE_FLOAT, "curr_mz");
+
 	SD_Logger_RegisterVariable(&curr_odometry.p, LOG_TYPE_FLOAT, "curr_roll_rate");
 	SD_Logger_RegisterVariable(&curr_odometry.q, LOG_TYPE_FLOAT, "curr_pitch_rate");
 	SD_Logger_RegisterVariable(&curr_odometry.r, LOG_TYPE_FLOAT, "curr_yaw_rate");

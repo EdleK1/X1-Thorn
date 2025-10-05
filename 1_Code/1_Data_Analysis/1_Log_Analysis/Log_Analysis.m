@@ -6,9 +6,12 @@
 clear; close all; clc;
 
 % 1) Load data
-T = readtable('LOG2.csv');
+T = readtable('LOG3.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
 ax         = T.curr_ax;           thrust_ref = T.thrust_ref;
+ay         = T.curr_ay;           az         = T.curr_az;
+mx         = T.curr_mx;           my         = T.curr_my;
+mz         = T.curr_mz;
 p_rate     = T.curr_roll_rate;    q_rate     = T.curr_pitch_rate;
 r_rate     = T.curr_yaw_rate;
 qw         = T.curr_qw;           qx         = T.curr_qx;
@@ -208,6 +211,59 @@ ylabel('Errors','Interpreter','latex',"FontSize",16)
 title('Error Codes','Interpreter','latex',"FontSize",20)
 grid on
 
+
+
+%
+
+% Figure 2: Accelerometer Components
+figure('Name','Accelerometer Raw','NumberTitle','off');
+subplot(2,2,1)
+plot(time, ax,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('$a_x$','Interpreter','latex',"FontSize",16)
+title('Accelerometer Raw $x$','Interpreter','latex',"FontSize",20)
+grid on
+
+subplot(2,2,2)
+plot(time, ay,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('$a_y$','Interpreter','latex',"FontSize",16)
+title('Accelerometer Raw $y$','Interpreter','latex',"FontSize",20)
+grid on
+
+subplot(2,2,3)
+plot(time, az,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('$a_z$','Interpreter','latex',"FontSize",16)
+title('Accelerometer Raw $z$','Interpreter','latex',"FontSize",20)
+grid on
+
+
+% Figure 2: Magnetometer Components
+figure('Name','Magnetometer Raw','NumberTitle','off');
+subplot(2,2,1)
+plot(time, mx,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('$m_x$','Interpreter','latex',"FontSize",16)
+title('Magnetometer Raw $x$','Interpreter','latex',"FontSize",20)
+grid on
+
+subplot(2,2,2)
+plot(time, my,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('$m_y$','Interpreter','latex',"FontSize",16)
+title('Magnetometer Raw $y$','Interpreter','latex',"FontSize",20)
+grid on
+
+subplot(2,2,3)
+plot(time, mz,'LineWidth',1)
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel('$m_z$','Interpreter','latex',"FontSize",16)
+title('Magnetometer Raw $z$','Interpreter','latex',"FontSize",20)
+grid on
+
+
+
 %% Quaternion Animation Integration for Log Analysis (Manual Drawing)
 % This version draws body axes manually, captures frames off-screen, and
 % uses implay with a larger window size.
@@ -233,9 +289,9 @@ hY = line([0 ey0(1)],[0 ey0(2)],[0 ey0(3)],'Color','g','LineWidth',2);
 hZ = line([0 ez0(1)],[0 ez0(2)],[0 ez0(3)],'Color','b','LineWidth',2);
 
 %--- Set figure size for capture & record frames ---
-set(figA,'Units','pixels','Position',[100 100 1200 900],'Visible','off');
+set(figA,'Units','pixels','Position',[100 100 1200 900],'Visible','on');
 skip = 1; cnt = 0;
-for k = 1:skip:length(time)
+for k = 900 %1:skip:length(time)
     Rk = rotmat(Q(k),'point');
     ex = (Rk*[L;0;0])';  ey = (Rk*[0;L;0])';  ez = (Rk*[0;0;L])';
     set(hX,'XData',[0 ex(1)],'YData',[0 ex(2)],'ZData',[0 ex(3)]);
@@ -246,10 +302,10 @@ for k = 1:skip:length(time)
     M(cnt) = getframe(figA);
 end
 
-%--- Launch interactive player ---
-hPlayer = implay(M,10);  % launch interactive player
-pause(0.1);  
-vpFig = findall(0,'Type','figure','Name','Video Player');
-if ~isempty(vpFig)
-    set(vpFig,'Position',[100 100 800 600]);
-end
+% %--- Launch interactive player ---
+% hPlayer = implay(M,10);  % launch interactive player
+% pause(0.1);  
+% vpFig = findall(0,'Type','figure','Name','Video Player');
+% if ~isempty(vpFig)
+%     set(vpFig,'Position',[100 100 800 600]);
+% end
