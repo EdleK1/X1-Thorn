@@ -78,8 +78,8 @@ uint8_t Control_Start(void)
 {
 	// Initialize Servos
 
-	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1400); // 1390
-	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1480); // 1490
+	Servo_Init(&Servo_L, &htim5, TIM_CHANNEL_2, 1330);
+	Servo_Init(&Servo_R, &htim5, TIM_CHANNEL_1, 1480);
 
 	// Initialize LCD (we need it to calibrate the BNO055 sensor
 
@@ -111,12 +111,6 @@ uint8_t Control_Start(void)
 	// Initialize the logger
 
 	SD_Logger_RegisterVariable(&curr_odometry.ax, LOG_TYPE_FLOAT, "curr_ax");
-	SD_Logger_RegisterVariable(&curr_odometry.ay, LOG_TYPE_FLOAT, "curr_ay");
-	SD_Logger_RegisterVariable(&curr_odometry.az, LOG_TYPE_FLOAT, "curr_az");
-	SD_Logger_RegisterVariable(&curr_odometry.mx, LOG_TYPE_FLOAT, "curr_mx");
-	SD_Logger_RegisterVariable(&curr_odometry.my, LOG_TYPE_FLOAT, "curr_my");
-	SD_Logger_RegisterVariable(&curr_odometry.mz, LOG_TYPE_FLOAT, "curr_mz");
-
 	SD_Logger_RegisterVariable(&curr_odometry.p, LOG_TYPE_FLOAT, "curr_roll_rate");
 	SD_Logger_RegisterVariable(&curr_odometry.q, LOG_TYPE_FLOAT, "curr_pitch_rate");
 	SD_Logger_RegisterVariable(&curr_odometry.r, LOG_TYPE_FLOAT, "curr_yaw_rate");
@@ -149,10 +143,10 @@ void Control_Loop(void)
 
 	Odometry_Read(&curr_odometry);
 
-	curr_attitude.w = curr_odometry.qw;
-	curr_attitude.x = curr_odometry.qx;
-	curr_attitude.y = curr_odometry.qy;
-	curr_attitude.z = curr_odometry.qz;
+	curr_attitude.w = 0.707f; //curr_odometry.qw;
+	curr_attitude.x = 0.0f; //curr_odometry.qx;
+	curr_attitude.y = -0.707f; //curr_odometry.qy;
+	curr_attitude.z = 0.0f; //curr_odometry.qz;
 
 	// Get reference from ground commands (p_ref, pitch_ref, yaw_ref, ax_ref)
 

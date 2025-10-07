@@ -31,10 +31,9 @@ static const float S_CG[3] = {
 
 
 typedef struct {
-	float ax, ay, az;			  	// longitudinal acceleration
+	float ax;			  	// longitudinal acceleration
     float p, q, r;        			// angular rates
     float qw, qx, qy, qz; 			// attitude quaternion
-    float mx, my, mz;				// Magnetometer
 } odometry_t;
 
 

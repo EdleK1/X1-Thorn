@@ -49,16 +49,16 @@ void Odometry_Init(void)
 
 	/*-=-=-=-=-=-=Calibration Part-=-=-=-=-=-=*/
 
-	if(Calibrate_BNO055())
-	{
-		getSensorOffsets(OffsetDatas);
-	}
-	else
-	{
-//		printf("Sensor calibration failed.\nFailed to retrieve offset data\n");
-	}
-
-	Check_Status(&Status);
+//	if(Calibrate_BNO055())
+//	{
+//		getSensorOffsets(OffsetDatas);
+//	}
+//	else
+//	{
+////		printf("Sensor calibration failed.\nFailed to retrieve offset data\n");
+//	}
+//
+//	Check_Status(&Status);
 }
 
 
@@ -68,15 +68,10 @@ void Odometry_Read(odometry_t *Curr_Read)
 
 	// Read from sensor
 
-	ReadData(&BNO055, SENSOR_LINACC|SENSOR_GYRO|SENSOR_QUATERNION|SENSOR_MAG|SENSOR_ACCEL);
+	ReadData(&BNO055, SENSOR_LINACC|SENSOR_GYRO|SENSOR_QUATERNION);
 
 
-	Curr_Read->ax = BNO055.Accel.X;
-	Curr_Read->ay = BNO055.Accel.Y;
-	Curr_Read->az = BNO055.Accel.Z;
-	Curr_Read->mx = BNO055.Magneto.X;
-	Curr_Read->my = BNO055.Magneto.Y;
-	Curr_Read->mz = BNO055.Magneto.Z;
+	Curr_Read->ax = BNO055.LineerAcc.X;
 	Curr_Read->p = BNO055.Gyro.X;
 	Curr_Read->q = BNO055.Gyro.Y;
 	Curr_Read->r = BNO055.Gyro.Z;
