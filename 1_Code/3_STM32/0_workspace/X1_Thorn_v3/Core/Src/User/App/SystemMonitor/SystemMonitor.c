@@ -55,11 +55,11 @@ void System_Monitor_Task(void *argument)
   {
 	  if (CSV_number == 0)
 	  {
-		  CSV_number = SD_Logger_GetLogNum(); // Abans estava a monitor Loop
+		  CSV_number = SD_Logger_GetLogNum();
 	  }
 
 	  System_Monitor_Loop();
-	  osDelay(100);
+	  osDelay(200);
   }
 }
 

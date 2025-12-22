@@ -41,7 +41,7 @@ void GroundCommands_Test_Loop(void)
 	curr_attitude_test.y = curr_odometry_test.qy;
 	curr_attitude_test.z = curr_odometry_test.qz;
 
-	get_reference(curr_attitude_test, &curr_reference_test);
+//	get_reference(curr_attitude_test, &curr_reference_test);
 
 
 	sprintf((char *)&text, "ax=%.3f                   	", curr_reference_test.thrust_ref);

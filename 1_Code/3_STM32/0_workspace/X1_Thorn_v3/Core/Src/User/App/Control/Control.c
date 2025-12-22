@@ -27,11 +27,14 @@
 #include "../../Service/Logger/SD_Logger.h"
 #include "../SystemMonitor/SystemMonitor.h"
 #include "../../Peripheral/LCD/lcd.h"
+#include "../../Peripheral/ESP32/ESP32.h"
+#include "../../Lib/Globals/Globals.h"
 
 
 odometry_t curr_odometry;
 reference_t curr_reference;
-quaternion_t curr_attitude;
+quaternion_t initial_attitude = { 0.707f, 0.0f, -0.707f, 0.0f };
+esp32_commands_t curr_esp32_commands;
 Actuators_t newActuators;
 FlightControlOutputs_t newFlightControlOutputs;
 servo_t Servo_L, Servo_R;
@@ -143,14 +146,26 @@ void Control_Loop(void)
 
 	Odometry_Read(&curr_odometry);
 
-	curr_attitude.w = 0.707f; //curr_odometry.qw;
-	curr_attitude.x = 0.0f; //curr_odometry.qx;
-	curr_attitude.y = -0.707f; //curr_odometry.qy;
-	curr_attitude.z = 0.0f; //curr_odometry.qz;
+	// Read Ground commands and send back the ESC status
 
-	// Get reference from ground commands (p_ref, pitch_ref, yaw_ref, ax_ref)
+	ESP32_Get_Commands(&curr_esp32_commands);
+	ESP32_Send_ESC_Status();
 
-	get_reference(curr_attitude, &curr_reference);
+	// Determine initial attitude to compute the reference, essentially, if roll command = 0 and we are in mode 2, we will use the last commands as initial reference for the commands so that the drone maintains the current roll attitude
+	// We are only updating the initial attitude if we want to roll
+
+	if (g_Status != 2 || curr_esp32_commands.p_command != 0.0f)		// we are checking if we need to hold roll attitude or not
+	{
+
+		initial_attitude.w = curr_odometry.qw;
+		initial_attitude.x = curr_odometry.qx;
+		initial_attitude.y = curr_odometry.qy;
+		initial_attitude.z = curr_odometry.qz;
+	}
+
+	// Calculate reference (p_ref, pitch_ref, yaw_ref, thrust_ref) using the initial attitude from which to compute the rotations and the ground commands
+
+	get_reference(initial_attitude, &curr_esp32_commands, &curr_reference);
 
 
 	// Thrust Control: Get required Omega from curr_reference

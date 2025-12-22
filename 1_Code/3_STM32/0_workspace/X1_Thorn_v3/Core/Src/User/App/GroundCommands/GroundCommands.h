@@ -9,6 +9,7 @@
 #define SRC_USER_APP_GROUNDCOMMANDS_GROUNDCOMMANDS_H_
 
 #include "../../Lib/Algebra/Algebra.h"
+#include "../../Peripheral/ESP32/ESP32.h"
 #include <stdint.h>
 
 typedef struct {
@@ -17,6 +18,6 @@ typedef struct {
 } reference_t;
 
 void GroundCommands_Init(void);
-void get_reference(quaternion_t curr_attitude, reference_t *curr_reference);
+void get_reference(quaternion_t curr_attitude, esp32_commands_t *curr_esp32_commands, reference_t *curr_reference);
 
 #endif /* SRC_USER_APP_GROUNDCOMMANDS_GROUNDCOMMANDS_H_ */

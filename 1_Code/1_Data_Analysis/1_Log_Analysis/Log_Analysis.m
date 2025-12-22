@@ -9,9 +9,9 @@ clear; close all; clc;
 T = readtable('LOG4.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
 ax         = T.curr_ax;           thrust_ref = T.thrust_ref;
-ay         = T.curr_ay;           az         = T.curr_az;
-mx         = T.curr_mx;           my         = T.curr_my;
-mz         = T.curr_mz;
+% ay         = T.curr_ay;           az         = T.curr_az;
+% mx         = T.curr_mx;           my         = T.curr_my;
+% mz         = T.curr_mz;
 p_rate     = T.curr_roll_rate;    q_rate     = T.curr_pitch_rate;
 r_rate     = T.curr_yaw_rate;
 qw         = T.curr_qw;           qx         = T.curr_qx;
@@ -28,37 +28,37 @@ current    = T.Current;           errors     = T.ErrorCodes;
 % 2) Plot grouped signals
 
 % Figure 1: Accel & Body Rates
-figure('Name','Accel & Body Rates','NumberTitle','off');
+figure('Name','Accel & Body Rates','NumberTitle','off','Position',[100 100 720 540]);
 subplot(2,2,1)
 plot(time, ax, '-', 'LineWidth',1);
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$a_x$','Interpreter','latex',"FontSize",16)
+ylabel('$a_x (m/s^2)$','Interpreter','latex',"FontSize",16)
 title('Longitudinal Acceleration','Interpreter','latex',"FontSize",20)
 grid on
 
 subplot(2,2,2)
 plot(time, q_rate,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('Pitch Rate','Interpreter','latex',"FontSize",16)
+ylabel('$q (rad/s)$','Interpreter','latex',"FontSize",16)
 title('Pitch Rate','Interpreter','latex',"FontSize",20)
 grid on
 
 subplot(2,2,3)
 plot(time, r_rate,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('Yaw Rate','Interpreter','latex',"FontSize",16)
+ylabel('$r (rad/s)$','Interpreter','latex',"FontSize",16)
 title('Yaw Rate','Interpreter','latex',"FontSize",20)
 grid on
 
 subplot(2,2,4)
 plot(time, p_rate,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('Roll Rate','Interpreter','latex',"FontSize",16)
+ylabel('$p (rad/s)$','Interpreter','latex',"FontSize",16)
 title('Roll Rate','Interpreter','latex',"FontSize",20)
 grid on
 
 % Figure 2: Quaternion Components
-figure('Name','Quaternion','NumberTitle','off');
+figure('Name','Quaternion','NumberTitle','off','Position',[100 100 720 540]);
 subplot(2,2,1)
 plot(time, qw,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
@@ -90,14 +90,14 @@ grid on
 
 % Figure 3: Reference Body Rates
 
-figure('Name','Ref Body Rates','NumberTitle','off');
+figure('Name','Real and Reference Body Rates','NumberTitle','off','Position',[100 100 720 540]);
 subplot(3,1,1)
 plot(time, p_rate,'LineWidth',1); hold on
 plot(time, p_ref,'--','LineWidth',1); hold off
 legend({'Current Roll Rate','Target Roll Rate'},'Interpreter','latex',"FontSize",14)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$p_{\mathrm{ref}}$','Interpreter','latex',"FontSize",16)
-title('Roll Rate Ref','Interpreter','latex',"FontSize",20)
+ylabel('$p_{\mathrm{ref}}(rad/s)$','Interpreter','latex',"FontSize",16)
+title('Roll Rate','Interpreter','latex',"FontSize",20)
 grid on
 
 subplot(3,1,2)
@@ -105,8 +105,8 @@ plot(time, q_rate,'LineWidth',1); hold on
 plot(time, q_ref,'--','LineWidth',1); hold off
 legend({'Current Pitch Rate','Target Pitch Rate'},'Interpreter','latex',"FontSize",14)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$q_{\mathrm{ref}}$','Interpreter','latex',"FontSize",16)
-title('Pitch Rate Ref','Interpreter','latex',"FontSize",20)
+ylabel('$q_{\mathrm{ref}}(rad/s)$','Interpreter','latex',"FontSize",16)
+title('Pitch Rate','Interpreter','latex',"FontSize",20)
 grid on
 
 subplot(3,1,3)
@@ -114,12 +114,12 @@ plot(time, r_rate,'LineWidth',1); hold on
 plot(time, r_ref,'--','LineWidth',1); hold off
 legend({'Current Yaw Rate','Target Yaw Rate'},'Interpreter','latex',"FontSize",14)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$r_{\mathrm{ref}}$','Interpreter','latex',"FontSize",16)
-title('Yaw Rate Ref','Interpreter','latex',"FontSize",20)
+ylabel('$r_{\mathrm{ref}}(rad/s)$','Interpreter','latex',"FontSize",16)
+title('Yaw Rate','Interpreter','latex',"FontSize",20)
 grid on
 
 % Figure 4: Motor Speeds
-figure('Name','Motor Speeds','NumberTitle','off');
+figure('Name','Motor Speeds','NumberTitle','off','Position',[100 100 720 540]);
 subplot(2,1,1)
 plot(time, rpm2,'LineWidth',1); hold on
 plot(time, omegaL_ref,'--','LineWidth',1); hold off
@@ -139,23 +139,23 @@ title('Right Motor','Interpreter','latex',"FontSize",20)
 grid on
 
 % Figure 5: Servo Commands
-figure('Name','Servo Commands','NumberTitle','off');
+figure('Name','Servo Commands','NumberTitle','off','Position',[100 100 720 540]);
 subplot(2,1,1)
 plot(time, servoL_ref,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$servo_L$','Interpreter','latex',"FontSize",16)
+ylabel('$Servo_L$','Interpreter','latex',"FontSize",16)
 title('Servo Left Command','Interpreter','latex',"FontSize",20)
 grid on
 
 subplot(2,1,2)
 plot(time, servoR_ref,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$servo_R$','Interpreter','latex',"FontSize",16)
+ylabel('$Servo_R$','Interpreter','latex',"FontSize",16)
 title('Servo Right Command','Interpreter','latex',"FontSize",20)
 grid on
 
 % Figure 6: Temperature & Voltage
-figure('Name','Temp & Voltage','NumberTitle','off');
+figure('Name','Temp & Voltage','NumberTitle','off','Position',[100 100 720 540]);
 yyaxis left
 plot(time, temp,'-','LineWidth',1)
 ylabel('Temperature ($^\circ$C)','Interpreter','latex',"FontSize",16)
@@ -168,8 +168,8 @@ legend({'Temp','Volt'},'Interpreter','latex','Location','best',"FontSize",14)
 grid on
 
 
-% Figure 7: Motor Speeds
-figure('Name','Throttle','NumberTitle','off');
+% Figure 7: Motor throttle
+figure('Name','Throttle','NumberTitle','off','Position',[100 100 720 540]);
 subplot(2,1,1)
 plot(time, throttle2);
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
@@ -186,10 +186,10 @@ grid on
 
 
 % Figure 8: Thrust Commands
-figure('Name','Thrust Command','NumberTitle','off');
+figure('Name','Thrust Command','NumberTitle','off','Position',[100 100 720 540]);
 plot(time, thrust_ref,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('Thrust','Interpreter','latex',"FontSize",16)
+ylabel('Thrust Command','Interpreter','latex',"FontSize",16)
 title('Thrust Command','Interpreter','latex',"FontSize",20)
 grid on
 
@@ -215,52 +215,52 @@ grid on
 
 %
 
-% Figure 2: Accelerometer Components
-figure('Name','Accelerometer Raw','NumberTitle','off');
-subplot(2,2,1)
-plot(time, ax,'LineWidth',1)
-xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$a_x$','Interpreter','latex',"FontSize",16)
-title('Accelerometer Raw $x$','Interpreter','latex',"FontSize",20)
-grid on
-
-subplot(2,2,2)
-plot(time, ay,'LineWidth',1)
-xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$a_y$','Interpreter','latex',"FontSize",16)
-title('Accelerometer Raw $y$','Interpreter','latex',"FontSize",20)
-grid on
-
-subplot(2,2,3)
-plot(time, az,'LineWidth',1)
-xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$a_z$','Interpreter','latex',"FontSize",16)
-title('Accelerometer Raw $z$','Interpreter','latex',"FontSize",20)
-grid on
-
-
-% Figure 2: Magnetometer Components
-figure('Name','Magnetometer Raw','NumberTitle','off');
-subplot(2,2,1)
-plot(time, mx,'LineWidth',1)
-xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$m_x$','Interpreter','latex',"FontSize",16)
-title('Magnetometer Raw $x$','Interpreter','latex',"FontSize",20)
-grid on
-
-subplot(2,2,2)
-plot(time, my,'LineWidth',1)
-xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$m_y$','Interpreter','latex',"FontSize",16)
-title('Magnetometer Raw $y$','Interpreter','latex',"FontSize",20)
-grid on
-
-subplot(2,2,3)
-plot(time, mz,'LineWidth',1)
-xlabel('Time (s)','Interpreter','latex',"FontSize",16)
-ylabel('$m_z$','Interpreter','latex',"FontSize",16)
-title('Magnetometer Raw $z$','Interpreter','latex',"FontSize",20)
-grid on
+% % Figure 2: Accelerometer Components
+% figure('Name','Accelerometer Raw','NumberTitle','off');
+% subplot(2,2,1)
+% plot(time, ax,'LineWidth',1)
+% xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+% ylabel('$a_x$','Interpreter','latex',"FontSize",16)
+% title('Accelerometer Raw $x$','Interpreter','latex',"FontSize",20)
+% grid on
+% 
+% subplot(2,2,2)
+% plot(time, ay,'LineWidth',1)
+% xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+% ylabel('$a_y$','Interpreter','latex',"FontSize",16)
+% title('Accelerometer Raw $y$','Interpreter','latex',"FontSize",20)
+% grid on
+% 
+% subplot(2,2,3)
+% plot(time, az,'LineWidth',1)
+% xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+% ylabel('$a_z$','Interpreter','latex',"FontSize",16)
+% title('Accelerometer Raw $z$','Interpreter','latex',"FontSize",20)
+% grid on
+% 
+% 
+% % Figure 2: Magnetometer Components
+% figure('Name','Magnetometer Raw','NumberTitle','off');
+% subplot(2,2,1)
+% plot(time, mx,'LineWidth',1)
+% xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+% ylabel('$m_x$','Interpreter','latex',"FontSize",16)
+% title('Magnetometer Raw $x$','Interpreter','latex',"FontSize",20)
+% grid on
+% 
+% subplot(2,2,2)
+% plot(time, my,'LineWidth',1)
+% xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+% ylabel('$m_y$','Interpreter','latex',"FontSize",16)
+% title('Magnetometer Raw $y$','Interpreter','latex',"FontSize",20)
+% grid on
+% 
+% subplot(2,2,3)
+% plot(time, mz,'LineWidth',1)
+% xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+% ylabel('$m_z$','Interpreter','latex',"FontSize",16)
+% title('Magnetometer Raw $z$','Interpreter','latex',"FontSize",20)
+% grid on
 
 
 

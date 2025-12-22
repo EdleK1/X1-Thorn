@@ -85,27 +85,28 @@ title("Battery current vs time","Interpreter","Latex")
 grid on
 
 
-figure("Name","Thrust vs time")
+figure("Name","Thrust vs time",'Position',[100 100 540 540]);
 plot(time,T_x,".-")
-xlabel("time(s)","Interpreter","Latex")
-ylabel("Thrust (N)","Interpreter","Latex")
-title("Thrust vs time","Interpreter","Latex")
+xlabel('Time (s)','Interpreter','latex',"FontSize",16)
+ylabel("Thrust (N)","Interpreter","Latex","FontSize",16)
+title("Measured Thrust","Interpreter","Latex","FontSize",20)
 grid on
 
 
-figure("Name","Fy vs time")
+
+figure("Name","Side Force vs time")
 plot(time,T_z,".-")
-xlabel("time(s)","Interpreter","Latex")
-ylabel("Fy (N)","Interpreter","Latex")
-title("Fy vs time","Interpreter","Latex")
+xlabel("Time (s)","Interpreter","Latex")
+ylabel("$F_y (N)$","Interpreter","Latex")
+title("$F_y$ vs time","Interpreter","Latex")
 grid on
 
 
-figure("Name","Moment vs time")
+figure("Name","Moment vs time",'Position',[100 100 540 540]);
 plot(time,M_y,".-")
-xlabel("time(s)","Interpreter","Latex")
-ylabel("Moment (N*m)","Interpreter","Latex")
-title("Moment vs time","Interpreter","Latex")
+xlabel("Time (s)","Interpreter","Latex","FontSize",16)
+ylabel("Moment (Nm)","Interpreter","Latex","FontSize",16)
+title("Measured Moment","Interpreter","Latex","FontSize",20)
 grid on
 
 
