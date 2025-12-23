@@ -92,7 +92,7 @@ void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 	mat3Multiply(temp_mat, Rz, R_ref);
 
 	matrixToQuat(R_ref, &q_ref);
-	quaternion_correction(&initial_attitude, &q_ref);
+	quaternion_correction(&curr_attitude, &q_ref);
 
 	quaternion_t dq; // dq = q_ref - q_curr
 
