@@ -12,7 +12,8 @@
 #include "../../Peripheral/ESP32/ESP32.h"
 #include "../../Lib/Globals/Globals.h"
 
-
+quaternion_t initial_attitude = { 0.707f, 0.0f, -0.707f, 0.0f };
+esp32_commands_t curr_esp32_commands;
 static const Vec3 VEC_X_WORLD = { 0.0f, 0.0f, 1.0f };
 
 
@@ -22,12 +23,44 @@ void GroundCommands_Init(void)
 }
 
 
-void get_reference(quaternion_t initial_attitude, esp32_commands_t *curr_esp32_commands, reference_t *curr_reference)
+void get_reference(quaternion_t curr_attitude, reference_t *curr_reference)
 {
-	Vec3 vec_y_world, vec_z_world, vec_z_aircraft;
+	// Read Ground commands and send back the ESC status
 
+	ESP32_Get_Commands(&curr_esp32_commands);
+	ESP32_Send_ESC_Status();
+
+	if (g_Status != 2) // Landing / Off mode
+	{
+		curr_reference->thrust_ref = curr_reference->thrust_ref - 9e5;		//  it should take aprox 10 seconds to go from 22000 RPMS to 0
+		curr_esp32_commands.p_command = 0;
+		curr_esp32_commands.pitch_command = 0;
+		curr_esp32_commands.yaw_command = 0;
+	}
+	else
+	{
+		curr_reference->thrust_ref = curr_esp32_commands.thrust_command;
+	}
+
+	if (curr_reference->thrust_ref < 0)
+	{
+		curr_reference->thrust_ref = 0;
+	}
+
+	// Determine initial attitude to compute the reference, essentially, if roll command = 0 and we are in mode 2, we will not update the initial reference for the commands so that the drone maintains the current roll attitude
+	// We are only updating the initial attitude if we want to roll
+
+	Vec3 vec_y_world, vec_z_world, vec_z_aircraft;
 	quaternion_t q_ref;
 	Mat3 Rz, Ry, R0;
+
+	if (g_Status != 2 || curr_esp32_commands.p_command != 0.0f)		// we are checking if we need to hold roll attitude or not
+	{
+		initial_attitude.w = curr_attitude.w;
+		initial_attitude.x = curr_attitude.x;
+		initial_attitude.y = curr_attitude.y;
+		initial_attitude.z = curr_attitude.z;
+	}
 
 	vec_z_aircraft[0] = 2.0f*(initial_attitude.x*initial_attitude.z + initial_attitude.w*initial_attitude.y);
 	vec_z_aircraft[1] = 2.0f*(initial_attitude.y*initial_attitude.z - initial_attitude.w*initial_attitude.x);
@@ -48,25 +81,8 @@ void get_reference(quaternion_t initial_attitude, esp32_commands_t *curr_esp32_c
 	R0[1][2] = vec_z_world[1];
 	R0[2][2] = vec_z_world[2];
 
-	if (g_Status != 2) // Landing / Off mode
-	{
-		curr_reference->thrust_ref = curr_reference->thrust_ref - 9e5;		// new thrust controller architecture, it should take aprox 10 seconds to go from 22000 RPMS to 0
-		curr_esp32_commands->p_command = 0;
-		curr_esp32_commands->pitch_command = 0;
-		curr_esp32_commands->yaw_command = 0;
-	}
-	else
-	{
-		curr_reference->thrust_ref = curr_esp32_commands->thrust_command;
-	}
-
-	if (curr_reference->thrust_ref < 0)
-	{
-		curr_reference->thrust_ref = 0;
-	}
-
-	rot_z_mat(Rz, curr_esp32_commands->yaw_command);
-	rot_y_mat(Ry, curr_esp32_commands->pitch_command);
+	rot_z_mat(Rz, curr_esp32_commands.yaw_command);
+	rot_y_mat(Ry, curr_esp32_commands.pitch_command);
 
 	// R_ref = R0 * Ry * Rz;
 
@@ -80,21 +96,21 @@ void get_reference(quaternion_t initial_attitude, esp32_commands_t *curr_esp32_c
 
 	quaternion_t dq; // dq = q_ref - q_curr
 
-	dq.w = q_ref.w - initial_attitude.w;
-	dq.x = q_ref.x - initial_attitude.x;
-	dq.y = q_ref.y - initial_attitude.y;
-	dq.z = q_ref.z - initial_attitude.z;
+	dq.w = q_ref.w - curr_attitude.w;
+	dq.x = q_ref.x - curr_attitude.x;
+	dq.y = q_ref.y - curr_attitude.y;
+	dq.z = q_ref.z - curr_attitude.z;
 
 
 	// esentially using that dq = M(omega) * q, it can be also done with deviation but this is faster to implement
 
 	float p_delta, q_delta, r_delta;
 
-	p_delta = 2 * (-initial_attitude.x * dq.w + initial_attitude.w * dq.x + initial_attitude.z * dq.y - initial_attitude.y * dq.z);
-	q_delta = 2 * (-initial_attitude.y * dq.w - initial_attitude.z * dq.x + initial_attitude.w * dq.y + initial_attitude.x * dq.z);
-	r_delta = 2 * (-initial_attitude.z * dq.w + initial_attitude.y * dq.x - initial_attitude.x * dq.y + initial_attitude.w * dq.z);
+	p_delta = 2 * (-curr_attitude.x * dq.w + curr_attitude.w * dq.x + curr_attitude.z * dq.y - curr_attitude.y * dq.z);
+	q_delta = 2 * (-curr_attitude.y * dq.w - curr_attitude.z * dq.x + curr_attitude.w * dq.y + curr_attitude.x * dq.z);
+	r_delta = 2 * (-curr_attitude.z * dq.w + curr_attitude.y * dq.x - curr_attitude.x * dq.y + curr_attitude.w * dq.z);
 
-	curr_reference->p_ref = p_delta + curr_esp32_commands->p_command;
+	curr_reference->p_ref = p_delta + curr_esp32_commands.p_command;
 	curr_reference->pitch_ref = q_delta;
 	curr_reference->yaw_ref = r_delta;
 }
