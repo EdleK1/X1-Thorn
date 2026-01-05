@@ -8,7 +8,7 @@
 #include <stdbool.h>
 
 
-#define SD_LOGGER_MAX_VARIABLES         30                                  /*!< Máximo número de variables a registrar */
+#define SD_LOGGER_MAX_VARIABLES         31                                  /*!< Máximo número de variables a registrar */
 #define SD_LOGGER_FREQUENCY_HZ          10                                  /*!< Frecuencia de logging en Hertz */
 
 #define SD_LOGGER_STACK_SIZE			(configMINIMAL_STACK_SIZE * 16)		/*!< Stack size	*/

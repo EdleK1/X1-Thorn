@@ -29,6 +29,7 @@ void Yaw_Controller_Init(void)
     prevError  = 0.0f;
     dTermFilt  = 0.0f;
     SD_Logger_RegisterVariable(&r_ref, LOG_TYPE_FLOAT, "r_ref");
+    SD_Logger_RegisterVariable(&integrator, LOG_TYPE_FLOAT, "yaw_integrator");
 }
 
 
