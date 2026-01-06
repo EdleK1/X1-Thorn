@@ -37,8 +37,8 @@
 
 #define OUTPUT_MIN_YAW 					-2e8f
 #define OUTPUT_MAX_YAW 					+2e8f
-#define OUTPUT_MIN_YAW_INTEGRATOR 		-5e7f
-#define OUTPUT_MAX_YAW_INTEGRATOR 		+5e7f
+#define OUTPUT_MIN_YAW_INTEGRATOR 		-6e7f
+#define OUTPUT_MAX_YAW_INTEGRATOR 		+6e7f
 
 
 // Roll Controller Parameters

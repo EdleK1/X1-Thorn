@@ -6,7 +6,7 @@
 clear; close all; clc;
 
 % 1) Load data
-T = readtable('LOG4.csv');
+T = readtable('LOG7.csv');
 time       = (T.Timestamp - T.Timestamp(1)) / 1000;  % seconds
 ax         = T.curr_ax;           thrust_ref = T.thrust_ref;
 % ay         = T.curr_ay;           az         = T.curr_az;
@@ -219,6 +219,8 @@ yaw_commands = omegaL_ref.^2 - omegaR_ref.^2;
 
 figure('Name','Yaw Command','NumberTitle','off');
 plot(time, yaw_commands,'LineWidth',1)
+hold on
+plot(time, T.yaw_integrator,'LineWidth',1)
 xlabel('Time (s)','Interpreter','latex',"FontSize",16)
 ylabel('Yaw Command','Interpreter','latex',"FontSize",16)
 title('Yaw Command','Interpreter','latex',"FontSize",20)
